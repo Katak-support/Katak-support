@@ -1,0 +1,90 @@
+body {
+	background-color:#fff;
+	font-family:arial, helvetica, sans-serif;
+	font-size:0.9em;
+	color:#000;
+	text-align: center;
+	margin-top: 100px;
+}
+
+h1 {
+	font-size: 0.9em;
+	color: #F70;
+	margin: 0;
+	text-align: center;
+}
+
+h1#title {
+  color:#879186;
+}
+
+h1#logo {
+  width: 188px;
+  height: 72px;
+  padding:10px 0 20px 0;
+  background: url(../images/kataklogo.gif) center center no-repeat #fff;
+  margin: 0 auto 0 auto;
+}
+
+a, a:link, a:visited, a:hover {
+  color:#000;
+  text-decoration: none;
+	background: none;
+  margin:0 auto 0 auto;
+}
+
+a:hover { color:#DB8606;}
+
+.input {
+  display:inline-block;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:bold;
+	min-width:90px;
+  padding:0 0 10px 0;
+}
+
+input { 
+  width: 175px;
+  margin-left: 5px
+}
+
+input:focus, textarea:focus {
+  color: #F70;
+  background: #FEA;
+  -moz-outline-style: none;
+}
+
+.submit {
+ 		margin:10px auto 10px auto;
+    background-color: #479126;
+    color: #FFF;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border:1px solid #888;
+    font-weight:bold;
+    width:auto;
+}
+
+.submit:hover {
+    background: #F70;
+}
+
+div#loginBox {
+	width: 300px;
+	padding: 10px 20px 5px 20px;
+	margin: 0 auto 0 auto;
+	background: #fff;
+	text-align: center;
+	border:5px solid #ddd;
+}
+
+#copyRights, #copyRights a, #copyRights a:link, #copyRights a:visited, #copyRights a:hover {
+  font-size:11px;
+  text-align: center;
+	text-decoration: none;
+  background: none;
+  color:#AAAAAA;
+}
+

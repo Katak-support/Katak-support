@@ -1,0 +1,173 @@
+/*********************************************************************
+    colors.css
+
+    Colors for client page.
+
+    Copyright (c)  2012-2013 Katak Support
+    http://www.katak-support.com/
+    
+    Released under the GNU General Public License WITHOUT ANY WARRANTY.
+    Derived from osTicket by Peter Rotich.
+    See LICENSE.TXT for details.
+
+    $Id: $
+**********************************************************************/
+
+/* default text and background colors */
+body {
+  color:#333;
+  background-color: #fff;
+}
+
+/* Headings */
+h1 {
+  color:#609543;
+}
+h2 {
+  color:#333;
+}
+h3 {
+  color:#666;
+}
+
+hr {border-bottom-color:#ccc;}
+
+/* default link color */
+a {
+	color:#111166;
+	text-decoration: none;
+}
+
+/* default link hover color */
+a:hover, .button:hover {
+	color:#DB8606;
+	text-decoration: none;
+}
+
+
+#container {
+    border-color:#ccc;
+}
+
+/* footer background and border */
+#footer {
+  background:url(../images/footerbg.jpg) top left repeat-x #fff;
+}
+
+/* Landing page title */
+#content #title {
+  color:#444444;
+}
+
+#content #ticket {
+  background:#F6F4F4;
+} 
+
+#right-top-block a {
+background: #ededed; /* Old browsers */
+background: -moz-linear-gradient(top,  #ededed 0%, #b8b8b8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#b8b8b8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ededed 0%,#b8b8b8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ededed 0%,#b8b8b8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ededed 0%,#b8b8b8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ededed 0%,#b8b8b8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#b8b8b8',GradientType=0 ); /* IE6-9 */
+border: 1px solid #BBBBBB;
+}
+
+/* Data Table */
+
+/* Table headings */
+table.tgrid th {
+  background-color:#008800;;
+  color: #FFF;
+}
+
+table.tgrid, table.tgrid td, table.tgrid th {
+  border-color:#FFFFFF;
+}
+
+table.tgrid th a{
+  color:#FFF;
+  text-decoration:underline;
+}
+
+table.tgrid th a:hover {
+  color:#EB9616;
+  text-decoration:underline;
+}
+
+/* row highlighting on hover */
+.tgrid tr:hover td {
+	  background-color: #FFFFDD; 
+}
+
+/* Rows used on tickets list table */
+.row { background-color: #F0F0F0; }
+
+/* messages, warning and errors */
+.error {
+    color: #FF0000;
+}
+
+.msg {
+    color:#006600;
+}
+
+#info {
+    color:#006600;
+}
+
+#infomessage {
+  background-color: #390;
+  border-color: #390;
+  color: #390;
+  background: #CFC;
+}
+
+#errormessage {
+    border-color: #903;
+    background-color: #fcc;
+    color: #903;
+}
+
+#warnmessage {
+    border-color: #fad163;
+    background-color: #fdedc1;
+}
+
+/* Input buttons/submits colors*/
+.button {
+background: #e3f7e3; /* Old browsers */
+background: -moz-linear-gradient(top,  #e3f7e3 0%, #73b570 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e3f7e3), color-stop(100%,#73b570)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #e3f7e3 0%,#73b570 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #e3f7e3 0%,#73b570 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #e3f7e3 0%,#73b570 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #e3f7e3 0%,#73b570 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3f7e3', endColorstr='#73b570',GradientType=0 ); /* IE6-9 */
+border: 1px solid #448844;
+}
+
+
+/* Message title */
+
+.firstmessage {
+    border-color:#EEE1CA;
+}
+
+.messagelabel {
+    background-color: #EEE1CA;
+}
+
+.responselabel {
+    background-color: #E2E8E2;
+}
+
+.message {
+    background-color: #FCFCFC;
+}
+
+.attachment {
+    background-color: #FCFCFC;
+}

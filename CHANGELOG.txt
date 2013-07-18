@@ -1,0 +1,15 @@
+Katak-support 0.9.1, 2013-04-11
+----------------------
+- Fixed a variety of small bugs, improved texts and translations.
+- Fixed some problems on attachments management.
+- Completely revised the administrator's role and management.
+    * The user created during the installation is now the System Administrator
+    * System Administrator can not be eliminated, sysadmin email can not be changed.
+    * The Administrator role can't be eliminated or changed.
+    * New ticket alert sent to all the administrators.
+- Database:
+    * The xxx_config.admin_email field has been eliminated.
+ 
+Katak-support 0.9.0, 2013-03-19
+------------------------
+- Initial stable release

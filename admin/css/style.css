@@ -1,0 +1,300 @@
+/* admin customizable stylesheet */
+
+
+/* input submit + button class  */
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    background-color: #479126;
+    color: #FFF;
+    border:1px solid #666;
+    font-weight:bold;
+    cursor:pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.button:hover {
+	color:#FBA626;
+  text-decoration: none;
+}
+
+
+/* mesages, warning and errors */
+
+.warning {
+  font-size:.9em;
+  font-style:italic;
+}
+
+.error, .msg {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.error {
+    color: #FF0000;
+}
+
+.msg {
+  color:#222222;
+}
+
+.firstmessage {
+    border-left:8px solid;
+    margin-left:20px;
+    padding:0px 5px 5px 5px;
+    border-color:#EEE1CA;
+}
+
+.message {
+    border:1px solid #DFDFDF;
+    padding:4px 5px 1px 5px;
+    background-color: #FCFCFC;
+}
+
+.note_title {
+    padding:4px 5px 1px 5px;
+    background-color: #E4E4E4;
+    font-style:italic;
+}
+
+.messagelabel, .responselabel, .notelabel {
+    margin-top:12px;
+    font-weight:bold;
+    background-color: #EEE1CA;
+}
+
+.responselabel {
+    background-color: #E2E8E2;
+}
+.Icon.outMessage { background:url(../images/icons/messageOUT.gif) 0 0 no-repeat; }
+.Icon.inMessage { background:url(../images/icons/messageIN.gif) 0 0 no-repeat; }
+
+.notelabel {
+    background-color: #E4E4E4;
+}
+
+#ticketnumber {
+  display:inline-block;
+  float:left;
+  padding:0 4px 4px 0;
+  font-weight: bold;
+  font-size:11pt;
+  color:#006600;
+}
+
+#ticketstatus {
+  display:inline-block;
+  float:right;
+  padding:0 4px 4px 4px;
+}
+
+#infomessage, #warnmessage, #errormessage {
+    margin-bottom: 1.5em;
+    padding: 0.3em;
+    font-weight: bold;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+#infomessage {
+  background-color: #390;
+  border-color: #390;
+  color: #390;
+  background: #CFC;
+}
+
+#errormessage {
+    border-color: #903;
+    background-color: #fcc;
+    color: #903;
+}
+
+#warnmessage {
+    border-color: #fad163;
+    background-color: #fdedc1;
+}
+
+
+/* Alt rows used on most data tables */
+.row1 td { background-color: #F4F4F4; }
+.row2 td { background-color: #FFFFFF; }
+
+
+
+/* Data Table */
+table.dtable, table.logs {
+ border-left: 1px solid;
+}
+
+table.dtable td, table.logs td {
+  padding-left:3px;
+  border:1px solid;
+  border-top:none;
+  border-left:none;
+}
+
+table.dtable th, table.logs th {
+  color: #FFF;
+  font-size: 12px;
+  font-weight:bold;
+}
+
+
+table.dtable, table.dtable td, table.dtable th, table.logs, table.logs td, table.logs th {
+  border-color:#CCC;
+}
+
+/* Table headings */
+table.dtable th, table.logs th {
+  text-align:left;
+  background:#ADADAD;
+  color:#FFF;
+}
+
+table.dtable th a, table.dtable th a:hover {
+  color:#FFF;
+  text-decoration:underline;
+}
+
+/* row highlighting on hover + select */
+.dtable tr:hover td, .highlight td {  background-color: #FFFFDD; }
+/* disabled highlighting on nohover */
+.dtable tr:hover td.nohover, .highlight td.nohover {}
+
+
+
+
+/* Form Table */
+table.tform {
+ border-left: 1px solid;
+ border-top: 1px solid;
+ margin-bottom: 10px;
+}
+
+table.tform td,table.tform th {
+  padding-left:3px;
+  border:1px solid;
+  border-top:none;
+  border-left:none;
+}
+
+table.tform th {
+    text-align:left;
+    font-weight:normal;
+    background:#F4FAFF;
+    padding-left:5px;
+    width: 210px;
+}
+
+table.tform.tpl th {
+    width: 150px;
+}
+
+table.tform td {
+    background:#FFF;
+}
+
+table.tform, table.tform td, table.tform th {
+  border-color:#CCC;
+}
+
+table.tform tr.header td {
+    font-weight:bold;
+    background:#ADADAD; 
+    color:#FFF; 
+}
+table.tform tr.subheader td {
+    font-weight:normal;
+    background:#DCDCDC;
+}
+
+/* Ticket view related styles */
+table.ticketinfo {
+    margin-bottom:4px;
+    border:0 none;
+}
+
+table.ticketinfo td, table.ticketinfo th {
+    background-color: #F6F4F4;
+}
+
+table.ticketinfo th {
+    font-weight:bold;
+    text-align:left;
+    padding-left:3px;
+    width: 110px;
+}
+
+table.ticketoptions {
+    background-color: #EFEFEF;
+    border-color:#CCC;
+    border: 1px solid;
+}
+
+table.ticketoptions td {
+    border: 0;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+/* Ticket view (Notes, Messages and Responses) */
+#ticketthread table.message {
+    margin:10px 0 5px 0;
+}
+
+#ticketthread table.response {
+    margin-bottom:5px;
+}
+
+#ticketnotes table.note {
+    margin-bottom:10px;
+}
+
+table.message, table.response,table.note {
+    border: 1px solid;
+    border-bottom: none;
+    border-color:#ADADAD;
+}
+
+table.message td, table.message th,table.response td, table.response th,table.note td, table.note th {
+    border-bottom:1px solid;
+    padding:5px;
+}
+
+table.message td, table.response td, table.note td{
+  background-color: #FAFAFA;
+}
+
+table.message th, table.response th, table.note th {
+    line-height:24px;
+    font-size:12px;
+    font-weight:bold;
+    text-align: left;
+    padding:1px;
+    padding-left:5px;
+}
+
+table.message th {
+    background-color: #eee1ca;
+}
+
+table.response th {
+    background-color: #e2e8e2;
+}
+
+table.note th {
+    background-color: #DDDDDD;
+    color: #3E3E3E;
+}
+
+table.message tr.header td, table.response tr.header td, table.note tr.header td{
+    background-color: #EFEFEF;
+    border-color:#ccc;
+    padding:1px;
+    padding-left:5px;
+}

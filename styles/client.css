@@ -1,0 +1,366 @@
+/*********************************************************************
+    client.css
+
+    Style for client page.
+
+    Copyright (c)  2012-2013 Katak Support
+    http://www.katak-support.com/
+    
+    Released under the GNU General Public License WITHOUT ANY WARRANTY.
+    Derived from osTicket by Peter Rotich.
+    See LICENSE.TXT for details.
+
+    $Id: $
+**********************************************************************/
+
+body {
+  font-family:arial, helvetica, sans-serif;
+  font-size:10.5pt;
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+
+img {
+	border:None;
+}
+
+h1, h2, h3 {
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+
+table.tgrid {
+  margin:2px 0 18px 0;
+}
+
+table.tgrid td {
+  border-bottom:none;
+  border-right:none;
+  border-top:8px solid;
+  border-left:none;
+}
+
+table.tgrid th {
+  font-size:11pt; 
+  font-weight:bold;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  border-radius:8px;
+}
+
+hr { border:none; border-bottom:1px solid; margin:8px 0 12px 0; }
+
+.label, .label-optional {
+  display:inline-block;
+  vertical-align:top;
+  text-align:left;
+  min-width:124px;
+}
+
+.input {
+  padding:0 0 8px 0;
+}
+
+.label {
+  font-weight:bold;
+}
+
+#container {
+  width:758px;
+  margin:5px auto 0 auto;
+  border:1px solid;
+  text-align:left;
+}
+
+  #footer {
+    clear:both;
+    line-height:28px;
+    text-align:center;
+    font-size:10pt; 
+    font-style:italic;
+    overflow:auto;
+    margin-top:8px;
+  }
+
+  #left-top-block {
+    background:url(../images/pagebg.jpg);
+    padding:0 10px 0 0;
+    height:58px;
+    display:block;
+  }
+
+  #logo { 
+      width:150px;
+      height:54px;
+  }
+
+  #right-top-block {
+      margin:0 0 8px 0;
+      padding:0 2px 0 0;
+      display:inline;
+      float:right;
+  }
+  
+	#right-top-block a {
+			border-radius: 12px;
+			-webkit-border-radius: 12px;
+			-moz-border-radius: 12px;
+			padding: 5px 10px;
+			float: right;
+			margin-right: 8px;
+			margin-bottom: 15px;
+			display: inline;
+			line-height: 22px;
+			font-size: 11pt;
+			font-weight: bold;
+			width: 120px;
+		}
+
+    #right-top-block span {
+      padding-left:24px;
+    }
+
+    #right-top-block a.home span { background:url(../images/icons/home.gif) 0 0 no-repeat; }
+    #right-top-block a.new_ticket span { background:url(../images/icons/new_ticket.gif) 0 0 no-repeat; }
+    #right-top-block a.my_tickets span { background:url(../images/icons/my_tickets.gif) 0 0 no-repeat; }
+    #right-top-block a.ticket_status span { background:url(../images/icons/ticket_status.gif) 0 0 no-repeat; }
+    #right-top-block a.log_out span { background:url(../images/icons/logout.gif) 0 0 no-repeat; }
+
+   
+  #content {
+      clear:both;
+      padding:0px 20px 0px 20px;
+      line-height:14pt;
+      margin:8px auto 0px auto;
+  }
+    
+    #content #landingpage {
+			background-image:url('../images/backgound-home.jpg');
+			background-repeat:no-repeat;
+			background-position:center;
+      width:100%;
+      height:480px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      text-decoration: none;
+      border: none;
+      font-weight: normal;
+    }
+
+    #content #title {
+       display:block;
+       font-family: Arial, Helvetica, sans-serif;
+       font-size:22px;
+       text-decoration: none;
+       border: none;
+       font-weight: bold;
+       padding-top:30px;
+       padding-bottom:30px;
+       padding-left:30px;
+    }
+    
+    #content #subtitle {
+		   overflow: auto;
+		   height: 140px;
+ 		   margin: 5px;
+	 	   padding-left: 30px;
+		   width: 560px;
+    }
+
+    #content form {
+      margin:0;
+      padding:0;
+    }
+      #content form.status_form fieldset { clear:none; }
+    
+      #content form label {
+        display:block;
+        width:60px;
+        padding-right:10px;
+        text-align:right;
+        float:left;
+        font-weight:bold;
+      }
+    
+   
+.error {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+}
+
+.msg {
+	display:inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#leftcolumn {
+    display:inline-block;
+    float:left;
+    width:50%;
+}
+
+#rightcolumn {
+    display:inline-block;
+    float:right;
+	  width:50%;
+}
+
+#ticketstatus {
+  display:inline-block;
+  float:right;
+  min-width:100px;
+  padding:0 4px 4px 0;
+}
+
+
+#infomessage, #warnmessage, #errormessage {
+    margin-bottom: 1.5em;
+    padding: 0.3em;
+    font-weight: bold;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+#info {
+    padding:4px 4px 8px 4px;
+    float:right;
+    font-size: 10pt;
+    text-align:center;
+}
+
+/* Buttons  */
+.button {
+     -webkit-border-radius: 12px;
+     -moz-border-radius: 12px;
+     border-radius: 12px;
+     display: inline;
+     padding: 5px 10px;
+     margin-top: 8px;
+     margin-right: 8px;
+     margin-bottom: 12px;
+     line-height: 20px;
+     font-size: 11pt;
+     font-weight: bold;
+     width: 140px;
+}
+    
+/* Generic CSS based Icons. use=> <tag class="Icon iconname">text</tag> */
+    
+.Icon {     
+    width: auto;
+    padding-left:20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+/* Icons */
+a.Icon { }
+   
+a.Icon:hover {
+    text-decoration: underline;    
+}
+
+.Icon.Ticket { background:url(../images/icons/ticket.gif) 0 0 no-repeat; }
+.Icon.closedTicket { background-image:url(../images/icons/closed.gif); }
+.Icon.openTicket { background-image:url(../images/icons/open.gif); }
+.Icon.answeredTicket { background-image:url(../images/icons/answered.gif); }
+.Icon.attachment { background-image: url(../images/icons/attachment.gif); }
+.Icon.file {
+	background-image: url(../images/icons/attachment.gif);
+    color:#999999
+}
+.Icon.refresh { background-image: url(../images/icons/refresh.gif); }   
+.Icon.thread {
+    font-weight: bold;
+    font-size: 1em;
+    background-image: url(../images/icons/thread.gif);
+}
+.Icon.outMessage { background:url(../images/icons/messageOUT.gif) 0 0 no-repeat; }
+.Icon.inMessage { background:url(../images/icons/messageIN.gif) 0 0 no-repeat; }
+
+
+/* Ticket view (Messages and Responses) */
+#ticketthread {
+    margin:5px 0 15px 0;
+}
+
+.messagelabel, .responselabel {
+	  margin-top:16px;
+    font-weight:bold;
+}
+
+.firstmessage {
+    border-left:4px solid;
+    margin-left:20px;
+    padding:0px 5px 0px 5px;
+}
+
+.message {
+    border-right:2px solid #DFDFDF;
+    border-left:2px solid #DFDFDF;
+    margin-left:20px;
+    padding:4px 5px 1px 5px;
+}
+
+.warning {
+	font-size:.9em;
+	font-style:italic;
+}
+
+.attachment {
+    border-bottom:2px solid #DFDFDF;
+    border-right:2px solid #DFDFDF;
+    border-left:2px solid #DFDFDF;
+    margin-left:20px;
+    padding:4px 5px 1px 5px;
+}
+
+/* Multiple upload */
+#Delete {
+	width:16px;
+	padding-left:4px;
+}
+
+.files_list {
+    padding:5px 0 10px 128px;
+}
+
+/* -----------------------------------
+MOBILE, SMARTPHONE
+------------------------------------ */
+@media (max-width: 759px) {
+
+  #container {
+    width:100%;
+  }
+
+  #content #landingpage {
+    background-image:none;
+    height:100%;
+  }
+
+  #content #title {
+     padding-top:10px;
+     padding-bottom:10px;
+     padding-left:10px;
+  }
+
+  #content #subtitle {
+     height: 100%;
+     padding-left: 10px;
+     width: 90%;
+  }
+#info {
+    background:none;
+    padding:0px 0px 4px 0px;
+}
+}
