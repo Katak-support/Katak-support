@@ -75,8 +75,8 @@ class Ticket{
             $this->updated  =$row['updated'];
             $this->duedate  =$row['duedate'];
             $this->closed   =$row['closed'];
-            $this->lastmsgdate  =$row['lastmessagedate'];
-            $this->lastrespdate  =$row['lastresponsedate'];
+            $this->lastmsgdate  =$row['lastmessage'];
+            $this->lastrespdate  =$row['lastresponse'];
             $this->lock_id  =$row['lock_id'];
             $this->priority_id=$row['priority_id'];
             $this->priority=$row['priority_desc'];
@@ -299,8 +299,8 @@ class Ticket{
         if($this->lastmsgdate)
             return $this->lastmsgdate;
 
-        //for old versions...
-        $createDate=0;
+        //for old versions... or if you want to eliminate the field lastmessage in the ticket table
+                    $createDate=0;
         $sql ='SELECT created FROM '.TICKET_MESSAGE_TABLE.' WHERE ticket_id='.db_input($this->getId()).' AND msg_type IN ("F","M") ORDER BY created DESC LIMIT 1';
         if(($res=db_query($sql)) && db_num_rows($res))
             list($createDate)=db_fetch_row($res);
@@ -310,10 +310,10 @@ class Ticket{
 
     function getLastResponseDate() {
 
-               
         if($this->lastrespdate)
             return $this->lastrespdate;
 
+        //for old versions... or if you want to eliminate the field lastresponse in the ticket table
         $createDate=0;
         $sql ='SELECT created FROM '.TICKET_MESSAGE_TABLE.' WHERE ticket_id='.db_input($this->getId()).' AND msg_type="R" ORDER BY created DESC LIMIT 1';
         if(($res=db_query($sql)) && db_num_rows($res))

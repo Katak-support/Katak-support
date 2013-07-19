@@ -39,8 +39,8 @@ ini_set('session.cache_limiter', 'nocache');
 
 #Error reporting...Good idea to ENABLE error reporting to a file. i.e display_errors should be set to false
 #Don't display errors in productions.
-error_reporting(E_STRICT | E_ERROR);
-//error_reporting(E_ERROR); 
+//error_reporting(E_STRICT | E_ERROR);
+error_reporting(E_ERROR); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 0);
 

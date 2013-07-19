@@ -32,7 +32,7 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
       <span class="label"><?=_('Department:') ?></span>
       <span><?=Format::htmlchars($dept->getName())?></span>
     </div>
-    <?php if ($ticket->getCloseDate()) { ?>
+    <?php if (!$ticket->isOpen()) { ?>
     <div>
       <span class="label"><?=_('Closing date:') ?></span>
       <span><?=Format::db_datetime($ticket->getCloseDate())?></span>
