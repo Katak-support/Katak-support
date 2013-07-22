@@ -8,8 +8,10 @@ header("Content-Type: text/html; charset=UTF-8\r\n");
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title><?=Format::htmlchars($title)?></title>
 
-    <link rel="stylesheet" href="./styles/client.css" media="screen">
-    <link rel="stylesheet" href="./styles/colors.css" media="screen">
+    <link rel="stylesheet" href="./styles/client.css" media="screen, print">
+    <link rel="stylesheet" href="./styles/print.css" media="print">
+    <link rel="stylesheet" href="./styles/colors.css" media="screen, print">
+
 
   	<script src="./js/multifile.js" type="text/javascript"></script>
 </head>

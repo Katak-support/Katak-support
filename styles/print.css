@@ -1,0 +1,22 @@
+/*********************************************************************
+    print.css
+
+    Style for printing client page.
+    Used in cascade with client.css.
+
+    Copyright (c)  2012-2013 Katak Support
+    http://www.katak-support.com/
+    
+    Released under the GNU General Public License WITHOUT ANY WARRANTY.
+    See LICENSE.TXT for details.
+
+    $Id: $
+**********************************************************************/
+#right-top-block {
+    display:none;
+}
+
+#reply {
+  display:none;
+}
+

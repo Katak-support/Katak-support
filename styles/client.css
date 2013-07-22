@@ -257,14 +257,13 @@ hr { border:none; border-bottom:1px solid; margin:8px 0 12px 0; }
 .Icon {     
     width: auto;
     padding-left:20px;
-    background-position: left center;
-    background-repeat: no-repeat;
-    text-decoration: none;
+    background-position:left center;
+    background-repeat:no-repeat;
+    text-decoration:none;
 }
 
 /* Icons */
-a.Icon { }
-   
+  
 a.Icon:hover {
     text-decoration: underline;    
 }
@@ -273,10 +272,9 @@ a.Icon:hover {
 .Icon.closedTicket { background-image:url(../images/icons/closed.gif); }
 .Icon.openTicket { background-image:url(../images/icons/open.gif); }
 .Icon.answeredTicket { background-image:url(../images/icons/answered.gif); }
-.Icon.attachment { background-image: url(../images/icons/attachment.gif); }
 .Icon.file {
 	background-image: url(../images/icons/attachment.gif);
-    color:#999999
+  color:#999999;
 }
 .Icon.refresh { background-image: url(../images/icons/refresh.gif); }   
 .Icon.thread {
