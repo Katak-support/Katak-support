@@ -79,10 +79,10 @@ ul.tabbernav li.tabberactive a:hover
   Add style only after the tabber interface is set up (.tabberlive)
   --------------------------------------------------*/
 .tabberlive .tabbertab {
- padding:10px;
- border:0px solid #aaa;
+ padding:10px 32px 0px 32px;
+ border:1px solid #aaa;
  border-top:0;
-
+ 
  /* If you don't want the tab size changing whenever a tab is changed
     you can set a fixed height */
 

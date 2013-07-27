@@ -31,7 +31,7 @@ class Staff {
     var $dept;
     
     function Staff($var){
-        $this->id =0;
+        $this->id = 0;
         return ($this->lookup($var));
     }
 
@@ -268,7 +268,7 @@ class Staff {
         return false;
     }
 
-    function create($vars,&$errors) {
+    static function create($vars,&$errors) {
         return Staff::save(0,$vars,$errors);
     }
 

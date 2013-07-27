@@ -51,7 +51,7 @@ $showing=($num=db_num_rows($users))?_("Staff Members"):sprintf(_("No staff found
                 </td>
                 <td><a href="admin.php?t=staff&id=<?=$row['staff_id']?>"><?=Format::htmlchars($name)?></a>&nbsp;</td>
                 <td><?=$row['username']?></td>
-                <td><?=$row['isactive']?_('Active'):'<b>'._('Locked').'</b>'?><?=$row['onvacation']?'&nbsp;(<i>'._('vacation').'</i>)':''?></td>
+                <td><?=$row['isactive']?_('Active'):'<b>'._('Locked').'</b>'?><?=$row['onvacation']?'&nbsp;(<i>'._('Vacation').'</i>)':''?></td>
                 <td><a href="admin.php?t=grp&id=<?=$row['role_id']?>"><?=Format::htmlchars($row['role_name'])?></a><?=$sysadmin?'*':''?><?=$row['role_enabled']?'':' (<i>'._('Disabled').'</i>)'?></td>
                 <td><a href="admin.php?t=dept&id=<?=$row['dept_id']?>"><?=Format::htmlchars($row['dept_name'])?></a><?=$row['manager_id']==$row['staff_id']?'&nbsp;<i>('._('mng').')</i>':''?></td>
                 <td><?=Format::db_date($row['created'])?></td>

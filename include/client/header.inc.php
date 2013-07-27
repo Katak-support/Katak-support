@@ -12,7 +12,6 @@ header("Content-Type: text/html; charset=UTF-8\r\n");
     <link rel="stylesheet" href="./styles/print.css" media="print">
     <link rel="stylesheet" href="./styles/colors.css" media="screen, print">
 
-
   	<script src="./js/multifile.js" type="text/javascript"></script>
 </head>
 <body>

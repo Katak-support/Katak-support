@@ -1,9 +1,11 @@
 /* 
    Tiny DHTML Calendar
 
-   Stolen somewhere online....add credit.
+   Based on the Swazz Javascript Calendar
+   v 1.0 3rd November 2006
+   By Oliver Bryant.
    
- */
+*/
 
 function getObj(objID)
 {

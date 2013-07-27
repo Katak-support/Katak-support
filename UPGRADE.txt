@@ -1,3 +1,8 @@
+UPGRADE FROM KATAK VER 0.9.1
+Just replace all files with the new release, UNLESS THE FILE INCLUDE/KTK-CONFIG.PHP and the attachment directory (if exists)
+
+
+UPGRADE FROM OSTICKET 1.6
 You can install the Katak-system saving the data of an already installed osTicket ver. 1.6 ST system.
 You have to:
 

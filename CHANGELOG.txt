@@ -1,3 +1,9 @@
+Katak-support 0.9.2, 2013-07-27
+- Fixed error on closing ticket date
+- Revised the stylesheets and added the print stylesheets
+- Added staff member status on directory
+- Fixed some errors in showing tickets to the staff
+
 Katak-support 0.9.1, 2013-04-11
 ----------------------
 - Fixed a variety of small bugs, improved texts and translations.

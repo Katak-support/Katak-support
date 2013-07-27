@@ -151,7 +151,6 @@ table.dtable, table.dtable td, table.dtable th, table.logs, table.logs td, table
 
 /* Table headings */
 table.dtable th, table.logs th {
-  text-align:left;
   background:#ADADAD;
   color:#FFF;
 }

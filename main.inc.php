@@ -39,8 +39,8 @@ ini_set('session.cache_limiter', 'nocache');
 
 #Error reporting...Good idea to ENABLE error reporting to a file. i.e display_errors should be set to false
 #Don't display errors in productions.
-//error_reporting(E_STRICT | E_ERROR);
-error_reporting(E_ERROR); 
+error_reporting(E_STRICT | E_ERROR);
+//error_reporting(E_ERROR); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 0);
 
@@ -66,7 +66,7 @@ define('SETUP_DIR',INCLUDE_DIR.'setup/');
  * The first two digits indicate the database's version.
  * The third digit represents minor changes that do not affect the database.
 */ 
-define('THIS_VERSION','0.9.1'); //Changes from version to version.
+define('THIS_VERSION','0.9.2'); //Changes from version to version.
 
 // Check if config file exists and load config info
 $configfile='';

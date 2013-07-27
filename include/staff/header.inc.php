@@ -10,8 +10,9 @@
   }
   ?>
   <title>Katak-support :: Staff Control Panel</title>
-  <link rel="stylesheet" href="css/main.css" media="screen">
-  <link rel="stylesheet" href="css/style.css" media="screen">
+  <link rel="stylesheet" href="css/main.css" media="screen, print">
+  <link rel="stylesheet" href="css/style.css" media="screen, print">
+  <link rel="stylesheet" href="css/print.css" media="print">
   <link rel="stylesheet" href="css/tabs.css" type="text/css">
   <link rel="stylesheet" href="css/autosuggest_inquisitor.css" type="text/css" media="screen" charset="utf-8">
   <script type="text/javascript" src="js/ajax.js"></script>

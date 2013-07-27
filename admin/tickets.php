@@ -423,12 +423,14 @@ $sql = 'SELECT count(open.ticket_id) as open, count(overdue.ticket_id) as overdu
         'LEFT JOIN ' . TICKET_TABLE . ' overdue ON overdue.ticket_id=ticket.ticket_id AND overdue.status=\'open\' AND overdue.isoverdue=1 ' .
         'LEFT JOIN ' . TICKET_TABLE . ' assigned ON assigned.ticket_id=ticket.ticket_id AND assigned.staff_id=' . db_input($thisuser->getId()) . ' AND assigned.status=\'open\' ';
 if (!$thisuser->isAdmin()) {
-  if(!$thisuser->canViewunassignedTickets())
-    $sql.=' WHERE (ticket.dept_id IN(' . implode(',', $thisuser->getDeptsId()) . ') AND ticket.staff_id='. db_input($thisuser->getId()).') OR ticket.staff_id=' . db_input($thisuser->getId());
+  if($thisuser->isManager())
+    $sql.=' WHERE ticket.dept_id IN(' . implode(',', $thisuser->getDeptsId()) . ') OR ticket.staff_id=' . db_input($thisuser->getId());
+  elseif(!$thisuser->canViewunassignedTickets())
+    $sql.=' WHERE (ticket.dept_id IN(' . implode(',', $thisuser->getDeptsId()) . ') AND ticket.staff_id=' . db_input($thisuser->getId()).') OR ticket.staff_id=' . db_input($thisuser->getId());
   else
     $sql.=' WHERE (ticket.dept_id IN(' . implode(',', $thisuser->getDeptsId()) . ') AND (ticket.staff_id=0 OR ticket.staff_id='. db_input($thisuser->getId()).')) OR ticket.staff_id=' . db_input($thisuser->getId());
   }
-//echo $sql;
+// echo $sql;
 
 $stats = db_fetch_array(db_query($sql));
 //print_r($stats);

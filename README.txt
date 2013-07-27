@@ -1,4 +1,4 @@
-Katak-support ver. 0.9.1
+Katak-support ver. 0.9.2
 
 Katak-support is an online help desk software solution for handling client requests through a web-based support ticket system.
 It is PHP-based and can receive tickets via email (pop3/pipe) or through a web form.
@@ -8,7 +8,7 @@ Katak-support can be customized in many ways and can be easily skinned to the lo
 
 System requirements:
 - PHP 5.2+
-- short_open_tag enabled (PHP < 5.4)
+- short_open_tag enabled (if PHP < 5.4)
 - Gettext installed (http://php.net/manual/en/gettext.installation.php)
 - MySQL 4.4+
 

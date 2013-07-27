@@ -1,0 +1,49 @@
+/*********************************************************************
+    print.css
+
+    Style for printing staff pages.
+    Used in cascade with main.css and style.css.
+
+    Copyright (c)  2012-2013 Katak Support
+    http://www.katak-support.com/
+    
+    Released under the GNU General Public License WITHOUT ANY WARRANTY.
+    See LICENSE.TXT for details.
+
+    $Id: $
+**********************************************************************/
+#nav {
+    display:none;
+}
+
+#info {
+  display:none;
+}
+
+.ticketprocess {
+  display:none;
+}
+
+.ticketoptions {
+  display:none;
+}
+
+#basic form {
+  display:none;
+}
+
+#advance form {
+  display:none;
+}
+
+#buttonsline {
+  display:none;
+}
+
+.box {
+  display:none;
+}
+
+#togglebox {
+  display:none;
+}

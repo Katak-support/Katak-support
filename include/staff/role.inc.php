@@ -62,7 +62,7 @@ if($role && $_REQUEST['a']!='new'){
           <td>
               <input type="radio" name="can_viewunassigned_tickets"  value="1"   <?=$info['can_viewunassigned_tickets']?'checked':''?> /><?= _('Yes') ?>
               <input type="radio" name="can_viewunassigned_tickets"  value="0"   <?=!$info['can_viewunassigned_tickets']?'checked':''?> <?=($info['dept_access']=='SADMIN')?'disabled':''?> /><?= _('No') ?>
-              &nbsp;&nbsp;<i><?= _('Ability to view unassigned tickets in your dept. (Dept Manager are always allowed).') ?></i>
+              &nbsp;&nbsp;<i><?= _('Ability to view unassigned tickets. (Dept Manager are always allowed).') ?></i>
           </td>
       </tr>
       <tr><th><?= _('Can <b>Create</b> Tickets') ?></th>

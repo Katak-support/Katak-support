@@ -173,7 +173,7 @@ class Dept {
     }
 
 
-    function create($vars,&$errors) {
+    static function create($vars,&$errors) {
         return Dept::save(0,$vars,$errors);
     }
 
@@ -200,7 +200,7 @@ class Dept {
         
     }
 
-    function save($id,$vars,&$errors) {
+    static function save($id,$vars,&$errors) {
         global $cfg;
                 
         if($id && $id!=$_POST['dept_id'])

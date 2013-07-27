@@ -19,7 +19,7 @@ $nav->setTabActive('directory');
 $nav->addSubMenu(array('desc'=>_('STAFF MEMBERS'),'href'=>'directory.php','iconclass'=>'staff'));
 
 $WHERE=' WHERE isvisible=1 ';
-$sql=' SELECT staff.staff_id,staff.dept_id, firstname,lastname,email,phone,mobile,dept_name,onvacation '.
+$sql=' SELECT staff.staff_id,staff.dept_id,firstname,lastname,email,phone,mobile,dept_name,isactive,onvacation,manager_id '.
      ' FROM '.STAFF_TABLE.' staff LEFT JOIN  '.DEPT_TABLE.' USING(dept_id)';
 if($_POST && $_POST['a']=='search') {
     $searchTerm=$_POST['query']; 
@@ -79,6 +79,7 @@ require_once(STAFFINC_DIR.'header.inc.php');
     <tr>
         <th><?= _('Name') ?></th>
         <th><?= _('Dept') ?></th>
+        <th><?= _('Status') ?></th>
         <th><?= _('Email') ?></th>
         <th><?= _('Phone') ?></th>
         <th><?= _('Mobile') ?></th>
@@ -90,7 +91,8 @@ require_once(STAFFINC_DIR.'header.inc.php');
         ?>
         <tr class="<?=$class?>" id="<?=$row['staff_id']?>" onClick="highLightToggle(this.id);">
             <td><?=$name?>&nbsp;</td>
-            <td><?=$row['dept_name']?>&nbsp;</td>
+            <td><?=$row['dept_name']?>&nbsp;<?=$row['manager_id']==$row['staff_id']?'&nbsp;<i>('._('mng').')</i>':''?></td>
+            <td><?=$row['isactive']?($row['onvacation']?_('Vacation'):_('Active')):_('Locked')?>&nbsp;</td>
             <td><?=$row['email']?>&nbsp;</td>
             <td><?=Format::phone($row['phone'])?>&nbsp;</td>
             <td><?=Format::phone($row['mobile'])?>&nbsp;</td>

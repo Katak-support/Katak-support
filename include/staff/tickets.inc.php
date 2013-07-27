@@ -72,9 +72,9 @@ if(!$depts or !is_array($depts) or !count($depts)){
     else {
         $qwhere = ' WHERE 1=1';
     }
-    if($staffId) { //assigned
+    if($staffId) { //assigned tickets
         $results_type=_('Assigned Tickets');
-        $qwhere .= ' AND ticket.staff_id='.db_input($staffId);    
+        $qwhere .= ' AND ticket.staff_id='.db_input($staffId).' AND status=\'open\'';    
     }
     elseif($showoverdue) //overdue
         $qwhere .= ' AND isoverdue=1 AND status=\'open\'';
@@ -92,12 +92,12 @@ if(!$depts or !is_array($depts) or !count($depts)){
     }
     if($staffId) { //assigned
         $results_type=_('Assigned Tickets');
-        $qwhere .= ' AND ticket.staff_id='.db_input($staffId);    
+        $qwhere .= ' AND ticket.staff_id='.db_input($staffId).' AND status=\'open\'';    
     }
     elseif($showoverdue) //overdue
-        $qwhere .= ' AND isoverdue=1 AND (ticket.dept_id IN ('.implode(',',$depts).') OR ticket.staff_id='.$thisuser->getId().') AND status=\'open\'';
+        $qwhere .= ' AND isoverdue=1 AND status=\'open\'';
     elseif($status) { //open or closed
-      $qwhere .= ' AND status='.db_input(strtolower($status)).' AND (ticket.dept_id IN ('.implode(',',$depts).') OR ticket.staff_id='.$thisuser->getId().')'; 
+      $qwhere .= ' AND status='.db_input(strtolower($status)); 
     }   
 }elseif(!$thisuser->canViewunassignedTickets()){
     //staff users limited to tickets assigned to them regardless of the dept.
@@ -115,10 +115,7 @@ if(!$depts or !is_array($depts) or !count($depts)){
     elseif($showoverdue) //overdue
         $qwhere .= ' AND isoverdue=1 AND status=\'open\'';
     elseif($status) { //open or closed
-      if(strtolower($status)!='closed') // open
         $qwhere .= ' AND status='.db_input(strtolower($status)); 
-      else
-        $qwhere .= ' AND status='.db_input(strtolower($status));
     } 
 }else{
     //staff users with access to unassigned ticket of their dept.
@@ -131,14 +128,11 @@ if(!$depts or !is_array($depts) or !count($depts)){
     }
     if($staffId) { //assigned
         $results_type=_('Assigned Tickets');
-        $qwhere .= ' AND 1=2 OR (ticket.staff_id='.db_input($staffId).' AND status=\'open\')';    
+        $qwhere .= ' AND (ticket.staff_id='.db_input($staffId).' AND status=\'open\')';    
     }
     elseif($showoverdue) //overdue
         $qwhere .= ' AND isoverdue=1 AND status=\'open\'';
     elseif($status) { //open or closed
-      if(strtolower($status)!='closed') // open
-        $qwhere .= ' AND status='.db_input(strtolower($status));
-      else
         $qwhere .= ' AND status='.db_input(strtolower($status));
     }   
 }
@@ -249,7 +243,7 @@ $total=db_count("SELECT count(DISTINCT ticket.ticket_id) $qfrom $qwhere");
 //pagenate
 $pageNav=new PageNate($total,$page,$pagelimit);
 $pageNav->setURL('tickets.php',$qstr.'&sort='.urlencode($_REQUEST['sort']).'&order='.urlencode($_REQUEST['order']));
-//
+
 //Ok..lets roll...create the actual query
 //ADD attachment,priorities and lock crap
 $qselect.=' , IF(ticket.reopened is NULL,ticket.created,ticket.reopened) as effective_date';
@@ -285,8 +279,8 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
      <?php } ?>
 </div>
 
-<!-- SEARCH FORM START -->
-<div id='basic' style="display:<?=$basic_display?'block':'none'?>; float:right">
+<!-- SEARCH FORM: START -->
+<div id="basic" style="display:<?=$basic_display?'block':'none'?>; float:right">
     <form action="tickets.php" method="get">
       <input type="hidden" name="a" value="search">
       <div>
@@ -297,7 +291,7 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
       </div>
     </form>
 </div>
-<div id='advance' style="display:<?=$basic_display?'none':'block'?>; float:right">
+<div id="advance" style="display:<?=$basic_display?'none':'block'?>; float:right">
   <form action="tickets.php" method="get">
   <input type="hidden" name="a" value="search">
   <table>
@@ -391,7 +385,7 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
 </script>
 
 <br style="clear:both;" />
-<!-- SEARCH FORM END -->
+<!-- SEARCH FORM: END -->
 
 <div class="msg" style="padding-left:12px">
   <a href="" class="Icon refresh"></a>
@@ -402,20 +396,16 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
   <input type="hidden" name="status" value="<?=$statusss?>" >
   <table width="100%" border="0" cellspacing=0 cellpadding=2 class="dtable" align="center">
     <tr>
-        <?php if($canDelete || $canClose) { ?>
-      <th width="8px">&nbsp;</th>
-        <?php } ?>
-        <th width="68" nowrap><?= _('Status') ?></th>
-      <th width="54">
-                <a href="tickets.php?sort=ID&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Ticket ID') ?> <?=$negorder?>"><?= _('Ticket') ?></a></th>
-      <th width="72">
-                <a href="tickets.php?sort=date&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Date') ?> <?=$negorder?>"><?= _('Date') ?></a></th>
-        <th width="270"><?= _('Subject') ?></th>
-        <th width="170" ><?= _('From') ?></th>
-      <th width="124">
-                <a href="tickets.php?sort=dept&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Category') ?> <?=$negorder?>"><?= _('Department') ?></a></th>
-      <th width="58">
-                <a href="tickets.php?sort=pri&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Priority') ?> <?=$negorder?>"><?= _('Priority') ?></a></th>
+      <?php if($canDelete || $canClose) { ?>
+        <th class="box" width="8px">&nbsp;</th>
+      <?php } ?>
+      <th width="68" nowrap>&nbsp;<?= _('Status') ?></th>
+      <th width="54"><a href="tickets.php?sort=ID&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Ticket ID') ?> <?=$negorder?>">&nbsp;<?= _('Ticket') ?></a></th>
+      <th width="72"><a href="tickets.php?sort=date&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Date') ?> <?=$negorder?>"><?= _('Date') ?></a></th>
+      <th width="270"><?= _('Subject') ?></th>
+      <th width="170"><?= _('From') ?></th>
+      <th width="124"><a href="tickets.php?sort=dept&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Category') ?> <?=$negorder?>"><?= _('Department') ?></a></th>
+      <th width="58"><a href="tickets.php?sort=pri&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Priority') ?> <?=$negorder?>"><?= _('Priority') ?></a></th>
     </tr>
     <?php
     $class = "row1";
@@ -433,7 +423,7 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
             ?>
         <tr class="<?=$class?>" id="<?=$row['ticket_id']?>">
             <?php if($canDelete || $canClose) { ?>
-            <td align="center" class="nohover">
+            <td class="box" align="center" class="nohover">
                 <input type="checkbox" name="tids[]" value="<?=$row['ticket_id']?>" onClick="highLight(this.value,this.checked);">
             </td>
             <?php } ?>
@@ -462,14 +452,16 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
   <?php
   if($num>0){ //if we actually had any tickets returned.
     if($canDelete || $canClose) { ?>
+    <span id="togglebox">
       <?= _('Select:')." &nbsp; " ?>
       <a href="#" onclick="return select_all(document.forms['tickets'],true)"><?= _('All') ?></a>&nbsp;
       <a href="#" onclick="return reset_all(document.forms['tickets'])"><?= _('None') ?></a>&nbsp;
       <a href="#" onclick="return toogle_all(document.forms['tickets'],true)"><?= _('Toggle') ?></a>&nbsp;
+    </span>
     <?php } ?>
     <span style="float:right; padding-right:4px;"><?= _('page:') ?><?=$pageNav->getPageLinks()?></span>
     <?php if($canClose or $canDelete) { ?>
-    <div style="text-align:center">
+    <div id="buttonsline" style="text-align:center">
       <?php
       $status=$_REQUEST['status']?$_REQUEST['status']:$status;
 

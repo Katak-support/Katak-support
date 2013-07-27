@@ -216,7 +216,7 @@ if($notes=db_num_rows($resp)){
             <div class="message"><?=Format::display($row['note'])?></div>
      <?php } ?>
    </div>
-</div>
+</div> <!-- ticketnotes -->
 <br />
 <?php }
 
@@ -260,201 +260,196 @@ if($notes=db_num_rows($resp)){
     $msgid =$msg_row['msg_id'];
   endwhile; //message loop.
   ?>
-</div>
-<table align="center" cellspacing="0" cellpadding="3" width="90%" border=0>
-  <?php if($_POST['a']!='process') { ?>
-  <tr> <td align="center">
-     <?php if($errors['err']) { ?>
+</div> <!-- ticketthread -->
+
+<div class="ticketprocess">
+  <?php if($_POST['a']!='process') {
+         if($errors['err']) { ?>
         <p align="center" id="errormessage"><?=$errors['err']?></p>
     <?php }elseif($msg) { ?>
         <p align="center" id="infomessage"><?=$msg?></p>
-    <?php } ?> 
-  </td></tr>
-  <?php } ?>
-  <tr>
-    <td align="center">
-        <div class="tabber">
-            <div id="reply" class="tabbertab" align="left">
-                <h2><?= _('Post Reply') ?></h2>
-                    <form action="tickets.php?id=<?=$id?>#reply" name="reply" id="replyform" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="ticket_id" value="<?=$id?>">
-                        <input type="hidden" name="a" value="reply">
-                        <div><font class="error">&nbsp;<?=$errors['response']?></font></div>
-                        <div class="input">
-                           <?php
-                             $sql='SELECT stdreply_id,title FROM '.STD_REPLY_TABLE.' WHERE isenabled=1 '.
-                                ' AND (dept_id=0 OR dept_id='.db_input($ticket->getDeptId()).')';
-                            $canned=db_query($sql);
-                            if($canned && db_num_rows($canned)) {
-                             ?>
-                            <?= _('Canned Response:') ?>&nbsp;
-                               <select id="canned" name="canned"
-                                onChange="getCannedResponse(this.options[this.selectedIndex].value,this.form,'response');this.selectedIndex='0';" >
-                                   <option value="0" selected="selected"><?= _('Select a standard reply') ?></option>
-                                <?php while(list($cannedId,$title)=db_fetch_row($canned)) { ?>
-                                 <option value="<?=$cannedId?>" ><?=Format::htmlchars($title)?></option>
-                                <?php } ?>
-                               </select>&nbsp;&nbsp;&nbsp;<label><input type='checkbox' value='1' name=append checked="true" /><?= _('Append') ?></label>
-                            <?php } ?>
-                        </div>
-                        <div>
-                            <textarea name="response" id="response" cols="90" rows="9" wrap="soft" style="width:90%"><?=$info['response']?></textarea>
-                        </div>
-                        <?php if($cfg->canUploadFiles()){ //TODO: may be allow anyways and simply email out attachment?? ?>
-                        <div style="margin-top: 3px;">
-                            <label for="attachment" ><?= _('Attach File:') ?></label>
-                            <input type="file" name="attachment[]" size=30px value="<?=$info['attachment']?>" multiple /> 
-                            &nbsp;<span class="warning">(max <?=$cfg->getMaxFileSize()?> bytes)</span>
-                            <font class="error">&nbsp;<?=$errors['attachment']?></font>
-                        </div>
-                        <?php }?>
-                        <?php
-                         $appendStaffSig=$thisuser->appendMySignature();
-                         $appendDeptSig=$dept->canAppendSignature();
-                         $info['signature']=!$info['signature']?'none':$info['signature']; //change 'none' to 'mine' to default to staff signature.
-                         if($appendStaffSig || $appendDeptSig) { ?>
-                          <div style="margin-top: 10px;">
-                              <label for="signature" nowrap><?= _('Append Signature:') ?></label>
-                              <label><input type="radio" name="signature" value="none" checked > <?= _('None') ?></label>
-                                <?php if($appendStaffSig) { ?>
-                              <label> <input type="radio" name="signature" value="mine" <?=$info['signature']=='mine'?'checked':''?> > <?= _('My signature') ?></label>
-                                <?php } ?>
-                                <?php if($appendDeptSig) { ?>
-                              <label><input type="radio" name="signature" value="dept" <?=$info['signature']=='dept'?'checked':''?> > <?= _('Dept Signature') ?></label>
-                                <?php } ?>
-                           </div>
-                         <?php } ?>
-                        <div style="margin-top: 3px;">
-                            <b><?= _('Ticket Status:') ?></b>
-                            <?php
-                            $checked=isset($info['ticket_status'])?'checked':''; //Staff must explicitly check the box to change status..
-                            if($ticket->isOpen()){?>
-                            <label><input type="checkbox" name="ticket_status" id="l_ticket_status" value="Close" <?=$checked?> > <?= _('Close on Reply') ?></label>
-                            <?php }else{ ?>
-                            <label><input type="checkbox" name="ticket_status" id="l_ticket_status" value="Reopen" <?=$checked?> > <?= _('Reopen on Reply') ?></label>
-                            <?php } ?>
-                        </div>
-                        <div  style="margin-left:50px; margin-top:20px; margin-bottom:10px; border:0px;">
-                            <input class="button" type='submit' value='<?= _('Post Reply') ?>' />
-                            <input class="button" type='reset' value='<?= _('Reset') ?>' />
-                            <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
-                        </div>
-                    </form>                
-             </div>
-            <div id="notes" class="tabbertab"  align="left">
-                <h2><?= _('Post Internal Note') ?></h2>
-                    <form action="tickets.php?id=<?=$id?>#notes" name="notes" class="inline" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="ticket_id" value="<?=$id?>">
-                        <input type="hidden" name="a" value="postnote">
-                        <div class="input">
-                            <label for="title"><?= _('Note Title:') ?></label>
-                            <input type="text" name="title" id="title" value="<?=$info['title']?>" size=30px />
-                            </select><font class="error">*&nbsp;<?=$errors['title']?></font>
-                        </div>
-                        <div style="margin-top: 3px;">
-                            <label for="note"><?= _('Enter note content.') ?>
-                                <font class="error">*&nbsp;<?=$errors['note']?></font></label><br/>
-                            <textarea name="note" id="note" cols="80" rows="7" wrap="soft" style="width:90%"><?=$info['note']?></textarea>
-                        </div>
-                        <?php
-                         //When the ticket is assigned Allow assignee, admin or ANY dept manager to close it
-                        if(!$ticket->isAssigned() || $thisuser->isadmin()  || $thisuser->isManager() || $thisuser->getId()==$ticket->getStaffId()) {
+    <?php }
+        } ?>
+    <div class="tabber">
+        <div id="reply" class="tabbertab" align="left">
+            <h2><?= _('Post Reply') ?></h2>
+                <form action="tickets.php?id=<?=$id?>#reply" name="reply" id="replyform" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="ticket_id" value="<?=$id?>">
+                    <input type="hidden" name="a" value="reply">
+                    <div class="input">
+                       <?php
+                         $sql='SELECT stdreply_id,title FROM '.STD_REPLY_TABLE.' WHERE isenabled=1 '.
+                            ' AND (dept_id=0 OR dept_id='.db_input($ticket->getDeptId()).')';
+                        $canned=db_query($sql);
+                        if($canned && db_num_rows($canned)) {
                          ?>
-                          <div style="margin-top: 3px;">
-                              <b><?= _('Ticket Status:') ?></b>
-                              <?php
-                              $checked=($info && isset($info['ticket_status']))?'checked':''; //not selected by default.
-                              if($ticket->isOpen()){?>
-                              <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Close" <?=$checked?> > <?= _('Close Ticket') ?></label>
-                              <?php }else{ ?>
-                              <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Reopen" <?=$checked?> > <?= _('Reopen Ticket') ?></label>
-                              <?php } ?>
-                          </div>
+                        <?= _('Canned Response:') ?>&nbsp;
+                           <select id="canned" name="canned"
+                            onChange="getCannedResponse(this.options[this.selectedIndex].value,this.form,'response');this.selectedIndex='0';" >
+                               <option value="0" selected="selected"><?= _('Select a standard reply') ?></option>
+                            <?php while(list($cannedId,$title)=db_fetch_row($canned)) { ?>
+                             <option value="<?=$cannedId?>" ><?=Format::htmlchars($title)?></option>
+                            <?php } ?>
+                           </select>&nbsp;&nbsp;&nbsp;<label><input type='checkbox' value='1' name=append checked="true" /><?= _('Append') ?></label>
                         <?php } ?>
-                        <div  align="left" style="margin-left:50px; margin-top:20px; margin-bottom:10px; border: 0px;">
-                            <input class="button" type='submit' value='<?= _('Submit') ?>' />
-                            <input class="button" type='reset' value='<?= _('Reset') ?>' />
-                            <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
-                        </div>
-                    </form>
-            </div>
-            <?php
-            if($thisuser->canTransferTickets()) { 
-            ?>
-            <div id="transfer" class="tabbertab"  align="left">
-                <h2><?= _('Dept. Transfer') ?></h2>
-                    <form action="tickets.php?id=<?=$id?>#transfer" name="notes" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="ticket_id" value="<?=$id?>">
-                        <input type="hidden" name="a" value="transfer">
-                        <div class="input">
-                            <span for="dept_id"><?= _('Department:') ?></span>
-                            <select id="dept_id" name="dept_id">
-                                <option value="" selected="selected"><?= _('-Select Target Dept.-') ?></option>
-                                <?php
-                                $depts= db_query('SELECT dept_id,dept_name FROM '.DEPT_TABLE.' WHERE dept_id!='.db_input($ticket->getDeptId()));
-                                while (list($deptId,$deptName) = db_fetch_row($depts)){
-                                    $selected = ($info['dept_id']==$deptId)?'selected':''; ?>
-                                    <option value="<?=$deptId?>"<?=$selected?>><?=$deptName?> Department </option>
-                                <?php
-                                }?>
-                            </select><font class='error'>&nbsp;*<?=$errors['dept_id']?></font>
-                        </div>
-                        <div>
-                            <span ><?= _('Comments/Reasons for the transfer')?> <i><?= _('(Internal note).') ?></i>
-                                <font class='error'>&nbsp;*<?=$errors['message']?></font></span>
-                            <textarea name="message" id="message" cols="80" rows="7" wrap="soft" style="width:90%;"><?=$info['message']?></textarea>
-                        </div>
-                        <div  style="margin-left:50px; margin-top:8px; margin-bottom:10px; border:0px;" align="left">
-                            <input class="button" type='submit' value='<?= _('Transfer') ?>' />
-                            <input class="button" type='reset' value='<?= _('Reset') ?>' />
-                            <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
-                        </div>
-                    </form>
-            </div>
-            <?php } ?>
-            <?php
-             //When the ticket is assigned Allow staff with permission, admin or ANY dept manager to reassign the ticket.
-            if(!$ticket->isAssigned() || $thisuser->isadmin()  || $thisuser->isManager() || $thisuser->canAssignTickets()) {
-            ?>
-            <div id="assign" class="tabbertab"  align="left">
-                <h2><?=$staff?_('Re Assign Ticket'):_('Assign to Staff') ?></h2>
-                    <form action="tickets.php?id=<?=$id?>#assign" name="notes" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="ticket_id" value="<?=$id?>">
-                        <input type="hidden" name="a" value="assign">
-                        <div class="input">
-                            <span for="staffId"><?= _('Staff Member:') ?></span>
-                            <select id="staffId" name="staffId">
-                                <option value="0" selected="selected"><?= _('-Select Staff Member.-') ?></option>
-                                <?php
-                                //TODO: make sure the user's role is also active....DO a join.
-                                $sql=' SELECT dept_name,staff_id,CONCAT_WS(", ",lastname,firstname) as name FROM '.STAFF_TABLE.' LEFT JOIN '.DEPT_TABLE.' USING (dept_id) '.
-                                     ' WHERE isactive=1 AND onvacation=0 ';
-                                if($ticket->isAssigned()) 
-                                    $sql.=' AND staff_id!='.db_input($ticket->getStaffId());
-                                $depts= db_query($sql.' ORDER BY lastname,firstname ');
-                                while (list($deptName,$staffId,$staffName) = db_fetch_row($depts)){
-                                    
-                                    $selected = ($info['staffId']==$staffId)?'selected':''; ?>
-                                    <option value="<?=$staffId?>"<?=$selected?>><?=$staffName?> &nbsp; (<?=$deptName?>)</option>
-                                <?php
-                                }?>
-                            </select><font class='error'>&nbsp;*<?=$errors['staffId']?></font>
-                        </div>
-                        <div>
-                            <span><?= _('Comments/message for assignee')?> <i><?= _('(Internal note).') ?></i>
-                                <font class='error'>&nbsp;*<?=$errors['assign_message']?></font></span>
-                            <textarea name="assign_message" id="assign_message" cols="80" rows="7" 
-                                wrap="soft" style="width:90%;"><?=$info['assign_message']?></textarea>
-                        </div>
-                        <div  style="margin-left:50px; margin-top:8px; margin-bottom:10px; border:0px;" align="left">
-                            <input class="button" type='submit' value='<?= _('Assign') ?>' />
-                            <input class="button" type='reset' value='<?= _('Reset') ?>' />
-                            <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
-                        </div>
-                    </form>
-            </div>
-            <?php } ?>
+                    </div>
+                    <div><font class="error">&nbsp;<?=$errors['response']?></font></div>
+                    <div>
+                        <textarea name="response" id="response" cols="90" rows="9" wrap="soft" style="width:100%"><?=$info['response']?></textarea>
+                    </div>
+                    <?php if($cfg->canUploadFiles()){ //TODO: may be allow anyways and simply email out attachment?? ?>
+                    <div style="margin-top: 3px;">
+                        <label for="attachment" ><?= _('Attach File:') ?></label>
+                        <input type="file" name="attachment[]" size=30px value="<?=$info['attachment']?>" multiple /> 
+                        &nbsp;<span class="warning">(max <?=$cfg->getMaxFileSize()?> bytes)</span>
+                        <font class="error">&nbsp;<?=$errors['attachment']?></font>
+                    </div>
+                    <?php }?>
+                    <?php
+                     $appendStaffSig=$thisuser->appendMySignature();
+                     $appendDeptSig=$dept->canAppendSignature();
+                     $info['signature']=!$info['signature']?'none':$info['signature']; //change 'none' to 'mine' to default to staff signature.
+                     if($appendStaffSig || $appendDeptSig) { ?>
+                      <div style="margin-top: 10px;">
+                          <label for="signature" nowrap><?= _('Append Signature:') ?></label>
+                          <label><input type="radio" name="signature" value="none" checked > <?= _('None') ?></label>
+                            <?php if($appendStaffSig) { ?>
+                          <label> <input type="radio" name="signature" value="mine" <?=$info['signature']=='mine'?'checked':''?> > <?= _('My signature') ?></label>
+                            <?php } ?>
+                            <?php if($appendDeptSig) { ?>
+                          <label><input type="radio" name="signature" value="dept" <?=$info['signature']=='dept'?'checked':''?> > <?= _('Dept Signature') ?></label>
+                            <?php } ?>
+                       </div>
+                     <?php } ?>
+                    <div style="margin-top: 3px;">
+                        <b><?= _('Ticket Status:') ?></b>
+                        <?php
+                        $checked=isset($info['ticket_status'])?'checked':''; //Staff must explicitly check the box to change status..
+                        if($ticket->isOpen()){?>
+                        <label><input type="checkbox" name="ticket_status" id="l_ticket_status" value="Close" <?=$checked?> > <?= _('Close on Reply') ?></label>
+                        <?php }else{ ?>
+                        <label><input type="checkbox" name="ticket_status" id="l_ticket_status" value="Reopen" <?=$checked?> > <?= _('Reopen on Reply') ?></label>
+                        <?php } ?>
+                    </div>
+                    <div  style="margin-left:50px; margin-top:20px; margin-bottom:10px; border:0px;">
+                        <input class="button" type='submit' value='<?= _('Post Reply') ?>' />
+                        <input class="button" type='reset' value='<?= _('Reset') ?>' />
+                        <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
+                    </div>
+                </form>                
+         </div>
+        <div id="notes" class="tabbertab"  align="left">
+            <h2><?= _('Post Internal Note') ?></h2>
+            <form action="tickets.php?id=<?=$id?>#notes" name="notes" class="inline" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="ticket_id" value="<?=$id?>">
+                <input type="hidden" name="a" value="postnote">
+                <div class="input">
+                    <label for="title"><?= _('Note Title:') ?></label>
+                    <input type="text" name="title" id="title" value="<?=$info['title']?>" size=30px />
+                    </select><font class="error">*&nbsp;<?=$errors['title']?></font>
+                </div>
+                <div style="margin-top: 3px;">
+                    <label for="note"><?= _('Enter note content.') ?>
+                        <font class="error">*&nbsp;<?=$errors['note']?></font></label><br/>
+                    <textarea name="note" id="note" cols="80" rows="7" wrap="soft" style="width:100%"><?=$info['note']?></textarea>
+                </div>
+                <?php
+                 //When the ticket is assigned Allow assignee, admin or ANY dept manager to close it
+                if(!$ticket->isAssigned() || $thisuser->isadmin()  || $thisuser->isManager() || $thisuser->getId()==$ticket->getStaffId()) {
+                 ?>
+                  <div style="margin-top: 3px;">
+                      <b><?= _('Ticket Status:') ?></b>
+                      <?php
+                      $checked=($info && isset($info['ticket_status']))?'checked':''; //not selected by default.
+                      if($ticket->isOpen()){?>
+                      <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Close" <?=$checked?> > <?= _('Close Ticket') ?></label>
+                      <?php }else{ ?>
+                      <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Reopen" <?=$checked?> > <?= _('Reopen Ticket') ?></label>
+                      <?php } ?>
+                  </div>
+                <?php } ?>
+                <div  align="left" style="margin-left:50px; margin-top:20px; margin-bottom:10px; border: 0px;">
+                    <input class="button" type='submit' value='<?= _('Submit') ?>' />
+                    <input class="button" type='reset' value='<?= _('Reset') ?>' />
+                    <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
+                </div>
+            </form>
         </div>
-    </td>
- </tr>
-</table>
+        <?php
+        if($thisuser->canTransferTickets()) { 
+        ?>
+        <div id="transfer" class="tabbertab"  align="left">
+            <h2><?= _('Dept. Transfer') ?></h2>
+            <form action="tickets.php?id=<?=$id?>#transfer" name="notes" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="ticket_id" value="<?=$id?>">
+                <input type="hidden" name="a" value="transfer">
+                <div class="input">
+                    <span for="dept_id"><?= _('Department:') ?></span>
+                    <select id="dept_id" name="dept_id">
+                        <option value="" selected="selected"><?= _('-Select Target Dept.-') ?></option>
+                        <?php
+                        $depts= db_query('SELECT dept_id,dept_name FROM '.DEPT_TABLE.' WHERE dept_id!='.db_input($ticket->getDeptId()));
+                        while (list($deptId,$deptName) = db_fetch_row($depts)){
+                            $selected = ($info['dept_id']==$deptId)?'selected':''; ?>
+                            <option value="<?=$deptId?>"<?=$selected?>><?=$deptName?> Department </option>
+                        <?php
+                        }?>
+                    </select><font class='error'>&nbsp;*<?=$errors['dept_id']?></font>
+                </div>
+                <div>
+                    <span ><?= _('Comments/Reasons for the transfer')?> <i><?= _('(Internal note).') ?></i>
+                        <font class='error'>&nbsp;*<?=$errors['message']?></font></span>
+                    <textarea name="message" id="message" cols="80" rows="7" wrap="soft" style="width:100%;"><?=$info['message']?></textarea>
+                </div>
+                <div  style="margin-left:50px; margin-top:8px; margin-bottom:10px; border:0px;" align="left">
+                    <input class="button" type='submit' value='<?= _('Transfer') ?>' />
+                    <input class="button" type='reset' value='<?= _('Reset') ?>' />
+                    <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
+                </div>
+            </form>
+        </div>
+        <?php }
+
+         //When the ticket is assigned Allow staff with permission, admin or ANY dept manager to reassign the ticket.
+        if(!$ticket->isAssigned() || $thisuser->isadmin()  || $thisuser->isManager() || $thisuser->canAssignTickets()) {
+        ?>
+        <div id="assign" class="tabbertab"  align="left">
+            <h2><?=$staff?_('Re Assign Ticket'):_('Assign to Staff') ?></h2>
+            <form action="tickets.php?id=<?=$id?>#assign" name="notes" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="ticket_id" value="<?=$id?>">
+                <input type="hidden" name="a" value="assign">
+                <div class="input">
+                    <span for="staffId"><?= _('Staff Member:') ?></span>
+                    <select id="staffId" name="staffId">
+                        <option value="0" selected="selected"><?= _('-Select Staff Member.-') ?></option>
+                        <?php
+                        //TODO: make sure the user's role is also active....DO a join.
+                        $sql=' SELECT dept_name,staff_id,CONCAT_WS(", ",lastname,firstname) as name FROM '.STAFF_TABLE.' LEFT JOIN '.DEPT_TABLE.' USING (dept_id) '.
+                             ' WHERE isactive=1 AND onvacation=0 ';
+                        if($ticket->isAssigned()) 
+                            $sql.=' AND staff_id!='.db_input($ticket->getStaffId());
+                        $depts= db_query($sql.' ORDER BY lastname,firstname ');
+                        while (list($deptName,$staffId,$staffName) = db_fetch_row($depts)){
+                            
+                            $selected = ($info['staffId']==$staffId)?'selected':''; ?>
+                            <option value="<?=$staffId?>"<?=$selected?>><?=$staffName?> &nbsp; (<?=$deptName?>)</option>
+                        <?php
+                        }?>
+                    </select><font class='error'>&nbsp;*<?=$errors['staffId']?></font>
+                </div>
+                <div>
+                    <span><?= _('Comments/message for assignee')?> <i><?= _('(Internal note).') ?></i>
+                        <font class='error'>&nbsp;*<?=$errors['assign_message']?></font></span>
+                    <textarea name="assign_message" id="assign_message" cols="80" rows="7" 
+                        wrap="soft" style="width:100%;"><?=$info['assign_message']?></textarea>
+                </div>
+                <div  style="margin-left:50px; margin-top:8px; margin-bottom:10px; border:0px;" align="left">
+                    <input class="button" type='submit' value='<?= _('Assign') ?>' />
+                    <input class="button" type='reset' value='<?= _('Reset') ?>' />
+                    <input class="button" type='button' value='<?= _('Cancel') ?>' onClick="history.go(-1)" />
+                </div>
+            </form>
+        </div>
+        <?php } ?>
+    </div>
+</div> <!-- ticketprocess -->

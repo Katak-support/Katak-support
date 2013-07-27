@@ -16,18 +16,18 @@
 
 class Role {
 
-    function update($id,$vars,&$errors) {
+    static function update($id,$vars,&$errors) {
         if($id && Role::save($id,$vars,$errors)){
             return true;
         }
         return false;
     }
 
-    function create($vars,&$errors) { 
+    static function create($vars,&$errors) { 
         return Role::save(0,$vars,$errors);
     }
 
-    function save($id,$vars,&$errors) {
+    static function save($id,$vars,&$errors) {
 
         if($id && !$vars['role_id'])
             $errors['err']=_('Missing or invalid role ID');
