@@ -54,9 +54,9 @@ $showing=($num=db_num_rows($roles))?_('Staff Roles'):'No roles?';
    ?>
       <div style="padding-left:20px;">
           <?= _('Select:') ?>&nbsp;
-          <a href="#" onclick="return select_all(document.forms['roles'],true)"><?= _('All') ?></a>&nbsp;&nbsp;
-          <a href="#" onclick="return toogle_all(document.forms['roles'],true)"><?= _('Toggle') ?></a>&nbsp;&nbsp;
-          <a href="#" onclick="return reset_all(document.forms['roles'])"><?= _('None') ?></a>&nbsp;&nbsp;
+          [<a href="#" onclick="return select_all(document.forms['roles'],true)"><?= _('All') ?></a>]&nbsp;&nbsp;
+          [<a href="#" onclick="return toogle_all(document.forms['roles'],true)"><?= _('Toggle') ?></a>]&nbsp;&nbsp;
+          [<a href="#" onclick="return reset_all(document.forms['roles'])"><?= _('None') ?></a>]&nbsp;&nbsp;
       </div>
       <div class="centered">
           <input class="button" type="submit" name="activate_grps" value="<?= _('Enable') ?>"

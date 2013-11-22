@@ -71,7 +71,7 @@ ob_start();
 echo "
 Thank you for choosing Katak-support.
 
-Please make sure you join the Katak-support forums at http://www.katak-support.org/forums to stay up to date on the latest news, security alerts and updates. The Katak-support forums are also a great place to get assistance, guidance, tips, and help from other Katak-support users. In addition to the forums, the Katak-support wiki provides a useful collection of educational materials, documentation, and notes from the community. We welcome your contributions to the Katak-support community.
+Please make sure you join the Katak-support forums at http://www.katak-support.org/forums to stay up to date on the latest news, security alerts and updates. The Katak-support forums are also a great place to get assistance, guidance, tips, and help from other Katak-support users. We welcome your contributions to the Katak-support community.
 
 If you are looking for a greater level of support, we provide professional services and commercial support with guaranteed response times, and access to the core development team. We can also help customize Katak-support or even add new features to the system to meet your unique needs.
 
@@ -81,19 +81,6 @@ For more information or to discuss your needs, please contact us today at http:/
 $msg1 = ob_get_contents();
 ob_end_clean();
 define('KATAK_INSTALLED',trim($msg1));
-
-ob_start();
-echo "
-Katak-support upgraded!
-
-Please make sure you join the Katak-support forums http://katak-support.org/forums, if you haven't done so already, to stay up to date on the latest news, security alerts and updates. Your contribution to Katak-support community will be appreciated!
-
-The Katak-support team is committed to providing support to all users through our free online resources and a full range of commercial support packages and services. For more information, or to discuss your needs, please contact us today at http://katak-support.com/support/. Any feedback will be appreciated!
-
-- The Katak-support Team";
-$msg2 = ob_get_contents();
-ob_end_clean();
-define('KATAK_UPGRADED',trim($msg2));
 
 $msg='';
 $errors=array();

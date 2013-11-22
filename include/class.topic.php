@@ -22,6 +22,7 @@ class Topic {
     var $id;
     var $topic;
     var $dept_id;
+    var $autoassign_id;
     var $priority_id;
     var $autoresp;
  
@@ -44,6 +45,7 @@ class Topic {
             $this->id=$info['topic_id'];
             $this->topic=$info['topic'];
             $this->dept_id=$info['dept_id'];
+            $this->autoassign_id=$info['autoassign_id'];
             $this->priority_id=$info['priority_id'];
             $this->active=$info['isactive'];
             $this->autoresp=$info['noautoresp']?false:true;
@@ -69,6 +71,10 @@ class Topic {
     
     function getDeptId() {
         return $this->dept_id;
+    }
+
+    function getAutoassignId() {
+        return $this->autoassign_id;
     }
 
     function getPriorityId() {
@@ -129,9 +135,10 @@ class Topic {
             
         if(!$errors) {
             $sql='updated=NOW(),topic='.db_input(Format::striptags($vars['topic'])).
-                 ',dept_id='.db_input($vars['dept_id']).
-                 ',priority_id='.db_input($vars['priority_id']).
                  ',isactive='.db_input($vars['isactive']).
+                 ',priority_id='.db_input($vars['priority_id']).
+                 ',dept_id='.db_input($vars['dept_id']).
+                 ',autoassign_id='.db_input($vars['autoassign_id']).
                  ',noautoresp='.db_input(isset($vars['noautoresp'])?1:0);
             if($id) {
                 $sql='UPDATE '.TOPIC_TABLE.' SET '.$sql.' WHERE topic_id='.db_input($id);

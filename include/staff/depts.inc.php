@@ -65,9 +65,9 @@ $depts=db_query($sql.' GROUP BY dept.dept_id ORDER BY dept_name');
    ?>
       <div>
           <?= _('Select:') ?>&nbsp;
-          <a href="#" onclick="return select_all(document.forms['depts'],true)"><?= _('All') ?></a>&nbsp;&nbsp;
-          <a href="#" onclick="return reset_all(document.forms['depts'])"><?= _('None') ?></a>&nbsp;&nbsp;
-          <a href="#" onclick="return toogle_all(document.forms['depts'],true)"><?= _('Toggle') ?></a>&nbsp;&nbsp;
+          [<a href="#" onclick="return select_all(document.forms['depts'],true)"><?= _('All') ?></a>]&nbsp;&nbsp;
+          [<a href="#" onclick="return reset_all(document.forms['depts'])"><?= _('None') ?></a>]&nbsp;&nbsp;
+          [<a href="#" onclick="return toogle_all(document.forms['depts'],true)"><?= _('Toggle') ?></a>]&nbsp;&nbsp;
       </div>
       <div class="centered">
           <input class="button" type="submit" name="public" value="<?= _('Make Public') ?>"

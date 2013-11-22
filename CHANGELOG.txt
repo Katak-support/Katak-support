@@ -1,3 +1,9 @@
+Katak-support 1.0.0, 2013-10-31
+- Ticket automatic assignment
+- Basic ticket report
+- Deleted some unnecessary files and fields
+- Added some info to the fatal error message
+
 Katak-support 0.9.2, 2013-07-27
 - Fixed error on closing ticket date
 - Revised the stylesheets and added the print stylesheets

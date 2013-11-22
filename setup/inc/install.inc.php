@@ -12,9 +12,8 @@ if(!isset($info['dbhost'])) {
 if(!isset($info['prefix'])) {
     $info['prefix']='ktk_';
 }
-
-
 ?>
+
 &nbsp;All fields are required.
 <form action="install.php" method="post" name="setup" id="setup">
 <table width="100%" cellspacing="0" cellpadding="2" class="setup">
@@ -22,20 +21,20 @@ if(!isset($info['prefix'])) {
     <tr class="subtitle"><td colspan=2>Url to Katak-support installation on your server, title and default language. You can change everything later.</td></tr>
     <tr><td width=150>Support System URL:</td><td><b><?=URL?></b></td></tr>
     <tr>
-        <td>Support System Title:</td><td><input type=text name=title size=40 value="<?=$info['title']?>">
+        <td>Support System Title:</td><td><input type=text name=title size=40 value="<?php echo $info['title']?>">
             &nbsp;<span class="error"><?=$errors['title']?></span></td>
     </tr>
-    <tr><td><?= _('System Language:') ?></td><td>
+    <tr><td>System Language:</td><td>
             <select name="language">
             <?php foreach (i18n::getLanguages() as $lang) { ?>
-                <option value="<?=$lang->name ?>"><?=$lang->description ?></option>
+                <option value="<?=$lang->name ?>"><?php echo $lang->description ?></option>
             <?php } ?>
             </select>
             &nbsp;<span class="error"><?=$errors['language']?></span></td>
     </tr>
     <tr class="title"><td colspan=2>System email</td></tr>
     <tr class="subtitle"><td colspan=2>Default system email (e.g support@yourdomain.com). You can change or add more emails later.</td></tr>
-    <tr><td>Default Email:</td><td><input type=text name=sysemail size=40 value="<?=$info['sysemail']?>">
+    <tr><td>Default Email:</td><td><input type=text name=sysemail size=40 value="<?php echo $info['sysemail']?>">
             &nbsp;<span class="error"><?=$errors['sysemail']?></span></td>
     </tr>
     <tr class="title"><td colspan=2>System Administrator</td></tr>
@@ -44,16 +43,16 @@ if(!isset($info['prefix'])) {
         <td colspan=2>
          <table border=0 cellspacing=0 cellpadding=2 class="clean">
             <tr><td width=150>Username:</td>
-                <td><input type=text name=username size=20 value="<?=$info['username']?>">
+                <td><input type=text name=username size=20 value="<?php echo $info['username']?>">
                     &nbsp;<span class="error"><?=$errors['username']?></span></td></tr>
             <tr><td>Password:</td>
-                <td><input type=password name=password size=20 value="<?=$info['password']?>">
+                <td><input type=password name=password size=20 value="<?php echo $info['password']?>">
                     &nbsp;<span class="error"><?=$errors['password']?></span></td></tr>
             <tr><td>Password (again):</td>
-                <td><input type=password name=password2 size=20 value="<?=$info['password2']?>">
+                <td><input type=password name=password2 size=20 value="<?php echo $info['password2']?>">
                     &nbsp;<span class="error"><?=$errors['password2']?></span></td>
             </tr>
-            <tr><td>Email:</td><td><input type=text name=email size=40 value="<?=$info['email']?>">
+            <tr><td>Email:</td><td><input type=text name=email size=40 value="<?php echo $info['email']?>">
                     &nbsp;<span class="error"><?=$errors['email']?></span></td></tr>
          </table>
         </td>
@@ -63,15 +62,15 @@ if(!isset($info['prefix'])) {
     <tr>
         <td colspan=2><span class="error"><b><?=$errors['mysql']?></b></span>
          <table cellspacing=1 cellpadding=2 border=0>
-            <tr><td width=150>MySQL Table Prefix:</td><td><input type=text name=prefix size=20 value="<?=$info['prefix']?>" >
+            <tr><td width=150>MySQL Table Prefix:</td><td><input type=text name=prefix size=20 value="<?php echo $info['prefix']?>" >
                     <span class="error"><?=$errors['prefix']?></span></td></tr>
-            <tr><td>MySQL Hostname:</td><td><input type=text name=dbhost size=20 value="<?=$info['dbhost']?>" >
+            <tr><td>MySQL Hostname:</td><td><input type=text name=dbhost size=20 value="<?php echo $info['dbhost']?>" >
                     <span class="error"><?=$errors['dbhost']?></span></td></tr>
-            <tr><td>MySQL Database:</td><td><input type=text name=dbname size=20 value="<?=$info['dbname']?>">
+            <tr><td>MySQL Database:</td><td><input type=text name=dbname size=20 value="<?php echo $info['dbname']?>">
                     <span class="error"><?=$errors['dbname']?></span></td></tr>
-            <tr><td>MySQL Username:</td><td><input type=text name=dbuser size=20 value="<?=$info['dbuser']?>">
+            <tr><td>MySQL Username:</td><td><input type=text name=dbuser size=20 value="<?php echo $info['dbuser']?>">
                     <span class="error"><?=$errors['dbuser']?></span></td></tr>
-            <tr><td>MySQL Password:</td><td><input type=password name=dbpass size=20 value="<?=$info['dbpass']?>">
+            <tr><td>MySQL Password:</td><td><input type=password name=dbpass size=20 value="<?php echo $info['dbpass']?>">
                     <span class="error"><?=$errors['dbpass']?></span></td></tr>
          </table>
         </td>

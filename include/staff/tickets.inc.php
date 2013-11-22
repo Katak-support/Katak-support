@@ -454,9 +454,9 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
     if($canDelete || $canClose) { ?>
     <span id="togglebox">
       <?= _('Select:')." &nbsp; " ?>
-      <a href="#" onclick="return select_all(document.forms['tickets'],true)"><?= _('All') ?></a>&nbsp;
-      <a href="#" onclick="return reset_all(document.forms['tickets'])"><?= _('None') ?></a>&nbsp;
-      <a href="#" onclick="return toogle_all(document.forms['tickets'],true)"><?= _('Toggle') ?></a>&nbsp;
+      [<a href="#" onclick="return select_all(document.forms['tickets'],true)"><?= _('All') ?></a>]&nbsp;
+      [<a href="#" onclick="return reset_all(document.forms['tickets'])"><?= _('None') ?></a>]&nbsp;
+      [<a href="#" onclick="return toogle_all(document.forms['tickets'],true)"><?= _('Toggle') ?></a>]&nbsp;
     </span>
     <?php } ?>
     <span style="float:right; padding-right:4px;"><?= _('page:') ?><?=$pageNav->getPageLinks()?></span>

@@ -72,12 +72,15 @@ input:focus, textarea:focus {
 }
 
 div#loginBox {
-	width: 300px;
-	padding: 10px 20px 5px 20px;
+  width: 340px;
+  padding: 10px 20px 5px 20px;
 	margin: 0 auto 0 auto;
 	background: #fff;
 	text-align: center;
 	border:5px solid #ddd;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 #copyRights, #copyRights a, #copyRights a:link, #copyRights a:visited, #copyRights a:hover {

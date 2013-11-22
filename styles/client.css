@@ -250,6 +250,7 @@ hr { border:none; border-bottom:1px solid; margin:8px 0 12px 0; }
      font-size: 11pt;
      font-weight: bold;
      width: 140px;
+     cursor:pointer;
 }
     
 /* Generic CSS based Icons. use=> <tag class="Icon iconname">text</tag> */

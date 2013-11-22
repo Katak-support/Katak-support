@@ -29,8 +29,8 @@ class Sys {
         return ($cfg && $cfg->getId())?$cfg:null;
     }
 
-    // Send alert to the system administrator
-    static function alertAdmin($subject,$message,$log=false) {
+    // Send email alert to the system administrator
+    static function alertAdmin($subject,$message) {
         global $cfg;
                 
         //Set sysadmin's email address
@@ -46,47 +46,41 @@ class Sys {
         }else {//no luck - try the system mail.
             Email::sendmail($to,$subject,$message,sprintf('"Katak-support Alerts"<%s>',$to));
         }
-
-        //log the alert? Watch out for loops here.
-        if($log && is_object($cfg)) { //if $cfg is not set then it means we don't have DB connection.
-            Sys::log(LOG_CRIT,$subject,$message,false); //Log the enter...and make sure no alerts are resent.
-        }
-
     }
 
-    static function log($priority,$title,$message,$alert=true) {
+    // Save a log message in the database
+    static function log($priority,$title,$message,$logger,$alert=true) {
         global $cfg;
         global $dblink;
-
+        
         switch($priority){ //We are providing only 3 levels of logs. Windows style.
             case LOG_EMERG:
             case LOG_ALERT: 
             case LOG_CRIT: 
-            case LOG_ERR:
-                $level=1;
+            case LOG_ERR:       
+                $level=1; // Error level
                 if($alert) {
                     Sys::alertAdmin($title,$message);
                 }
                 break;
             case LOG_WARN:
             case LOG_WARNING:
-                //Warning...
-                $level=2;
+                $level=2; // Warning level
                 break;
             case LOG_NOTICE:
             case LOG_INFO:
             case LOG_DEBUG:
             default:
-                $level=3;
-                //debug
+                $level=3; // Debug level
         }
         //Save log based on system log level settings.
         if($cfg && $cfg->getLogLevel()>=$level){
             $loglevel=array(1=>'Error','Warning','Debug');
-            $sql='INSERT INTO '.SYSLOG_TABLE.' SET created=NOW(),updated=NOW() '.
+            $sql='INSERT INTO '.SYSLOG_TABLE.' SET created=NOW() '.
                  ',title='.db_input($title).
                  ',log_type='.db_input($loglevel[$level]).
                  ',log='.db_input($message).
+                 ',logger='.db_input($logger).
                  ',ip_address='.db_input($_SERVER['REMOTE_ADDR']);
             //echo $sql;
             if (class_exists('mysqli'))
@@ -96,6 +90,7 @@ class Sys {
         }
     }
 
+    // Delete old log messages
     static function purgeLogs(){
         global $cfg;
 

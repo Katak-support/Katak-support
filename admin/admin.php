@@ -515,7 +515,7 @@ switch ($thistab) {
         $nav->addSubMenu(array('desc' => _('PREFERENCES'), 'href' => 'admin.php?t=pref', 'iconclass' => 'preferences'));
         $nav->addSubMenu(array('desc' => _('ATTACHMENTS'), 'href' => 'admin.php?t=attach', 'iconclass' => 'attachment'));
         $nav->addSubMenu(array('desc' => _('API'), 'href' => 'admin.php?t=api', 'iconclass' => 'api'));
-        switch ($thistab):
+        switch ($thistab){
             case 'settings':
             case 'pref':
                 $page = 'preference.inc.php';
@@ -525,14 +525,23 @@ switch ($thistab) {
                 break;
             case 'api':
                 $page = 'api.inc.php';
-        endswitch;
+        }
         break;
     case 'dashboard':
     case 'syslog':
-        $nav->setTabActive('dashboard');
-        $nav->addSubMenu(array('desc' => _('SYSTEM LOGS'), 'href' => 'admin.php?t=syslog', 'iconclass' => 'syslogs'));
-        $page = 'syslogs.inc.php';
-        break;
+    case 'reports':
+      $nav->setTabActive('dashboard');
+      $nav->addSubMenu(array('desc' => _('REPORTS'), 'href' => 'admin.php?t=reports', 'iconclass' => 'reports'));
+      $nav->addSubMenu(array('desc' => _('SYSTEM LOGS'), 'href' => 'admin.php?t=syslog', 'iconclass' => 'syslogs'));
+      switch ($thistab) {
+          case 'dashboard':
+          case 'reports':
+            $page = 'reports.inc.php';
+            break;
+          case 'syslog':
+            $page = 'syslogs.inc.php';
+      }
+      break;
     case 'email':
     case 'templates':
     case 'banlist':
@@ -541,7 +550,7 @@ switch ($thistab) {
         $nav->addSubMenu(array('desc' => _('ADD NEW EMAIL'), 'href' => 'admin.php?t=email&a=new', 'iconclass' => 'newEmail'));
         $nav->addSubMenu(array('desc' => _('TEMPLATES'), 'href' => 'admin.php?t=templates', 'title' => _('Email Templates'), 'iconclass' => 'emailTemplates'));
         $nav->addSubMenu(array('desc' => _('BANLIST'), 'href' => 'admin.php?t=banlist', 'title' => _('Banned Email'), 'iconclass' => 'banList'));
-        switch (strtolower($_REQUEST['t'])) {
+        switch ($thistab) {
             case 'templates':
                 $page = 'templates.inc.php';
                 $template = null;
@@ -668,7 +677,7 @@ if ($inc && file_exists($inc)) {
 ?>
     <p align="center">
         <span class="error"><?= _('Problems loading requested admin page.') ?> (<?= Format::htmlchars($thistab) ?>)</span>
-        <br><?= _('Possibly access denied, if you believe this is in error please get technical support.') ?>
+        <br /><?= _('Possibly access denied, if you believe this is in error please get technical support.') ?>
     </p>
 <?php } ?>
 <?php

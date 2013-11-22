@@ -15,6 +15,11 @@
 **********************************************************************/
 
 require('client.inc.php');
+
+//Log logout info...
+$msg=sprintf("%s/%s " . _("logged out"),$_SESSION['_client']['userID'],$_SESSION['_client']['key']);
+Sys::log(LOG_DEBUG,'User logout',$msg,$_SESSION['_client']['userID']);
+
 //We are checking to make sure the user is logged in before a logout to avoid session reset tricks on excess logins
 $_SESSION['_client']=array();
 session_unset();

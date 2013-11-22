@@ -69,7 +69,7 @@ if($staff)
   <tr>
     <th><?= _('Help Topic:') ?></th>
     <td><?php
-        $ht=$ticket->getHelpTopic();
+        $ht=$ticket->getTopic();
         echo Format::htmlchars($ht?$ht:'N/A');
         ?>
     </td>
@@ -204,20 +204,18 @@ $resp=$ticket->getNotes();
 if($notes=db_num_rows($resp)){
   $display=($notes>5)?'none':'block'; //Collapse internal notes if more than 5.
   ?>
-<a class="Icon note" href="#" onClick="toggleLayer('ticketnotes'); return false;"><?= _('Internal Notes') ?> (<?=$notes?>)</a><br />
-<div id="ticketnotes">
-    <div id='ticketnotes' style="display:<?=$display?>;"> 
-        <?php
-        while($row=db_fetch_array($resp)) {?>
-            <div class="notelabel">&nbsp; <?=Format::db_daydatetime($row['created'])?>&nbsp;-&nbsp; <?= _('posted by') ?> <?=$row['source']?></div>
-            <?php if($row['title']) {?>
-            <div class="note_title"><?=Format::display($row['title'])?></div>
-            <?php } ?>
-            <div class="message"><?=Format::display($row['note'])?></div>
-     <?php } ?>
-   </div>
-</div> <!-- ticketnotes -->
-<br />
+  <a class="Icon note" href="#" onClick="toggleLayer('ticketnotes'); return false;"><?= _('Internal Notes') ?> (<?=$notes?>)</a><br />
+  <div id='ticketnotes' style="display:<?=$display?>;"> 
+      <?php
+      while($row=db_fetch_array($resp)) {?>
+          <div class="notelabel">&nbsp; <?=Format::db_daydatetime($row['created'])?>&nbsp;-&nbsp; <?= _('posted by') ?> <?=$row['source']?></div>
+          <?php if($row['title']) {?>
+          <div class="note_title"><?=Format::display($row['title'])?></div>
+          <?php } ?>
+          <div class="message"><?=Format::display($row['note'])?></div>
+   <?php } ?>
+  </div> <!-- ticketnotes -->
+  <br />
 <?php }
 
 // Messages and responses

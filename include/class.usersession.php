@@ -41,7 +41,6 @@ class UserSession {
        return FALSE;
    }
 
-
    function getSessionId(){
        return $this->session_id;
    }

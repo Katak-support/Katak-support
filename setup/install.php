@@ -15,7 +15,7 @@
 **********************************************************************/
 
 #inits
-error_reporting(E_ALL ^ E_NOTICE); //turn on errors
+error_reporting(E_ERROR); //turn on fatal errors reporting
 ini_set('magic_quotes_gpc', 0);
 ini_set('session.use_trans_sid', 0);
 ini_set('session.cache_limiter', 'nocache');
@@ -29,10 +29,10 @@ require('setup.inc.php');
 $errors=array();
 $fp=null;
 $_SESSION['abort']=false;
-define('VERSION','0.9'); //Current database version number
-define('VERSION_VERBOSE','0.9.2'); //Script version (what the user sees during installation process).
+define('VERSION','1.0'); //Current database version number
+define('VERSION_VERBOSE','1.0.0'); //Script version (what the user sees during installation process).
 define('CONFIGFILE','../include/ktk-config.php'); //Katak config file full path.
-define('SCHEMAFILE','./inc/katak-v0.9.sql'); //Katak SQL schema.
+define('SCHEMAFILE','./inc/katak-v1.0.sql'); //Katak SQL schema.
 define('URL',rtrim('http'.(($_SERVER['HTTPS']=='on')?'s':'').'://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']),'setup'));
 
 $install='<strong>Need help?</strong> &nbsp; <a href="http://www.katak-support.com/en/content/katak-pro" target="_blank">Professional Installation Available</a>';
@@ -49,6 +49,8 @@ if((double)phpversion()<5.1){ // Too old PHP version
 }elseif(!ini_get('short_open_tag') && (double)phpversion()<5.4) {
     $errors['err']='Short open tag disabled! - with PHP version prior to 5.4 Katak Support requires it turned on.';
     $wrninc='shortopentag.inc.php';
+}elseif(!function_exists('gettext')) { // Check if GETTEXT is installed
+    $errors['err']='GETTEXT not installed!';
 }elseif(!file_exists(CONFIGFILE)) { 
     $errors['err']=sprintf('Configuration file (%s) missing!',basename(CONFIGFILE));
     $wrninc='missing.inc.php';
@@ -165,20 +167,20 @@ if((double)phpversion()<5.1){ // Too old PHP version
                          ',helpdesk_url='.db_input(URL).
                          ',helpdesk_title='.db_input($_POST['title']);
                     db_query($sql);
-                    //Create a first ticket as example.
+                    //Create a first ticket as welcome and example.
                     $sql='INSERT INTO '.PREFIX.'ticket SET created=NOW(),ticketID='.db_input(Misc::randNumber(6)).
-                        ",priority_id=2,topic_id=1,dept_id=1,email='support@katak-support.com',name='Katak-support' ".
-                        ",subject='Katak-support installed!',helptopic='General',status='open',source='Web'";
+                        ',priority_id=2,topic_id=1,dept_id=1,email="'.$_POST['sysemail'].'",name="Katak-support" '.
+                        ',subject="Katak-support installed!",status="open",source="Web"';
                     if(db_query($sql) && ($id=db_insert_id())){
-                        db_query('INSERT INTO '.PREFIX."ticket_message VALUES (1,$id,NULL,".db_input(KATAK_INSTALLED).",NULL,'Web','',NOW(),NULL)");
+                        db_query('INSERT INTO '.PREFIX.'ticket_message SET ticket_id=1,msg_type="F",message="'.db_input(KATAK_INSTALLED).'",source="web",created=NOW()');
                     }
                     //Log a message.
-                    $sql='INSERT INTO '.PREFIX.'syslog SET created=NOW(),updated=NOW() '.
-                         ',title="Katak-support installed!",log_type="Debug" '.
-                         ',log='.db_input("Congratulations: Katak Support basic installation completed!\n\nThank you for choosing Katak-support!").
+                    $sql='INSERT INTO '.PREFIX.'syslog SET created=NOW() '.
+                         ',title="Katak-support installed",log_type="Debug" '.
+                         ',log='.db_input("Katak-support ".VERSION." basic installation completed\n\nThank you for choosing Katak-support!").
                          ',ip_address='.db_input($_SERVER['REMOTE_ADDR']);
                     db_query($sql);
-                    $msg='Congratulations: Katak Support basic installation completed!';
+                    $msg='Congratulations: Katak-support basic installation completed!';
                     $inc='done.inc.php';
                 }else{
                     $errors['err']='Unable to write to config file!';

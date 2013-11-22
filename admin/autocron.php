@@ -31,13 +31,13 @@ ob_start(); //Keep the image output clean. Hide our dirt.
 //We DON'T want to spawn cron on every page load...we record the lastcroncall on the session per user
 $sec=time()-$_SESSION['lastcroncall'];
 if($sec>180): //user can call cron once every 3 minutes.
-require_once(INCLUDE_DIR.'class.cron.php');    
-Cron::TicketMonitor(); //Age tickets: We're going to age tickets ever regardless of cron settings. 
-if($cfg && $cfg->enableAutoCron()){ //ONLY fetch tickets if autocron is enabled!
-    Cron::MailFetcher();  //Fetch mail.
-    Sys::log(LOG_DEBUG,'Autocron',sprintf(_('cron job executed [%s]'), $thisuser->getUserName()));
-}    
-$_SESSION['lastcroncall']=time();
+  require_once(INCLUDE_DIR.'class.cron.php');    
+  Cron::TicketMonitor(); //Age tickets: We're going to age tickets ever regardless of cron settings. 
+  if($cfg && $cfg->enableAutoCron()){ //ONLY fetch tickets if autocron is enabled!
+      Cron::MailFetcher();  //Fetch mail.
+      Sys::log(LOG_DEBUG,'Autocron',sprintf(_('cron job executed') . " [%s]", $thisuser->getUserName()), $thisuser->getUserName());
+  }    
+  $_SESSION['lastcroncall']=time();
 endif;
 $output = ob_get_contents();
 ob_end_clean();

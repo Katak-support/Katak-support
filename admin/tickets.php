@@ -279,7 +279,7 @@ if ($_POST && !$errors):
                                     $note.=' ' . _('and status set to') . ' ' . $ticket->getPriority();
                                 }
                                 $note.=' by ' . $thisuser->getName();
-                                $ticket->logActivity(_('Ticket Marked Overdue'), $note);
+                                $ticket->logActivity(_('Ticket marked Overdue'), $note);
                             } else {
                                 $errors['err'] = _('Problems marking the the ticket overdue. Try again');
                             }

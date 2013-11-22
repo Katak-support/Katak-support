@@ -38,13 +38,10 @@ ini_set('session.cache_limiter', 'nocache');
 //ini_set('session.cookie_path','/katak-support/');
 
 #Error reporting...Good idea to ENABLE error reporting to a file. i.e display_errors should be set to false
-#Don't display errors in productions.
-error_reporting(E_STRICT | E_ERROR);
-//error_reporting(E_ERROR); 
+#Don't display errors in productions, but fatal errors.
+error_reporting(E_ERROR); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 0);
-
-//set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ . '/include/pear/');
 
 
 //Start the session BUT ONLY if a web request (http) host exists
@@ -66,7 +63,7 @@ define('SETUP_DIR',INCLUDE_DIR.'setup/');
  * The first two digits indicate the database's version.
  * The third digit represents minor changes that do not affect the database.
 */ 
-define('THIS_VERSION','0.9.2'); //Changes from version to version.
+define('THIS_VERSION','1.0.0'); //Changes from version to version.
 
 // Check if config file exists and load config info
 $configfile='';
@@ -115,7 +112,7 @@ define('SESSION_SECRET', MD5(SECRET_SALT)); //Not that useful anymore...
 define('SESSION_TTL', 86400); // Default 24 hours
 
 define('DEFAULT_PRIORITY_ID',1);
-define('EXT_TICKET_ID_LEN',6); //Ticket create. when you start getting collisions. Applies only on random ticket ids.
+define('EXT_TICKET_ID_LEN',6); //Ticket ID length. Applies only on random ticket ids.
 
 #Tables being used sytem wide
 define('CONFIG_TABLE',TABLE_PREFIX.'config');
@@ -150,12 +147,13 @@ if (!db_connect(DBHOST,DBUSER,DBPASS,DBNAME)) {
 }
 
 if($ferror) { //Fatal error
-    Sys::alertAdmin('Katak-support fatal error: ',$ferror); //try alerting sysadmin.
+    Sys::alertAdmin('Katak-support fatal error', 'Server ' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . ': ' . $ferror); //try alerting sysadmin.
     die("<br /><b>Fatal error!</b> Contact system adminstrator."); //Generic error message.
     exit;
 }
 //Init
 $cfg->init();
+
 //Set default timezone...staff will overwrite it.
 $_SESSION['TZ_OFFSET']=$cfg->getTZoffset();
 $_SESSION['daylight']=$cfg->observeDaylightSaving();
@@ -166,4 +164,5 @@ if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
     $_GET=Format::strip_slashes($_GET);
     $_REQUEST=Format::strip_slashes($_REQUEST);
 }
+
 ?>

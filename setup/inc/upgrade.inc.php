@@ -6,54 +6,19 @@ $info=($errors && $_POST)?Format::input($_POST):array(); //use post data.
 if(!isset($info['title'])) {
     $info['title']='KataK Support - Ticket System';
 }
-if(!isset($info['dbhost'])) {
-    $info['dbhost']='localhost';
-}
-if(!isset($info['prefix'])) {
-    $info['prefix']='ost_';
-}
 
 
 ?>
-&nbsp;All fields are required.
-<form action="upgrade.php" method="post" name="setup" id="setup">
-<table width="100%" cellspacing="0" cellpadding="2" class="setup">
-    <tr class="title"><td colspan=2>Admin user</td></tr>
-    <tr class="subtitle"><td colspan=2>Autentication data administrator of the old osTicket system.</td></tr>
-    <tr>
-        <td colspan=2>
-         <table border=0 cellspacing=0 cellpadding=2 class="clean">
-            <tr><td width=150>Username:</td>
-                <td><input type=text name=username size=20 value="<?=$info['username']?>">
-                    &nbsp;<span class="error"><?=$errors['username']?></span></td></tr>
-            <tr><td>Password:</td>
-                <td><input type=password name=password size=20 value="<?=$info['password']?>">
-                    &nbsp;<span class="error"><?=$errors['password']?></span></td></tr>
-         </table>
-        </td>
-    </tr>
-    <tr class="title"><td colspan=2>Database</td></tr>
-    <tr class="subtitle"><td colspan=2>Database connection data of the old osTicket system.</td></tr>
-    <tr>
-        <td colspan=2><span class="error"><b><?=$errors['mysql']?></b></span>
-         <table cellspacing=1 cellpadding=2 border=0>
-            <tr><td width=150>MySQL Table Prefix:</td><td><input type=text name=prefix size=20 value="<?=$info['prefix']?>" >
-                    <span class="error"><?=$errors['prefix']?></span></td></tr>
-            <tr><td>MySQL Hostname:</td><td><input type=text name=dbhost size=20 value="<?=$info['dbhost']?>" >
-                    <span class="error"><?=$errors['dbhost']?></span></td></tr>
-            <tr><td>MySQL Database:</td><td><input type=text name=dbname size=20 value="<?=$info['dbname']?>">
-                    <span class="error"><?=$errors['dbname']?></span></td></tr>
-            <tr><td>MySQL Username:</td><td><input type=text name=dbuser size=20 value="<?=$info['dbuser']?>">
-                    <span class="error"><?=$errors['dbuser']?></span></td></tr>
-            <tr><td>MySQL Password:</td><td><input type=password name=dbpass size=20 value="<?=$info['dbpass']?>">
-                    <span class="error"><?=$errors['dbpass']?></span></td></tr>
-         </table>
-        </td>
-    </tr>
-</table>
-&nbsp;Please read the upgrade instructions and remember to do a full backup of the old site and database before proceeding!<br /><br />
-<div align="center">
-    <input class="button" type="submit" value="Install">
-    <input class="button" type="reset" name="reset" value="Reset">
-</div>
+<h1>Getting ready</h1>
+<p>We recommend that you take the system offline during the upgrade process, if you haven't done so already. While we try to ensure that the upgrade process is straightforward and painless, we can't guarantee it will be the case for every user. 
+<br /><b>Did you remember to backup the database?</b></p>
+<p>
+If the thought of upgrading your installation gives you the shake then feel free to <a href="http://katak-support.com/contact/" target="_blank">contact us </a> for help.
+</p>
+<p>Please click continue to complete the upgrade process ... be patient it might take a couple of seconds.</p>
+<div style="padding:20px 20px 10px 200px;">
+<form method=post action='upgrade.php'>
+    <input type=hidden name=step value=1 />
+    <input class="button" type="submit" name=submit value="Continue &raquo;&raquo;" />
 </form>
+</div>

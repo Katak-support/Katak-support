@@ -1,3 +1,6 @@
+ALTER TABLE `%TABLE_PREFIX%api_key`
+CHANGE `ipaddr` `ipaddr` varchar(64) NOT NULL;
+
 ALTER TABLE `%TABLE_PREFIX%config` 
 ADD `staff_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `isonline`,
 ADD `client_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `staff_language`,
@@ -28,16 +31,20 @@ INSERT INTO `%TABLE_PREFIX%priority` (`priority_id`, `priority`, `priority_desc`
 (2, 'normal', 'Normal', '#333333', 3, 1),
 (3, 'high', 'High', '#CC9900', 2, 1),
 (4, 'urgent', 'Urgent', '#CC3300', 1, 0);
+
 ALTER TABLE `%TABLE_PREFIX%groups` RENAME TO `%TABLE_PREFIX%roles`;
 
 ALTER TABLE `%TABLE_PREFIX%roles`
-CHANGE `group_id` `role_id` INT(10) UNSIGNED NOT NULL,
+CHANGE `group_id` `role_id` INT(10) UNSIGNED NOT NULL auto_increment,
 CHANGE `group_enabled` `role_enabled` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
 CHANGE `group_name` `role_name` VARCHAR(50) NOT NULL,
 ADD `can_viewunassigned_tickets` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `dept_access`,
 ADD `can_changepriority_tickets` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `can_edit_tickets`,
 ADD `can_assign_tickets` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `can_changepriority_tickets`,
 CHANGE `can_manage_kb` `can_manage_stdr` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0';
+
+ALTER TABLE `%TABLE_PREFIX%help_topic`
+ADD `autoassign_id` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' AFTER `dept_id`;
 
 ALTER TABLE `%TABLE_PREFIX%staff`
 CHANGE `group_id` `role_id` INT(10) UNSIGNED NOT NULL,
@@ -49,21 +56,32 @@ ADD `language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `timezone_offset`;
 ALTER TABLE `%TABLE_PREFIX%kb_premade` RENAME TO `%TABLE_PREFIX%std_reply`;
 
 ALTER TABLE `%TABLE_PREFIX%std_reply`
-CHANGE `premade_id` `stdreply_id` INT(10) UNSIGNED NOT NULL;
+CHANGE `premade_id` `stdreply_id` INT(10) UNSIGNED NOT NULL auto_increment;
+
+ALTER TABLE `%TABLE_PREFIX%syslog`
+CHANGE `ip_address` `ip_address` varchar(64) NOT NULL,
+DROP `updated`;
 
 ALTER TABLE `%TABLE_PREFIX%ticket`
-CHANGE `ip_address` `ip_address` VARCHAR(32) NOT NULL,
+CHANGE `ip_address` `ip_address` VARCHAR(64) NOT NULL,
 CHANGE `phone` `phone` VARCHAR(28) NULL,
 DROP `phone_ext`,
+DROP `helptopic`,
 ADD `firstresponse` DATETIME NULL AFTER `lastmessage`;
 
 ALTER TABLE `%TABLE_PREFIX%ticket_message`
 ADD `msg_type` ENUM('F','M','R') NULL AFTER `messageId`,
 ADD `staff_id` INT(11) UNSIGNED NOT NULL DEFAULT '0' AFTER `message`,
-ADD `staff_name` VARCHAR(32) NULL AFTER `staff_id`;
+ADD `staff_name` VARCHAR(32) NULL AFTER `staff_id`,
+CHANGE `ip_address` `ip_address` varchar(64) default NULL,
+DROP `updated`;
 
 UPDATE `%TABLE_PREFIX%ticket_message`
 SET `msg_type`='M';
+
+ALTER TABLE `%TABLE_PREFIX%ticket_attachment`
+DROP `deleted`,
+DROP `updated`;
 
 ALTER TABLE `%TABLE_PREFIX%ticket_note` RENAME TO `%TABLE_PREFIX%ticket_events`;
 

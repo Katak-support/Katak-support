@@ -352,13 +352,14 @@ class MailFetcher {
                 db_query('UPDATE '.EMAIL_TABLE.' SET mail_errors=mail_errors+1, mail_lasterror=NOW() WHERE email_id='.db_input($row['email_id']));
                 if($errors>=$MAX_ERRORS){
                     //We've reached the MAX consecutive errors...will attempt logins at delayed intervals
-                    $msg="\nThe system is having trouble fetching emails from the following mail account: \n".
+                    $msg="\n". _('The system is having trouble fetching emails from the following mail account:') . " \n".
                         "\nUser: ".$row['userid'].
                         "\nHost: ".$row['mail_host'].
                         "\nError: ".$fetcher->getLastError().
-                        "\n\n ".$errors.' consecutive errors. Maximum of '.$MAX_ERRORS. ' allowed'.
-                        "\n\n This could be connection issues related to the host. Next delayed login attempt in aprox. 10 minutes";
-                    Sys::alertAdmin('Mail Fetch Failure Alert',$msg,true);
+                        "\n\n".$errors . ' ' . _('consecutive errors. Maximum of') . ' ' . $MAX_ERRORS . ' ' . _(' allowed').
+                        "\n\n" . _('This could be connection issues related to the host. Next delayed login attempt in approx. 10 minutes');
+                    Sys::alertAdmin('Mail Fetch Failure Alert',$msg);
+                    Sys::log(LOG_CRIT,'Mail Fetch Failure Alert',$msg,$row['userid'],false);
                 }
             }
         }

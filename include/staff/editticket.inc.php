@@ -11,7 +11,7 @@ if($_POST && $errors){
                 'phone'=>$ticket->getPhone(),
                 'pri'=>$ticket->getPriorityId(),
                 'topicId'=>$ticket->getTopicId(),
-                'topic'=>$ticket->getHelpTopic(),
+                'topic'=>$ticket->getTopic(),
                 'subject' =>$ticket->getSubject(),
                 'duedate' =>$ticket->getDueDate()?(Format::userdate('m/d/Y',Misc::db2gmtime($ticket->getDueDate()))):'',
                 'time'=>$ticket->getDueDate()?(Format::userdate('G:i',Misc::db2gmtime($ticket->getDueDate()))):'',
@@ -104,8 +104,8 @@ if($_POST && $errors){
         <td>
             <select name="topicId">    
                 <option value="0" selected ><?= _('None') ?></option>
-                <?php if(!$info['topicId'] && $info['topic']){ //old helptopic ?>
-                <option value="0" selected ><?=$info['topic']?> <?= _('(deleted)') ?></option>
+                <?php if(!$info['topicId'] && $info['topic']){ ?>
+                  <option value="0" selected ><?=$info['topic']?> <?= _('(deleted)') ?></option>
                 <?php
                 }
                  while (list($topicId,$topic,$active) = db_fetch_row($services)){

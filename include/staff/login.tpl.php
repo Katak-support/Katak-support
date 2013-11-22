@@ -18,6 +18,7 @@
 	<form action="login.php" method="post">
   	<input type="hidden" name=do value="adminlogin" />
     <span class="input"><?= _('Username') ?>: </span><span><input type="text" name="username" id="name" value="" /></span>
+    <br />
     <span class="input"><?= _('Password') ?>: </span><span><input type="password" name="passwd" id="pass" /></span>
     <div><input class="submit" type="submit" name="submit" value="<?= _('Login') ?>" /></div>
   </form>

@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `%TABLE_PREFIX%api_key`;
 CREATE TABLE `%TABLE_PREFIX%api_key` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `isactive` tinyint(1) NOT NULL default '1',
-  `ipaddr` varchar(16) NOT NULL,
+  `ipaddr` varchar(64) NOT NULL,
   `apikey` varchar(255) NOT NULL,
   `updated` datetime NOT NULL default '0000-00-00 00:00:00',
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
@@ -21,15 +21,15 @@ CREATE TABLE `%TABLE_PREFIX%config` (
   `timezone_offset` float(3,1) NOT NULL default '0.0',
   `enable_daylight_saving` tinyint(1) unsigned NOT NULL default '0',
   `staff_ip_binding` tinyint(1) unsigned NOT NULL default '1',
-  `staff_max_logins` tinyint(3) unsigned NOT NULL default '4',
-  `staff_login_timeout` int(10) unsigned NOT NULL default '2',
+  `staff_max_logins` tinyint(5) unsigned NOT NULL default '4',
+  `staff_login_timeout` int(10) unsigned NOT NULL default '5',
   `staff_session_timeout` int(10) unsigned NOT NULL default '30',
-  `client_max_logins` tinyint(3) unsigned NOT NULL default '4',
-  `client_login_timeout` int(10) unsigned NOT NULL default '2',
+  `client_max_logins` tinyint(5) unsigned NOT NULL default '4',
+  `client_login_timeout` int(10) unsigned NOT NULL default '5',
   `client_session_timeout` int(10) unsigned NOT NULL default '30',
   `max_page_size` tinyint(3) unsigned NOT NULL default '25',
   `max_open_tickets` tinyint(3) unsigned NOT NULL default '0',
-  `max_file_size` int(11) unsigned NOT NULL default '1048576',
+  `max_file_size` int(11) unsigned NOT NULL default '524288',
   `autolock_minutes` tinyint(3) unsigned NOT NULL default '3',
   `overdue_grace_period` int(10) unsigned NOT NULL default '0',
   `reopen_grace_period` int(10) unsigned NOT NULL default '90',
@@ -82,7 +82,7 @@ CREATE TABLE `%TABLE_PREFIX%config` (
   `allow_online_attachments` tinyint(1) unsigned NOT NULL default '0',
   `allow_online_attachments_onlogin` tinyint(1) unsigned NOT NULL default '0',
   `random_ticket_ids` tinyint(1) unsigned NOT NULL default '1',
-  `log_level` tinyint(1) unsigned NOT NULL default '2',
+  `log_level` tinyint(1) unsigned NOT NULL default '1',
   `log_graceperiod` int(10) unsigned NOT NULL default '12',
   `upload_dir` varchar(255) NOT NULL default '',
   `allowed_filetypes` varchar(255) NOT NULL default '.doc, .odt, .pdf, .jpg, .png, .txt, .ods',
@@ -209,7 +209,7 @@ CREATE TABLE `%TABLE_PREFIX%email_template` (
 
 
 INSERT INTO `%TABLE_PREFIX%email_template` (`tpl_id`, `cfg_id`, `name`, `notes`, `ticket_autoresp_subj`, `ticket_autoresp_body`, `ticket_notice_subj`, `ticket_notice_body`, `ticket_alert_subj`, `ticket_alert_body`, `message_autoresp_subj`, `message_autoresp_body`, `message_alert_subj`, `message_alert_body`, `note_alert_subj`, `note_alert_body`, `assigned_alert_subj`, `assigned_alert_body`, `ticket_overdue_subj`, `ticket_overdue_body`, `ticket_overlimit_subj`, `ticket_overlimit_body`, `ticket_reply_subj`, `ticket_reply_body`, `created`, `updated`) VALUES
-(1, 1, 'Katak Support Default Template', 'Default Katak Support templates', 'Support Ticket Opened [#%ticket]', '%name,\r\n\r\nA request for support has been created and assigned ticket #%ticket. A representative will follow-up with you as soon as possible.\r\n\r\nYou can view this ticket''s progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\nIf you wish to send additional comments or information regarding this issue, please don''t open a new ticket. Simply login using the link above and update the ticket.\r\n\r\n%signature', '[#%ticket] %subject', '%name,\r\n\r\nOur customer care team has created a ticket, #%ticket on your behalf, with the following message.\r\n\r\n%message\r\n\r\nIf you wish to provide additional comments or information regarding this issue, please don''t open a new ticket. You can update or view this ticket''s progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\n%signature', 'New Ticket Alert', '%staff,\r\n\r\nNew ticket #%ticket created.\r\n-------------------\r\nName: %name\r\nEmail: %email\r\nDept: %dept\r\n\r\n%message\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak-support.', '[#%ticket] Message Added', '%name,\r\n\r\nYour reply to support request #%ticket has been noted.\r\n\r\nYou can view this support request progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\n%signature', 'New Message Alert', '%staff,\r\n\r\nNew message appended to ticket #%ticket\r\n\r\n----------------------\r\nName: %name\r\nEmail: %email\r\nDept: %dept\r\n\r\n%message\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by osTicket.', 'New Internal Note Alert', '%staff,\r\n\r\nInternal note appended to ticket #%ticket\r\n\r\n----------------------\r\nName: %name\r\n\r\n%note\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak Support.', 'Ticket #%ticket Assigned to you', '%assignee,\r\n\r\n%assigner has assigned ticket #%ticket to you!\r\n\r\n%message\r\n\r\nTo view complete details, simply login to the support system.\r\n\r\n- Your friendly Support Ticket System - powered by Katak Support.', 'Stale Ticket Alert', '%staff,\r\n\r\nA ticket, #%ticket assigned to you or in your department is seriously overdue.\r\n\r\n%url/admin/tickets.php?id=%id\r\n\r\nWe should all work hard to guarantee that all tickets are being addressed in a timely manner. Enough baby talk...please address the issue or you will hear from me again.\r\n\r\n\r\n- Your friendly (although with limited patience) Support Ticket System - powered by Katak Support.', 'Support Ticket Denied', '%name\r\n\r\nNo support ticket has been created. You''ve exceeded maximum number of open tickets allowed.\r\n\r\nThis is a temporary block. To be able to open another ticket, one of your pending tickets must be closed. To update or add comments to an open ticket simply login using the link below.\r\n\r\n%url/tickets.php?e=%email\r\n\r\nThank you.\r\n\r\nSupport Ticket System', '[#%ticket] %subject', '%name,\r\n\r\nA customer support staff member has replied to your support request, #%ticket with the following response:\r\n\r\n%response\r\n\r\nWe hope this response has sufficiently answered your questions. If not, please do not send another email. Instead, reply to this email or login to your account for a complete archive of all your support requests and responses.\r\n\r\n%url/tickets.php?e=%email&t=%ticket\r\n\r\n%signature', NOW(), NOW());
+(1, 1, 'Katak Support Default Template', 'Default Katak Support templates', 'Support Ticket Opened [#%ticket]', '%name,\r\n\r\nA request for support has been created and assigned ticket #%ticket. A representative will follow-up with you as soon as possible.\r\n\r\nYou can view this ticket''s progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\nIf you wish to send additional comments or information regarding this issue, please don''t open a new ticket. Simply login using the link above and update the ticket.\r\n\r\n%signature', '[#%ticket] %subject', '%name,\r\n\r\nOur customer care team has created a ticket, #%ticket on your behalf, with the following message.\r\n\r\n%message\r\n\r\nIf you wish to provide additional comments or information regarding this issue, please don''t open a new ticket. You can update or view this ticket''s progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\n%signature', 'New Ticket Alert', '%staff,\r\n\r\nNew ticket #%ticket created.\r\n-------------------\r\nName: %name\r\nEmail: %email\r\nDept: %dept\r\n\r\n%message\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak-support.', '[#%ticket] Message Added', '%name,\r\n\r\nYour reply to support request #%ticket has been noted.\r\n\r\nYou can view this support request progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\n%signature', 'New Message Alert', '%staff,\r\n\r\nNew message appended to ticket #%ticket\r\n\r\n----------------------\r\nName: %name\r\nEmail: %email\r\nDept: %dept\r\n\r\n%message\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by KataK.', 'New Internal Note Alert', '%staff,\r\n\r\nInternal note appended to ticket #%ticket\r\n\r\n----------------------\r\nName: %name\r\n\r\n%note\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak Support.', 'Ticket #%ticket Assigned to you', '%assignee,\r\n\r\n%assigner has assigned ticket #%ticket to you!\r\n\r\n%message\r\n\r\nTo view complete details, simply login to the support system.\r\n\r\n- Your friendly Support Ticket System - powered by Katak Support.', 'Stale Ticket Alert', '%staff,\r\n\r\nA ticket, #%ticket assigned to you or in your department is seriously overdue.\r\n\r\n%url/admin/tickets.php?id=%id\r\n\r\nWe should all work hard to guarantee that all tickets are being addressed in a timely manner. Enough baby talk...please address the issue or you will hear from me again.\r\n\r\n\r\n- Your friendly (although with limited patience) Support Ticket System - powered by Katak Support.', 'Support Ticket Denied', '%name\r\n\r\nNo support ticket has been created. You''ve exceeded maximum number of open tickets allowed.\r\n\r\nThis is a temporary block. To be able to open another ticket, one of your pending tickets must be closed. To update or add comments to an open ticket simply login using the link below.\r\n\r\n%url/tickets.php?e=%email\r\n\r\nThank you.\r\n\r\nSupport Ticket System', '[#%ticket] %subject', '%name,\r\n\r\nA customer support staff member has replied to your support request, #%ticket with the following response:\r\n\r\n%response\r\n\r\nWe hope this response has sufficiently answered your questions. If not, please do not send another email. Instead, reply to this email or login to your account for a complete archive of all your support requests and responses.\r\n\r\n%url/tickets.php?e=%email&t=%ticket\r\n\r\n%signature', NOW(), NOW());
 
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%roles`;
@@ -246,6 +246,7 @@ CREATE TABLE `%TABLE_PREFIX%help_topic` (
   `noautoresp` tinyint(3) unsigned NOT NULL default '0',
   `priority_id` tinyint(3) unsigned NOT NULL default '0',
   `dept_id` tinyint(3) unsigned NOT NULL default '0',
+  `autoassign_id` tinyint(3) unsigned NOT NULL default '0',
   `topic` varchar(32) NOT NULL default '',
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
   `updated` datetime NOT NULL default '0000-00-00 00:00:00',
@@ -323,10 +324,9 @@ CREATE TABLE `%TABLE_PREFIX%syslog` (
   `log_type` enum('Debug','Warning','Error') NOT NULL,
   `title` varchar(255) NOT NULL,
   `log` text NOT NULL,
-  `logger` varchar(64) NOT NULL,
-  `ip_address` varchar(16) NOT NULL,
+  `logger` varchar(64) default NULL,
+  `ip_address` varchar(64) NOT NULL,
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
-  `updated` datetime NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`log_id`),
   KEY `log_type` (`log_type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -343,9 +343,8 @@ CREATE TABLE `%TABLE_PREFIX%ticket` (
   `email` varchar(120) NOT NULL default '',
   `name` varchar(32) NOT NULL default '',
   `subject` varchar(64) NOT NULL default '[no subject]',
-  `helptopic` varchar(255) default NULL,
   `phone` varchar(28) default NULL,
-  `ip_address` varchar(32) NOT NULL default '',
+  `ip_address` varchar(64) NOT NULL default '',
   `status` enum('open','closed') NOT NULL default 'open',
   `source` enum('Web','Email','Phone','Other') NOT NULL default 'Other',
   `isoverdue` tinyint(1) unsigned NOT NULL default '0',
@@ -380,9 +379,7 @@ CREATE TABLE `%TABLE_PREFIX%ticket_attachment` (
   `file_size` varchar(32) NOT NULL default '',
   `file_name` varchar(128) NOT NULL default '',
   `file_key` varchar(128) NOT NULL default '',
-  `deleted` tinyint(1) unsigned NOT NULL default '0',
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
-  `updated` datetime default NULL,
   PRIMARY KEY  (`attach_id`),
   KEY `ticket_id` (`ticket_id`),
   KEY `ref_type` (`ref_type`),
@@ -414,9 +411,8 @@ CREATE TABLE `%TABLE_PREFIX%ticket_message` (
   `staff_name` varchar(32) NOT NULL default '',
   `headers` text,
   `source` varchar(16) default NULL,
-  `ip_address` varchar(16) default NULL,
+  `ip_address` varchar(64) default NULL,
   `created` datetime NOT NULL default '0000-00-00 00:00:00',
-  `updated` datetime default NULL,
   PRIMARY KEY  (`msg_id`),
   KEY `ticket_id` (`ticket_id`),
   KEY `msgId` (`messageId`),

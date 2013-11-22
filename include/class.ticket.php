@@ -40,7 +40,6 @@ class Ticket{
     var $topic_id;
     var $dept_name;
     var $subject;
-    var $helptopic;
     var $overdue;
 
     var $lastMsgId;
@@ -57,7 +56,7 @@ class Ticket{
     function load($id) {
        
        
-        $sql =' SELECT  ticket.*,topic.topic_id as topicId,lock_id,dept_name,priority_desc FROM '.TICKET_TABLE.' ticket '.
+        $sql =' SELECT  ticket.*,topic.topic as topic,topic.topic_id as topicId,lock_id,dept_name,priority_desc FROM '.TICKET_TABLE.' ticket '.
               ' LEFT JOIN '.DEPT_TABLE.' dept ON ticket.dept_id=dept.dept_id '.
               ' LEFT JOIN '.PRIORITY_TABLE.' pri ON ticket.priority_id=pri.priority_id '.
               ' LEFT JOIN '.TOPIC_TABLE.' topic ON ticket.topic_id=topic.topic_id '.
@@ -82,10 +81,10 @@ class Ticket{
             $this->priority=$row['priority_desc'];
             $this->staff_id =$row['staff_id'];
             $this->dept_id  =$row['dept_id'];
-            $this->topic_id  =$row['topicId']; //Note that we're actually joining the topic table to make the topic is not deleted (long story!).
-            $this->dept_name    =$row['dept_name'];
+            $this->topic_id  =$row['topicId'];
+            $this->topic =$row['topic'];
+            $this->dept_name  =$row['dept_name'];
             $this->subject =$row['subject'];
-            $this->helptopic =$row['helptopic'];
             $this->overdue =$row['isoverdue'];
             $this->row=$row;
             //Reset the sub classes (initiated ondemand)...good for reloads.
@@ -141,13 +140,6 @@ class Ticket{
         return $this->subject;
     }
 
-    function getHelpTopic() {
-        if($this->topic_id && ($topic=$this->getTopic()))
-            return $topic->getName();
-            
-        return $this->helptopic;
-    }
-   
     function getCreateDate(){
         return $this->created;
     }    
@@ -446,7 +438,7 @@ class Ticket{
                          $this->getEmail(),
                          $this->getName(),
                          $this->getSubject(),
-                         $this->getHelpTopic(),
+                         $this->getTopic(),
                          $this->getPhoneNumber(),
                          $this->getStatus(),
                          $this->getPriority(),
@@ -528,7 +520,7 @@ class Ticket{
                         }
                     }
                 }else {
-                    Sys::log(LOG_WARNING,'Template Fetch Error',"Unable to fetch 'overdue' alert template #$tplId");
+                    Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch 'overdue' alert template No.").' '.$tplId);
                 }
             }
             return true;
@@ -588,7 +580,7 @@ class Ticket{
                         $email->send($staff->getEmail(),$subj,$body);
                     }
                 }else {
-                    Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'assigned' alert template #").$tplId);
+                    Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch 'assigned' alert template No.").' '.$tplId);
                 }
             }
             $message=$message?$message:_('Ticket assigned');
@@ -690,7 +682,7 @@ class Ticket{
                         }
 
                     }else {
-                        Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'new message' auto response template #").$tplId);
+                        Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch 'new message' auto response template No.").' '.$tplId);
                     }
                 }
                 //If enabled...send alert to staff (New Message Alert)
@@ -733,7 +725,7 @@ class Ticket{
                             }
                         }
                     }else {
-                        Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'new message' alert template #").$tplId);
+                        Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch 'new message' alert template No.").' '.$tplId);
                     }
                 }
 
@@ -813,7 +805,7 @@ class Ticket{
                 }
             }else{
                 //We have a big problem...alert admin...
-                $msg=sprintf(_('Problems fetching response template for ticket# %s  Possible config error - template # %s'), $this->getId(), $tplId);
+                $msg=sprintf(_('Problems fetching response template for ticket No. %s.  Possible config error - template No. %s'), $this->getId(), $tplId);
                 Sys::alertAdmin(_('System Error'),$msg);
             }
             return $resp_id;
@@ -884,7 +876,7 @@ class Ticket{
                         }
                     }
                 }else {
-                    Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'new note' alert template #").$tplId);
+                    Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'new note' alert template No.").' '.$tplId);
                 }
                     
             }
@@ -927,8 +919,8 @@ class Ticket{
                   ',file_key='.db_input($rand);
             if(!db_query($sql) && !($id=db_insert_id())) {
             //DB  insert failed!--remove the file..
-             @unlink($filename);
-             return 0;
+              @unlink($filename);
+              return 0;
             }
           }
           $i++;
@@ -987,32 +979,6 @@ class Ticket{
   
         return FALSE;
     }
-   
-    function fixAttachments(){
-        global $cfg;
-
-        $sql='SELECT attach_id,file_name,file_key FROM '.TICKET_ATTACHMENT_TABLE.' WHERE ticket_id='.db_input($this->getId());
-        $res=db_query($sql);
-        if($res && db_num_rows($res)) {
-            $dir=$cfg->getUploadDir();
-            $month=date('my',strtotime($this->getCreateDate()));
-            while(list($id,$name,$key)=db_fetch_row($res)){
-                $origfilename=sprintf("%s/%s_%s",rtrim($dir,'/'),$key,$name);
-                if(!file_exists($origfilename)) continue;
-
-                if(!file_exists(rtrim($dir,'/').'/'.$month) &&  @mkdir(rtrim($dir,'/').'/'.$month,0777))
-                    chmod(rtrim($dir,'/').'/'.$month,0777);
-                
-                if(!file_exists(rtrim($dir,'/').'/'.$month) || !is_writable(rtrim($dir,'/').'/'.$month)) continue; //cannot create the new dir???
-
-                $filename=sprintf("%s/%s/%s_%s",rtrim($dir,'/'),$month,$key,$name); //new destination.
-                if(rename($origfilename,$filename) && file_exists($filename)) {
-                    @unlink($origfilename);
-                }
-            }
-
-        }
-    }
 
     function deleteAttachments(){
         global $cfg;
@@ -1041,7 +1007,7 @@ class Ticket{
     function getAttachmentStr($refid,$type){
         
         $sql ='SELECT attach_id,file_size,file_name FROM '.TICKET_ATTACHMENT_TABLE.
-             ' WHERE deleted=0 AND ticket_id='.db_input($this->getId()).' AND ref_id='.db_input($refid).' AND ref_type='.db_input($type);
+             ' WHERE ticket_id='.db_input($this->getId()).' AND ref_id='.db_input($refid).' AND ref_type='.db_input($type);
         $res=db_query($sql);
         if($res && db_num_rows($res)){
             while(list($id,$size,$name)=db_fetch_row($res)){
@@ -1101,7 +1067,10 @@ class Ticket{
         return $num;
     }
 
-    static function update($var,&$errors) {
+    /*
+    * Update ticket
+    */
+    function update($var,&$errors) {
          global $cfg,$thisuser;
 
          $fields=array();
@@ -1130,17 +1099,7 @@ class Ticket{
              elseif(strtotime($var['duedate'].' '.$var['time'])<=time())
                  $errors['duedate']=_('Due date must be in the future');
          }
-
-        $cleartopic=false;
-        $topicDesc='';
-        if($var['topicId'] && ($topic= new Topic($var['topicId'])) && $topic->getId()) {
-            $topicDesc=$topic->getName();
-        }elseif(!$var['topicId'] && $this->getTopicId()){
-            $topicDesc='';
-            $cleartopic=true;
-        }
-
- 
+         
          if(!$errors){
              $sql='UPDATE '.TICKET_TABLE.' SET updated=NOW() '.
                   ',email='.db_input($var['email']).
@@ -1152,9 +1111,6 @@ class Ticket{
                   ',duedate='.($var['duedate']?db_input(date('Y-m-d G:i',Misc::dbtime($var['duedate'].' '.$var['time']))):'NULL');
              if($var['duedate']) { //We are setting new duedate...
                  $sql.=',isoverdue=0';
-             }
-             if($topicDesc || $cleartopic) { //we're overwriting previous topic.
-                 $sql.=',helptopic='.db_input($topicDesc);
              }
              $sql.=' WHERE ticket_id='.db_input($this->getId());
              //echo $sql;
@@ -1207,7 +1163,7 @@ class Ticket{
         //Make sure the email is not banned
         if(!$errors && BanList::isbanned($var['email'])) {
             $errors['err']='Ticket denied. Error #403'; //We don't want to tell the user the real reason...Psssst.
-            Sys::log(LOG_WARNING,_('Ticket denied'),_('Banned email - ').$var['email']); //We need to let admin know which email got banned.
+            Sys::log(LOG_WARNING,'Ticket denied',_('Banned email').' - '.$var['email']); //We need to let admin know which email got banned.
         }
 
         if(!$errors && $thisclient && strcasecmp($thisclient->getEmail(),$var['email']))
@@ -1265,7 +1221,7 @@ class Ticket{
                             $email->send($var['email'],$subj,$body);
                     }
                     //Alert admin...this might be spammy (no option to disable)...but it is helpful..I think.
-                    $msg=sprintf(_('Support ticket request denied for %s\nOpen ticket: %s\nMax Allowed: %s\n\nNotice only sent once'), $var['email'], $openTickets, $cfg->getMaxOpenTickets());
+                    $msg=sprintf(_('Support ticket request denied for %s\nOpen ticket: %s\nMax Allowed: %s\n\nNotice only sent once.'), $var['email'], $openTickets, $cfg->getMaxOpenTickets());
                     Sys::alertAdmin(_('Overlimit Notice'),$msg);
                 }
             }
@@ -1279,11 +1235,13 @@ class Ticket{
         $priorityId=$var['pri'];
         $source=ucfirst($var['source']);
         $topic=NULL;
+        $autoassignId=0;
         // Intenal mapping magic...see if we need to overwrite anything
         if(isset($var['topicId'])) { //Ticket created via web by user/or staff
 
             if($var['topicId'] && ($topic= new Topic($var['topicId'])) && $topic->getId()) {
                 $deptId=$deptId?$deptId:$topic->getDeptId();
+                $autoassignId=$topic->getAutoassignId();
                 $priorityId=$priorityId?$priorityId:$topic->getPriorityId();
                 $topicDesc=$topic->getName();
                 if($autorespond)
@@ -1321,11 +1279,11 @@ class Ticket{
                 ',ticketID='.db_input($extId).
                 ',dept_id='.db_input($deptId).
                 ',topic_id='.db_input($topicId).
+                ',staff_id='.db_input($autoassignId).
                 ',priority_id='.db_input($priorityId).
                 ',email='.db_input($var['email']).
                 ',name='.db_input(Format::striptags($var['name'])).
                 ',subject='.db_input(Format::striptags($var['subject'])).
-                ',helptopic='.db_input(Format::striptags($topicDesc)).
                 ',phone="'.db_input($var['phone'],false).'"'.
                 ',ip_address='.db_input($ipaddress).        
                 ',source='.db_input($source);
@@ -1340,7 +1298,7 @@ class Ticket{
         if(db_query($sql) && ($id=db_insert_id())){
 
             if(!$cfg->useRandomIds()){
-                //Sequential ticketIDs support really..really suck arse.
+                //NB: There is no collision control with sequential ticketIDs.
                 $extId=$id; //To make things really easy we are going to use autoincrement ticket_id.
                 db_query('UPDATE '.TICKET_TABLE.' SET ticketID='.db_input($extId).' WHERE ticket_id='.$id); 
                 //TODO: RETHING what happens if this fails?? [At the moment on failure random ID is used...making stuff usable]
@@ -1389,7 +1347,7 @@ class Ticket{
                         $email->send($ticket->getEmail(),$subj,$body);
                     }
                 }else {
-                    Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch autoresponse template #").$tplId);
+                    Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch autoresponse template No.").' '.$tplId);
                 }
 
 
@@ -1450,7 +1408,7 @@ class Ticket{
                         }
                     }
                 }else {
-                    Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'new ticket' alert template #").$tplId);
+                    Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch 'new ticket' alert template No.").' '.$tplId);
                 }
             }
         }
@@ -1526,7 +1484,7 @@ class Ticket{
                         }
                     }else{
                         //We have a big problem...alert admin...
-                        $msg=_('Problems fetching response template for ticket#').$ticket->getId().' '._('Possible config error - template #').$tplId;
+                        $msg=_('Problems fetching response template for ticket No.').'. '.$ticket->getId().' '._('Possible config error - template No.').' '.$tplId;
                         Sys::alertAdmin(_('System Error'),$msg);
                     }
                     

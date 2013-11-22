@@ -1,13 +1,16 @@
-UPGRADE FROM KATAK VER 0.9.1
-Just replace all files with the new release, UNLESS THE FILE INCLUDE/KTK-CONFIG.PHP and the attachment directory (if exists)
+UPGRADE FROM KATAK VER 0.9.x
+1) Do a safety backup of the database and of the attachments directory.
+2) Replace all files with the new release, UNLESS THE FILE INCLUDE/KTK-CONFIG.PHP and the attachments directory (if exists)
+3) With a browser go to your_site/setup/, select the tag "Upgrade" and follow the instruction. You'll have to enter the system administrator's name and password.
+
 
 
 UPGRADE FROM OSTICKET 1.6
 You can install the Katak-system saving the data of an already installed osTicket ver. 1.6 ST system.
 You have to:
 
-1) Do a safety backup of the original database and of the attachments folder.
-2) Make sure you have done a good backup of the original database and of the attachments folder :).
+1) Do a safety backup of the original database and of the attachments directory.
+2) Make sure you have done a good backup of the original database and of the attachments directory :).
 3) Delete all the files BUT the attachment directory of the installed version.
 4) Upload on the server all the file of the Katak-support system.
 5) Start a normal installation, but select the tab Upgrade and follow the instructions.
@@ -16,3 +19,5 @@ You have to:
 8) For security reasons, ask to all the staff members to change the password.
 
 Note: If you database is big, be sure to have enough time and memory to run the PHP upgrade script!
+Note2: KataK does not allow to have duplicate email addresses among the members of the staff!
+Note3: There could be problems doing the upgrade with messages written in non-Latin characters (eg Cyrillic)

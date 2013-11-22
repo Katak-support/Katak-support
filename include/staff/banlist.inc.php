@@ -104,6 +104,7 @@ $showadd=($errors && $_POST['a']=='add')?true:false;
                 <td width=7px>
                   <input type="checkbox" name="ids[]" value="<?=$row['id']?>" <?=$sel?'checked':''?> 
                         onClick="highLight(this.value,this.checked);">
+                </td>
                 <td><?=$row['email']?></td>
                 <td><?=$row['submitter']?></td>
                 <td><?=Format::db_datetime($row['added'])?></td>
@@ -121,9 +122,9 @@ $showadd=($errors && $_POST['a']=='add')?true:false;
      ?>
         <div style="padding-left:20px">
             <?= _('Select:') ?>&nbsp;
-            <a href="#" onclick="return select_all(document.forms['banlist'],true)"><?= _('All') ?></a>&nbsp;&nbsp;
-            <a href="#" onclick="return toogle_all(document.forms['banlist'],true)"><?= _('Toggle') ?></a>&nbsp;&nbsp;
-            <a href="#" onclick="return reset_all(document.forms['banlist'])"><?= _('None') ?></a>&nbsp;&nbsp;
+            [<a href="#" onclick="return select_all(document.forms['banlist'],true)"><?= _('All') ?></a>]&nbsp;&nbsp;
+            [<a href="#" onclick="return toogle_all(document.forms['banlist'],true)"><?= _('Toggle') ?></a>]&nbsp;&nbsp;
+            [<a href="#" onclick="return reset_all(document.forms['banlist'])"><?= _('None') ?></a>]&nbsp;&nbsp;
             &nbsp;<?= _('page:') ?><?=$pageNav->getPageLinks()?>
             
         </div>

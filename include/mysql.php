@@ -51,18 +51,18 @@ if (class_exists('mysqli')) {
   }
        
 	// execute sql query
-	function db_query($query){
-      global $cfg;
-      global $dblink;
-     
-      $response=$dblink->query($query);
+  function db_query($query){
+    global $cfg;
+    global $dblink;
+   
+    $response=$dblink->query($query);
 
-      if(!$response) { //error reporting
-          $alert='['.$query.']'."\n\n".db_error();
-          Sys::log(LOG_ALERT,_('DB Error #').db_errno(),$alert,($cfg && $cfg->alertONSQLError()));
-          //echo $msg; #uncomment during debuging or dev.
-      }
-      return $response;
+    if(!$response) { //error reporting
+        $alert='['.$query.']'."\n\n".db_error();
+        Sys::log(LOG_ALERT,_('DB Error No.').' '.db_errno(),$alert,($cfg && $cfg->alertONSQLError()));
+        //echo $msg; #uncomment during debuging or dev.
+    }
+    return $response;
 	}
 
 	function db_count($query){		
@@ -162,6 +162,8 @@ if (class_exists('mysqli')) {
       return $dblink->errno;
     }
 }
+
+
 //The MySQLI support is NOT enabled. To be delete when finally all the servers have it enabled!
 else {
   function db_connect($dbhost,$dbuser, $dbpass,$dbname = "") {
@@ -169,7 +171,7 @@ else {
       if(!strlen($dbuser) || !strlen($dbpass) || !strlen($dbhost))
           return NULL;
 
-      @$$dblink =mysql_connect($dbhost, $dbuser, $dbpass);
+      @$$dblink = mysql_connect($dbhost, $dbuser, $dbpass);
       if($$dblink && $dbname)
           @mysql_select_db($dbname);
       //set desired encoding just in case mysql charset is not UTF-8 - Thanks to FreshMedia
@@ -196,21 +198,20 @@ else {
        
   // execute sql query
   function db_query($query, $database="",$conn=""){
-        global $cfg;
+    global $cfg;
        
     if($conn){ /* connection is provided*/
-            $response=($database)?mysql_db_query($database,$query,$conn):mysql_query($query,$conn);
-        }else{
-            $response=($database)?mysql_db_query($database,$query):mysql_query($query);
-        }
-
-                
-        if(!$response) { //error reporting
-            $alert='['.$query.']'."\n\n".db_error();
-            Sys::log(LOG_ALERT,_('DB Error #').db_errno(),$alert,($cfg && $cfg->alertONSQLError()));
-            //echo $msg; #uncomment during debuging or dev.
-        }
-        return $response;
+      $response=($database)?mysql_db_query($database,$query,$conn):mysql_query($query,$conn);
+    }else{
+      $response=($database)?mysql_db_query($database,$query):mysql_query($query);
+    }
+         
+    if(!$response) { //error reporting
+      $alert='['.$query.']'."\n\n".db_error();
+      Sys::log(LOG_ALERT,_('DB Error No.').' '.db_errno(),$alert,($cfg && $cfg->alertONSQLError()));
+      //echo $msg; #uncomment during debuging or dev.
+    }
+    return $response;
   }
 
   function db_count($query){    

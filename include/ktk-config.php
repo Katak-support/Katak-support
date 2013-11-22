@@ -2,7 +2,8 @@
 /*********************************************************************
     ktk-config.php
 
-    Static Katak-support configuration file. Mainly useful for mysql login info.
+    Static Katak-support configuration file. Mainly useful for mysql login info
+    and sysadmin email recording.
     Created during installation process and shouldn't change even on upgrades.
    
     Copyright (c)  2012-2013 Katak Support
@@ -28,10 +29,10 @@ if(KTSINSTALLED!=TRUE){
 }
 
 # Encrypt/Decrypt secret key - randomly generated during installation.
-define('SECRET_SALT','61252A9687B41C0');
+define('SECRET_SALT','727E1D84768C3C0');
 
-#System admin email. Used on db connection issues and related alerts.
-define('ADMIN_EMAIL','marco@soffix.com');
+#System admin email. Used on db connection issues and ticket alerts.
+define('ADMIN_EMAIL','admin@katak.com');
 
 #Mysql Login info
 define('DBTYPE','mysql');

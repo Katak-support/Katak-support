@@ -54,7 +54,7 @@ if ($_POST):
                 if ($_POST['a'] == 'add') { //create
                     $res = db_query('INSERT INTO ' . STD_REPLY_TABLE . ' ' . $sql . ',created=NOW()');
                     if (!$res or !($replyID = db_insert_id()))
-                        $errors['err'] = _('Unable to create the reply. Internal error');
+                        $errors['err'] = _('Unable to create the reply. Internal error'.$sql);
                     else
                         $msg='Standard reply created';
                 }elseif ($_POST['a'] == 'update') { //update

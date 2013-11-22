@@ -15,7 +15,7 @@
     $Id: $
 **********************************************************************/
 require('staff.inc.php');
-Sys::log(LOG_DEBUG,'Staff logout',sprintf("%s logged out [%s]",$thisuser->getUserName(),$_SERVER['REMOTE_ADDR'])); //Debug.
+Sys::log(LOG_DEBUG,'Staff logout',sprintf("%s " . _('logged out'),$thisuser->getUserName()),$thisuser->getUserName()); //Debug.
 $_SESSION['_staff']=array();
 session_unset();
 session_destroy();

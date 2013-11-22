@@ -14,6 +14,7 @@ if($topic && $_REQUEST['a']!='new'){
 //get the goodies.
 $depts= db_query('SELECT dept_id,dept_name FROM '.DEPT_TABLE);
 $priorities= db_query('SELECT priority_id,priority_desc FROM '.PRIORITY_TABLE);
+$staff= db_query('SELECT staff_id,firstname,lastname,dept_name FROM '.STAFF_TABLE.' LEFT JOIN '.DEPT_TABLE.' USING(dept_id) ORDER BY lastname');
 ?>
 <form action="admin.php?t=topics" method="post">
   <input type="hidden" name="do" value="<?=$action?>">
@@ -69,6 +70,21 @@ $priorities= db_query('SELECT priority_id,priority_desc FROM '.PRIORITY_TABLE);
                 <?php
                 }?>
             </select>&nbsp;<font class="error">*&nbsp;<?=$errors['dept_id']?></font>
+        </td>
+    </tr>
+    <tr>
+        <th nowrap><?= _('New Ticket assignment:') ?></th>
+        <td>
+          <i><?=_('(Topic Choice must be enabled in Settings/Preferences)')?></i><br />
+          <select name="autoassign_id">
+              <option value=0><?= _('None') ?></option>
+              <?php
+              while (list($id,$firstname,$lastname,$deptname) = db_fetch_row($staff)){
+                $selected = ($info['autoassign_id']==$id)?'selected':''; ?>
+                <option value="<?=$id?>"<?=$selected?>><?=$firstname?> <?=$lastname?> (<?=$deptname?> Dept.)</option>
+              <?php
+              }?>
+          </select>&nbsp;<font class="error">&nbsp;<?=$errors['autoassign_id']?></font>
         </td>
     </tr>
   </table>

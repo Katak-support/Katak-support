@@ -96,8 +96,7 @@ class Dept {
         return $this->managerId;
     }
 
-    function getManager(){
-     
+    function getManager(){ 
         if(!$this->manager && $this->managerId)
             $this->manager= new Staff($this->managerId);
         

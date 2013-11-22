@@ -63,9 +63,9 @@ $emails=db_query($sql.' ORDER BY email');
     <tr>
         <td style="padding-left:20px">
             <?= _('Select:') ?>&nbsp;
-            <a href="#" onclick="return select_all(document.forms['email'],true)"><?= _('All') ?></a>&nbsp;
-            <a href="#" onclick="return reset_all(document.forms['email'])"><?= _('None') ?></a>&nbsp;
-            <a href="#" onclick="return toogle_all(document.forms['email'],true)"><?= _('Toggle') ?></a>&nbsp;
+            [<a href="#" onclick="return select_all(document.forms['email'],true)"><?= _('All') ?></a>]&nbsp;
+            [<a href="#" onclick="return reset_all(document.forms['email'])"><?= _('None') ?></a>]&nbsp;
+            [<a href="#" onclick="return toogle_all(document.forms['email'],true)"><?= _('Toggle') ?></a>]&nbsp;
         </td>
     </tr>
     <tr>

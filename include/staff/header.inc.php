@@ -6,7 +6,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <?php
   if(defined('AUTO_REFRESH') && is_numeric(AUTO_REFRESH_RATE) && AUTO_REFRESH_RATE>0){ //Refresh rate
-  echo '<meta http-equiv="refresh" content="'.AUTO_REFRESH_RATE.'" />';
+    echo '<meta http-equiv="refresh" content="'.AUTO_REFRESH_RATE.'" />';
   }
   ?>
   <title>Katak-support :: Staff Control Panel</title>

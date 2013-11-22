@@ -67,21 +67,21 @@ $showing=($num=db_num_rows($users))?_("Staff Members"):sprintf(_("No staff found
    </table>
   <?php
   if(db_num_rows($users)>0): //Show options..
-   ?>
-      <div style="margin-left:20px;">
-          <?= _('Select:') ?>&nbsp;
-          <a href="#" onclick="return select_all(document.forms['staff'],true)"><?= _('All') ?></a>&nbsp;&nbsp;
-          <a href="#" onclick="return toogle_all(document.forms['staff'],true)"><?= _('Toggle') ?></a>&nbsp;&nbsp;
-          <a href="#" onclick="return reset_all(document.forms['staff'])"><?= _('None') ?></a>&nbsp;&nbsp;
-      </div>
-  <div class="centered">
-          <input class="button" type="submit" name="enable" value="<?= _('Enable') ?>"
-          onClick=' return confirm("<?= _('Are you sure you want to ENABLE selected user(s)?') ?>");'>
-          <input class="button" type="submit" name="disable" value="<?= _('Lock') ?>"
-          onClick=' return confirm("<?= _('Are you sure you want to LOCK selected user(s)?') ?>");'>
-          <input class="button" type="submit" name="delete" value="<?= _('Delete') ?>"
-          onClick=' return confirm("<?= _('Are you sure you want to DELETE selected user(s)?') ?>");'>
-  </div>
+  ?>
+    <div style="margin-left:20px;">
+        <?= _('Select:') ?>&nbsp;
+        [<a href="#" onclick="return select_all(document.forms['staff'],true)"><?= _('All') ?></a>]&nbsp;&nbsp;
+        [<a href="#" onclick="return toogle_all(document.forms['staff'],true)"><?= _('Toggle') ?></a>]&nbsp;&nbsp;
+        [<a href="#" onclick="return reset_all(document.forms['staff'])"><?= _('None') ?></a>]&nbsp;&nbsp;
+    </div>
+    <div class="centered">
+            <input class="button" type="submit" name="enable" value="<?= _('Enable') ?>"
+            onClick=' return confirm("<?= _('Are you sure you want to ENABLE selected user(s)?') ?>");'>
+            <input class="button" type="submit" name="disable" value="<?= _('Lock') ?>"
+            onClick=' return confirm("<?= _('Are you sure you want to LOCK selected user(s)?') ?>");'>
+            <input class="button" type="submit" name="delete" value="<?= _('Delete') ?>"
+            onClick=' return confirm("<?= _('Are you sure you want to DELETE selected user(s)?') ?>");'>
+    </div>
   <?php
   endif;
   ?>

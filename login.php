@@ -15,12 +15,7 @@
 **********************************************************************/
 require_once('main.inc.php');
 if(!defined('INCLUDE_DIR')) die(_('Fatal error!'));
-/*
-if($thisclient && $thisclient->getId() && $thisclient->isValid()){
-    require('./tickets.php');
-    exit;
-}
-*/
+
 define('CLIENTINC_DIR',INCLUDE_DIR.'client/');
 define('KTKCLIENTINC',TRUE); //make includes happy
 
@@ -62,8 +57,8 @@ if($_POST && (!empty($_POST['lemail']) && !empty($_POST['lticket']))):
             $_SESSION['TZ_OFFSET']=$cfg->getTZoffset();
             $_SESSION['daylight']=$cfg->observeDaylightSaving();
             //Log login info...
-            $msg=sprintf("%s/%s logged in [%s]",$ticket->getEmail(),$ticket->getExtId(),$_SERVER['REMOTE_ADDR']);
-            Sys::log(LOG_DEBUG,'User login',$msg);
+            $msg=sprintf("%s/%s " . _("logged in"),$ticket->getEmail(),$ticket->getExtId());
+            Sys::log(LOG_DEBUG,'User login',$msg,$ticket->getEmail());
             //Redirect tickets.php
             session_write_close();
             session_regenerate_id();
@@ -78,15 +73,15 @@ if($_POST && (!empty($_POST['lemail']) && !empty($_POST['lticket']))):
         $loginmsg=('Access Denied');
         $errors['err']=_('Forgot your login info? Please <a href="open.php">open a new ticket</a>.');
         $_SESSION['_client']['laststrike']=time();
-        $alert=_('Excessive login attempts by a client?')."\n".
-                _('Email:').' '.$_POST['lemail']."\n"._('Ticket #:').' '.$_POST['lticket']."\n".
-                _('IP:').' '.$_SERVER['REMOTE_ADDR']."\n"._('Time:').date('M j, Y, g:i a T')."\n\n".
-                _('Attempts #').$_SESSION['_client']['strikes'];
-        Sys::log(LOG_ALERT,_('Excessive login attempts (client)'),$alert,($cfg->alertONLoginError()));
+        $alert=_('Excessive login attempts by a client')."\n\n".
+                _('Email') . ': '.$_POST['lemail'] . "\n" . _('Ticket No.') . ': ' . $_POST['lticket']."\n".
+                _('IP') . ': ' . $_SERVER['REMOTE_ADDR'] . "\n" . _('Time') . ": " . date('M j, Y, g:i a T') . "\n".
+                _('Attempts No.') . ' '.$_SESSION['_client']['strikes'];
+        Sys::log(LOG_ALERT,'Excessive login attempts (client)',$alert,$_POST['lemail'],($cfg->alertONLoginError()));
     }elseif($_SESSION['_client']['strikes']%2==0){ //Log every other failed login attempt as a warning.
-        $alert=_('Email:').' '.$_POST['lemail']."\n"._('Ticket #:').' '.$_POST['lticket']."\n".'IP: '.$_SERVER['REMOTE_ADDR'].
-               "\n"._('TIME:').' '.date('M j, Y, g:i a T')."\n\n"._('Attempts #').$_SESSION['_client']['strikes'];
-        Sys::log(LOG_WARNING,_('Failed login attempt (client)'),$alert);
+        $alert=_('Failed login attempts by a client') . "\n\n" . 
+               _('Email').': '.$_POST['lemail'] . "\n" . 'Ticket No.' . ' ' . $_POST['lticket'] . "\n" . _('Attempts No.') . ' ' . $_SESSION['_client']['strikes'];
+        Sys::log(LOG_WARNING,'Failed login attempt (client)',$alert,$_POST['lemail']);
     }
 endif;
 require(CLIENTINC_DIR.'header.inc.php');
