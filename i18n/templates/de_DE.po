@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak support 1.0.0\n"
-"POT-Creation-Date: 2013-11-21 11:55+0100\n"
-"PO-Revision-Date: 2013-11-21 11:56+0100\n"
+"POT-Creation-Date: 2013-11-29 14:49+0100\n"
+"PO-Revision-Date: 2013-11-29 14:49+0100\n"
 "Last-Translator: Tomark <marco@soffix.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -34,7 +34,7 @@ msgstr "System ist für ein Upgrade offline."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/index.php:22
 msgid "WELCOME TO THE KATAK-SUPPORT CENTER!"
-msgstr ""
+msgstr "WILLKOMMEN IM KATAK-SUPPORT CENTER"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/index.php:24
@@ -47,14 +47,14 @@ msgstr ""
 "Um Support-Anfragen zu optimieren und Sie besser unterstützen k&ouml;nnen, "
 "verwenden wir ein Support-Ticket-System. Jeder Anfrage wird eine eindeutige "
 "Ticket-Nummer zugeteilt, mit welcher Sie, den Fortschritt und die Antworten "
-"online verfolgen k&ouml;nnen. Eine gültige E-Mail-Adresse ist erforderlich."
+"online verfolgen k&ouml;nnen."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/index.php:25
 msgid "A valid email address is required to access the support system."
 msgstr ""
-"Eine gültige E-Mail-Adresse ist erforderlich, um die Support-System "
-"zugreifen."
+"Eine gültige E-Mail-Adresse ist erforderlich, um mit dem Support-System zu "
+"arbeiten."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/login.php:25
@@ -91,7 +91,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/admin/login.php:58
 #, php-format
 msgid "logged in"
-msgstr ""
+msgstr "Eingeloggt"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/login.php:74
@@ -150,9 +150,9 @@ msgstr "Fehlgeschlagener Anmeldeversuch (Client)"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/logout.php:20
 #: Foundation\Apache2.2\htdocs\katak/admin/logout.php:18
-#, fuzzy, php-format
+#, php-format
 msgid "logged out"
-msgstr "Geschlossen am"
+msgstr "Ausgeloggt"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/main.inc.php:75
@@ -274,7 +274,7 @@ msgstr "Die Datei ist zu gro&szlig;"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/tickets.php:68
 msgid "Message Posted Successfully"
-msgstr "Nachricht erfolgreich abgeschickt"
+msgstr "Nachricht erfolgreich gesendet"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/tickets.php:70
@@ -1055,7 +1055,7 @@ msgstr "Abt."
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:145
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:402
 msgid "Status"
-msgstr "Zustand"
+msgstr "Status"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:84
@@ -1254,7 +1254,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:129
 msgid "CHANGE PASSWORD"
-msgstr ""
+msgstr "PASSWORT ÄNDERN"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:132
@@ -1381,12 +1381,12 @@ msgstr "Fehler aufgetreten. Versuchen Sie es erneut."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:108
 msgid "STANDARD REPLIES"
-msgstr ""
+msgstr "STANDARD ANTWORTEN"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:109
 msgid "NEW STANDARD REPLY"
-msgstr ""
+msgstr "NEUE STANDARD ANTWORT"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:29
@@ -2249,7 +2249,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1077
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1142
 msgid "Name required"
-msgstr "Geben sie den Vornamen ein"
+msgstr "Geben sie Name/Vorname ein"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.msgtpl.php:86
@@ -2348,17 +2348,17 @@ msgstr "Bereiche"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:36
 msgid "Tickets"
-msgstr "Anfragen"
+msgstr "Ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:36
 msgid "Ticket Queue"
-msgstr "Anfrage Warteschlange"
+msgstr "Ticket Warteschlange"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:38
 msgid "Standard Replies"
-msgstr "Vorgefertigte Antworten"
+msgstr "Standard Antworten"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:40
@@ -2618,7 +2618,7 @@ msgstr "Ticket Aktualisiert"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1147
 msgid "Select help topic"
-msgstr ""
+msgstr "Wählen Sie einen Bereich aus"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1149
@@ -2816,7 +2816,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/client/header.inc.php:23
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:37
 msgid "Logged in as"
-msgstr ""
+msgstr "Eingeloggt als"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/header.inc.php:29
@@ -2847,6 +2847,10 @@ msgid ""
 ">If this is your first time contacting us or you've lost the ticket ID, "
 "please <a href='open.php'>click here</a> to open a new ticket."
 msgstr ""
+"Um den Status Ihres Ticket abzurufen geben Sie hier Ihre E-mail Adresse und "
+"die Ticket Nummer ein.<br />Wenn Sie Ihre Ticket verloren haben oder uns zum "
+"ersten Mal schreiben, <a href='open.php'>öffnen</a> Sie bitte ein neues "
+"Ticket."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/login.inc.php:24
@@ -2861,7 +2865,7 @@ msgstr "Ticket Nr."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/login.inc.php:33
 msgid "View Status"
-msgstr "Anzeige Status"
+msgstr "Status anzeigen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:15
@@ -2869,18 +2873,20 @@ msgid ""
 "Please fill in the form below to open a new ticket and provide as much "
 "detail as possible, so we can best assist you."
 msgstr ""
+"Bitte füllen Sie dieses Ticket so vollständig wie möglich aus, damit wir "
+"Ihnen schnell und effizient helfen können."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:16
 msgid "To update a previously submitted ticket, please go to "
-msgstr ""
+msgstr "Um ein bereits gesendetes Ticket erneut zu öffnen, klicken Sie "
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:21
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:47
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:30
 msgid "Full Name:"
-msgstr "Vollst&auml;ndiger Name:"
+msgstr "Name/Vorname:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:33
@@ -2905,7 +2911,7 @@ msgstr "Telefon:"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:30
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:70
 msgid "Help Topic:"
-msgstr ""
+msgstr "Bereich:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:59
@@ -2916,7 +2922,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:389
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:404
 msgid "Select One"
-msgstr ""
+msgstr "Auswälen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:69
@@ -2955,18 +2961,18 @@ msgstr "Anhang:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:138
 msgid "Captcha Text:"
-msgstr ""
+msgstr "Zugriffscode:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:141
 msgid "Enter the text shown on the image."
-msgstr ""
+msgstr "Bitte Zugriffscode eingeben"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:147
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:203
 msgid "Submit Ticket"
-msgstr ""
+msgstr "Ticket senden"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:148
@@ -3161,7 +3167,7 @@ msgstr "Ticket Text:"
 #: Foundation\Apache2.2\htdocs\katak/include/client/viewticket.inc.php:78
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:223
 msgid "Ticket Thread"
-msgstr ""
+msgstr "Ticket Verlauf"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/viewticket.inc.php:131
@@ -3183,7 +3189,12 @@ msgstr "Datei anh&auml;ngen"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:273
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:333
 msgid "Post Reply"
-msgstr ""
+msgstr "Antworten"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:34
+msgid "API Keys"
+msgstr "API-Schüssel"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:43
@@ -3861,7 +3872,7 @@ msgstr "Gründe für die &Auml;nderung."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:134
 msgid "Update Ticket"
-msgstr "Anfrage aktualisieren"
+msgstr "Ticket aktualisieren"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:2
@@ -5486,7 +5497,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:25
 msgid "Full Name"
-msgstr "Vollst&auml;ndiger Name"
+msgstr "Name/Vorname"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:28
@@ -5817,7 +5828,7 @@ msgstr "In Benutzung"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:50
 msgid "Last Update"
-msgstr "Letzte &Auml;nderung"
+msgstr "Letzte Änderung"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:95
@@ -5885,7 +5896,7 @@ msgstr "E-Mail Adresse"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:141
 msgid "Full name"
-msgstr "Vollst&auml;ndiger Name"
+msgstr "Name/Vorname"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:143
@@ -5950,7 +5961,7 @@ msgstr "Katak-support's Basis url (FQDN)"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:37
 msgid "Overdue Tickets"
-msgstr "&Uuml;berf&auml;llige Tickets"
+msgstr "Überfällige Tickets"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:290
@@ -5977,7 +5988,7 @@ msgstr "Jeder Status"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:430
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:479
 msgid "Overdue"
-msgstr "&Uuml;berf&auml;llig"
+msgstr "Überfällig"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:339
@@ -6028,7 +6039,7 @@ msgstr "Sortiere nach Ticket Nr."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:403
 msgid "Ticket"
-msgstr "Anfrage"
+msgstr "Ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:404
@@ -6069,7 +6080,7 @@ msgstr "Geschlossene Ticket"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:472
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:489
 msgid "Reopen"
-msgstr "Wiederer&ouml;ffnen"
+msgstr "Wiedereröffnen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:473
@@ -6087,7 +6098,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:487
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:175
 msgid "Close"
-msgstr "Schlie&szlig;en"
+msgstr "Schließen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:482
@@ -6171,7 +6182,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:59
 #, php-format
 msgid "Related Tickets"
-msgstr "&Auml;hnliche Vorg&auml;nge"
+msgstr "Ähnliche Vorgänge"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:81
@@ -6211,7 +6222,7 @@ msgstr "Aktion:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:153
 msgid "Select Action"
-msgstr "Aktion ausw&auml;hlen"
+msgstr "Aktion auswählen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:155
@@ -6221,7 +6232,7 @@ msgstr "Ticket bearbeiten"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:158
 msgid "Change Priority"
-msgstr "Priorit&auml;t &auml;ndern"
+msgstr "Priorität ändern"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:161
@@ -6243,7 +6254,7 @@ msgstr "Ticket schließen"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:170
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:365
 msgid "Reopen Ticket"
-msgstr "Ticket Wiederer&ouml;ffnen"
+msgstr "Ticket Wiedereröffnen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:175
@@ -6258,12 +6269,12 @@ msgstr "Entsperre E-Mailadresse"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:182
 msgid "Delete Ticket"
-msgstr "Ticket l&ouml;schen"
+msgstr "Ticket löschen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:187
 msgid "-Unchanged-"
-msgstr "-Unver&auml;ndert-"
+msgstr "-Unverändert-"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:207
@@ -6338,7 +6349,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:398
 msgid "Comments/Reasons for the transfer"
-msgstr "Gründe für die &Auml;nderung"
+msgstr "Gründe für die Änderung"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:398
@@ -6349,7 +6360,7 @@ msgstr "(Interner Hinweis)."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:403
 msgid "Transfer"
-msgstr "&Uuml;bertragen"
+msgstr "Übertragen"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:415

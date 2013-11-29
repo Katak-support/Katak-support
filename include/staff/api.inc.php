@@ -31,7 +31,7 @@ $showing=db_num_rows($result)?$pageNav->showing():'';
 $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
 $deletable=0;
 ?>
-<div class="msg">API Keys</div>
+<div class="msg"><?= _('API Keys')?></div>
 <hr>
 <div><b><?=$showing?></b></div>
 <form action="admin.php?t=api" method="POST" name="api" onSubmit="return checkbox_checker(document.forms['api'],1,0);">

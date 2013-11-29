@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NL Katak-support ver 1.0.0\n"
-"POT-Creation-Date: 2013-11-21 11:54+0100\n"
-"PO-Revision-Date: 2013-11-21 11:54+0100\n"
+"POT-Creation-Date: 2013-11-29 14:49+0100\n"
+"PO-Revision-Date: 2013-11-29 14:50+0100\n"
 "Last-Translator: Tomark <marco@soffix.com>\n"
 "Language-Team: LTLC <leon@ltlc.nl>\n"
 "Language: nl_NL\n"
@@ -3204,6 +3204,11 @@ msgstr "Bijlagen toevoegen"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:333
 msgid "Post Reply"
 msgstr "Antwoorden"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:34
+msgid "API Keys"
+msgstr "API Sleutel"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:43

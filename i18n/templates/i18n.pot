@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support ver 0.9.2\n"
-"POT-Creation-Date: 2013-11-21 11:21+0100\n"
-"PO-Revision-Date: 2013-11-21 11:21+0100\n"
+"POT-Creation-Date: 2013-11-29 15:20+0100\n"
+"PO-Revision-Date: 2013-11-29 15:20+0100\n"
 "Last-Translator: Tomark <marco@soffix.com>\n"
 "Language-Team:  <info@katak-support.com>\n"
 "MIME-Version: 1.0\n"
@@ -3121,6 +3121,11 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:273
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:333
 msgid "Post Reply"
+msgstr ""
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:34
+msgid "API Keys"
 msgstr ""
 
 #: C:\Program Files\Apache Software

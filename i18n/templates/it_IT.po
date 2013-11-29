@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support\n"
-"POT-Creation-Date: 2013-11-21 11:54+0100\n"
-"PO-Revision-Date: 2013-11-21 11:54+0100\n"
+"POT-Creation-Date: 2013-11-29 14:43+0100\n"
+"PO-Revision-Date: 2013-11-29 14:49+0100\n"
 "Last-Translator: Tomark <marco@soffix.com>\n"
 "Language-Team: info@katak-support.com\n"
 "Language: it_IT\n"
@@ -297,7 +297,7 @@ msgstr "Il programma è in versione %s mentre il database è in versione %s."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:31
 msgid "Possibly caused by incomplete upgrade."
-msgstr "Pu&ograve; esserea causa di un aggiornamento incompleto."
+msgstr "Può esserea causa di un aggiornamento incompleto."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:36
@@ -483,8 +483,8 @@ msgid ""
 "One or more of the selected emails is being used by a Dept. Remove "
 "association first."
 msgstr ""
-"Uno o pi&ugrave; indirizzi e-mail sono usati da dipartimenti. Rimuovere "
-"prima le associazioni."
+"Uno o più indirizzi e-mail sono usati da dipartimenti. Rimuovere prima le "
+"associazioni."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:200
@@ -545,7 +545,7 @@ msgid ""
 "One or more of the selected templates is being used by a Dept. Remove "
 "association first."
 msgstr ""
-"Uno o pi&ugrave; modelli sono usati da un dipartimento. Rimuovere prima "
+"Uno o più modelli sono usati da un dipartimento. Rimuovere prima "
 "l'associazione."
 
 #: C:\Program Files\Apache Software
@@ -649,7 +649,7 @@ msgid ""
 "One or more of the selected roles have users. Only empty roles can be "
 "deleted."
 msgstr ""
-"Uno o pi&ugrave; dei ruoli selezionati ha membri. Possono essere eliminati "
+"Uno o più dei ruoli selezionati possiede membri. Possono essere eliminati "
 "solo ruoli vuoti."
 
 #: C:\Program Files\Apache Software
@@ -1292,8 +1292,8 @@ msgstr "Il sistema è inattivo."
 msgid ""
 "Client interface is disabled and ONLY admins can access staff control panel."
 msgstr ""
-"La interfaccia cliente è disattivata e SOLO un amministratore pu&ograve; "
-"accedere al pannello di controllo."
+"La interfaccia cliente è disattivata e SOLO un amministratore può accedere "
+"al pannello di controllo."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/staff.inc.php:104
@@ -2044,7 +2044,7 @@ msgstr "&Egrave; richiesta la estensione GD"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.config.php:509
 msgid "PNG support required for Image Captcha"
-msgstr "Per la funzionalità captche è richiesto il supporto a immagini PNG."
+msgstr "Per la funzionalità captcha è richiesto il supporto a immagini PNG."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.config.php:610
@@ -2109,7 +2109,7 @@ msgstr "Richiesta la firma"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.dept.php:231
 msgid "Default department can not be private"
-msgstr "Il dipartimento predefinito non pu&ograve; essere privato"
+msgstr "Il dipartimento predefinito non può essere privato"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.dept.php:250
@@ -2587,7 +2587,7 @@ msgstr "Formato data non valido - deve essere MM/GG/AA"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1094
 msgid "Duedate can NOT be set on a closed ticket"
-msgstr "La data di scadenza NON pu&ograve; essere indicata su un ticket chiuso"
+msgstr "La data di scadenza NON può essere indicata su un ticket chiuso"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1096
@@ -2870,7 +2870,7 @@ msgid ""
 "detail as possible, so we can best assist you."
 msgstr ""
 "Compilare il questionario per aprire un nuovo ticket. Si prega di scrivere "
-"pi&ugrave; dettagli possibile, per permetterci di intervenire efficacemente."
+"più dettagli possibile, per permetterci di intervenire efficacemente."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:16
@@ -3195,9 +3195,14 @@ msgid "Post Reply"
 msgstr "Invio risposta"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:34
+msgid "API Keys"
+msgstr "Chiavi API"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:43
 msgid "API Key"
-msgstr ""
+msgstr "Chiavi API"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:45
@@ -3713,7 +3718,7 @@ msgid ""
 "can be appended to responses.&nbsp;(available as a choice for public "
 "departments)"
 msgstr ""
-"pu&ograve; essere aggiunta alla risposta.&nbsp;(disponibile come scelta per "
+"può essere aggiunta alla risposta.&nbsp;(disponibile come scelta per "
 "dipartimenti pubblici)"
 
 #: C:\Program Files\Apache Software
@@ -4429,7 +4434,7 @@ msgstr "nessuno"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:193
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:315
 msgid "My signature"
-msgstr ""
+msgstr "Propria firma"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:195
@@ -4479,7 +4484,7 @@ msgid ""
 "admins</b> to login to Staff Control Panel"
 msgstr ""
 "In modo offline viene disattivata la interfaccia clienti e <b>solo</b> "
-"l'amministratore di sistema pu&ograve; entrare nel pannello di controllo."
+"l'amministratore di sistema può entrare nel pannello di controllo."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:39
@@ -4550,8 +4555,7 @@ msgstr "Dimensione pagina predefinita:"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:91
 msgid "Global setting which can be overwritten by single staff members."
 msgstr ""
-"Impostazione generale che pu&ograve; essere sovrascritta dai singoli "
-"operatori."
+"Impostazione generale che può essere sovrascritta dai singoli operatori."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:94
@@ -4850,8 +4854,8 @@ msgstr "Riapertura ticket da parte del cliente:"
 msgid ""
 "Days after which the ticket can no longer be re-opened. 0 means never reopen"
 msgstr ""
-"Numero di giorni dopo il quale il ticket non pu&ograve; essere riaperto. 0 "
-"per evitare sempre la riapertura."
+"Numero di giorni dopo il quale il ticket non può essere riaperto. 0 per "
+"impedire sempre la riapertura."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:312
@@ -4930,8 +4934,7 @@ msgstr "Attivare recupero mail POP/IMAP"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:351
 msgid "Global setting which can be disabled at email level"
-msgstr ""
-"Impostazione globale che pu&ograve; essere disattivata a livello di e-mail"
+msgstr "Impostazione globale che può essere disattivata a livello di e-mail"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:352
@@ -5034,7 +5037,7 @@ msgid ""
 "disable)"
 msgstr ""
 "Avviso inviato quando un operatore crea un ticket a nome di un utente "
-"(l'operatore pu&ograve; disattivare l'invio)"
+"(l'operatore può disattivare l'invio)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:437
@@ -5071,8 +5074,8 @@ msgstr "Avvisi &amp; allarmi agli operatori"
 msgid ""
 "Alerts sent to staff use 'Default Alert Email' set above as FROM address."
 msgstr ""
-"Gli avvisi spediti agli operatori usano 'E-mail per avvisi' impostato "
-"pi&ugrave; sopra come indirizzo mittente"
+"Gli avvisi spediti agli operatori usano 'E-mail per avvisi' impostato più "
+"sopra come indirizzo mittente"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:455
@@ -5139,8 +5142,8 @@ msgid ""
 "The system administrator gets an alert by default. Select additional "
 "recipients below"
 msgstr ""
-"L'amministratore di sistema riceve comunque un avviso. Selezionare "
-"pi&ugrave; sotto ulteriori destinatari"
+"L'amministratore di sistema riceve comunque un avviso. Selezionare più sotto "
+"ulteriori destinatari"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:495
@@ -5327,19 +5330,19 @@ msgstr "Deseleziona tutto"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:61
 msgid "Can <b>View Unassigned</b> Tickets"
-msgstr "Pu&ograve; <b>vedere</b> ticket non assegnati"
+msgstr "Può <b>vedere</b> ticket non assegnati"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:65
 msgid "Ability to view unassigned tickets. (Dept Manager are always allowed)."
 msgstr ""
-"Possibilità di vedere i ticket non assegnati (Il manager del dip. lo "
-"pu&ograve; sempre fare)."
+"Possibilità di vedere i ticket non assegnati (Il manager del dip. lo può "
+"sempre fare)."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:68
 msgid "Can <b>Create</b> Tickets"
-msgstr "Pu&ograve; <b>creare</b> ticket"
+msgstr "Può <b>creare</b> ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:72
@@ -5349,7 +5352,7 @@ msgstr "Possibilità di aprire nuovi ticket."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:75
 msgid "Can <b>Edit</b> Tickets"
-msgstr "Pu&ograve; <b>modificare</b> ticket"
+msgstr "Può <b>modificare</b> ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:79
@@ -5359,7 +5362,7 @@ msgstr "Possibilità di cambiare i dati di un ticket."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:82
 msgid "Can <b>Close</b> Tickets"
-msgstr "Pu&ograve; <b>chiudere</b> ticket"
+msgstr "Può <b>chiudere</b> ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:86
@@ -5373,7 +5376,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:89
 msgid "Can <b>Change</b> Tickets Priority"
-msgstr "Pu&ograve; <b>cambiare</b> priorità ai ticket"
+msgstr "Può <b>cambiare</b> priorità ai ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:93
@@ -5384,7 +5387,7 @@ msgstr "Possibilità di cambiare la priorità dei ticket."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:96
 msgid "Can <b>Transfer</b> Tickets"
-msgstr "Pu&ograve; <b>trasferire</b> ticket"
+msgstr "Può <b>trasferire</b> ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:100
@@ -5394,7 +5397,7 @@ msgstr "Possibilità di trasferire un ticket da un dipartimento ad un altro."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:103
 msgid "Can <b>Assign</b> Tickets"
-msgstr "Pu&ograve; <b>assegnare</b> ticket"
+msgstr "Può <b>assegnare</b> ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:107
@@ -5404,7 +5407,7 @@ msgstr "Possibilità di assegnare un ticket ad un operatore."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:110
 msgid "Can <b>Delete</b> Tickets"
-msgstr "Pu&ograve; <b>eliminare</b> ticket"
+msgstr "Può <b>eliminare</b> ticket"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:114
@@ -5414,7 +5417,7 @@ msgstr "<b>NB</b>: i ticket eliminati non si possono recuperare."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:117
 msgid "Can <b>Ban</b> Emails"
-msgstr "Pu&ograve; <b>bloccare</b> e-mail"
+msgstr "Può <b>bloccare</b> e-mail"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:121
@@ -5426,12 +5429,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:124
 msgid "Can <b>Manage</b> Std. Replies"
-msgstr "Pu&ograve; <b>amministrare</b> risposte predefinite"
+msgstr "Può <b>amministrare</b> risposte predefinite"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:128
 msgid "Ability to add/update/disable/delete standard responses."
-msgstr "Pu&ograve; aggiungere/modificare/cancellare risposte predefinite."
+msgstr "Può aggiungere/modificare/cancellare risposte predefinite."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:8
@@ -5479,7 +5482,7 @@ msgstr "Aggiornamento: %s %s"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:10
 msgid "To reset the password enter a new one below (min. 6 chars.)"
-msgstr "Per resettare la password scriverne una pi&ugrave; sotto (min. 6 car.)"
+msgstr "Per resettare la password scriverne una più sotto (min. 6 car.)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:14
@@ -5781,8 +5784,8 @@ msgid ""
 "Meant to give the user the ticket ID which can be used to check the status "
 "online."
 msgstr ""
-"Pensata per dare all'utente l'ID del ticket, che pu&ograve; essere "
-"utilizzato per controllarne lo stato online."
+"Pensata per dare all'utente l'ID del ticket, che può essere utilizzato per "
+"controllarne lo stato online."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:41

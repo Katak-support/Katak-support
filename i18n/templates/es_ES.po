@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak support 1.0.0\n"
-"POT-Creation-Date: 2013-11-21 11:54+0100\n"
-"PO-Revision-Date: 2013-11-21 11:54+0100\n"
+"POT-Creation-Date: 2013-11-29 14:50+0100\n"
+"PO-Revision-Date: 2013-11-29 15:20+0100\n"
 "Last-Translator: Tomark <marco@soffix.com>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -95,8 +95,8 @@ msgstr ""
 msgid ""
 "Forgot your login info? Please <a href=\"open.php\">open a new ticket</a>."
 msgstr ""
-"&iquest;Olvidó su información para iniciar sesión? Por favor <a href=\"open."
-"php\">abra un nuevo caso</a>"
+"¿Olvidó su información para iniciar sesión? Por favor <a href=\"open.php"
+"\">abra un nuevo caso</a>"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/login.php:76
@@ -819,12 +819,12 @@ msgstr "Acción desconocida"
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:515
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:128
 msgid "PREFERENCES"
-msgstr ""
+msgstr "PREFERENCIAS"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:516
 msgid "ATTACHMENTS"
-msgstr ""
+msgstr "ADJUNTOS"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:517
@@ -944,12 +944,12 @@ msgstr "No fue posible recuperar la información sobre el departamento # %s"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:650
 msgid "DEPARTMENTS"
-msgstr ""
+msgstr "DEPARTAMENTOS"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:651
 msgid "ADD NEW DEPT."
-msgstr ""
+msgstr "NUEVO DEPARTAMENTO"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:679
@@ -1005,9 +1005,9 @@ msgstr "Usted no tiene acceso a ese caso"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/autocron.php:38
-#, fuzzy, php-format
+#, php-format
 msgid "cron job executed"
-msgstr "Se ejecutaron las tareas programadas [%s]"
+msgstr "Se ejecutaron las tareas programadas"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:61
@@ -1283,7 +1283,7 @@ msgstr "Debe cambiar su contraseña antes de continuar."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/staff.inc.php:68
 msgid "Session timed out due to inactivity"
-msgstr ""
+msgstr "Sesión cerrada por inactividad"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/staff.inc.php:76
@@ -1397,12 +1397,12 @@ msgstr "Hubo un error. Intente de nuevo"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:108
 msgid "STANDARD REPLIES"
-msgstr ""
+msgstr "RESPUESTAS PREDEFINIDAS"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:109
 msgid "NEW STANDARD REPLY"
-msgstr ""
+msgstr "NUEVA RESPOSTA PREDEFINIDA"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:29
@@ -1974,9 +1974,8 @@ msgstr "NUEVO CASO"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/api/cron.php:20
-#, fuzzy
 msgid "External cron job executed"
-msgstr "Se ejecutaron las tareas programadas [%s]"
+msgstr "Se ejecutaron las tareas externa programadas"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.api.php:25
@@ -2833,7 +2832,7 @@ msgstr "(mínimo 3 caracteres)"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:114
 msgid "(Only letters and numbers allowed)"
-msgstr ""
+msgstr "(Sólo letras y números permitidos)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:121
@@ -3248,6 +3247,11 @@ msgid "Post Reply"
 msgstr "Publicar respuesta"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:34
+msgid "API Keys"
+msgstr "Clave API"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:43
 msgid "API Key"
 msgstr "Clave API"
@@ -3293,7 +3297,7 @@ msgstr "Lista de índices"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:91
 msgid "Are you sure you want to ENABLE selected keys?"
-msgstr "&iquest;Está seguro que quiere ACTIVAR las claves seleccionadas?"
+msgstr "¿Está seguro que quiere ACTIVAR las claves seleccionadas?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:96
@@ -3318,7 +3322,7 @@ msgstr "Deshabilitar"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:97
 msgid "Are you sure you want to DISABLE selected keys?"
-msgstr "&iquest;Está seguro que quiere DESACTIVAR las claves seleccionadas?"
+msgstr "¿Está seguro que quiere DESACTIVAR las claves seleccionadas?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:100
@@ -3333,7 +3337,7 @@ msgstr "Eliminar"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:101
 msgid "Are you sure you want to DELETE selected keys?"
-msgstr "&iquest;Está seguro que quiere ELIMINAR las claves seleccionadas?"
+msgstr "¿Está seguro que quiere ELIMINAR las claves seleccionadas?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:108
@@ -3642,7 +3646,7 @@ msgstr "Eliminar de la lista"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:133
 msgid "Are you sure you want to REMOVE selected email from ban list?"
 msgstr ""
-"&iquest;Está seguro que desea quitar de la lista de direcciones de correo "
+"¿Está seguro que desea quitar de la lista de direcciones de correo "
 "electrónico prohibidas en el sistema la que seleccionó?"
 
 #: C:\Program Files\Apache Software
@@ -3871,7 +3875,7 @@ msgstr "Hacer público"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:74
 msgid "Are you sure you want to make selected depts(s) public?"
 msgstr ""
-"&iquest;Está seguro de que desea convertir en públicos los departamentos que "
+"¿Está seguro de que desea convertir en públicos los departamentos que "
 "seleccionó?"
 
 #: C:\Program Files\Apache Software
@@ -3883,7 +3887,7 @@ msgstr "Hacer privado"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:76
 msgid "Are you sure you want to make selected depts(s) private?"
 msgstr ""
-"&iquest;Está seguro de que desea convertir en privados los departamentos que "
+"¿Está seguro de que desea convertir en privados los departamentos que "
 "seleccionó?"
 
 #: C:\Program Files\Apache Software
@@ -3894,8 +3898,7 @@ msgstr "Eliminar departamento/s"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:78
 msgid "Are you sure you want to DELETE selected depts(s)?"
-msgstr ""
-"&iquest;Está seguro de que desea borrar los departamentos que seleccionó?"
+msgstr "¿Está seguro de que desea borrar los departamentos que seleccionó?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:4
@@ -3909,9 +3912,8 @@ msgstr "Actualizar el caso #"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:36
-#, fuzzy
 msgid "Back to Ticket"
-msgstr "Actualizar caso"
+msgstr "Volver al caso"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:67
@@ -4175,7 +4177,7 @@ msgstr "Puerto SMTP"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:176
 msgid "Authentication Required?"
-msgstr "&iquest;Se necesita autentificación?"
+msgstr "¿Se necesita autentificación?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:180
@@ -4253,7 +4255,7 @@ msgstr "Borrar los correos electrónicos seleccionados"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:74
 msgid "Are you sure you want to DELETE selected emails?"
-msgstr "&iquest;Borrar los correos electrónicos seleccionados?"
+msgstr "¿Borrar los correos electrónicos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:41
@@ -4288,18 +4290,17 @@ msgstr "<b>Sí</b>"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:66
 msgid "Are you sure you want to make selected services active?"
-msgstr "&iquest;Está seguro de que desea activar los servicios seleccionados?"
+msgstr "¿Está seguro de que desea activar los servicios seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:68
 msgid "Are you sure you want to DISABLE selected services?"
-msgstr ""
-"&iquest;Está seguro de que desea desactivar los servicios seleccionados?"
+msgstr "¿Está seguro de que desea desactivar los servicios seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:70
 msgid "Are you sure you want to DELETE selected services?"
-msgstr "&iquest;Borrar los servicios seleccionados?"
+msgstr "¿Borrar los servicios seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/login.tpl.php:1
@@ -4450,7 +4451,7 @@ msgstr "Visible para el cliente como respuesta al caso."
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:86
 msgid "Std. reply:"
-msgstr ""
+msgstr "Respuesta predef.:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:89
@@ -5479,9 +5480,8 @@ msgstr "Puede <b>asignar</b> casos"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:107
-#, fuzzy
 msgid "Ability to assign tickets to a staff member."
-msgstr "Posibilidad de crear casos en nombre del usuario!"
+msgstr "Posibilidad de asignar casos a miembros del equipo de soporte."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:110
@@ -5541,17 +5541,17 @@ msgstr "Creado el"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:63
 msgid "Are you sure you want to ENABLE selected role(s)"
-msgstr "&iquest;Quiere habilitar los grupos seleccionados?"
+msgstr "¿Quiere habilitar los grupos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:65
 msgid "Are you sure you want to DISABLE selected role(s)"
-msgstr "&iquest;Quiere deshabilitar los grupos seleccionados?"
+msgstr "¿Quiere deshabilitar los grupos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:67
 msgid "Are you sure you want to DELETE selected role(s)"
-msgstr "&iquest;Quiere borrar los grupos seleccionados?"
+msgstr "¿Quiere borrar los grupos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:8
@@ -5682,7 +5682,7 @@ msgstr "último inicio de sesión"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:79
 msgid "Are you sure you want to ENABLE selected user(s)?"
-msgstr "&iquest;Está seguro de querer habilitar los usuarios seleccionados?"
+msgstr "¿Está seguro de querer habilitar los usuarios seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:80
@@ -5692,12 +5692,12 @@ msgstr "Bloquear"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:81
 msgid "Are you sure you want to LOCK selected user(s)?"
-msgstr "&iquest;Quiere BLOQUEAR el/los usuario/s seleccionado/s?"
+msgstr "¿Quiere BLOQUEAR el/los usuario/s seleccionado/s?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:83
 msgid "Are you sure you want to DELETE selected user(s)?"
-msgstr "&iquest;Quiere ELIMINAR el/los usuario/s seleccionado/s?"
+msgstr "¿Quiere ELIMINAR el/los usuario/s seleccionado/s?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:54
@@ -5738,17 +5738,17 @@ msgstr "Ordenar por fecha de actualización"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:143
 msgid "Are you sure you want to ENABLE selected entries?"
-msgstr "&iquest;Está seguro de habilitar lo que seleccionó?"
+msgstr "¿Está seguro de habilitar lo que seleccionó?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:145
 msgid "Are you sure you want to DISABLE selected entries?"
-msgstr "&iquest;Está seguro de deshabilitar lo que seleccionó?"
+msgstr "¿Está seguro de deshabilitar lo que seleccionó?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:147
 msgid "Are you sure you want to DELETE selected entries?"
-msgstr "&iquest;Está seguro de borrar lo que seleccionó?"
+msgstr "¿Está seguro de borrar lo que seleccionó?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:13
@@ -6031,7 +6031,7 @@ msgstr "Borrar plantilla(s)"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:96
 msgid "Are you sure you want to DELETE selected template(s)?"
-msgstr "&iquest;Está seguro de borrar las plantilla(s) seleccionada(s)?"
+msgstr "¿Está seguro de borrar las plantilla(s) seleccionada(s)?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:105
@@ -6284,14 +6284,13 @@ msgstr "Reabrir"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:473
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:490
 msgid "Are you sure you want to reopen selected tickets?"
-msgstr "&iquest;Desea reabrir los casos seleccionados?"
+msgstr "¿Desea reabrir los casos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:480
 msgid "Are you sure you want to mark selected tickets overdue/stale?"
 msgstr ""
-"&iquest;Está seguro de que desea señalar los casos como atrasados/"
-"desatendidos?"
+"¿Está seguro de que desea señalar los casos como atrasados/desatendidos?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:481
@@ -6304,12 +6303,12 @@ msgstr "Cerrar"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:482
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:488
 msgid "Are you sure you want to close selected tickets?"
-msgstr "&iquest;Desea cerrar los casos seleccionados?"
+msgstr "¿Desea cerrar los casos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:495
 msgid "Are you sure you want to DELETE selected tickets?"
-msgstr "&iquest;Desea ELIMINAR los casos seleccionados?"
+msgstr "¿Desea ELIMINAR los casos seleccionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:6
