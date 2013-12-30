@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Katak support 1.0.0\n"
 "POT-Creation-Date: 2013-11-29 14:49+0100\n"
-"PO-Revision-Date: 2013-12-24 17:32+0300\n"
+"PO-Revision-Date: 2013-12-26 18:33+0300\n"
 "Last-Translator: Victor Goryachko <vicgor@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.dept.php:250
 msgid " Dept. Error occured"
-msgstr ""
+msgstr "Ошибка отдела"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:359
@@ -220,7 +220,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:387
 msgid "-Select Target Dept.-"
-msgstr ""
+msgstr "-Выберите целевой отдел-"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:187
@@ -529,7 +529,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:9
 msgid "Add New Role"
-msgstr ""
+msgstr "Добавить новую роль"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reply.inc.php:8
@@ -539,7 +539,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:105
 msgid "Add New Template"
-msgstr ""
+msgstr "Добавить новый шаблон"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:111
@@ -574,17 +574,17 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:6
 msgid "Administrator"
-msgstr ""
+msgstr "Администратор"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:460
 msgid "Administrators"
-msgstr ""
+msgstr "Администраторы"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:290
 msgid "Advanced"
-msgstr ""
+msgstr "Расширенный"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:138
@@ -685,7 +685,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:306
 msgid "Already in-use email"
-msgstr ""
+msgstr "e-mail уже используется"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:299
@@ -866,7 +866,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:355
 msgid "Ascending"
-msgstr ""
+msgstr "По возрастанию"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:445
@@ -1020,7 +1020,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:110
 msgid "Autoresponders"
-msgstr ""
+msgstr "Автоответы"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:422
@@ -1208,7 +1208,7 @@ msgstr "Текст на картинке:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:95
 msgid "Category/Dept"
-msgstr ""
+msgstr "Категория/Отдел"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reply.inc.php:40
@@ -1304,7 +1304,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/viewticket.inc.php:37
 msgid "Closing date:"
-msgstr ""
+msgstr "Выбор даты:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:398
@@ -1413,23 +1413,23 @@ msgstr "Дата и время"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:224
 msgid "Date &amp; Time Format:"
-msgstr ""
+msgstr "Формат даты и времени:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:89
 msgid "Date Added"
-msgstr ""
+msgstr "Дата добавлена"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:218
 msgid "Date Format:"
-msgstr ""
+msgstr "Формат даты"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:80
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:324
 msgid "Date Span:"
-msgstr ""
+msgstr "Диапазон дат"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:151
@@ -1439,7 +1439,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.config.php:469
 msgid "Date format required"
-msgstr ""
+msgstr "Требуется формат даты"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.config.php:470
@@ -1459,7 +1459,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:255
 msgid "Daylight Saving:"
-msgstr ""
+msgstr "Летнее время:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:46
@@ -1520,7 +1520,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:236
 msgid "Default Timezone:"
-msgstr ""
+msgstr "Часовой пояс по умолчанию:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.dept.php:231
@@ -1570,17 +1570,17 @@ msgstr "Удалить"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:77
 msgid "Delete Dept(s)"
-msgstr ""
+msgstr "Удалить отдел(ы)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:147
 msgid "Delete Messages"
-msgstr ""
+msgstr "Удалить сообщения"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:73
 msgid "Delete Selected Emails"
-msgstr ""
+msgstr "Удалить выбранные email"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:95
@@ -1660,7 +1660,7 @@ msgstr "Отделы"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:29
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:69
 msgid "Dept"
-msgstr ""
+msgstr "Отдел"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:42
@@ -1675,22 +1675,22 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:35
 msgid "Dept Email:"
-msgstr ""
+msgstr "Email отдела"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:57
 msgid "Dept Manager:"
-msgstr ""
+msgstr "Начальник отдела:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:28
 msgid "Dept Name:"
-msgstr ""
+msgstr "Название отдела:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:318
 msgid "Dept Signature"
-msgstr ""
+msgstr "Подпись отдела"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:195
@@ -1700,12 +1700,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:85
 msgid "Dept Signature:"
-msgstr ""
+msgstr "Подпись отдела:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:77
 msgid "Dept Type"
-msgstr ""
+msgstr "Тип отдела"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:27
@@ -1736,12 +1736,12 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:62
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:351
 msgid "Dept."
-msgstr ""
+msgstr "Отдел"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:17
 msgid "Dept. Name"
-msgstr ""
+msgstr "Имя отдела"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:380
@@ -1762,12 +1762,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:300
 msgid "Dept:"
-msgstr ""
+msgstr "Отдел:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:354
 msgid "Descending"
-msgstr ""
+msgstr "По убыванию"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:40
@@ -2648,7 +2648,7 @@ msgstr "Неверно - попробуйте еще!"
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1082
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1155
 msgid "Invalid Priority"
-msgstr ""
+msgstr "Неверный приоритет"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1081
@@ -2677,24 +2677,24 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:66
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1187
 msgid "Invalid file type"
-msgstr ""
+msgstr "Неверный тип файла"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:42
 msgid "Invalid input"
-msgstr ""
+msgstr "Неверный ввод"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/login.php:33
 #: Foundation\Apache2.2\htdocs\katak/admin/login.php:36
 msgid "Invalid login"
-msgstr ""
+msgstr "Неверный логин"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.email.php:329
 #, php-format
 msgid "Invalid login. Check %s settings"
-msgstr ""
+msgstr "Неверный логин. Проверьте настройки %s"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/ajax.php:34
@@ -2705,12 +2705,12 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/login.tpl.php:1
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:3
 msgid "Invalid path"
-msgstr ""
+msgstr "Неверный путь"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1429
 msgid "Invalid source - "
-msgstr ""
+msgstr "Неверный источник -"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.config.php:612
@@ -2761,17 +2761,17 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:31
 msgid "Last Login"
-msgstr ""
+msgstr "Последний логин"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:113
 msgid "Last Message:"
-msgstr ""
+msgstr "Последнее сообщение:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:24
 msgid "Last Name:"
-msgstr ""
+msgstr "Фамилия:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:470
@@ -2810,14 +2810,14 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:80
 msgid "Lock"
-msgstr ""
+msgstr "Блокировать"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:95
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:125
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:54
 msgid "Locked"
-msgstr ""
+msgstr "Блокировано"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:437
@@ -2844,12 +2844,12 @@ msgstr "Зашел как"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/login.tpl.php:23
 msgid "Login"
-msgstr ""
+msgstr "Логин"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:127
 msgid "MY PROFILE"
-msgstr ""
+msgstr "МОЙ ПРОФИЛЬ"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:447
@@ -2880,12 +2880,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:21
 msgid "Manager"
-msgstr ""
+msgstr "Менеджер"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:161
 msgid "Mark Overdue"
-msgstr ""
+msgstr "Пометить \"просрочено\""
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:288
@@ -2900,12 +2900,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/attachment.inc.php:49
 msgid "Maximum File Size:"
-msgstr ""
+msgstr "Максимальный размер файла:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:10
 msgid "Maximum Page size:"
-msgstr ""
+msgstr "Максимальный размер страницы"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.email.php:303
@@ -2996,12 +2996,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:85
 msgid "Mobile"
-msgstr ""
+msgstr "Мобильный"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:96
 msgid "Mobile Phone:"
-msgstr ""
+msgstr "Мобильный телефон:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:108
@@ -3016,29 +3016,29 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.api.php:52
 msgid "Must be at least 3 words long."
-msgstr ""
+msgstr "Должно быть по крайней мере 3 слова"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:54
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:321
 msgid "Must be at least 6 characters"
-msgstr ""
+msgstr "Должно быть по крайней мере 5 символов"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:41
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:56
 msgid "My Account"
-msgstr ""
+msgstr "Моя учетная запись"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:56
 msgid "My Preference"
-msgstr ""
+msgstr "Мое предпочтение"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:4
 msgid "My Preferences"
-msgstr ""
+msgstr "Мои предпочтения"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:5
@@ -3054,7 +3054,7 @@ msgstr "Мои запросы"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:193
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:315
 msgid "My signature"
-msgstr ""
+msgstr "Моя подпись"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:109
@@ -3081,12 +3081,12 @@ msgstr "Имя"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:78
 msgid "Name (First, Last):"
-msgstr ""
+msgstr "Имя, Фамилия:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.msgtpl.php:173
 msgid "Name already in use"
-msgstr ""
+msgstr "Имя уже используется"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.msgtpl.php:84
@@ -3109,7 +3109,7 @@ msgstr "Новый отдел"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:15
 msgid "New Email"
-msgstr ""
+msgstr "Новый  Email"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:10
@@ -3227,7 +3227,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:115
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:424
 msgid "New Ticket:"
-msgstr ""
+msgstr "Новый запрос:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:63
@@ -3258,7 +3258,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:120
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:127
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:70
@@ -3324,17 +3324,17 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:80
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:313
 msgid "None"
-msgstr ""
+msgstr "Нет"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:97
 msgid "None (Disable Logger)"
-msgstr ""
+msgstr "Нет (логгер выключен)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:104
 msgid "None (Disable)"
-msgstr ""
+msgstr "Нет (Выключено)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:366
@@ -3394,13 +3394,13 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:440
 #, php-format
 msgid "OPEN TICKETS (%s)"
-msgstr ""
+msgstr "ОТКРЫТЫЕ ЗАПРОСЫ (%s)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:452
 #, php-format
 msgid "OVERDUE (%s)"
-msgstr ""
+msgstr "ПРОСРОЧЕНО (%s)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:48
@@ -3416,12 +3416,12 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:34
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:90
 msgid "Office Phone:"
-msgstr ""
+msgstr "Рабочий телефон:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:42
 msgid "Offline"
-msgstr ""
+msgstr "Оффлайн"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:37
@@ -3454,7 +3454,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:41
 msgid "Online"
-msgstr ""
+msgstr "Онлайн"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/attachment.inc.php:33
@@ -3496,12 +3496,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:49
 msgid "Other"
-msgstr ""
+msgstr "Другие"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:134
 msgid "Other Variables"
-msgstr ""
+msgstr "Другие переменные"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/offline.php:29
@@ -3525,7 +3525,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:430
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:479
 msgid "Overdue"
-msgstr ""
+msgstr "Просрочено"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:485
@@ -3535,7 +3535,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:37
 msgid "Overdue Tickets"
-msgstr ""
+msgstr "Просроченные запросы"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:164
@@ -3835,7 +3835,7 @@ msgstr "Приоритет"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:218
 msgid "Priority Changed"
-msgstr ""
+msgstr "Приоритет изменен"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:215
@@ -3912,12 +3912,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:115
 msgid "Protocol"
-msgstr ""
+msgstr "Протокол"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:79
 msgid "Public"
-msgstr ""
+msgstr "Публичный"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:102
@@ -3953,12 +3953,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:534
 msgid "REPORTS"
-msgstr ""
+msgstr "ОТЧЕТЫ"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:268
 msgid "Random  (recommended)"
-msgstr ""
+msgstr "Случайный (рекомендуется)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:415
@@ -3978,13 +3978,13 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reports.inc.php:85
 msgid "Refresh"
-msgstr ""
+msgstr "Обновить"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:59
 #, php-format
 msgid "Related Tickets"
-msgstr ""
+msgstr "Связанные запросы"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:164
@@ -4007,7 +4007,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:472
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:489
 msgid "Reopen"
-msgstr ""
+msgstr "Переоткрыть"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:170
@@ -4053,7 +4053,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.api.php:50
 msgid "Required"
-msgstr ""
+msgstr "Требуется"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:87
@@ -4078,13 +4078,13 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:404
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:446
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/attachment.inc.php:78
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:505
 msgid "Reset Changes"
-msgstr ""
+msgstr "Сбросить изменения"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:157
@@ -4104,54 +4104,54 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:358
 msgid "Results Per Page:"
-msgstr ""
+msgstr "Результатов на страницу"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:28
 msgid "Role"
-msgstr ""
+msgstr "Роль"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:332
 #, php-format
 msgid "Role %s created successfully"
-msgstr ""
+msgstr "Роль %s успешно создана"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:325
 #, php-format
 msgid "Role %s updated successfully"
-msgstr ""
+msgstr "Роль %s успешно обновлена"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:16
 msgid "Role Name"
-msgstr ""
+msgstr "Имя роли"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:28
 msgid "Role Name:"
-msgstr ""
+msgstr "Имя роли:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:35
 msgid "Role Status:"
-msgstr ""
+msgstr "Статус роли:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:45
 msgid "Role name already exists"
-msgstr ""
+msgstr "Имя роли уже существует"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:38
 msgid "Role name must be at least 5 chars."
-msgstr ""
+msgstr "Имя роли должно состоять по крайне мере из 5 букв"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:36
 msgid "Role name required"
-msgstr ""
+msgstr "Требуется имя роли"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:26
@@ -4163,7 +4163,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:338
 msgid "Role required"
-msgstr ""
+msgstr "Требуется роль"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:166
@@ -4226,7 +4226,7 @@ msgstr "Сохранить изменения"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:339
 msgid "Scan"
-msgstr ""
+msgstr "Сканировать"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:63
@@ -4239,7 +4239,7 @@ msgstr "Найти"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:53
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:54
 msgid "Search Results"
-msgstr ""
+msgstr "Результаты поиска"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:61
@@ -4264,7 +4264,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:118
 msgid "Select"
-msgstr ""
+msgstr "Выбрать"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:153
@@ -4303,7 +4303,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:58
 msgid "Select None"
-msgstr ""
+msgstr "Выбрать Нет"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/open.inc.php:59
@@ -4330,12 +4330,12 @@ msgstr "Выбрать роль"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:46
 msgid "Select Source"
-msgstr ""
+msgstr "Выбрать источник"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:97
 msgid "Select Template"
-msgstr ""
+msgstr "Выбрать шаблон"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:117
@@ -4429,7 +4429,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:30
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:34
@@ -4446,7 +4446,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.pagenate.php:75
 msgid "Showing"
-msgstr ""
+msgstr "Показано"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.dept.php:228
@@ -4463,34 +4463,34 @@ msgstr "Подпись:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:407
 msgid "Sort By Category"
-msgstr ""
+msgstr "Сортировать по катергории"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:404
 msgid "Sort By Date"
-msgstr ""
+msgstr "Сортировать по дате"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:46
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:89
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:50
 msgid "Sort By Date of Creation"
-msgstr ""
+msgstr "Сортировать по дате создания"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:408
 msgid "Sort By Priority"
-msgstr ""
+msgstr "Сортировать по приоритету"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:403
 msgid "Sort By Ticket ID"
-msgstr ""
+msgstr "Сортировать по № запроса"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:93
 msgid "Sort By Title"
-msgstr ""
+msgstr "сортировать по заголовку"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:96
@@ -4510,38 +4510,38 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/tickets.inc.php:69
 msgid "Sort by Status"
-msgstr ""
+msgstr "сортировать по статусу"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/tickets.inc.php:67
 msgid "Sort by Ticket Number"
-msgstr ""
+msgstr "C"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:86
 msgid "Sort by email"
-msgstr ""
+msgstr "Сортировать по email"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:47
 msgid "Sort by name"
-msgstr ""
+msgstr "Сортировать по имени"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:343
 msgid "Sort by:"
-msgstr ""
+msgstr "Сортировать по:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:106
 msgid "Source:"
-msgstr ""
+msgstr "Источник:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:33
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:107
 msgid "Staff"
-msgstr ""
+msgstr "Сотрудники"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:40
@@ -5124,7 +5124,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:43
 msgid "Ticket Source:"
-msgstr ""
+msgstr "Источник запроса:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/header.inc.php:32
@@ -5148,7 +5148,7 @@ msgstr "История запроса"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1118
 msgid "Ticket Updated"
-msgstr ""
+msgstr "Запрос обновлен"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:143
@@ -5298,7 +5298,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:192
 msgid "Ticket updated successfully"
-msgstr ""
+msgstr "Запрос успешно обновлен"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/client/viewticket.inc.php:131
@@ -5330,7 +5330,7 @@ msgstr "Формат времени"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.config.php:468
 msgid "Time format required"
-msgstr ""
+msgstr "Требуется формат времени"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:115
@@ -5347,7 +5347,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:70
 msgid "Title already exists!"
-msgstr ""
+msgstr "Заголовок уже существует!"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:167
@@ -5357,7 +5357,7 @@ msgstr "Требуется заголовок"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:44
 msgid "Title/subject required"
-msgstr ""
+msgstr "Требуется заголовок/тема"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/attachment.inc.php:70
@@ -5468,7 +5468,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:422
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:499
 msgid "Uknown command!"
-msgstr ""
+msgstr "Неизвестная команда!"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:177
@@ -5717,7 +5717,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.dept.php:250
 msgid "Unable to update "
-msgstr ""
+msgstr "Ну удалось обновить"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.email.php:379
@@ -5754,31 +5754,31 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:98
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:329
 msgid "Unknown action"
-msgstr ""
+msgstr "Неизвестное действие"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:128
 #, php-format
 msgid "Unknown action %s"
-msgstr ""
+msgstr "Неизвестное действие %s"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:123
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:205
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:258
 msgid "Unknown command"
-msgstr ""
+msgstr "Неизвестная команда"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:231
 #: Foundation\Apache2.2\htdocs\katak/include/class.msgtpl.php:180
 msgid "Unknown template"
-msgstr ""
+msgstr "Неизвестный шаблон"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:29
 msgid "Unknown ticket ID#"
-msgstr ""
+msgstr "Неизвестный № запроса"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/admin.php:210
@@ -5789,7 +5789,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:6
 msgid "Update Department"
-msgstr ""
+msgstr "Обновить отдел"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:134
@@ -5859,17 +5859,17 @@ msgstr "Имя пользователя"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:292
 msgid "Username already in-use"
-msgstr ""
+msgstr "Имя пользователя уже занято"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.email.php:284
 msgid "Username missing"
-msgstr ""
+msgstr "Пропущено имя пользователя"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:285
 msgid "Username required"
-msgstr ""
+msgstr "Требуется имя пользователя"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:11
@@ -5886,12 +5886,12 @@ msgstr "Пользователи"
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:95
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:54
 msgid "Vacation"
-msgstr ""
+msgstr "Отпуск"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:133
 msgid "Vacation Mode"
-msgstr ""
+msgstr "Режим отпуска"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.api.php:28
@@ -5926,7 +5926,7 @@ msgstr "Необходим корректный № телефона: допус
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:129
 msgid "Variables"
-msgstr ""
+msgstr "Переменные"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:132
@@ -5959,7 +5959,7 @@ msgstr "Добро пожаловать в центр поддержки TOPBY"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:17
 #: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:93
 msgid "Warnings"
-msgstr ""
+msgstr "Предупреждения"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/attachment.inc.php:59
@@ -6240,7 +6240,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/login.php:75
 msgid "minutes"
-msgstr ""
+msgstr "минуты"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:94
@@ -6251,7 +6251,7 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:188
 msgid "none"
-msgstr ""
+msgstr "нет"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:360
