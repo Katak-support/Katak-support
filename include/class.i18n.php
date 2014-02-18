@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*********************************************************************
     class.i18n.php
     
@@ -26,10 +26,11 @@ class i18n {
     static function getLanguages() {
 
        $langs[] = new i18n("en", "English (default)");
-       $langs[] = new i18n("it_IT", "Italiano");
        $langs[] = new i18n("de_DE", "Deutsch");
        $langs[] = new i18n("es_ES", "Espa&ntilde;ol");
+       $langs[] = new i18n("it_IT", "Italiano");
        $langs[] = new i18n("nl_NL", "Nederlands");
+       $langs[] = new i18n("pt_BR", "Portugu&ecirc;s do Brasil");
        $langs[] = new i18n("ru_RU", "Русский");
        
        return $langs;

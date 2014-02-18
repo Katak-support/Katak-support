@@ -1,3 +1,6 @@
+﻿# This file is distributed under the same license as the Katak-suppot package.
+# Translators: Victor Goryachko <vicgor@gmail.com>, 2013
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak support 1.0.0\n"
