@@ -17,3 +17,5 @@ See http://www.katak-support.com/en/content/installation-guide for installation 
 
 Thanks to:
 Leon ter Linden for the Dutch translation.
+Thiago Andrade Lima for the Brazilian Portuguese translation.
+Victor Goryachko for the Russian translation.
