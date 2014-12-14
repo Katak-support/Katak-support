@@ -75,7 +75,7 @@ $staff= db_query('SELECT staff_id,firstname,lastname,dept_name FROM '.STAFF_TABL
     <tr>
         <th nowrap><?= _('New Ticket assignment:') ?></th>
         <td>
-          <i><?=_('(Topic Choice must be enabled in Settings/Preferences)')?></i><br />
+          <i><?=_('(Topic Choice should be enabled in Settings/Preferences)')?></i><br />
           <select name="autoassign_id">
               <option value=0><?= _('None') ?></option>
               <?php

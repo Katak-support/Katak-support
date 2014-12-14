@@ -4,11 +4,11 @@
 
     Everything about staff.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicketv1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -68,7 +68,7 @@ class Staff {
         return $this->udata;
     }
     
-    // Compares user password
+    // Compares staff password
     function check_passwd($password){
       $check = (strlen($this->passwd) && PhpassHashedPass::check($password, $this->passwd))?(TRUE):(FALSE);
       return $check;
@@ -268,6 +268,12 @@ class Staff {
         return false;
     }
 
+    // Update last login
+    function update_lastlogin($id) {
+      db_query('UPDATE ' . STAFF_TABLE . ' SET lastlogin=NOW() WHERE staff_id=' . db_input($id));
+      return true;
+    }
+    
     static function create($vars,&$errors) {
         return Staff::save(0,$vars,$errors);
     }
@@ -312,6 +318,7 @@ class Staff {
         if($vars['mobile'] && !Validator::is_phone($vars['mobile']))
             $errors['mobile']=_('Valid number required');
 
+        // Chek password
         if($vars['npassword'] || $vars['vpassword'] || !$id){
             if(!$vars['npassword'] && !$id)
                 $errors['npassword']=_('Temp password required');

@@ -1,3 +1,11 @@
+Katak-support 1.1.0, 2014-12-15
+- Ability to require users to login in order to insert tickets
+- Assignee alerted on automatic assignment
+- Possibility to deactivate assignment notice
+- Possibility to deactivate new response by staff notice
+- Added info on server in the alert admin messages
+- Fixed a lot of litle bugs
+
 Katak-support 1.0.0, 2013-10-31
 - Ticket automatic assignment
 - Basic ticket report

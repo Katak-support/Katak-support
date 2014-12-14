@@ -4,11 +4,11 @@
     
     Manage email
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -265,7 +265,7 @@ class Email {
         if(!$vars['email'] || !Validator::is_email($vars['email'])){
             $errors['email']=_('Valid email required');
         }elseif(($eid=Email::getIdByEmail($vars['email'])) && $eid!=$id){
-            $errors['email']=_('Email already exits');
+            $errors['email']=_('Email already exists');
         }else{ //make sure the email doesn't belong to any of the staff 
             $sql='SELECT staff_id FROM '.STAFF_TABLE.' WHERE email='.db_input($vars['email']);
             if(($res=db_query($sql)) && db_num_rows($res))

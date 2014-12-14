@@ -5,11 +5,11 @@
     Collection of MySQL helper interface functions. 
     Mostly wrappers with error checking.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -54,9 +54,10 @@ if (class_exists('mysqli')) {
   function db_query($query){
     global $cfg;
     global $dblink;
-   
-    $response=$dblink->query($query);
 
+    $response=$dblink->query($query);
+    //TODO: recover from "Lost connection to MySQL server during query" error??
+    
     if(!$response) { //error reporting
         $alert='['.$query.']'."\n\n".db_error();
         Sys::log(LOG_ALERT,_('DB Error No.').' '.db_errno(),$alert,($cfg && $cfg->alertONSQLError()));
@@ -155,7 +156,7 @@ if (class_exists('mysqli')) {
 	  function db_error(){
       global $dblink;
 	    return $dblink->error;   
-	}
+      }
    
     function db_errno(){
       global $dblink;

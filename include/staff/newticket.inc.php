@@ -77,7 +77,7 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
     <tr>
         <td><br /><b><?= _('Issue Summary:') ?></b></td>
         <td>
-            <i><?= _('Visible to client/customer as answer to the ticket.') ?></i><font class="error"><b>*&nbsp;<?=$errors['issue']?></b></font><br/>
+            <i><?= _('Visible to user/client as answer to the ticket.') ?></i><font class="error"><b>*&nbsp;<?=$errors['issue']?></b></font><br/>
             <?php
             $sql='SELECT stdreply_id,title FROM '.STD_REPLY_TABLE.' WHERE isenabled=1';
             $canned=db_query($sql);

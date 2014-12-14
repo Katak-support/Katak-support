@@ -4,11 +4,11 @@
 
     Katak-support config info manager. 
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -96,6 +96,7 @@ class Config {
     }
 
 
+
     function getId() {
         return $this->config['id'];
     }
@@ -105,7 +106,7 @@ class Config {
     }
    
     function getClientLanguage() {
-        return $this->config['client_language'];
+        return $this->config['user_language'];
     }
    
     function getTitle() {
@@ -140,11 +141,15 @@ class Config {
         return $this->config['reopen_grace_period'];
     }
  
+    function getUserLogRequired() {
+        return $this->config['user_log_required'];
+    }
+
     function getClientTimeout() {
-        return $this->getClientSessionTimeout();
+        return $this->getUserSessionTimeout();
     }
  
-    function getClientSessionTimeout() {
+    function getUserSessionTimeout() {
         return $this->config['client_session_timeout']*60;
     }
 
@@ -181,7 +186,6 @@ class Config {
     }
 
     function getDefaultDept(){
-
         if(!$this->defaultDept && $this->getDefaultDeptId())
             $this->defaultDept= new Dept($this->getDefaultDeptId());
         return $this->defaultDept;
@@ -192,7 +196,6 @@ class Config {
     }
 
     function getDefaultEmail(){
-
         if(!$this->defaultEmail && $this->getDefaultEmailId())
             $this->defaultEmail= new Email($this->getDefaultEmailId());
         return $this->defaultEmail;
@@ -289,8 +292,7 @@ class Config {
     function allowPriorityChange() {
         return $this->config['allow_priority_change']?true:false;
     }
-
-        
+       
     function useEmailPriority() {
         return $this->config['use_email_priority']?true:false;
     }
@@ -311,6 +313,7 @@ class Config {
         return $this->config['random_ticket_ids']?true:false;
     }
 
+
     /* autoresponders  & Alerts */
     function autoRespONNewTicket() {
         return $this->config['ticket_autoresponder']?true:false;
@@ -322,6 +325,10 @@ class Config {
 
     function notifyONNewStaffTicket(){
         return $this->config['ticket_notice_active']?true:false;
+    }
+
+    function notifyONNewResponse() {
+        return $this->config['response_notice_active']?true:false;
     }
 
     function alertONNewMessage() {
@@ -340,6 +347,10 @@ class Config {
         return $this->config['message_alert_dept_manager']?true:false;
     }
 
+    function alertONAssignment() {
+        return $this->config['assignment_alert_active']?true:false;
+    }
+    
     function alertONNewNote() {
         return $this->config['note_alert_active']?true:false;
     }
@@ -484,12 +495,13 @@ class Config {
                     && !isset($var['ticket_alert_dept_manager'])
                     && !isset($var['ticket_alert_dept_members']))){        
             $errors['ticket_alert_active']=_('No target recipient(s) selected');
-        }       
+        }  
+     
         if($var['message_alert_active']
                 && (!isset($var['message_alert_laststaff'])
                     && !isset($var['message_alert_assigned'])
                     && !isset($var['message_alert_dept_manager']))){
-            $errors['message_alert_active']=_('No target recipient(s) selected');
+        $errors['message_alert_active']=_('No target recipient(s) selected');
         }
 
         if($var['note_alert_active']
@@ -515,13 +527,14 @@ class Config {
         //We are good to go...blanket update!
         $sql= 'UPDATE '.CONFIG_TABLE.' SET isonline='.db_input($var['isonline']).
             ',staff_language='.db_input($var['stafflanguage']).
-            ',client_language='.db_input($var['clientlanguage']).
+            ',user_language='.db_input($var['userlanguage']).
             ',timezone_offset='.db_input($var['timezone_offset']).
             ',enable_daylight_saving='.db_input(isset($var['enable_daylight_saving'])?1:0).
             ',staff_ip_binding='.db_input(isset($var['staff_ip_binding'])?1:0).
             ',staff_max_logins='.db_input($var['staff_max_logins']).
             ',staff_login_timeout='.db_input($var['staff_login_timeout']).
             ',staff_session_timeout='.db_input($var['staff_session_timeout']).
+            ',user_log_required='.db_input(isset($var['user_log_required'])?1:0).
             ',client_max_logins='.db_input($var['client_max_logins']).
             ',client_login_timeout='.db_input($var['client_login_timeout']).
             ',client_session_timeout='.db_input($var['client_session_timeout']).
@@ -555,6 +568,7 @@ class Config {
             ',ticket_autoresponder='.db_input($var['ticket_autoresponder']).
             ',message_autoresponder='.db_input($var['message_autoresponder']).
             ',ticket_notice_active='.db_input($var['ticket_notice_active']).
+            ',response_notice_active='.db_input($var['response_notice_active']).
             ',ticket_alert_active='.db_input($var['ticket_alert_active']).
             ',ticket_alert_admin='.db_input(isset($var['ticket_alert_admin'])?1:0).
             ',ticket_alert_dept_manager='.db_input(isset($var['ticket_alert_dept_manager'])?1:0).
@@ -563,6 +577,7 @@ class Config {
             ',message_alert_laststaff='.db_input(isset($var['message_alert_laststaff'])?1:0).
             ',message_alert_assigned='.db_input(isset($var['message_alert_assigned'])?1:0).
             ',message_alert_dept_manager='.db_input(isset($var['message_alert_dept_manager'])?1:0).
+            ',assignment_alert_active='.db_input($var['assignment_alert_active']).
             ',note_alert_active='.db_input($var['note_alert_active']).
             ',note_alert_laststaff='.db_input(isset($var['note_alert_laststaff'])?1:0).
             ',note_alert_assigned='.db_input(isset($var['note_alert_assigned'])?1:0).

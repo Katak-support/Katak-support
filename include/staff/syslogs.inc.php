@@ -94,7 +94,7 @@ $showing=db_num_rows($resp)?$pageNav->showing():"";
               <option value="Debug" <?=($type=='Debug')?'selected="selected"':''?>><?= _('Debug') ?></option>
           </select>
           &nbsp;&nbsp;
-          <input class="button" type="submit" Value="<?= _('Go!') ?>" />
+          <input class="button" type="submit" Value="<?= _('GO') ?>" />
     </div>
   </form>
 </div>

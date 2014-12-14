@@ -2,8 +2,8 @@
 /*********************************************************************
     attachment.php
 
-    Attachments interface for clients.
-    Clients should never see the dir paths.
+    Attachments interface for users.
+    Users should never see the dir paths.
     
     Copyright (c)  2012-2013 Katak Support
     http://www.katak-support.com/
@@ -16,7 +16,7 @@
 **********************************************************************/
 require('secure.inc.php');
 //TODO: alert admin on any error on this file.
-if(!$thisclient || !$thisclient->isClient() || !$_GET['id'] || !$_GET['ref']) die('Access Denied');
+if(!$thisuser || !$thisuser->isUser() || !$_GET['id'] || !$_GET['ref']) die('Access Denied');
 
 $sql='SELECT attach_id,ref_id,ticket.ticket_id,ticketID,ticket.created,dept_id,file_name,file_key,email FROM '.TICKET_ATTACHMENT_TABLE.
     ' LEFT JOIN '.TICKET_TABLE.' ticket USING(ticket_id) '.
@@ -27,10 +27,10 @@ list($id,$refid,$tid,$extid,$date,$deptID,$filename,$key,$email)=db_fetch_row($r
 
 //Still paranoid...:)...check the secret session based hash and email
 $hash=MD5($tid*$refid.session_id());
-if(!$_GET['ref'] || strcmp($hash,$_GET['ref']) || strcasecmp($thisclient->getEmail(),$email)) die('Access denied: Kwaheri');
+if(!$_GET['ref'] || strcmp($hash,$_GET['ref']) || strcasecmp($thisuser->getEmail(),$email)) die('Access denied: Kwaheri');
 
 
-//see if the file actually exits.
+//see if the file actually exists.
 $month=date('my',strtotime("$date"));
 $file=rtrim($cfg->getUploadDir(),'/')."/$month/$key".'_'.$filename;
 if(!file_exists($file))

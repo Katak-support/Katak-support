@@ -34,7 +34,7 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
   <table width="100%" border="0" cellspacing=0 cellpadding=2 class="tform">
       <tr class="header" ><td colspan=2><?= _('General Settings') ?></td></tr>
       <tr class="subheader">
-          <td colspan=2"><?= _('Offline mode will disable client interface and <b>only</b> allow <b>super admins</b> to login to Staff Control Panel') ?></td>
+          <td colspan=2"><?= _('Offline mode will disable external interface and <b>only</b> allow <b>super admins</b> to login to Staff Control Panel') ?></td>
       </tr>
       <tr><th><b><?= _('Support System Status') ?></b></th>
           <td>
@@ -143,7 +143,14 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
           </td>
       </tr>
 
-      <tr><th><?= _('Client Excessive Logins:') ?></th>
+      <tr><th><?= _('User log-in required:') ?></th>
+          <td>
+            <input type="checkbox" name="user_log_required" <?=$config['user_log_required']?'checked':''?>>
+            <?= _('Require user to log-in and become "client" to post and view ticket.') ?>
+          </td>
+      </tr>
+
+      <tr><th><?= _('User/client Excessive Logins:') ?></th>
           <td>
               <select name="client_max_logins">
                 <?php
@@ -164,10 +171,10 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
           </td>
       </tr>
 
-      <tr><th><?= _('Client Session Timeout:') ?></th>
+      <tr><th><?= _('User/client Session Timeout:') ?></th>
           <td>
             <input type="text" name="client_session_timeout" size=6 value="<?=$config['client_session_timeout']?>">
-            (<i><?= _('Client\'s max Idle time in minutes. Enter 0 to disable timeout') ?></i>)
+            (<i><?= _('User/client\'s max Idle time in minutes. Enter 0 to disable timeout') ?></i>)
           </td>
       </tr>
       <tr><th><?= _('Clickable URLs:') ?></th>
@@ -192,14 +199,14 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
           (<i><?= _('Default language for the admin/staff control panel') ?></i>)
           </td>
       </tr>
-      <tr><th><?= _('Client Language:') ?></th>
+      <tr><th><?= _('User/client Language:') ?></th>
           <td>
-          <select name="clientlanguage">
+          <select name="userlanguage">
           <?php foreach (i18n::getLanguages() as $lang) { ?>
-               <option value="<?=$lang->name ?>" <?=$lang->name==$config['client_language']?'selected':'' ?>><?=$lang->description ?></option>
+               <option value="<?=$lang->name ?>" <?=$lang->name==$config['user_language']?'selected':'' ?>><?=$lang->description ?></option>
           <?php } ?>
           </select>
-          (<i><?= _('Default language for the external client\'s interface') ?></i>)
+          (<i><?= _('Default language for the external users\'s interface') ?></i>)
           </td>
       </tr>
   </table>
@@ -248,7 +255,7 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
                       <?php
                   }?>
               </select>
-              (<i><?= _('Default timezone for the external client\'s interface') ?></i>)
+              (<i><?= _('Default timezone for the external interface') ?></i>)
           </td>
       </tr>
       <tr>
@@ -439,11 +446,17 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
               <input type="radio" name="message_autoresponder"  value="0"   <?=!$config['message_autoresponder']?'checked':''?> /><?= _('Disable') ?>
           </td>
       </tr>
+      <tr><th><?= _('New Response from staff:') ?></th>
+          <td><i><?= _('Notice sent when staff respond to an existing ticket') ?></i><br>
+              <input type="radio" name="response_notice_active"  value="1"   <?=$config['response_notice_active']?'checked':''?> /><?= _('Enable') ?>
+              <input type="radio" name="response_notice_active"  value="0"   <?=!$config['response_notice_active']?'checked':''?> /><?= _('Disable') ?>
+          </td>
+      </tr>
       <tr><th><?= _('Overlimit notice:') ?></th>
           <td><i><?= _('Ticket denied notice sent <b>only once</b> on limit violation to the user.') ?></i><br/>
               <input type="radio" name="overlimit_notice_active"  value="1"   <?=$config['overlimit_notice_active']?'checked':''?> /><?= _('Enable') ?>
               <input type="radio" name="overlimit_notice_active"  value="0"   <?=!$config['overlimit_notice_active']?'checked':''?> /><?= _('Disable') ?>
-              <br><i><?= _('<b>Note:</b> SysAdmin gets alerts on ALL denials by default.') ?></i><br>
+              <br><i><?= _('<b>Note:</b> SysAdmin gets alerts on ALL denials by default') ?></i><br>
           </td>
       </tr>
   </table>
@@ -454,17 +467,17 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
       </tr>
       <tr><th><?= _('New Ticket Alert:') ?></th>
           <td>
-              <input type="radio" name="ticket_alert_active"  value="1"   <?=$config['ticket_alert_active']?'checked':''?> /><?= _('Enable') ?>
-              <input type="radio" name="ticket_alert_active"  value="0"   <?=!$config['ticket_alert_active']?'checked':''?> /><?= _('Disable') ?>
-              <br><i><?= _('Select recipients') ?></i>&nbsp;<font class="error">&nbsp;<?=$errors['ticket_alert_active']?></font><br>
-              <input type="checkbox" name="ticket_alert_admin" <?=$config['ticket_alert_admin']?'checked':''?>> <?= _('Administrators') ?>
-              <input type="checkbox" name="ticket_alert_dept_manager" <?=$config['ticket_alert_dept_manager']?'checked':''?>> <?= _('Department Manager') ?>
-              <input type="checkbox" name="ticket_alert_dept_members" <?=$config['ticket_alert_dept_members']?'checked':''?>> <?= _('Department Members (spammy)') ?>
+            <input type="radio" name="ticket_alert_active"  value="1"   <?=$config['ticket_alert_active']?'checked':''?> /><?= _('Enable') ?>
+            <input type="radio" name="ticket_alert_active"  value="0"   <?=!$config['ticket_alert_active']?'checked':''?> /><?= _('Disable') ?>
+            <br><i><?= _('Select recipients') ?></i>&nbsp;<font class="error">&nbsp;<?=$errors['ticket_alert_active']?></font><br>
+            <input type="checkbox" name="ticket_alert_admin" <?=$config['ticket_alert_admin']?'checked':''?>> <?= _('Administrators') ?>
+            <input type="checkbox" name="ticket_alert_dept_manager" <?=$config['ticket_alert_dept_manager']?'checked':''?>> <?= _('Department Manager') ?>
+            <input type="checkbox" name="ticket_alert_dept_members" <?=$config['ticket_alert_dept_members']?'checked':''?>> <?= _('Department Members (spammy)') ?>
           </td>
       </tr>
       <tr><th><?= _('New Message Alert:') ?></th>
           <td>
-              <input type="radio" name="message_alert_active"  value="1"   <?=$config['message_alert_active']?'checked':''?> /><?= _('Enable') ?>
+            <input type="radio" name="message_alert_active"  value="1"   <?=$config['message_alert_active']?'checked':''?> /><?= _('Enable') ?>
             <input type="radio" name="message_alert_active"  value="0"   <?=!$config['message_alert_active']?'checked':''?> /><?= _('Disable') ?>
             <br><i><?= _('Select recipients') ?></i>&nbsp;<font class="error">&nbsp;<?=$errors['message_alert_active']?></font><br>
             <input type="checkbox" name="message_alert_laststaff" <?=$config['message_alert_laststaff']?'checked':''?>> <?= _('Last Respondent') ?>
@@ -472,9 +485,16 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
             <input type="checkbox" name="message_alert_dept_manager" <?=$config['message_alert_dept_manager']?'checked':''?>> <?= _('Department Manager') ?>
           </td>
       </tr>
+      <tr><th><?= _('Ticket assignment:') ?></th>
+          <td>
+            <i><?= _('Send alert to assigned staff') ?></i>&nbsp;<font class="error">&nbsp;<?=$errors['assignment_alert_active']?></font><br />
+            <input type="radio" name="assignment_alert_active"  value="1"   <?=$config['assignment_alert_active']?'checked':''?> /><?= _('Enable') ?>
+            <input type="radio" name="assignment_alert_active"  value="0"   <?=!$config['assignment_alert_active']?'checked':''?> /><?= _('Disable') ?>
+          </td>
+      </tr>
       <tr><th><?= _('New Internal Note Alert:') ?></th>
           <td>
-              <input type="radio" name="note_alert_active"  value="1"   <?=$config['note_alert_active']?'checked':''?> /><?= _('Enable') ?>
+            <input type="radio" name="note_alert_active"  value="1"   <?=$config['note_alert_active']?'checked':''?> /><?= _('Enable') ?>
             <input type="radio" name="note_alert_active"  value="0"   <?=!$config['note_alert_active']?'checked':''?> /><?= _('Disable') ?>
             <br><i><?= _('Select recipients') ?></i>&nbsp;<font class="error">&nbsp;<?=$errors['note_alert_active']?></font><br>
             <input type="checkbox" name="note_alert_laststaff" <?=$config['note_alert_laststaff']?'checked':''?>> <?= _('Last Respondent') ?>
@@ -484,7 +504,7 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
       </tr>
       <tr><th><?= _('Overdue Ticket Alert:') ?></th>
           <td>
-              <input type="radio" name="overdue_alert_active"  value="1"   <?=$config['overdue_alert_active']?'checked':''?> /><?= _('Enable') ?>
+            <input type="radio" name="overdue_alert_active"  value="1"   <?=$config['overdue_alert_active']?'checked':''?> /><?= _('Enable') ?>
             <input type="radio" name="overdue_alert_active"  value="0"   <?=!$config['overdue_alert_active']?'checked':''?> /><?= _('Disable') ?>
             <br><i><?= _('The system administrator gets an alert by default. Select additional recipients below') ?></i>&nbsp;<font class="error">&nbsp;<?=$errors['overdue_alert_active']?></font><br>
             <input type="checkbox" name="overdue_alert_assigned" <?=$config['overdue_alert_assigned']?'checked':''?>> <?= _('Assigned Staff') ?>
@@ -494,7 +514,7 @@ $templates=db_query('SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_TABLE.' WHERE cfg_
       </tr>
       <tr><th><?= _('System Errors:') ?></th>
           <td><i><?= _('Enabled errors are sent to the system administrator') ?></i><br>
-              <input type="checkbox" name="send_sys_errors" <?=$config['send_sys_errors']?'checked':'checked'?> disabled><?= _('System Errors') ?>
+            <input type="checkbox" name="send_sys_errors" <?=$config['send_sys_errors']?'checked':'checked'?> disabled><?= _('System Errors') ?>
             <input type="checkbox" name="send_sql_errors" <?=$config['send_sql_errors']?'checked':''?>><?= _('SQL errors') ?>
             <input type="checkbox" name="send_login_errors" <?=$config['send_login_errors']?'checked':''?>><?= _('Excessive Login attempts') ?>
           </td>

@@ -1,7 +1,7 @@
 <?php
-if(!defined('KTKCLIENTINC') || !is_object($thisclient) || !is_object($ticket)) die('Adiaux amikoj!'); //bye..see ya
+if(!defined('KTKUSERINC') || !is_object($thisuser) || !is_object($ticket)) die('Adiaux amikoj!'); //bye..see ya
 //Double check access one last time...
-if(strcasecmp($thisclient->getEmail(),$ticket->getEmail())) die(_('Access Denied'));
+if(strcasecmp($thisuser->getEmail(),$ticket->getEmail())) die(_('Access Denied'));
 
 $info=($_POST && $errors)?Format::input($_POST):array(); //Re-use the post info on error...savekeyboards.org
 

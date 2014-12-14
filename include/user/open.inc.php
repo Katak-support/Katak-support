@@ -1,5 +1,5 @@
 <?php
-if(!defined('KTKCLIENTINC')) die('Adiaux amikoj!'); //Say bye to our friends.
+if(!defined('KTKUSERINC')) die('Adiaux amikoj!'); //Say bye to our friends.
 
 $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the post data
 ?>
@@ -20,30 +20,30 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
     <div class="input">
         <span class="label"><?= _('Full Name:')?></span>
         <span>
-            <?php if ($thisclient && ($name=$thisclient->getName())) {
-                ?>
-                <input type="hidden" name="name" value="<?=$name?>"><?=$name?>
-            <?php }else { ?>
-                <input type="text" name="name" size="30" value="<?=$info['name']?>">
+          <?php if ($thisuser && ($name=$thisuser->getName())) {
+              ?>
+              <input type="hidden" name="name" value="<?=$name?>"><?=$name?>
+          <?php }else { ?>
+              <input type="text" name="name" size="30" maxlength="32" value="<?=$info['name']?>">
 	        <?php } ?>
-            &nbsp;<span class="error">*&nbsp;<?=$errors['name']?></span>
+          &nbsp;<span class="error">*&nbsp;<?=$errors['name']?></span>
         </span>
     </div>
     <div class="input">
         <span class="label"><?= _('Email Address:')?></span>
         <span>
-            <?php if ($thisclient && ($email=$thisclient->getEmail())) {
+            <?php if ($thisuser && ($email=$thisuser->getEmail())) {
                 ?>
                 <input type="hidden" name="email" size="30" value="<?=$email?>"><?=$email?>
             <?php }else { ?>             
-                <input type="text" name="email" size="30" value="<?=$info['email']?>">
+                <input type="text" name="email" size="30" maxlength="120" value="<?=$info['email']?>">
             <?php } ?>
             &nbsp;<span class="error">*&nbsp;<?=$errors['email']?></span>
         </span>
     </div>
     <div class="input">
         <span class="label-optional"><?= _('Telephone:')?></span>
-        <span><input type="text" name="phone" size="30" value="<?=$info['phone']?>">
+        <span><input type="text" name="phone" size="30" maxlength="28" value="<?=$info['phone']?>">
             &nbsp;<span class="error">&nbsp;<?=$errors['phone']?></span>
         </span>
     </div>
@@ -80,7 +80,7 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
     <div class="input">
         <span class="label"><?= _('Subject:')?></span>
         <span>
-            <input type="text" name="subject" size="38" value="<?=$info['subject']?>">
+            <input type="text" name="subject" size="38" maxlength="64" value="<?=$info['subject']?>">
             &nbsp;<span class="error">*&nbsp;<?=$errors['subject']?></span>
         </span>
     </div>
@@ -112,7 +112,7 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
     }?>
 
     <?php if(($cfg->allowOnlineAttachments() && !$cfg->allowAttachmentsOnlogin())  
-                || ($cfg->allowAttachmentsOnlogin() && ($thisclient && $thisclient->isValid()))){
+                || ($cfg->allowAttachmentsOnlogin() && ($thisuser && $thisuser->isValid()))){
                   ?>
     <div class="input">
         <span class="label-optional"><?= _('Attachment:')?></span>
@@ -129,14 +129,14 @@ $info=($_POST && $errors)?Format::input($_POST):array(); //on error...use the po
           </script>
     </div>
     <?php } ?>
-    <?php //test if captcha is enabled and the client is not yet log-in
-    if($cfg && $cfg->enableCaptcha() && (!$thisclient || !$thisclient->isValid())) {
+    <?php //test if captcha is enabled and the user is not yet log-in
+    if($cfg && $cfg->enableCaptcha() && (!$thisuser || !$thisuser->isValid())) {
         if($_POST && $errors && !$errors['captcha'])
             $errors['captcha']='Please re-enter the text again';
     ?>
     <div class="input">
         <span class="label"><?= _('Captcha Text:')?></span>
-        <span><img src="captcha.php" border="0"></span>
+        <span><img src="captcha.php" alt="captcha" border="0"></span>
         <span style="vertical-align:top">
             &nbsp;&nbsp;<input type="text" name="captcha" size="7" value="">&nbsp;<i><?= _('Enter the text shown on the image.')?></i>
             <span class="error">*&nbsp;<?=$errors['captcha']?></span>

@@ -5,11 +5,11 @@
     Master include file which must be included at the start of every file.
     The brain of the whole sytem. Don't monkey with it.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -29,7 +29,6 @@ if(ini_get('register_globals')) {
 #Disable url fopen && url include
 ini_set('allow_url_fopen', 0);
 ini_set('allow_url_include', 0);
-
 #Disable session ids on url.
 ini_set('session.use_trans_sid', 0);
 #No cache
@@ -40,6 +39,7 @@ ini_set('session.cache_limiter', 'nocache');
 #Error reporting...Good idea to ENABLE error reporting to a file. i.e display_errors should be set to false
 #Don't display errors in productions, but fatal errors.
 error_reporting(E_ERROR); 
+//error_reporting(E_ALL); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 0);
 
@@ -63,8 +63,9 @@ define('SETUP_DIR',INCLUDE_DIR.'setup/');
  * The first two digits indicate the database's version.
  * The third digit represents minor changes that do not affect the database.
 */ 
-define('THIS_VERSION','1.0.0'); //Changes from version to version.
+define('THIS_VERSION','1.1.0'); //Changes from version to version.
 
+// Is the system already installed?
 // Check if config file exists and load config info
 $configfile='';
 if(file_exists(INCLUDE_DIR.'ktk-config.php'))
@@ -89,9 +90,9 @@ if(!defined('PATH_SEPARATOR')) {
 ini_set('include_path', './'.PATH_SEPARATOR.INCLUDE_DIR.PATH_SEPARATOR.PEAR_DIR);
 
 #include required files
-require(INCLUDE_DIR.'class.usersession.php');
+require(INCLUDE_DIR.'class.visitorsession.php');
 require(INCLUDE_DIR.'class.pagenate.php'); //Pagenate helper!
-require(INCLUDE_DIR.'class.sys.php'); //system loader & config & logger.
+// require(INCLUDE_DIR.'class.sys.php'); //system loader & config & logger. Already loaded by mysql.php
 require(INCLUDE_DIR.'class.misc.php');
 require(INCLUDE_DIR.'class.http.php');
 require(INCLUDE_DIR.'class.format.php'); //format helpers
@@ -122,6 +123,7 @@ define('STAFF_TABLE',TABLE_PREFIX.'staff');
 define('DEPT_TABLE',TABLE_PREFIX.'department');
 define('TOPIC_TABLE',TABLE_PREFIX.'help_topic');
 define('GROUP_TABLE',TABLE_PREFIX.'roles');
+define('CLIENT_TABLE',TABLE_PREFIX.'clients');
 
 define('TICKET_TABLE',TABLE_PREFIX.'ticket');
 define('TICKET_EVENTS_TABLE',TABLE_PREFIX.'ticket_events');
@@ -154,7 +156,7 @@ if($ferror) { //Fatal error
 //Init
 $cfg->init();
 
-//Set default timezone...staff will overwrite it.
+//Set default timezone and store it in the session array...staff will overwrite it.
 $_SESSION['TZ_OFFSET']=$cfg->getTZoffset();
 $_SESSION['daylight']=$cfg->observeDaylightSaving();
 

@@ -20,19 +20,3 @@ CHANGE `client_language` `user_language` CHAR(8) NOT NULL DEFAULT 'en',
 ADD `user_log_required` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `staff_session_timeout`,
 ADD `response_notice_active` tinyint(1) unsigned NOT NULL default '0' AFTER `message_autoresponder`,
 ADD `assignment_alert_active` tinyint(1) unsigned NOT NULL default '0' AFTER `message_alert_dept_manager`;
-
-ALTER TABLE `%TABLE_PREFIX%help_topic`
-ADD `autoassign_id` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' AFTER `dept_id`;
-
-ALTER TABLE `%TABLE_PREFIX%syslog`
-DROP `updated`;
-
-ALTER TABLE `%TABLE_PREFIX%ticket`
-DROP `helptopic`;
-
-ALTER TABLE `%TABLE_PREFIX%ticket_message`
-DROP `updated`;
-
-ALTER TABLE `%TABLE_PREFIX%ticket_attachment`
-DROP `deleted`,
-DROP `updated`;

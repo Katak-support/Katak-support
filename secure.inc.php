@@ -2,7 +2,7 @@
 /*********************************************************************
     secure.inc.php
 
-    File included on every client's "secure" pages
+    File included on every user's "secure" pages
 
     Copyright (c)  2012-2013 Katak Support
     http://www.katak-support.com/
@@ -14,12 +14,12 @@
     $Id: $
 **********************************************************************/
 if(!strcasecmp(basename($_SERVER['SCRIPT_NAME']),basename(__FILE__))) die('Adiaux amikoj!');
-if(!file_exists('client.inc.php')) die(_('Fatal error!'));
-require_once('client.inc.php');
+if(!file_exists('user.inc.php')) die(_('Fatal error!'));
+require_once('user.inc.php');
 //User must be logged in!
-if(!$thisclient || !$thisclient->getId() || !$thisclient->isValid()){
+if(!$thisuser || !$thisuser->getId() || !$thisuser->isValid()){
     require('./login.php');
     exit;
 }
-$thisclient->refreshSession();
+$thisuser->refreshSession();
 ?>

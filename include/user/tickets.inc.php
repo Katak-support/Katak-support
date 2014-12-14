@@ -1,10 +1,10 @@
 <?php
-if(!defined('KTKCLIENTINC') || !is_object($thisclient) || !$thisclient->isValid()) die('Adiaux amikoj!');
+if(!defined('KTKUSERINC') || !is_object($thisuser) || !$thisuser->isValid()) die('Adiaux amikoj!');
 
 $qstr='&'; //Query string collector
 
 //Restrict based on email of the user...STRICT!
-$qwhere =' WHERE email='.db_input($thisclient->getEmail());
+$qwhere =' WHERE email='.db_input($thisuser->getEmail());
 
 //Translate the order requests to db-fields
 $sortOptions=array('date'=>'ticket.created','ID'=>'ticketID','dept'=>'dept_name','status'=>'ticket.status');

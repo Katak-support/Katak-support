@@ -3,14 +3,33 @@ CHANGE `ipaddr` `ipaddr` varchar(64) NOT NULL;
 
 ALTER TABLE `%TABLE_PREFIX%config` 
 ADD `staff_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `isonline`,
-ADD `client_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `staff_language`,
-ADD `reopen_grace_period` INT(10) UNSIGNED NOT NULL DEFAULT '90' AFTER `overdue_grace_period`,
+ADD `user_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `staff_language`,
+ADD `user_log_required` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `staff_session_timeout`,
 ADD `enable_topic` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `use_email_priority`,
+ADD `response_notice_active` tinyint(1) unsigned NOT NULL default '0' AFTER `message_autoresponder`,
+ADD `assignment_alert_active` tinyint(1) unsigned NOT NULL default '0' AFTER `message_alert_dept_manager`,
 DROP `show_assigned_tickets`,
 DROP `show_answered_tickets`,
 DROP `admin_email`,
 CHANGE `helpdesk_title` `helpdesk_title` VARCHAR(255) NOT NULL DEFAULT 'KataK Support Ticket System',
 CHANGE `ostversion` `ktsversion` VARCHAR(16) NOT NULL;
+
+DROP TABLE IF EXISTS `%TABLE_PREFIX%clients`;
+CREATE TABLE `%TABLE_PREFIX%clients` (
+  `client_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `client_email` varchar(128) NOT NULL,
+  `client_firstname` varchar(32) DEFAULT NULL,
+  `client_lastname` varchar(32) DEFAULT NULL,
+  `client_password` varchar(128) DEFAULT NULL,
+  `client_organization` varchar(128) DEFAULT NULL,
+  `client_phone` varchar(28) DEFAULT NULL,
+  `client_mobile` varchar(28) DEFAULT NULL,
+  `client_isactive` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `client_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `client_lastlogin` datetime DEFAULT NULL,
+  PRIMARY KEY (`client_id`),
+  UNIQUE KEY `email` (`client_email`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%ticket_priority`;
 CREATE TABLE `%TABLE_PREFIX%priority` (

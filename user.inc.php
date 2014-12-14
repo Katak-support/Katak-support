@@ -1,14 +1,15 @@
 <?php
 /*********************************************************************
-    client.inc.php
+    user.inc.php
 
-    File included on every client page. Includes everything you need for client pages.
+    File included on every external interface page.
+    Includes everything you need for user pages.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -18,7 +19,7 @@ if(!strcasecmp(basename($_SERVER['SCRIPT_NAME']),basename(__FILE__))) die('Adiau
 if(!file_exists('main.inc.php')) die('Fatal error!');
 require_once('main.inc.php');
 
-// set client language and language domain
+// set user language and language domain
 $lang = $cfg->getClientLanguage();
 putenv('LC_MESSAGES=' . $lang);
 setlocale(LC_MESSAGES, $lang . '.UTF-8', $lang . '.UTF8', $lang . '.utf8', $lang . '.utf-8');
@@ -28,9 +29,9 @@ textdomain("messages");
 
 if(!defined('INCLUDE_DIR')) die(_('Fatal error!'));
 
-/*Some more include defines specific to client only */
-define('CLIENTINC_DIR',INCLUDE_DIR.'client/');
-define('KTKCLIENTINC',TRUE);
+/*Some more include defines specific to user only */
+define('USERINC_DIR',INCLUDE_DIR.'user/');
+define('KTKUSERINC',TRUE);
 
 //Check the status of the Support System.
 if(!is_object($cfg) || !$cfg->getId() || $cfg->isHelpDeskOffline()) {
@@ -44,23 +45,34 @@ if(defined('THIS_VERSION') && strcasecmp($cfg->getVersion(), substr(THIS_VERSION
     exit;
 }
 
-/* include what is needed on client stuff */
-require_once(INCLUDE_DIR.'class.client.php');
+// include what is needed on user stuff
 require_once(INCLUDE_DIR.'class.ticket.php');
-require_once(INCLUDE_DIR.'class.dept.php');
 
-//clear some vars
+// clear some vars
 $errors=array();
 $msg='';
-$thisclient=null;
-//Make sure the user is valid..before doing anything else.
-if($_SESSION['_client']['userID'] && $_SESSION['_client']['key'])
-    $thisclient = new ClientSession($_SESSION['_client']['userID'],$_SESSION['_client']['key']);
+$thisuser=null;
 
-//print_r($_SESSION);
-//is the user logged in?
-if($thisclient && $thisclient->getId() && $thisclient->isValid()){
-     $thisclient->refreshSession();
+// Has got the user a session? Then make sure the user is valid...before doing anything else.
+if($_SESSION['_user']['userID'] && $_SESSION['_user']['key'])
+  if(!$cfg->getUserLogRequired())
+    $thisuser = new UserSession($_SESSION['_user']['userID'],$_SESSION['_user']['key']);
+  else {
+    $thisuser = new ClientSession($_SESSION['_user']['userID'],$_SESSION['_user']['key']);
+    // Block blocked client
+    if (!$thisuser->isactive()) {
+      $errors['err'] = _('Access Disabled. Contact Admin');
+      $_SESSION['_user']=array();
+      session_unset();
+      session_destroy();
+    }
+  }
+
+// print_r($_SESSION);
+    
+// Is the user logged in?
+if($thisuser && $thisuser->getId() && $thisuser->isValid()){
+     $thisuser->refreshSession();
 }
 
 ?>

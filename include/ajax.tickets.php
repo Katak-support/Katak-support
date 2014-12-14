@@ -94,7 +94,7 @@ class TicketsAjaxAPI{
             return '{"id":'.$lock->getId().', "time":'.$lock->getTime().'}';
         
         //unable to obtain the lock..for some really weired reason!
-        return '{"id":0, "retry":true}'; //Client should watch for possible loop on retries. Max attempts?
+        return '{"id":0, "retry":true}'; //User should watch for possible loop on retries. Max attempts?
     }
 
     function renewLock($params) {

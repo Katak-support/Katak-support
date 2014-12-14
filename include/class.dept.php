@@ -221,7 +221,7 @@ class Dept {
                 $sql.=' AND dept_id!='.db_input($id);
                 
             if(db_num_rows(db_query($sql)))
-                $errors['dept_name']=_('Department already exist');
+                $errors['dept_name']=_('Department already exists');
         }
 
         if($_POST['ispublic'] && !$_POST['dept_signature'])

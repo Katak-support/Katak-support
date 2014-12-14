@@ -32,7 +32,7 @@ class Sys {
     // Send email alert to the system administrator
     static function alertAdmin($subject,$message) {
         global $cfg;
-                
+
         //Set sysadmin's email address
         $to=ADMIN_EMAIL;
 

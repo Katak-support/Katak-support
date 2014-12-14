@@ -13,14 +13,14 @@
 
     $Id: $
 **********************************************************************/
-require_once('client.inc.php');
+require_once('user.inc.php');
 if($cfg && !$cfg->isHelpDeskOffline()) { 
     @header('Location: index.php'); //Redirect if the system is online.
     include('index.php');
     exit;
 }
 
-require(CLIENTINC_DIR . 'header.inc.php'); 
+require(USERINC_DIR . 'header.inc.php'); 
 ?>
 
 <h2><?= _('Support Ticket System Offline') ?></h2>
@@ -29,4 +29,4 @@ require(CLIENTINC_DIR . 'header.inc.php');
   <?= _('Our Support System is offline at the moment, please check back at a later time.') ?>
 </p>
 
-<?php require(CLIENTINC_DIR . 'footer.inc.php'); ?>
+<?php require(USERINC_DIR . 'footer.inc.php'); ?>

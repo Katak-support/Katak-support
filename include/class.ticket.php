@@ -4,11 +4,11 @@
 
     The most important class! Don't play with fire please.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -211,7 +211,7 @@ class Ticket{
         if(($lock=$this->getLock()) && !$lock->isExpired()) {
             if($lock->getStaffId()!=$thisuser->getId()) //someone else locked the ticket.
                 return null;
-            //Lock already exits...renew it
+            //Lock already exists...renew it
             $lock->renew(); //New clock baby.
             
             return $lock;
@@ -541,22 +541,32 @@ class Ticket{
         return $this->setDeptId($deptId)?true:false;
     }
 
-    //Assign: staff
-    function assignStaff($staffId,$message,$alertstaff=true) {
+    /*
+     * Assign ticket to staff
+     * 
+     * @param string $staffId Id staff to assign
+     * @param int $assignerId Id assigner, 0 for autoassign
+     * @param string $message
+     * @param bool $alertstaff
+     * @return bool
+     */
+    function assignStaff($staffId,$assignerId,$message,$alertstaff=TRUE) {
         global $thisuser,$cfg;
 
-
+        // Check if staff exists and is available
         $staff = new Staff($staffId);
-        if(!$staff || !$staff->isAvailable() || !$thisuser)
-            return false;
+        if(!$staff || !$staff->isAvailable())
+            return FALSE;
 
+        // Assign to staff
         if($this->setStaffId($staff->getId())){
-            //Reopen the ticket if cloed.                
-            if($this->isClosed()) //Assigned ticket Must be open.
+            //Reopen the ticket if closed.                
+            if($this->isClosed()) //Assigned ticket must be open.
                 $this->reopen();
             $this->reload(); //
-            //Send Notice + Message to assignee. (if directed)
-            if($alertstaff && ($thisuser && $staff->getId()!=$thisuser->getId())) { //No alerts for self assigned.
+            //Send Notice + Message to assignee. (if enabled)
+            if($alertstaff && $cfg->alertONAssignment())
+            	if(!$assignerId || ($thisuser && $staff->getId()!=$thisuser->getId())) { //No alerts for self assigned.
                 //Send Notice + Message to assignee.
                 $dept=$this->getDept();
                 if(!$dept || !($tplId=$dept->getTemplateId()))
@@ -571,7 +581,7 @@ class Ticket{
                     $body = str_replace('%note',$message,$body);
                     $body = str_replace("%message", $message,$body); //Previous versions used message.
                     $body = str_replace("%assignee", $staff->getName(),$body);
-                    $body = str_replace("%assigner", ($thisuser)?$thisuser->getName():'System',$body);
+                    $body = str_replace("%assigner", ($assignerId!=0 && $thisuser)?$thisuser->getName():'System',$body);
 
                     if(!($email=$cfg->getAlertEmail()))
                         $email=$cfg->getDefaultEmail();
@@ -583,13 +593,15 @@ class Ticket{
                     Sys::log(LOG_WARNING,'Template Fetch Error',_("Unable to fetch 'assigned' alert template No.").' '.$tplId);
                 }
             }
-            $message=$message?$message:_('Ticket assigned');
             //Save the message as internal note...(record).
-            $this->postNote(sprintf(_('Ticket Assigned to %s'), $staff->getName()),$message,false); //Notice that we are disabling note alerts!
+            $message=$message?$message:_('Ticket assigned');
+           	$this->postNote(sprintf(_('Ticket Assigned to %s'), $staff->getName()),$message,false,($assignerId != 0)?'':'System'); //Notice that we are disabling note alerts!
             return true;
         }
         return false;
     }
+   
+    
     //unassign
     function release(){
         global $thisuser;
@@ -600,7 +612,7 @@ class Ticket{
         return $this->setStaffId(0)?true:false;
     }
 
-    //Insert message from client
+    // Insert message from user/client.
     function postMessage($msg,$source='',$msgid=NULL,$headers='',$newticket=false){
         global $cfg;
        
@@ -613,14 +625,14 @@ class Ticket{
         $sql='INSERT INTO '.TICKET_MESSAGE_TABLE.' SET created=NOW() '.
              ',ticket_id='.db_input($this->getId()).
              ',messageId='.db_input($msgid).
-             ',message='.db_input(Format::striptags($msg)). //Tags/code stripped...meaning client can not send in code..etc
+             ',message='.db_input(Format::striptags($msg)). //Tags/code stripped...meaning user can not send in code..etc
              ',headers='.db_input($headers). //Raw header.
              ',source='.db_input($source).
              ',ip_address='.db_input($_SERVER['REMOTE_ADDR']);
         if($newticket)
           $sql .= ',msg_type='.db_input('F');   
         else
-          $sql .= ',msg_type='.db_input('M');              
+          $sql .= ',msg_type='.db_input('M');      
         
         if(db_query($sql) && ($msgid=db_insert_id())) {
             $this->setLastMsgId($msgid);
@@ -735,7 +747,7 @@ class Ticket{
     }
 
     //Insert Staff Reply
-    function postResponse($response,$signature='none',$attachment=false,$canalert=true){
+    function postResponse($response,$signature='none',$attachment=FALSE,$canalert=TRUE){
         global $thisuser,$cfg;
 
         if(!$thisuser || !$thisuser->getId() || !$thisuser->isStaff()) //just incase
@@ -754,14 +766,14 @@ class Ticket{
         //echo $sql;
         if(db_query($sql) && ($resp_id=db_insert_id())):
             $this->onResponse(); //store response date
-            if(!$canalert) //No alert/response 
+            if(!$canalert || !$cfg->notifyONNewResponse()) //No alert on response 
                 return $resp_id;
                 
             $dept=$this->getDept();
             if(!$dept || !($tplId=$dept->getTemplateId()))
                 $tplId=$cfg->getDefaultTemplateId();
 
-            //Send Response to client...based on the template...
+            //Send Response to user...based on the template...
             //TODO: check department level templates...if set.
             $sql='SELECT ticket_reply_subj,ticket_reply_body FROM '.EMAIL_TEMPLATE_TABLE.
                 ' WHERE cfg_id='.db_input($cfg->getId()).' AND tpl_id='.db_input($tplId);
@@ -774,16 +786,16 @@ class Ticket{
                 
                 //Figure out the signature to use...if any.
                 switch(strtolower($signature)):
-                case 'mine';
-                $signature=$thisuser->getSignature();
-                break;
-                case 'dept':
-                $signature=($dept && $dept->isPublic())?$dept->getSignature():''; //make sure it is public
-                break;
-                case 'none';
-                default:
-                $signature='';
-                break;
+	                case 'mine';
+	                	$signature=$thisuser->getSignature();
+	                	break;
+	                case 'dept':
+	                	$signature=($dept && $dept->isPublic())?$dept->getSignature():''; //make sure it is public
+	                	break;
+	                case 'none';
+	                default:
+	                	$signature='';
+	                	break;
                 endswitch;
                 $body = str_replace("%signature",$signature,$body);
                 
@@ -806,7 +818,7 @@ class Ticket{
             }else{
                 //We have a big problem...alert admin...
                 $msg=sprintf(_('Problems fetching response template for ticket No. %s.  Possible config error - template No. %s'), $this->getId(), $tplId);
-                Sys::alertAdmin(_('System Error'),$msg);
+                Sys::alertAdmin(_('System Error'), 'Server ' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . ': ' . $msg);
             }
             return $resp_id;
         endif;
@@ -878,7 +890,6 @@ class Ticket{
                 }else {
                     Sys::log(LOG_WARNING,_('Template Fetch Error'),_("Unable to fetch 'new note' alert template No.").' '.$tplId);
                 }
-                    
             }
         }
         return $id;
@@ -1133,7 +1144,7 @@ class Ticket{
      *  $autorespond and $alertstaff overwrites config info...
      */      
     static function create($var,&$errors,$origin,$autorespond=true,$alertstaff=true) {
-        global $cfg,$thisclient;
+        global $cfg,$thisuser;
        
        /* Coders never code so fully and joyfully as when they do it for free  - Peter Rotich */
 
@@ -1166,7 +1177,9 @@ class Ticket{
             Sys::log(LOG_WARNING,'Ticket denied',_('Banned email').' - '.$var['email']); //We need to let admin know which email got banned.
         }
 
-        if(!$errors && $thisclient && strcasecmp($thisclient->getEmail(),$var['email']))
+        // if the user is logged-in and isn't a staff member, check the mail correspondence
+        if(!$errors && $_SESSION['_user']['userID'] && $_SESSION['_user']['key'])
+        	if(!$thisuser->isStaff() && strcasecmp($thisuser->getEmail(),$var['email']))
             $errors['email']=_('Email mismatch.');
 
         //Make sure the due date is valid
@@ -1196,7 +1209,7 @@ class Ticket{
             $openTickets=Ticket::getOpenTicketsByEmail($var['email']);
             if($openTickets>=$cfg->getMaxOpenTickets()) {
                 $errors['err']=_("You've reached the maximum open tickets allowed.");
-                //Send the notice only once (when the limit is reached) incase of autoresponders at client end.
+                //Send the notice only once (when the limit is reached) incase of autoresponders at user end.
                 if($cfg->getMaxOpenTickets()==$openTickets && $cfg->sendOverlimitNotice()) {
                     if($var['deptId'])
                         $dept = new Dept($var['deptId']);
@@ -1279,7 +1292,6 @@ class Ticket{
                 ',ticketID='.db_input($extId).
                 ',dept_id='.db_input($deptId).
                 ',topic_id='.db_input($topicId).
-                ',staff_id='.db_input($autoassignId).
                 ',priority_id='.db_input($priorityId).
                 ',email='.db_input($var['email']).
                 ',name='.db_input(Format::striptags($var['name'])).
@@ -1298,23 +1310,27 @@ class Ticket{
         if(db_query($sql) && ($id=db_insert_id())){
 
             if(!$cfg->useRandomIds()){
-                //NB: There is no collision control with sequential ticketIDs.
+                //NB: There is no collision control with sequential ticketIDs!!!
                 $extId=$id; //To make things really easy we are going to use autoincrement ticket_id.
                 db_query('UPDATE '.TICKET_TABLE.' SET ticketID='.db_input($extId).' WHERE ticket_id='.$id); 
                 //TODO: RETHING what happens if this fails?? [At the moment on failure random ID is used...making stuff usable]
             }
             // Load newly created ticket.
             $ticket = new Ticket($id);
-            // Post the message.
+            // Write the message on the database.
             $msgid=$ticket->postMessage($var['message'],$source,$var['mid'],$var['header'],true);
             //TODO: recover from postMessage error??
             //Upload attachments...web based.
             if($_FILES['attachment']['name'] && $cfg->allowOnlineAttachments() && $msgid) {    
-              if(!$cfg->allowAttachmentsOnlogin() || ($cfg->allowAttachmentsOnlogin() && ($thisclient && $thisclient->isValid()))) {
+              if(!$cfg->allowAttachmentsOnlogin() || ($cfg->allowAttachmentsOnlogin() && ($thisuser && $thisuser->isValid()))) {
                     $ticket->uploadAttachment($_FILES['attachment'],$msgid,'M');
                     //TODO: recover from upload issues?
                 }
             }
+
+            // Automatically assign ticket if enable
+            if($autoassignId)
+            	$ticket->assignStaff($autoassignId,0,_('Ticket automatically assigned.'),TRUE);
             
             $dept=$ticket->getDept();
 
@@ -1435,7 +1451,7 @@ class Ticket{
             //post issue as a response...
             $msgId=$ticket->getLastMsgId();
             $issue=$ticket->replaceTemplateVars($var['issue']);
-            if(($respId=$ticket->postResponse($issue,'none',null,false))) { //Note that we're overwriting alerts.
+            if(($respId=$ticket->postResponse($issue,'none',null,false))) { //Note that we're overwriting alerts to user.
                 //Mark the ticket unanswered - postResponse marks it answered which is not the desired state.
                 $ticket->markUnAnswered();
                 //Send Notice to user --- if requested AND enabled!!
@@ -1485,7 +1501,7 @@ class Ticket{
                     }else{
                         //We have a big problem...alert admin...
                         $msg=_('Problems fetching response template for ticket No.').'. '.$ticket->getId().' '._('Possible config error - template No.').' '.$tplId;
-                        Sys::alertAdmin(_('System Error'),$msg);
+                        Sys::alertAdmin(_('System Error'), 'Server ' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . ': ' . $msg);
                     }
                     
                 } //Send send alert.
@@ -1500,7 +1516,7 @@ class Ticket{
             }
             //post create actions
             if($var['staffId']) { //Assign ticket to staff if any. (internal note as message)
-                $ticket->assignStaff($var['staffId'],$var['note'],(isset($var['alertstaff'])));
+                $ticket->assignStaff($var['staffId'],$thisuser->getId(),$var['note'],(isset($var['alertstaff'])));
             }elseif($var['note']){ //Not assigned...save optional note if any
                 $ticket->postNote(_('New Ticket'),$var['note'],false);
             }else{ //Not assignment and no internal note - log activity 

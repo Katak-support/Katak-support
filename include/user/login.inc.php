@@ -1,5 +1,5 @@
 <?php
-if(!defined('KTKCLIENTINC')) die('Adiaux amikoj!');
+if(!defined('KTKUSERINC')) die('Adiaux amikoj!');
 
 $e=Format::input($_POST['lemail']?$_POST['lemail']:$_GET['e']);
 $t=Format::input($_POST['lticket']?$_POST['lticket']:$_GET['t']);

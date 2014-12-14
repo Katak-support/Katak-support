@@ -28,10 +28,8 @@ if(!$_GET['ref'] || strcmp($hash,$_GET['ref'])) die(_('Access Denied'));
 //Check ticket access,
 if($staffId!=$thisuser->getId() && !$thisuser->canAccessDept($deptID)) die(_("You do not have access to the ticket"));
 
-//see if the file actually exits.
 
-
-//see if the file actually exits.
+//see if the file actually exists.
 $month=date('my',strtotime($createDate));
 $file=rtrim($cfg->getUploadDir(),'/')."/$month/$key".'_'.$filename;
 if(!file_exists($file))

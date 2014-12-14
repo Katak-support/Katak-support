@@ -4,11 +4,11 @@
 
     mail fetcher class. Uses IMAP ext for now.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -114,7 +114,7 @@ class MailFetcher {
                 return iconv(mb_detect_encoding($text,$encodings),$enc,$text);
         }
 
-        return utf8_encode($text);
+        return mb_convert_encoding($text,"UTF-8");
     }
     
     //Generic decoder - mirrors imap_utf8
@@ -253,7 +253,7 @@ class MailFetcher {
             $msgid=$ticket->getLastMsgId();
         }else{
             $message=$var['message'];
-            //Strip quoted reply...TODO: figure out how mail clients do it without special tag..
+            //Strip quoted reply...TODO: figure out how mail users do it without special tag..
             if($cfg->stripQuotedReply() && ($tag=$cfg->getReplySeparator()) && strpos($var['message'],$tag))
                 list($message)=split($tag,$var['message']);
             $msgid=$ticket->postMessage($message,'Email',$var['mid'],$var['header']);

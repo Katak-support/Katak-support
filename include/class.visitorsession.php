@@ -1,31 +1,37 @@
 <?php
 /*********************************************************************
-    class.usersession.php
+    class.visitorsession.php
 
-    User (client and staff) sessions handle.
+    Client, user and staff sessions handle.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
 **********************************************************************/
 
+include_once(INCLUDE_DIR.'class.user.php');
 include_once(INCLUDE_DIR.'class.client.php');
 include_once(INCLUDE_DIR.'class.staff.php');
 
 
-class UserSession {
+/**
+ * Base class for user, client and staff sessions.
+ * Never directly instantiated.
+ */
+class VisitorSession {
+
    var $session_id = '';
    var $userID='';
    var $browser = '';
    var $ip = '';
    var $validated=FALSE;
 
-   function UserSession($userid){
+   function VisitorSession($userid){
 
       $this->browser=(!empty($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : $_ENV['HTTP_USER_AGENT'];
       $this->ip=(!empty($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : getenv('REMOTE_ADDR');
@@ -37,7 +43,7 @@ class UserSession {
        return FALSE;
    }
 
-   function isClient() {
+   function isUser() {
        return FALSE;
    }
 
@@ -53,7 +59,7 @@ class UserSession {
        return $this->browser;
    }
    function refreshSession(){
-       //nothing to do...clients need to worry about it.
+       //nothing to do...users need to worry about it.
    }
 
    function sessionToken(){
@@ -102,13 +108,13 @@ class UserSession {
 
 }
 
-class ClientSession extends Client {
+class UserSession extends User {
     
     var $session;
 
-    function ClientSession($email,$id){
-        parent::Client($email,$id);
-        $this->session= new UserSession($email);
+    function UserSession($email,$id){
+        parent::User($email,$id);
+        $this->session= new VisitorSession($email);
     }
 
     function isValid(){
@@ -117,12 +123,50 @@ class ClientSession extends Client {
         if(!$this->getId() || $this->session->getSessionId()!=session_id())
             return false;
         
-        return $this->session->isvalidSession($_SESSION['_client']['token'],$cfg->getClientTimeout(),false)?true:false;
+        return $this->session->isvalidSession($_SESSION['_user']['token'],$cfg->getClientTimeout(),false)?true:false;
     }
 
     function refreshSession(){
         global $_SESSION;
-        $_SESSION['_client']['token']=$this->getSessionToken();
+        $_SESSION['_user']['token']=$this->getSessionToken();
+        //TODO: separate expire time from hash??
+    }
+
+    function getSession() {
+        return $this->session;
+    }
+
+    function getSessionToken() {
+        return $this->session->sessionToken();
+    }
+    
+    function getIP(){
+        return $this->session->getIP();
+    }    
+}
+
+
+class ClientSession extends Client {
+    
+    var $session;
+
+    function ClientSession($var){
+        parent::Client($var);
+        $this->session= new VisitorSession($var);
+    }
+
+    function isValid(){
+        global $_SESSION,$cfg;
+
+        if(!$this->getId() || $this->session->getSessionId()!=session_id())
+            return false;
+        
+        return $this->session->isvalidSession($_SESSION['_user']['token'],$cfg->getClientTimeout(),false)?true:false;
+    }
+
+    function refreshSession(){
+        global $_SESSION;
+        $_SESSION['_user']['token']=$this->getSessionToken();
         //TODO: separate expire time from hash??
     }
 
@@ -146,7 +190,7 @@ class StaffSession extends Staff {
     
     function StaffSession($var){
         parent::Staff($var);
-        $this->session= new UserSession($var);
+        $this->session= new VisitorSession($var);
     }
 
     function isValid(){

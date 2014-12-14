@@ -12,18 +12,38 @@ CREATE TABLE `%TABLE_PREFIX%api_key` (
 
 INSERT INTO `%TABLE_PREFIX%api_key` (`id`, `isactive`, `ipaddr`, `apikey`, `updated`, `created`) VALUES (1, 1, '192.168.1.5', 'siri!', NOW(), NOW());
 
+
+DROP TABLE IF EXISTS `%TABLE_PREFIX%clients`;
+CREATE TABLE `%TABLE_PREFIX%clients` (
+  `client_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `client_email` varchar(128) NOT NULL,
+  `client_firstname` varchar(32) DEFAULT NULL,
+  `client_lastname` varchar(32) DEFAULT NULL,
+  `client_password` varchar(128) DEFAULT NULL,
+  `client_organization` varchar(128) DEFAULT NULL,
+  `client_phone` varchar(28) DEFAULT NULL,
+  `client_mobile` varchar(28) DEFAULT NULL,
+  `client_isactive` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `client_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `client_lastlogin` datetime DEFAULT NULL,
+  PRIMARY KEY (`client_id`),
+  UNIQUE KEY `email` (`client_email`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+
 DROP TABLE IF EXISTS `%TABLE_PREFIX%config`;
 CREATE TABLE `%TABLE_PREFIX%config` (
   `id` tinyint(1) unsigned NOT NULL auto_increment,
   `isonline` tinyint(1) unsigned NOT NULL default '0',
   `staff_language` char(8) NOT NULL default 'en',
-  `client_language` char(8) NOT NULL default 'en',
+  `user_language` char(8) NOT NULL default 'en',
   `timezone_offset` float(3,1) NOT NULL default '0.0',
   `enable_daylight_saving` tinyint(1) unsigned NOT NULL default '0',
   `staff_ip_binding` tinyint(1) unsigned NOT NULL default '1',
   `staff_max_logins` tinyint(5) unsigned NOT NULL default '4',
   `staff_login_timeout` int(10) unsigned NOT NULL default '5',
   `staff_session_timeout` int(10) unsigned NOT NULL default '30',
+  `user_log_required` tinyint(1) unsigned NOT NULL default '0',
   `client_max_logins` tinyint(5) unsigned NOT NULL default '4',
   `client_login_timeout` int(10) unsigned NOT NULL default '5',
   `client_session_timeout` int(10) unsigned NOT NULL default '30',
@@ -56,6 +76,7 @@ CREATE TABLE `%TABLE_PREFIX%config` (
   `log_ticket_activity` tinyint(1) unsigned NOT NULL default '1',
   `ticket_autoresponder` tinyint(1) unsigned NOT NULL default '0',
   `message_autoresponder` tinyint(1) unsigned NOT NULL default '0',
+  `response_notice_active` tinyint(1) unsigned NOT NULL default '0',
   `ticket_notice_active` tinyint(1) unsigned NOT NULL default '0',
   `ticket_alert_active` tinyint(1) unsigned NOT NULL default '0',
   `ticket_alert_admin` tinyint(1) unsigned NOT NULL default '1',
@@ -65,6 +86,7 @@ CREATE TABLE `%TABLE_PREFIX%config` (
   `message_alert_laststaff` tinyint(1) unsigned NOT NULL default '1',
   `message_alert_assigned` tinyint(1) unsigned NOT NULL default '1',
   `message_alert_dept_manager` tinyint(1) unsigned NOT NULL default '0',
+  `assignment_alert_active` tinyint(1) unsigned NOT NULL default '0',
   `note_alert_active` tinyint(1) unsigned NOT NULL default '0',
   `note_alert_laststaff` tinyint(1) unsigned NOT NULL default '1',
   `note_alert_assigned` tinyint(1) unsigned NOT NULL default '1',

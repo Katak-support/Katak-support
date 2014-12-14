@@ -67,7 +67,7 @@ _b.AutoSuggest = function (id, param)
 	
 	
 	// set keyup handler for field
-	// and prevent autocomplete from client
+	// and prevent autocomplete from user
 	//
 	var p = this;
 	

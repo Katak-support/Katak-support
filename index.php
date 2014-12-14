@@ -4,18 +4,18 @@
     
     Support System landing page. Please customize it to fit your needs.
     
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
 **********************************************************************/
-require('client.inc.php');
+require('user.inc.php');
 
-require(CLIENTINC_DIR . 'header.inc.php');
+require(USERINC_DIR . 'header.inc.php');
 ?>
 
   <div id='landingpage'>
@@ -26,4 +26,4 @@ require(CLIENTINC_DIR . 'header.inc.php');
     </div>
   </div>
 
-<?php require(CLIENTINC_DIR . 'footer.inc.php'); ?>
+<?php require(USERINC_DIR . 'footer.inc.php'); ?>

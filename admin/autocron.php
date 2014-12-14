@@ -5,11 +5,11 @@
     Auto-cron handle.
     File requested as 1X1 image on the footer of every staff's page
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -30,7 +30,7 @@ ob_start(); //Keep the image output clean. Hide our dirt.
 //TODO: Make cron DB based to allow for better time limits. Direct calls for now sucks big time.
 //We DON'T want to spawn cron on every page load...we record the lastcroncall on the session per user
 $sec=time()-$_SESSION['lastcroncall'];
-if($sec>180): //user can call cron once every 3 minutes.
+if($sec>180): //staff can call cron once every 3 minutes.
   require_once(INCLUDE_DIR.'class.cron.php');    
   Cron::TicketMonitor(); //Age tickets: We're going to age tickets ever regardless of cron settings. 
   if($cfg && $cfg->enableAutoCron()){ //ONLY fetch tickets if autocron is enabled!

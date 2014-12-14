@@ -4,16 +4,15 @@
 
     Katak-support installer.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
 **********************************************************************/
-
 #inits
 error_reporting(E_ERROR); //turn on fatal errors reporting
 ini_set('magic_quotes_gpc', 0);
@@ -24,15 +23,16 @@ ini_set('display_startup_errors',1);
 
 #start session
 session_start();
-require('setup.inc.php');
+if(!file_exists('setup.inc.php')) die('Fatal error...get tech support');
+require_once('setup.inc.php');
 
 $errors=array();
 $fp=null;
 $_SESSION['abort']=false;
-define('VERSION','1.0'); //Current database version number
-define('VERSION_VERBOSE','1.0.0'); //Script version (what the user sees during installation process).
+define('VERSION','1.1'); //Current database version number
+define('VERSION_VERBOSE','1.1.0'); //Script version (what the user sees during installation process).
 define('CONFIGFILE','../include/ktk-config.php'); //Katak config file full path.
-define('SCHEMAFILE','./inc/katak-v1.0.sql'); //Katak SQL schema.
+define('SCHEMAFILE','./inc/katak-v1.1.sql'); //Katak SQL schema.
 define('URL',rtrim('http'.(($_SERVER['HTTPS']=='on')?'s':'').'://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']),'setup'));
 
 $install='<strong>Need help?</strong> &nbsp; <a href="http://www.katak-support.com/en/content/katak-pro" target="_blank">Professional Installation Available</a>';
@@ -59,7 +59,7 @@ if((double)phpversion()<5.1){ // Too old PHP version
     $wrninc='unclean.inc.php';
 }elseif(!file_exists(CONFIGFILE) || !is_writable(CONFIGFILE)) { //writable config file??
     clearstatcache();
-    $errors['err']='Configuration file is not writable';
+    $errors['err']='Configuration file not writable';
     $wrninc='chmod.inc.php';
 }else {
     $configfile=file_get_contents(CONFIGFILE); //Get the goodies...peek and tell.
@@ -161,7 +161,7 @@ if((double)phpversion()<5.1){ // Too old PHP version
                     $sql='INSERT INTO '.PREFIX.'config SET updated=NOW() '.
                          ',isonline=0,default_email_id=1,alert_email_id=2,default_dept_id=1,default_template_id=1'.
                          ',staff_language='.db_input($_POST['language']).
-                         ',client_language='.db_input($_POST['language']).
+                         ',user_language='.db_input($_POST['language']).
                          ',timezone_offset='.db_input($tzoffset).
                          ',ktsversion='.db_input(VERSION).
                          ',helpdesk_url='.db_input(URL).

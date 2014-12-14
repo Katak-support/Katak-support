@@ -283,9 +283,9 @@ if($notes=db_num_rows($resp)){
                          ?>
                         <?= _('Canned Response:') ?>&nbsp;
                            <select id="canned" name="canned"
-                            onChange="getCannedResponse(this.options[this.selectedIndex].value,this.form,'response');this.selectedIndex='0';" >
-                               <option value="0" selected="selected"><?= _('Select a standard reply') ?></option>
-                            <?php while(list($cannedId,$title)=db_fetch_row($canned)) { ?>
+                             onChange="getCannedResponse(this.options[this.selectedIndex].value,this.form,'response');this.selectedIndex='0';" >
+                             <option value="0" selected="selected"><?= _('Select a standard reply') ?></option>
+                             <?php while(list($cannedId,$title)=db_fetch_row($canned)) { ?>
                              <option value="<?=$cannedId?>" ><?=Format::htmlchars($title)?></option>
                             <?php } ?>
                            </select>&nbsp;&nbsp;&nbsp;<label><input type='checkbox' value='1' name=append checked="true" /><?= _('Append') ?></label>
@@ -304,12 +304,13 @@ if($notes=db_num_rows($resp)){
                     </div>
                     <?php }?>
                     <?php
+                    if($cfg->notifyONNewResponse()) { // A notice will be sent to the user/client? If no, hide the signature.
                      $appendStaffSig=$thisuser->appendMySignature();
                      $appendDeptSig=$dept->canAppendSignature();
                      $info['signature']=!$info['signature']?'none':$info['signature']; //change 'none' to 'mine' to default to staff signature.
                      if($appendStaffSig || $appendDeptSig) { ?>
                       <div style="margin-top: 10px;">
-                          <label for="signature" nowrap><?= _('Append Signature:') ?></label>
+                          <label for="signature" nowrap><?= _('Append signature to e-mail:') ?></label>
                           <label><input type="radio" name="signature" value="none" checked > <?= _('None') ?></label>
                             <?php if($appendStaffSig) { ?>
                           <label> <input type="radio" name="signature" value="mine" <?=$info['signature']=='mine'?'checked':''?> > <?= _('My signature') ?></label>
@@ -318,7 +319,8 @@ if($notes=db_num_rows($resp)){
                           <label><input type="radio" name="signature" value="dept" <?=$info['signature']=='dept'?'checked':''?> > <?= _('Dept Signature') ?></label>
                             <?php } ?>
                        </div>
-                     <?php } ?>
+                      <?php }
+                    } ?>
                     <div style="margin-top: 3px;">
                         <b><?= _('Ticket Status:') ?></b>
                         <?php
@@ -336,7 +338,7 @@ if($notes=db_num_rows($resp)){
                     </div>
                 </form>                
          </div>
-        <div id="notes" class="tabbertab"  align="left">
+            <div id="notes" class="tabbertab"  align="left">
             <h2><?= _('Post Internal Note') ?></h2>
             <form action="tickets.php?id=<?=$id?>#notes" name="notes" class="inline" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="ticket_id" value="<?=$id?>">
@@ -360,9 +362,9 @@ if($notes=db_num_rows($resp)){
                       <?php
                       $checked=($info && isset($info['ticket_status']))?'checked':''; //not selected by default.
                       if($ticket->isOpen()){?>
-                      <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Close" <?=$checked?> > <?= _('Close Ticket') ?></label>
+                        <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Close" <?=$checked?> > <?= _('Close Ticket') ?></label>
                       <?php }else{ ?>
-                      <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Reopen" <?=$checked?> > <?= _('Reopen Ticket') ?></label>
+                        <label><input type="checkbox" name="ticket_status" id="ticket_status" value="Reopen" <?=$checked?> > <?= _('Reopen Ticket') ?></label>
                       <?php } ?>
                   </div>
                 <?php } ?>

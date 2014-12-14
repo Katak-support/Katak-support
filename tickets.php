@@ -14,8 +14,8 @@
 
     $Id: $
 **********************************************************************/
-require('secure.inc.php');
-if(!is_object($thisclient) || !$thisclient->isValid()) die(_('Access Denied')); //Double check again.
+require_once('secure.inc.php');
+if(!is_object($thisuser) || !$thisuser->isValid()) die(_('Access Denied')); //Double check again.
 
 require_once(INCLUDE_DIR.'class.ticket.php');
 $ticket=null;
@@ -27,7 +27,7 @@ if(($id=$_REQUEST['id']?$_REQUEST['id']:$_POST['ticket_id']) && is_numeric($id))
     if(!$ticket or !$ticket->getEmail()) {
         $ticket=null; //clear.
         $errors['err']=_('Access Denied. Possibly invalid ticket ID');
-    }elseif(strcasecmp($thisclient->getEmail(),$ticket->getEmail())){
+    }elseif(strcasecmp($thisuser->getEmail(),$ticket->getEmail())){
         $errors['err']=_('Security violation. Repeated violations will result in your account being locked.');
         $ticket=null; //clear.
     }else{
@@ -40,7 +40,7 @@ if($_POST && is_object($ticket) && $ticket->getId()):
     $errors=array();
     switch(strtolower($_POST['a'])){
     case 'postmessage':
-        if(strcasecmp($thisclient->getEmail(),$ticket->getEmail())) { //double check perm again!
+        if(strcasecmp($thisuser->getEmail(),$ticket->getEmail())) { //double check perm again!
             $errors['err']=_('Access Denied. Possibly invalid ticket ID');
             $inc='tickets.inc.php'; //Show the tickets.               
         }
@@ -78,7 +78,7 @@ if($_POST && is_object($ticket) && $ticket->getId()):
     }
     $ticket->reload();
 endif;
-include(CLIENTINC_DIR.'header.inc.php');
-include(CLIENTINC_DIR.$inc);
-include(CLIENTINC_DIR.'footer.inc.php');
+include(USERINC_DIR.'header.inc.php');
+include(USERINC_DIR.$inc);
+include(USERINC_DIR.'footer.inc.php');
 ?>

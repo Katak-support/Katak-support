@@ -4,18 +4,18 @@
 
     Handles all admin related pages....everything admin!
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
 **********************************************************************/
 require('staff.inc.php');
 /**
- * Make sure the user is admin type LOCKDOWN BABY!
+ * Make sure the user is admin type!
  */
 if (!$thisuser or !$thisuser->isadmin()) {
     header('Location: index.php');
@@ -72,7 +72,7 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                 $msg = _('Preferences Updated Successfully');
                 $cfg->reload();
             } else {
-                $errors['err'] = $errors['err'] ? $errors['err'] : _('Internal Error');
+                $errors['err'] = $errors['err'] ? $errors['err'] : _('Internal error');
             }
             break;
         case 'attach':  //set mail and attachment preferences
@@ -365,6 +365,54 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                     }
             }
             break;
+        case 'client':
+            include_once(INCLUDE_DIR . 'class.client.php');
+            $do = strtolower($_POST['do']);
+            switch ($do) {
+                case 'update':
+                    $client = new Client($_POST['client_id']);
+                    if ($client && $client->getId()) {
+                        if ($client->update($_POST, $errors))
+                            $msg = _('Client profile updated successfully');
+                        elseif (!$errors['err'])
+                            $errors['err'] = _('Error updating the user');
+                    }else {
+                        $errors['err'] = _('Internal error');
+                    }
+                    break;
+                case 'create':
+                    if (($uID = Client::create($_POST, $errors)))
+                      $msg = sprintf(_('%s added successfully'), Format::htmlchars($_POST['client_firstname'].' '.$_POST['client_lastname']));
+                    elseif (!$errors['err'])
+                        $errors['err'] = _('Unable to add the user. Internal error');
+                    break;
+                case 'mass_process':
+                    //ok..at this point..look WMA.
+                    if ($_POST['uids'] && is_array($_POST['uids'])) {
+                        $ids = implode(',', $_POST['uids']);
+                        $selected = count($_POST['uids']);
+                        if (isset($_POST['enable'])) {
+                            $sql = 'UPDATE ' . CLIENT_TABLE . ' SET client_isactive=1 WHERE client_isactive=0 AND client_id IN(' . $ids . ')';
+                            db_query($sql);
+                            $msg = sprintf(_("%s of  %s selected users enabled"), db_affected_rows(), $selected);
+                        } elseif (isset($_POST['disable'])) {
+                            $sql = 'UPDATE ' . CLIENT_TABLE . ' SET client_isactive=0 WHERE client_isactive=1 AND client_id IN(' . $ids . ')';
+                            db_query($sql);
+                            $msg = sprintf(_("%s of %s selected users locked"), db_affected_rows(), $selected);
+                        } elseif (isset($_POST['delete'])) {
+                            db_query('DELETE FROM ' . CLIENT_TABLE . ' WHERE client_id IN(' . $ids . ')');
+                            $msg = sprintf(_("%s of %s selected users deleted"), db_affected_rows(), $selected);
+                        } else {
+                            $errors['err'] = _('Uknown command!');
+                        }
+                    } else {
+                        $errors['err'] = _('No users selected.');
+                    }
+                    break;
+                default:
+                    $errors['err'] = _('Uknown command!');
+            }
+            break;
         case 'staff':
             include_once(INCLUDE_DIR . 'class.staff.php');
             $do = strtolower($_POST['do']);
@@ -597,9 +645,10 @@ switch ($thistab) {
         }
         $page = ($topic or ($_REQUEST['a'] == 'new' && !$topicID)) ? 'topic.inc.php' : 'helptopics.inc.php';
         break;
-    //Staff (users, roles and teams)
+    //Staff (members, clients and roles)
     case 'grp':
     case 'roles':
+    case 'client':
     case 'staff':
         $role = null;
         //Tab and Nav options.
@@ -608,6 +657,8 @@ switch ($thistab) {
         $nav->addSubMenu(array('desc' => _('ADD NEW STAFF'), 'href' => 'admin.php?t=staff&a=new', 'iconclass' => 'newuser'));
         $nav->addSubMenu(array('desc' => _('STAFF ROLES'), 'href' => 'admin.php?t=roles', 'iconclass' => 'roles'));
         $nav->addSubMenu(array('desc' => _('ADD NEW ROLE'), 'href' => 'admin.php?t=roles&a=new', 'iconclass' => 'newrole'));
+       	$nav->addSubMenu(array('desc' => _('CLIENT LIST'), 'href' => 'admin.php?t=client', 'iconclass' => 'user'));
+       	$nav->addSubMenu(array('desc' => _('ADD NEW CLIENT'), 'href' => 'admin.php?t=client&a=new', 'iconclass' => 'newuser'));
         $page = '';
         switch ($thistab) {
             case 'grp':
@@ -618,6 +669,17 @@ switch ($thistab) {
                         $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
                 }
                 $page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
+                break;
+            case 'client':
+                $page = 'clientmembers.inc.php';
+                if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['client_id']) && is_numeric($id)) {
+                    $client = new Client($id);
+                    if (!$client || !is_object($client) || $client->getId() != $id) {
+                        $client = null;
+                        $errors['err'] = sprintf(_('Unable to fetch info on client ID#%s'), $id);
+                    }
+                }
+                $page = ($client or ($_REQUEST['a'] == 'new' && !$uID)) ? 'client.inc.php' : 'clientmembers.inc.php';
                 break;
             case 'staff':
                 $page = 'staffmembers.inc.php';
@@ -657,16 +719,18 @@ switch ($thistab) {
 //========================= END ADMIN PAGE LOGIC ==============================//
 
 $inc = ($page) ? STAFFINC_DIR . $page : '';
-//Now lets render the page...
+//Now lets render the page... First the header
 require(STAFFINC_DIR . 'header.inc.php');
+
+// Insert possible error messages
 ?>
 <div>
 <?php if ($errors['err']) { ?>
         <p align="center" id="errormessage"><?= $errors['err'] ?></p>
 <?php } elseif ($msg) { ?>
         <p align="center" id="infomessage"><?= $msg ?></p>
-    <?php } elseif ($warn) {?>
-    <p align="center" id="warnmessage"><?= $warn ?></p>
+<?php } elseif ($warn) {?>
+        <p align="center" id="warnmessage"><?= $warn ?></p>
 <?php } ?>
 </div>
 
@@ -679,7 +743,7 @@ if ($inc && file_exists($inc)) {
         <span class="error"><?= _('Problems loading requested admin page.') ?> (<?= Format::htmlchars($thistab) ?>)</span>
         <br /><?= _('Possibly access denied, if you believe this is in error please get technical support.') ?>
     </p>
-<?php } ?>
-<?php
-  include_once(STAFFINC_DIR . 'footer.inc.php');
+<?php }
+// Eventually the footer
+include_once(STAFFINC_DIR . 'footer.inc.php');
 ?>

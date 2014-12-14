@@ -4,11 +4,11 @@
 
     Handles staff authentication/logins.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -46,7 +46,7 @@ if ($_POST && (!empty($_POST['username']) && !empty($_POST['passwd']))) {
     }
     if (!$errors && ($user = new StaffSession($_POST['username'])) && $user->getId() && $user->check_passwd($_POST['passwd'])) {
         //update last login.
-        db_query('UPDATE ' . STAFF_TABLE . ' SET lastlogin=NOW() WHERE staff_id=' . db_input($user->getId()));
+        $user->update_lastlogin($user->getId());
         //Figure out where the user is headed - destination!
         $dest = $_SESSION['_staff']['auth']['dest'];
         //Now set session crap and lets roll baby!
@@ -71,12 +71,17 @@ if ($_POST && (!empty($_POST['username']) && !empty($_POST['passwd']))) {
         $errors['err'] = _('Forgot your login info? Contact IT Dept.');
         $_SESSION['_staff']['laststrike'] = time();
         $alert = _('Excessive login attempts by a staff member') . "\n\n" .
-                 _('Username') . ": " . $_POST['username'] . "\n" . _('IP') . ': ' . $_SERVER['REMOTE_ADDR'] . "\n" . _('Time') . ': ' . date('M j, Y, g:i a T') . "\n\n" .
+                 _('Username') . ": " . $_POST['username'] . "\n" .
+                 'IP: ' . $_SERVER['REMOTE_ADDR'] . "\n" .
+                 _('Time') . ': ' . date('M j, Y, g:i a T') . "\n\n" .
                  _('Attempts No.') . ' ' . $_SESSION['_staff']['strikes'] . "\n" . 'Timeout: ' . ($cfg->getStaffLoginTimeout() / 60) . " " . _("minutes") . " \n";
         Sys::log(LOG_ALERT, 'Excessive login attempts (staff)', $alert, $_POST['username'], ($cfg->alertONLoginError()));
     } elseif ($_SESSION['_staff']['strikes'] % 2 == 0) { //Log every other failed login attempt as a warning.
-        $alert = _('Failed login attempts by a staff member') . "\n\n" .  _('Username') . ": " . $_POST['username'] . "\n" . 'IP: ' . $_SERVER['REMOTE_ADDR'] .
-                "\n" . _('Time') . ": " . date('M j, Y, g:i a T') . "\n" . _('Attempts No.') . ' ' . $_SESSION['_staff']['strikes'];
+        $alert = _('Failed login attempts by a staff member') . "\n\n" .
+                 _('Username') . ": " . $_POST['username'] . "\n" .
+                 'IP: ' . $_SERVER['REMOTE_ADDR'] . "\n" .
+                 _('Time') . ": " . date('M j, Y, g:i a T') . "\n" .
+                 _('Attempts No.') . ' ' . $_SESSION['_staff']['strikes'];
         Sys::log(LOG_WARNING, 'Failed login attempt (staff)', $alert, $_POST['username']);
     }
 }

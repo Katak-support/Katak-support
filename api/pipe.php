@@ -5,11 +5,11 @@
 
     Converts piped emails to ticket. Both local and remote!
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -51,7 +51,7 @@ foreach($fromlist as $fromobj){
     break;
 }
 
-//TO Address:Try to figure out the email associated with the message.
+//TO Address: Try to figure out the email associated with the message.
 $tolist = $parser->getToAddressList();
 foreach ($tolist as $toaddr){
     if(($emailId=Email::getIdByEmail($toaddr->mailbox.'@'.$toaddr->host))){
@@ -75,16 +75,16 @@ $deptId=0;
 $name=trim($from->personal,'"');
 if($from->comment && $from->comment[0])
     $name.=' ('.$from->comment[0].')';
-$subj=utf8_encode($parser->getSubject());
+$subj=mb_convert_encoding($parser->getSubject(),"UTF-8");
 if(!($body=Format::stripEmptyLines($parser->getBody())) && $subj)
     $body=$subj;
 
 $var['mid']=$parser->getMessageId();
 $var['email']=$from->mailbox.'@'.$from->host;
-$var['name']=$name?utf8_encode($name):$var['email'];
+$var['name']=$name?mb_convert_encoding($name,"UTF-8"):$var['email'];
 $var['emailId']=$emailId?$emailId:$cfg->getDefaultEmailId();
 $var['subject']=$subj?$subj:'[No Subject]';
-$var['message']=utf8_encode(Format::stripEmptyLines($body));
+$var['message']=umb_convert_encoding(Format::stripEmptyLines($body),"UTF-8");
 $var['header']=$parser->getHeader();
 $var['pri']=$cfg->useEmailPriority()?$parser->getPriority():0;
 
@@ -106,7 +106,7 @@ if(!$ticket){ //New tickets...
     $msgid=$ticket->getLastMsgId();
 }else{
     $message=$var['message'];
-    //Strip quoted reply...TODO: figure out how mail clients do it without special tag..
+    //Strip quoted reply...TODO: figure out how mail users do it without special tag..
     if($cfg->stripQuotedReply() && ($tag=$cfg->getReplySeparator()) && strpos($var['message'],$tag))
         list($message)=split($tag,$var['message']);
     //post message....postMessage does the cleanup.

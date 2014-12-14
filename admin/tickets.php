@@ -151,10 +151,10 @@ if ($_POST && !$errors):
                     if (!$thisuser->isadmin() && !$thisuser->isManager() && $thisuser->getId() != $ticket->getStaffId())
                         $errors['err'] = _('Ticket already assigned. You do not have permission to re-assign assigned tickets');
                 }
-                if (!$errors && $ticket->assignStaff($_POST['staffId'], $_POST['assign_message'])) {
+                if (!$errors && $ticket->assignStaff($_POST['staffId'], $thisuser->getId(), $_POST['assign_message'], TRUE)) {
                     $staff = $ticket->getStaff();
                     $msg = _('Ticket Assigned to') . ' ' . ($staff ? $staff->getName() : _('staff'));
-                    //Remove all the logs and go back to index page.
+                    //Remove all the locks and go back to index page.
                     TicketLock::removeStaffLocks($thisuser->getId(), $ticket->getId());
                     $page = 'tickets.inc.php';
                     $ticket = null;

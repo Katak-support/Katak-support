@@ -4,11 +4,11 @@
 
     Master include file for setup/install scripts.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -40,7 +40,7 @@ function load_sql_schema($schema,&$errors,$debug=false){
     global $dblink;
     //Get database schema
     if(!file_exists($schema) || !($schema=file_get_contents($schema))) {
-        $errors['err']='Internal error. Please make sure your download is the latest';
+        $errors['err']='Internal error. Unable to load SQL schema.';
         $errors[]='Error accessing SQL schema';
     }else{
         //Loadup SQL schema.

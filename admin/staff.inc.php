@@ -5,11 +5,11 @@
     File included on every staff page.
     Handles logins (security), file path issues and language.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket by Peter Rotich.
+    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -45,7 +45,6 @@ define('STD_REPLY_TABLE', TABLE_PREFIX . 'std_reply');
 
 
 /* include what is needed on staff control panel */
-
 require_once(INCLUDE_DIR . 'class.staff.php');
 require_once(INCLUDE_DIR . 'class.nav.php');
 
@@ -63,6 +62,7 @@ function staffLoginPage($msg) {
 }
 
 $thisuser = new StaffSession($_SESSION['_staff']['userID']); /* always reload??? */
+
 //1) is the user Logged in for real && is staff.
 if (!is_object($thisuser) || !$thisuser->getId() || !$thisuser->isValid()) {
     $msg = (!$thisuser || !$thisuser->isValid()) ? _('Authentication Required') : _('Session timed out due to inactivity');
@@ -100,7 +100,7 @@ $submenu = array();
 if (defined('THIS_VERSION') && strcasecmp($cfg->getVersion(), substr(THIS_VERSION, 0, strripos((THIS_VERSION),'.')))) {
     $errors['err'] = $sysnotice = sprintf(_('The script is version %s while the database is version %s'), substr(THIS_VERSION, 0, strripos((THIS_VERSION),'.')), $cfg->getVersion());
 } elseif ($cfg->isHelpDeskOffline()) {
-    $sysnotice ="<strong>". _('System is set to offline mode')."</strong> - "._('Client interface is disabled and ONLY admins can access staff control panel.');
+    $sysnotice ="<strong>". _('System is set to offline mode')."</strong> - "._('External interface is disabled and ONLY admins can access staff control panel.');
     $sysnotice.=' <a href="admin.php?t=pref">' . _('Enable') . '</a>.';
 }
 

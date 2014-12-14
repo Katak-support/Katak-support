@@ -3,9 +3,9 @@
     upgradeOST.php
 
     Katak-support upgrader script from osTicket.
-    Install the system retrieving data from old osTicket 1.6 ST database.
+    Install the system retrieving data from old osTicket v1.6 ST database.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2014 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -28,8 +28,8 @@ require('setup.inc.php');
 $errors=array();
 $fp=null;
 $_SESSION['abort']=false;
-define('VERSION','1.0'); //Current database version number
-define('VERSION_VERBOSE','1.0.0'); //Script version (what the user sees during installation process).
+define('VERSION','1.1'); //Current database version number
+define('VERSION_VERBOSE','1.1.0'); //Script version (what the user sees during installation process).
 define('CONFIGFILE','../include/ktk-config.php'); //Katak config file full path.
 define('SCHEMAFILE','./inc/ktk-upgrade-ost16ST.sql'); //Katak upgrade from osTicket SQL schema.
 define('URL',rtrim('http'.(($_SERVER['HTTPS']=='on')?'s':'').'://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']),'setup'));
@@ -56,7 +56,7 @@ if((double)phpversion()<5.1){ // Too old PHP version
     $wrninc='unclean.inc.php';
 }elseif(!file_exists(CONFIGFILE) || !is_writable(CONFIGFILE)) { //writable config file??
     clearstatcache();
-    $errors['err']='Configuration file is not writable';
+    $errors['err']='Configuration file not writable';
     $wrninc='chmod.inc.php';
 }else {
     $configfile=file_get_contents(CONFIGFILE); //Get the goodies...peek and tell.
@@ -89,7 +89,7 @@ if((double)phpversion()<5.1){ // Too old PHP version
         if(!$errors && (db_version()<'4.4'))
             $errors['mysql']='Katak Support requires MySQL 4.4 or better! Please upgrade';
         
-        //Check if it is an osTicket 1.6 ST database
+        //Check if it is an osTicket v1.6 ST database
         if(!$errors) {
           $sql='SHOW TABLES FROM '.$_POST['dbname'];
           if(db_query($sql) != '') {
