@@ -84,7 +84,7 @@ $var['email']=$from->mailbox.'@'.$from->host;
 $var['name']=$name?mb_convert_encoding($name,"UTF-8"):$var['email'];
 $var['emailId']=$emailId?$emailId:$cfg->getDefaultEmailId();
 $var['subject']=$subj?$subj:'[No Subject]';
-$var['message']=umb_convert_encoding(Format::stripEmptyLines($body),"UTF-8");
+$var['message']=mb_convert_encoding(Format::stripEmptyLines($body),"UTF-8");
 $var['header']=$parser->getHeader();
 $var['pri']=$cfg->useEmailPriority()?$parser->getPriority():0;
 
