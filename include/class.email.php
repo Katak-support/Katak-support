@@ -288,7 +288,7 @@ class Email {
         }
         
         if($vars['mail_active']) {
-            //Check pop/imapinfo only when enabled.
+            //Check pop/imap info only when enabled.
             if(!function_exists('imap_open'))
                 $errors['mail_active']= _('IMAP doesn\'t exist. PHP must be compiled with IMAP enabled.');
             if(!$vars['mail_host'])

@@ -2,9 +2,10 @@
     autolock.js
 
     Ticket locking utility...loaded only when ticket locking is enabled.
-    Mainly useful for renewing locks based on form activity since we do initial lock onview at PHP end.
+    Mainly useful for renewing locks based on form activity since we do
+    initial lock onview at PHP end.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -94,7 +95,7 @@ var autoLock = {
         //Check Ajax availability.
         if(!Http || !Http.get) { return; }
         
-        //make sure we are on ticket view page!
+        //make sure we are on ticket view page! )include/staff/viewpage.inc.php)
         void(autoLock.form=document.forms['replyform']);
         if(!autoLock.form || !autoLock.form.ticket_id.value) {
                 return;
@@ -174,7 +175,7 @@ var autoLock = {
         if(!autoLock.tid) { return false; }
         Http.get({
             url: "ajax.php?api=tickets&f=releaseLock&id="+autoLock.lockId+'&tid='+autoLock.tid,
-            callback: function (resp){ alert(resp);}
+            callback: function (resp){ console.log("releaseLock: " + resp);}
             });
     },
 

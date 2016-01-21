@@ -59,7 +59,7 @@ $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
     <?php } ?>
 </div>
 <div class='msg'>
-  <?=$showing?>&nbsp;&nbsp;<?=_('tickets')?> &nbsp; &nbsp;
+  <?=$showing?>&nbsp;&nbsp;<?=_('Tickets')?> &nbsp; &nbsp;
   <a href="" title="<?=_('Reload') ?>"><span class="Icon refresh">&nbsp;</span></a>
 </div>
 <table width="100%" cellspacing=0 cellpadding=3 class="tgrid" align="center">
@@ -107,7 +107,7 @@ $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
       <?php
     } //end of while.
     else: //not tickets found!! ?> 
-      <tr class="<?=$class?>"><td colspan=7><b><?= _('NO tickets found.')?></b></td></tr>
+      <tr class="<?=$class?>"><td colspan=7><b><?= _('NO Tickets Found.')?></b></td></tr>
     <?php
     endif; ?>
 </table>

@@ -66,7 +66,7 @@ class VisitorSession {
 
       $time  = time();
       $hash  = md5($time.SESSION_SECRET.$this->userID);
-      $token = "$hash:$time:".MD5($this->ip);
+      $token = "$hash:$time:".md5($this->ip);
 
       return($token);
    }
