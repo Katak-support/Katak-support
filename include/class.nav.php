@@ -4,7 +4,7 @@
 
     Navigation helper classes. Pointless BUT helps keep navigation clean and free from errors.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -31,6 +31,7 @@ class StaffNav {
             $tabs['emails']=array('desc'=>_('Emails'),'href'=>'admin.php?t=email','title'=>_('Email Settings'));
             $tabs['topics']=array('desc'=>_('Help Topics'),'href'=>'admin.php?t=topics','title'=>_('Help Topics'));
             $tabs['staff']=array('desc'=>_('Staff'),'href'=>'admin.php?t=staff','title'=>_('Staff Members'));
+            $tabs['clients']=array('desc'=>_('Clients'),'href'=>'admin.php?t=clients','title'=>_('Clients'));
             $tabs['depts']=array('desc'=>_('Departments'),'href'=>'admin.php?t=depts','title'=>_('Departments'));
         }else {
             $tabs['tickets']=array('desc'=>_('Tickets'),'href'=>'tickets.php','title'=>_('Ticket Queue'));

@@ -9,7 +9,7 @@ $showing=($num=db_num_rows($clients))?_("Client Members"):sprintf(_("No client f
 $showing .= $cfg->getUserLogRequired()?"":" &nbsp (" . _("Note: Client log-in disabled") . ")";
 ?>
 <div class="msg">&nbsp;<?=$showing?>&nbsp;</div>
-<form action="admin.php?t=client" method="POST" name="client" onSubmit="return checkbox_checker(document.forms['client'],1,0);">
+<form action="admin.php?t=clients" method="POST" name="client" onSubmit="return checkbox_checker(document.forms['client'],1,0);">
   <input type=hidden name='a' value='client'>
   <input type=hidden name='do' value='mass_process'>
    <table border="0" cellspacing=0 cellpadding=2 class="dtable" align="center" width="100%">
@@ -41,7 +41,7 @@ $showing .= $cfg->getUserLogRequired()?"":" &nbsp (" . _("Note: Client log-in di
                   <input type="checkbox" name="uids[]" value="<?=$row['client_id']?>" <?=$sel?'checked':''?> 
                       onClick="highLight(this.value,this.checked);">
                 </td>
-                <td><a href="admin.php?t=client&id=<?=$row['client_id']?>"><?=$row['client_email']?></a>&nbsp;</td>
+                <td><a href="admin.php?t=clients&id=<?=$row['client_id']?>"><?=$row['client_email']?></a>&nbsp;</td>
                 <td><?=Format::htmlchars($name)?>&nbsp;</td>
                 <td><?=$row['client_organization']?></td>
                 <td><?=$row['client_isactive']?_('Active'):'<b>'._('Locked').'</b>'?></td>

@@ -78,7 +78,7 @@ strong { color:#000; }
 }
 
 #container {
-  width:84%;
+  width:88%;
   min-width:840px;
   text-align: left;
   margin:5px auto 0 auto;
@@ -122,7 +122,7 @@ strong { color:#000; }
   
   #nav {
     clear:both;
-    padding:10px 0 0 30px;
+    padding:10px 0 0 6%;
   }
 
     #nav ul {
@@ -144,11 +144,7 @@ strong { color:#000; }
       margin:0 0 0 9px;
       text-decoration:none;
     }
-
-    #nav ul#main_nav {
-        padding-left:40px;
-    }
-    
+   
     #nav ul#main_nav li a {
       background:url(../images/tab.jpg) bottom left no-repeat #fff;
       width:110px;
@@ -268,7 +264,7 @@ strong { color:#000; }
 
     /*System Notice */
         #system_notice {
-                width:790px;
+                width:84%;
                 text-align:left;
                 font-size: 12px;
                 margin:0 auto -5px auto;
@@ -278,3 +274,14 @@ strong { color:#000; }
         }
 
         #system_notice a { color:#600; font-weight: bold;}
+
+
+/* -----------------------------------
+TABLET, MOBILE
+------------------------------------ */
+@media (max-width: 1012px) {
+	  #nav {
+    clear:both;
+    padding:10px 0 0 0;
+  }
+}

@@ -23,7 +23,7 @@ $rep=($errors && $_POST)?Format::input($_POST):Format::htmlchars($rep);
 <form action="admin.php" method="post">
   <input type="hidden" name="do" value="<?=$action?>">
   <input type="hidden" name="a" value="<?=Format::htmlchars($_REQUEST['a'])?>">
-  <input type="hidden" name="t" value="client">
+  <input type="hidden" name="t" value="clients">
   <input type="hidden" name="client_id" value="<?=$rep['client_id']?>">
   <input type="hidden" name="old_client_email" value="<?=$rep['client_email']?>">
   <table width="100%" border="0" cellspacing=0 cellpadding=2 class="tform">
@@ -81,6 +81,6 @@ $rep=($errors && $_POST)?Format::input($_POST):Format::htmlchars($rep);
   <div class="centered">
       <input class="button" type="submit" name="submit" value="<?= _('Submit') ?>">
       <input class="button" type="reset" name="reset" value="<?= _('Reset') ?>">
-      <input class="button" type="button" name="cancel" value="<?= _('Cancel') ?>" onClick='window.location.href="admin.php?t=client"'>
+      <input class="button" type="button" name="cancel" value="<?= _('Cancel') ?>" onClick='window.location.href="admin.php?t=clients"'>
   </div>
 </form>

@@ -4,7 +4,7 @@
 
     Handles all admin related pages....everything admin!
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -365,7 +365,7 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                     }
             }
             break;
-        case 'client':
+        case 'clients':
             include_once(INCLUDE_DIR . 'class.client.php');
             $do = strtolower($_POST['do']);
             switch ($do) {
@@ -645,10 +645,9 @@ switch ($thistab) {
         }
         $page = ($topic or ($_REQUEST['a'] == 'new' && !$topicID)) ? 'topic.inc.php' : 'helptopics.inc.php';
         break;
-    //Staff (members, clients and roles)
+    //Staff (members and roles)
     case 'grp':
     case 'roles':
-    case 'client':
     case 'staff':
         $role = null;
         //Tab and Nav options.
@@ -657,8 +656,6 @@ switch ($thistab) {
         $nav->addSubMenu(array('desc' => _('ADD NEW STAFF'), 'href' => 'admin.php?t=staff&a=new', 'iconclass' => 'newuser'));
         $nav->addSubMenu(array('desc' => _('STAFF ROLES'), 'href' => 'admin.php?t=roles', 'iconclass' => 'roles'));
         $nav->addSubMenu(array('desc' => _('ADD NEW ROLE'), 'href' => 'admin.php?t=roles&a=new', 'iconclass' => 'newrole'));
-       	$nav->addSubMenu(array('desc' => _('CLIENT LIST'), 'href' => 'admin.php?t=client', 'iconclass' => 'user'));
-       	$nav->addSubMenu(array('desc' => _('ADD NEW CLIENT'), 'href' => 'admin.php?t=client&a=new', 'iconclass' => 'newuser'));
         $page = '';
         switch ($thistab) {
             case 'grp':
@@ -669,17 +666,6 @@ switch ($thistab) {
                         $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
                 }
                 $page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
-                break;
-            case 'client':
-                $page = 'clientmembers.inc.php';
-                if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['client_id']) && is_numeric($id)) {
-                    $client = new Client($id);
-                    if (!$client || !is_object($client) || $client->getId() != $id) {
-                        $client = null;
-                        $errors['err'] = sprintf(_('Unable to fetch info on client ID#%s'), $id);
-                    }
-                }
-                $page = ($client or ($_REQUEST['a'] == 'new' && !$uID)) ? 'client.inc.php' : 'clientmembers.inc.php';
                 break;
             case 'staff':
                 $page = 'staffmembers.inc.php';
@@ -696,6 +682,41 @@ switch ($thistab) {
                 $page = 'staffmembers.inc.php';
         }
         break;
+        //Clients (Clients and groups)
+        case 'groups':
+        case 'clients':
+        	$role = null;
+        	//Tab and Nav options.
+        	$nav->setTabActive('clients');
+        	$nav->addSubMenu(array('desc' => _('CLIENT LIST'), 'href' => 'admin.php?t=clients', 'iconclass' => 'user'));
+        	$nav->addSubMenu(array('desc' => _('ADD NEW CLIENT'), 'href' => 'admin.php?t=clients&a=new', 'iconclass' => 'newuser'));
+//        	$nav->addSubMenu(array('desc' => _('CLIENT GROUPS'), 'href' => 'admin.php?t=groups', 'iconclass' => 'roles'));
+//        	$nav->addSubMenu(array('desc' => _('ADD NEW GROUP'), 'href' => 'admin.php?t=groups&a=new', 'iconclass' => 'newrole'));
+        	$page = '';
+        	switch ($thistab) {
+        		case 'groups':
+        			if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
+        				$res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
+        				if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
+        					$errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
+        			}
+        			$page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
+        			break;
+        		case 'clients':
+        			$page = 'clientmembers.inc.php';
+        			if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['client_id']) && is_numeric($id)) {
+        				$client = new Client($id);
+        				if (!$client || !is_object($client) || $client->getId() != $id) {
+        					$client = null;
+        					$errors['err'] = sprintf(_('Unable to fetch info on client ID#%s'), $id);
+        				}
+        			}
+        			$page = ($client or ($_REQUEST['a'] == 'new' && !$uID)) ? 'client.inc.php' : 'clientmembers.inc.php';
+        			break;
+        		default:
+        			$page = 'clientmembers.inc.php';
+        	}
+        	break;
     //Departments
     case 'dept': //lazy
     case 'depts':
