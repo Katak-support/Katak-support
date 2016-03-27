@@ -110,7 +110,7 @@ $deletable=0;
     <input type=hidden name='t' value='templates'>
     <input type=hidden name='do' value='add'>
     Name:
-    <input name="name" size=30 value="<?=($errors)?Format::htmlchars($_REQUEST['name']):''?>" />
+    <input name="name" size="30" maxlength="32" value="<?=($errors)?Format::htmlchars($_REQUEST['name']):''?>" />
     <font class="error">*&nbsp;<?=$errors['name']?></font>&nbsp;&nbsp;
     Copy: 
     <select name="copy_template">
