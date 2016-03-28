@@ -552,190 +552,180 @@ endif;
 //Process requested tab.
 $thistab = strtolower($_REQUEST['t'] ? $_REQUEST['t'] : 'dashboard');
 $inc = $page = ''; //No outside crap please!
-$submenu = array();
+
 switch ($thistab) {
-    //Preferences & settings
-    case 'settings':
-    case 'pref':
-    case 'attach':
-    case 'api':
-        $nav->setTabActive('settings');
-        $nav->addSubMenu(array('desc' => _('PREFERENCES'), 'href' => 'admin.php?t=pref', 'iconclass' => 'preferences'));
-        $nav->addSubMenu(array('desc' => _('ATTACHMENTS'), 'href' => 'admin.php?t=attach', 'iconclass' => 'attachment'));
-        $nav->addSubMenu(array('desc' => _('API'), 'href' => 'admin.php?t=api', 'iconclass' => 'api'));
-        switch ($thistab){
-            case 'settings':
-            case 'pref':
-                $page = 'preference.inc.php';
-                break;
-            case 'attach':
-                $page = 'attachment.inc.php';
-                break;
-            case 'api':
-                $page = 'api.inc.php';
+	
+	//Dashboard
+	case 'dashboard':
+	case 'syslog':
+	case 'reports':
+		$nav->setTabActive('dashboard');
+		switch ($thistab) {
+			case 'dashboard':
+			case 'reports':
+				$page = 'reports.inc.php';
+				break;
+			case 'syslog':
+				$page = 'syslogs.inc.php';
+	}
+	break;
+	
+	//Preferences & settings
+	case 'settings':
+	case 'pref':
+	case 'attach':
+	case 'api':
+		$nav->setTabActive('settings');
+		switch ($thistab){
+			case 'settings':
+			case 'pref':
+				$page = 'preference.inc.php';
+				break;
+			case 'attach':
+				$page = 'attachment.inc.php';
+				break;
+			case 'api':
+				$page = 'api.inc.php';
+		}
+		break;
+		
+	// System Emails
+	case 'email':
+	case 'templates':
+	case 'banlist':
+		$nav->setTabActive('emails');
+		switch ($thistab) {
+			case 'templates':
+				$page = 'templates.inc.php';
+				$template = null;
+				if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['email_id']) && is_numeric($id)) {
+					include_once(INCLUDE_DIR . 'class.msgtpl.php');
+					$template = new Template($id);
+					if (!$template || !$template->getId()) {
+						$template = null;
+						$errors['err'] = sprintf(_('Unable to fetch info on template ID#'), $id);
+					} else {
+						$page = 'template.inc.php';
+					}
+				}
+				break;
+			case 'banlist':
+				$page = 'banlist.inc.php';
+				break;
+			case 'email':
+      default:
+        include_once(INCLUDE_DIR . 'class.email.php');
+        $email = null;
+        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['email_id']) && is_numeric($id)) {
+          $email = new Email($id, false);
+          if (!$email->load()) {
+            $email = null;
+            $errors['err'] = sprintf(_('Unable to fetch info on email ID#%s'), $id);
+          }
         }
-        break;
-    case 'dashboard':
-    case 'syslog':
-    case 'reports':
-      $nav->setTabActive('dashboard');
-      $nav->addSubMenu(array('desc' => _('REPORTS'), 'href' => 'admin.php?t=reports', 'iconclass' => 'reports'));
-      $nav->addSubMenu(array('desc' => _('SYSTEM LOGS'), 'href' => 'admin.php?t=syslog', 'iconclass' => 'syslogs'));
-      switch ($thistab) {
-          case 'dashboard':
-          case 'reports':
-            $page = 'reports.inc.php';
-            break;
-          case 'syslog':
-            $page = 'syslogs.inc.php';
-      }
-      break;
-    case 'email':
-    case 'templates':
-    case 'banlist':
-        $nav->setTabActive('emails');
-        $nav->addSubMenu(array('desc' => _('EMAIL ADDRESSES'), 'href' => 'admin.php?t=email', 'iconclass' => 'emailSettings'));
-        $nav->addSubMenu(array('desc' => _('ADD NEW EMAIL'), 'href' => 'admin.php?t=email&a=new', 'iconclass' => 'newEmail'));
-        $nav->addSubMenu(array('desc' => _('TEMPLATES'), 'href' => 'admin.php?t=templates', 'title' => _('Email Templates'), 'iconclass' => 'emailTemplates'));
-        $nav->addSubMenu(array('desc' => _('BANLIST'), 'href' => 'admin.php?t=banlist', 'title' => _('Banned Email'), 'iconclass' => 'banList'));
-        switch ($thistab) {
-            case 'templates':
-                $page = 'templates.inc.php';
-                $template = null;
-                if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['email_id']) && is_numeric($id)) {
-                    include_once(INCLUDE_DIR . 'class.msgtpl.php');
-                    $template = new Template($id);
-                    if (!$template || !$template->getId()) {
-                        $template = null;
-                        $errors['err'] = sprintf(_('Unable to fetch info on template ID#'), $id);
-                    } else {
-                        $page = 'template.inc.php';
-                    }
-                }
-                break;
-            case 'banlist':
-                $page = 'banlist.inc.php';
-                break;
-            case 'email':
-            default:
-                include_once(INCLUDE_DIR . 'class.email.php');
-                $email = null;
-                if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['email_id']) && is_numeric($id)) {
-                    $email = new Email($id, false);
-                    if (!$email->load()) {
-                        $email = null;
-                        $errors['err'] = sprintf(_('Unable to fetch info on email ID#%s'), $id);
-                    }
-                }
-                $page = ($email or ($_REQUEST['a'] == 'new' && !$emailID)) ? 'email.inc.php' : 'emails.inc.php';
-        }
-        break;
-    case 'topics':
-        require_once(INCLUDE_DIR . 'class.topic.php');
+        $page = ($email or ($_REQUEST['a'] == 'new' && !$emailID)) ? 'email.inc.php' : 'emails.inc.php';
+    }
+    break;
+      
+  // Help topics
+  case 'topics':
+    require_once(INCLUDE_DIR . 'class.topic.php');
+    $topic = null;
+    $nav->setTabActive('topics');
+    if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['topic_id']) && is_numeric($id)) {
+      $topic = new Topic($id);
+      if (!$topic->load() && $topic->getId() == $id) {
         $topic = null;
-        $nav->setTabActive('topics');
-        $nav->addSubMenu(array('desc' => _('HELP TOPICS'), 'href' => 'admin.php?t=topics', 'iconclass' => 'helpTopics'));
-        $nav->addSubMenu(array('desc' => _('ADD NEW TOPIC'), 'href' => 'admin.php?t=topics&a=new', 'iconclass' => 'newHelpTopic'));
-        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['topic_id']) && is_numeric($id)) {
-            $topic = new Topic($id);
-            if (!$topic->load() && $topic->getId() == $id) {
-                $topic = null;
-                $errors['err'] = sprintf(_('Unable to fetch info on topic #%s'), $id);
-            }
+        $errors['err'] = sprintf(_('Unable to fetch info on topic #%s'), $id);
+      }
+    }
+    $page = ($topic or ($_REQUEST['a'] == 'new' && !$topicID)) ? 'topic.inc.php' : 'helptopics.inc.php';
+    break;
+    
+  //Staff (members and roles)
+  case 'grp':
+  case 'roles':
+  case 'staff':
+    $role = null;
+    //Tab and Nav options.
+    $nav->setTabActive('staff');
+    $page = '';
+    switch ($thistab) {
+      case 'grp':
+      case 'roles':
+        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
+          $res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
+          if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
+            $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
         }
-        $page = ($topic or ($_REQUEST['a'] == 'new' && !$topicID)) ? 'topic.inc.php' : 'helptopics.inc.php';
+        $page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
         break;
-    //Staff (members and roles)
-    case 'grp':
-    case 'roles':
-    case 'staff':
-        $role = null;
-        //Tab and Nav options.
-        $nav->setTabActive('staff');
-        $nav->addSubMenu(array('desc' => _('STAFF MEMBERS'), 'href' => 'admin.php?t=staff', 'iconclass' => 'users'));
-        $nav->addSubMenu(array('desc' => _('ADD NEW STAFF'), 'href' => 'admin.php?t=staff&a=new', 'iconclass' => 'newuser'));
-        $nav->addSubMenu(array('desc' => _('STAFF ROLES'), 'href' => 'admin.php?t=roles', 'iconclass' => 'roles'));
-        $nav->addSubMenu(array('desc' => _('ADD NEW ROLE'), 'href' => 'admin.php?t=roles&a=new', 'iconclass' => 'newrole'));
-        $page = '';
-        switch ($thistab) {
-            case 'grp':
-            case 'roles':
-                if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
-                    $res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
-                    if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
-                        $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
-                }
-                $page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
-                break;
-            case 'staff':
-                $page = 'staffmembers.inc.php';
-                if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['staff_id']) && is_numeric($id)) {
-                    $staff = new Staff($id);
-                    if (!$staff || !is_object($staff) || $staff->getId() != $id) {
-                        $staff = null;
-                        $errors['err'] = sprintf(_('Unable to fetch info on staff ID#%s'), $id);
-                    }
-                }
-                $page = ($staff or ($_REQUEST['a'] == 'new' && !$uID)) ? 'staff.inc.php' : 'staffmembers.inc.php';
-                break;
-            default:
-                $page = 'staffmembers.inc.php';
+      case 'staff':
+        $page = 'staffmembers.inc.php';
+        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['staff_id']) && is_numeric($id)) {
+          $staff = new Staff($id);
+          if (!$staff || !is_object($staff) || $staff->getId() != $id) {
+            $staff = null;
+            $errors['err'] = sprintf(_('Unable to fetch info on staff ID#%s'), $id);
+          }
         }
+        $page = ($staff or ($_REQUEST['a'] == 'new' && !$uID)) ? 'staff.inc.php' : 'staffmembers.inc.php';
         break;
-        //Clients (Clients and groups)
-        case 'groups':
-        case 'clients':
-        	$role = null;
-        	//Tab and Nav options.
-        	$nav->setTabActive('clients');
-        	$nav->addSubMenu(array('desc' => _('CLIENT LIST'), 'href' => 'admin.php?t=clients', 'iconclass' => 'user'));
-        	$nav->addSubMenu(array('desc' => _('ADD NEW CLIENT'), 'href' => 'admin.php?t=clients&a=new', 'iconclass' => 'newuser'));
-//        	$nav->addSubMenu(array('desc' => _('CLIENT GROUPS'), 'href' => 'admin.php?t=groups', 'iconclass' => 'roles'));
-//        	$nav->addSubMenu(array('desc' => _('ADD NEW GROUP'), 'href' => 'admin.php?t=groups&a=new', 'iconclass' => 'newrole'));
-        	$page = '';
-        	switch ($thistab) {
-        		case 'groups':
-        			if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
-        				$res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
-        				if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
-        					$errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
-        			}
-        			$page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
-        			break;
-        		case 'clients':
-        			$page = 'clientmembers.inc.php';
-        			if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['client_id']) && is_numeric($id)) {
-        				$client = new Client($id);
-        				if (!$client || !is_object($client) || $client->getId() != $id) {
-        					$client = null;
-        					$errors['err'] = sprintf(_('Unable to fetch info on client ID#%s'), $id);
-        				}
-        			}
-        			$page = ($client or ($_REQUEST['a'] == 'new' && !$uID)) ? 'client.inc.php' : 'clientmembers.inc.php';
-        			break;
-        		default:
-        			$page = 'clientmembers.inc.php';
-        	}
-        	break;
-    //Departments
-    case 'dept': //lazy
-    case 'depts':
+      default:
+        $page = 'staffmembers.inc.php';
+    }
+    break;
+    
+  //Clients (Clients and groups)
+  case 'groups':
+  case 'clients':
+    $role = null;
+    //Tab and Nav options.
+    $nav->setTabActive('clients');
+    $page = '';
+    switch ($thistab) {
+      case 'groups':
+        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
+          $res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
+          if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
+            $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
+        }
+        $page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
+        break;
+      case 'clients':
+        $page = 'clientmembers.inc.php';
+        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['client_id']) && is_numeric($id)) {
+          $client = new Client($id);
+          if (!$client || !is_object($client) || $client->getId() != $id) {
+            $client = null;
+            $errors['err'] = sprintf(_('Unable to fetch info on client ID#%s'), $id);
+          }
+        }
+        $page = ($client or ($_REQUEST['a'] == 'new' && !$uID)) ? 'client.inc.php' : 'clientmembers.inc.php';
+        break;
+      default:
+        $page = 'clientmembers.inc.php';
+    }
+    break;
+    
+  //Departments
+  case 'dept': //lazy
+  case 'depts':
+    $dept = null;
+    if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['dept_id']) && is_numeric($id)) {
+      $dept = new Dept($id);
+      if (!$dept || !$dept->getId()) {
         $dept = null;
-        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['dept_id']) && is_numeric($id)) {
-            $dept = new Dept($id);
-            if (!$dept || !$dept->getId()) {
-                $dept = null;
-                $errors['err'] = sprintf(_('Unable to fetch info on Dept ID#%s'), $id);
-            }
-        }
-        $page = ($dept or ($_REQUEST['a'] == 'new' && !$deptID)) ? 'dept.inc.php' : 'depts.inc.php';
-        $nav->setTabActive('depts');
-        $nav->addSubMenu(array('desc' => _('DEPARTMENTS'), 'href' => 'admin.php?t=depts', 'iconclass' => 'departments'));
-        $nav->addSubMenu(array('desc' => _('ADD NEW DEPT.'), 'href' => 'admin.php?t=depts&a=new', 'iconclass' => 'newDepartment'));
-        break;
-    // (default)
-    default:
-        $page = 'pref.inc.php';
+        $errors['err'] = sprintf(_('Unable to fetch info on Dept ID#%s'), $id);
+      }
+    }
+    $page = ($dept or ($_REQUEST['a'] == 'new' && !$deptID)) ? 'dept.inc.php' : 'depts.inc.php';
+    $nav->setTabActive('depts');
+    break;
+    
+  // (default)
+  default:
+    $page = 'pref.inc.php';
 }
 //========================= END ADMIN PAGE LOGIC ==============================//
 

@@ -2,13 +2,13 @@
 /*********************************************************************
     class.nav.php
 
-    Navigation helper classes. Pointless BUT helps keep navigation clean and free from errors.
+    Navigation helper class. Defines the menus and helps keep navigation
+    clean and free from errors.
 
     Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
-    Derived from osTicket v1.6 by Peter Rotich.
     See LICENSE.TXT for details.
 
     $Id: $
@@ -19,7 +19,8 @@ class StaffNav {
 
     var $activetab;
     var $ptype;
-
+    
+    // Create the main menu
     function StaffNav($pagetype='staff'){
         global $thisuser;
 
@@ -43,26 +44,67 @@ class StaffNav {
         }
         $this->tabs=$tabs;    
     }
+
+		// Set the admin's submenus
+    function setSubMenu($tab){
+    	switch ($tab) {
+    		case 'dashboard':
+    			$this->addSubMenu(array('desc' => _('REPORTS'), 'href' => 'admin.php?t=reports', 'iconclass' => 'reports'));
+    			$this->addSubMenu(array('desc' => _('SYSTEM LOGS'), 'href' => 'admin.php?t=syslog', 'iconclass' => 'syslogs'));
+    			break;
+    		case 'settings':
+    			$this->addSubMenu(array('desc' => _('PREFERENCES'), 'href' => 'admin.php?t=pref', 'iconclass' => 'preferences'));
+    			$this->addSubMenu(array('desc' => _('ATTACHMENTS'), 'href' => 'admin.php?t=attach', 'iconclass' => 'attachment'));
+    			$this->addSubMenu(array('desc' => _('API'), 'href' => 'admin.php?t=api', 'iconclass' => 'api'));
+    			break;
+    		case 'emails':
+    			$this->addSubMenu(array('desc' => _('EMAIL ADDRESSES'), 'href' => 'admin.php?t=email', 'iconclass' => 'emailSettings'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW EMAIL'), 'href' => 'admin.php?t=email&a=new', 'iconclass' => 'newEmail'));
+    			$this->addSubMenu(array('desc' => _('TEMPLATES'), 'href' => 'admin.php?t=templates', 'title' => _('Email Templates'), 'iconclass' => 'emailTemplates'));
+    			$this->addSubMenu(array('desc' => _('BANLIST'), 'href' => 'admin.php?t=banlist', 'title' => _('Banned Email'), 'iconclass' => 'banList'));
+    			break;
+    		case 'topics':
+    			$this->addSubMenu(array('desc' => _('HELP TOPICS'), 'href' => 'admin.php?t=topics', 'iconclass' => 'helpTopics'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW TOPIC'), 'href' => 'admin.php?t=topics&a=new', 'iconclass' => 'newHelpTopic'));
+    			break;
+    		case 'staff':
+    			$this->addSubMenu(array('desc' => _('STAFF MEMBERS'), 'href' => 'admin.php?t=staff', 'iconclass' => 'users'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW STAFF'), 'href' => 'admin.php?t=staff&a=new', 'iconclass' => 'newuser'));
+    			$this->addSubMenu(array('desc' => _('STAFF ROLES'), 'href' => 'admin.php?t=roles', 'iconclass' => 'roles'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW ROLE'), 'href' => 'admin.php?t=roles&a=new', 'iconclass' => 'newrole'));
+    			break;
+    		case 'clients':
+    			$this->addSubMenu(array('desc' => _('CLIENT LIST'), 'href' => 'admin.php?t=clients', 'iconclass' => 'user'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW CLIENT'), 'href' => 'admin.php?t=clients&a=new', 'iconclass' => 'newuser'));
+    			//$this->addSubMenu(array('desc' => _('CLIENT GROUPS'), 'href' => 'admin.php?t=groups', 'iconclass' => 'roles'));
+    			//$this->addSubMenu(array('desc' => _('ADD NEW GROUP'), 'href' => 'admin.php?t=groups&a=new', 'iconclass' => 'newrole'));
+    			break;
+    		case 'depts':
+    			$this->addSubMenu(array('desc' => _('DEPARTMENTS'), 'href' => 'admin.php?t=depts', 'iconclass' => 'departments'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW DEPT.'), 'href' => 'admin.php?t=depts&a=new', 'iconclass' => 'newDepartment'));
+    			break;
+    	}
+    }
     
-    
+		// Set the active main menu tab and calls the submenus
     function setTabActive($tab){
-            
+    
         if($this->tabs[$tab]){
             $this->tabs[$tab]['active']=true;
             if($this->activetab && $this->activetab!=$tab && $this->tabs[$this->activetab])
                  $this->tabs[$this->activetab]['active']=false;
             $this->activetab=$tab;
+            $this->setSubMenu($tab); // Calls the submenus
             return true;
         }
         return false;
     }
     
     function addSubMenu($item,$tab=null) {
-        
+      
         $tab=$tab?$tab:$this->activetab;
         $this->submenu[$tab][]=$item;
     }
-
       
     function getActiveTab(){
         return $this->activetab;

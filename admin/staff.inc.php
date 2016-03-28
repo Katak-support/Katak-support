@@ -5,7 +5,7 @@
     File included on every staff page.
     Handles logins (security), file path issues and language.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -104,7 +104,9 @@ if (defined('THIS_VERSION') && strcasecmp($cfg->getVersion(), substr(THIS_VERSIO
     $sysnotice.=' <a href="admin.php?t=pref">' . _('Enable') . '</a>.';
 }
 
+// Call the main menu
 $nav = new StaffNav(strcasecmp(basename($_SERVER['SCRIPT_NAME']), 'admin.php') ? 'staff' : 'admin');
+
 //Check for forced password change.
 if ($thisuser->forcePasswdChange()) {
     require('profile.php'); //profile.php must request this file as require_once to avoid problems.
