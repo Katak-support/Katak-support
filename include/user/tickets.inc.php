@@ -3,8 +3,18 @@ if(!defined('KTKUSERINC') || !is_object($thisuser) || !$thisuser->isValid()) die
 
 $qstr='&'; //Query string collector
 
-//Restrict based on email of the user...STRICT!
+//Restrict based on email of the user
 $qwhere =' WHERE email='.db_input($thisuser->getEmail());
+
+// Check if the user is a logged as client and belong to an enabled group
+if($cfg->getUserLogRequired() AND ($thisuser->group_id != 0)) {
+  $sql = "SELECT group_enabled FROM ".GROUP_TABLE." WHERE group_id = ".$thisuser->group_id;
+  $row = db_fetch_array(db_query($sql));
+  if($row['group_enabled']) {
+    $groupEmails = $thisuser->getGroupMemebers();
+    $qwhere = ' WHERE email IN ('.$groupEmails.')';
+  }
+}
 
 //Translate the order requests to db-fields
 $sortOptions=array('date'=>'ticket.created','ID'=>'ticketID','dept'=>'dept_name','status'=>'ticket.status');
@@ -31,7 +41,7 @@ $order=$order?$order:'DESC';
 $pagelimit=$_GET['limit']?$_GET['limit']:PAGE_LIMIT;
 $page=($_GET['p'] && is_numeric($_GET['p']))?$_GET['p']:1;
 
-$qselect = 'SELECT ticket.ticket_id,ticket.ticketID,ticket.dept_id,isanswered,ispublic,subject,name,closed '.
+$qselect = 'SELECT ticket.ticket_id,ticket.ticketID,ticket.email,ticket.dept_id,isanswered,ispublic,subject,name,closed '.
            ',dept_name,status,ticket.created,lastresponse ';
 $qfrom=' FROM '.TICKET_TABLE.' ticket LEFT JOIN '.DEPT_TABLE.' dept ON ticket.dept_id=dept.dept_id ';
 //Pagenation stuff....wish MYSQL could auto pagenate (something better than limit)
@@ -44,7 +54,7 @@ $qselect.=' ,count(attach_id) as attachments ';
 $qfrom.=' LEFT JOIN '.TICKET_ATTACHMENT_TABLE.' attach ON  ticket.ticket_id=attach.ticket_id ';
 $qgroup=' GROUP BY ticket.ticket_id';
 $query="$qselect $qfrom $qwhere $qgroup ORDER BY $order_by $order $order2 LIMIT ".$pageNav->getStart().",".$pageNav->getLimit();
-//echo $query;
+// echo $query;
 $tickets_res = db_query($query);
 $showing=db_num_rows($tickets_res)?$pageNav->showing():"";
 $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
@@ -85,9 +95,16 @@ $negorder=$order=='DESC'?'ASC':'DESC'; //Negate the sorting..
       }
       ?>
       <tr class="row" id="<?=$row['ticketID']?>">
-        <td align="center"><a href="tickets.php?id=<?=$row['ticketID']?>"><?=$ticketID?></a></td>
+        <?php 
+          if($thisuser->group_id != 0 && $thisuser->getEmail()!=$row['email']) {
+             echo '<td align="center" style="background-color:#DDDDD0">';
+             echo '<a href="tickets.php?id='.$row['ticketID'].'" title="'.$row['email'].'">'.trim($ticketID).'</a></td>';
+          } else {
+            echo'<td align="center">';
+            echo '<a href="tickets.php?id='.$row['ticketID'].'">'.trim($ticketID).'</a></td>';
+          }
+        ?>  
         <td align="center" nowrap><?=Format::db_date($row['created'])?></td>
-              
         <td align="center">
           <?php
           if($row['status']=='closed')

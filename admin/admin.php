@@ -328,7 +328,7 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                     }
                     break;
                 case 'create':
-                    if (($gID = Role::create($_POST, $errors))) {
+                    if ($gID = Role::create($_POST, $errors)) {
                         $msg = sprintf(_('Role %s created successfully'), Format::htmlchars($_POST['role_name']));
                     } elseif (!$errors['err']) {
                         $errors['err'] = _('Error(s) occured. Try again.');
@@ -340,13 +340,13 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                         $ids = implode(',', $_POST['grps']);
                         $selected = count($_POST['grps']);
                         if (isset($_POST['activate_grps'])) {
-                            $sql = 'UPDATE ' . GROUP_TABLE . ' SET role_enabled=1,updated=NOW() WHERE role_enabled=0 AND role_id IN(' . $ids . ')';
+                            $sql = 'UPDATE ' . ROLE_TABLE . ' SET role_enabled=1,updated=NOW() WHERE role_enabled=0 AND role_id IN(' . $ids . ')';
                             db_query($sql);
                             $msg = sprintf(_("%s of  $selected selected roles Enabled"), db_affected_rows());
                         } elseif (in_array($thisuser->getDeptId(), $_POST['grps'])) {
                             $errors['err'] = "Trying to 'Disable' or 'Delete' your role? Doesn't make any sense!";
                         } elseif (isset($_POST['disable_grps'])) {
-                            $sql = 'UPDATE ' . GROUP_TABLE . ' SET role_enabled=0, updated=NOW() WHERE role_enabled=1 AND role_id IN(' . $ids . ')';
+                            $sql = 'UPDATE ' . ROLE_TABLE . ' SET role_enabled=0, updated=NOW() WHERE role_enabled=1 AND role_id IN(' . $ids . ')';
                             db_query($sql);
                             $msg = sprintf(_("%s of  $selected selected roles Disabled"), db_affected_rows());
                         } elseif (isset($_POST['delete_grps'])) {
@@ -354,7 +354,7 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                             if (!$res || db_num_rows($res)) { //fail if any of the selected roles has users.
                                 $errors['err'] = _('One or more of the selected roles have users. Only empty roles can be deleted.');
                             } else {
-                                db_query('DELETE FROM ' . GROUP_TABLE . ' WHERE role_id IN(' . $ids . ')');
+                                db_query('DELETE FROM ' . ROLE_TABLE . ' WHERE role_id IN(' . $ids . ')');
                                 $msg = sprintf(_("%s of %s selected roles Deleted"), db_affected_rows(), $selected);
                             }
                         } else {
@@ -411,6 +411,55 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                     break;
                 default:
                     $errors['err'] = _('Uknown command!');
+            }
+            break;
+        case 'groups':
+            include_once(INCLUDE_DIR . 'class.group.php');
+            $do = strtolower($_POST['do']);
+            switch ($do) {
+              case 'update':
+                if (Group::update($_POST['group_id'], $_POST, $errors)) {
+                  $msg = sprintf(_('Group %s updated successfully'), Format::htmlchars($_POST['group_name']));
+                } elseif (!$errors['err']) {
+                  $errors['err'] = _('Error(s) occured. Try again.');
+                }
+                break;
+              case 'create':
+                if ($gID = Group::create($_POST, $errors)) {
+                  $msg = sprintf(_('Group %s created successfully'), Format::htmlchars($_POST['group_name']));
+                } elseif (!$errors['err']) {
+                  $errors['err'] = _('Error(s) occured. Try again.');
+                }
+                break;
+              default:
+                //ok..at this point..look WMA.
+                if ($_POST['groups'] && is_array($_POST['groups'])) {
+                  $ids = implode(',', $_POST['groups']);
+                  $selected = count($_POST['groups']);
+                  if (isset($_POST['activate_groups'])) {
+                    $sql = 'UPDATE ' . GROUP_TABLE . ' SET group_enabled=1,group_updated=NOW() WHERE group_enabled=0 AND group_id IN(' . $ids . ')';
+                    db_query($sql);
+                    $msg = sprintf(_("%s of  $selected selected groups Enabled"), db_affected_rows());
+                  } elseif (in_array($thisuser->getDeptId(), $_POST['groups'])) {
+                    $errors['err'] = "Trying to 'Disable' or 'Delete your group? Doesn't make any sense!";
+                  } elseif (isset($_POST['disable_groups'])) {
+                    $sql = 'UPDATE ' . GROUP_TABLE . ' SET group_enabled=0, group_updated=NOW() WHERE group_enabled=1 AND group_id IN(' . $ids . ')';
+                    db_query($sql);
+                    $msg = sprintf(_("%s of  $selected selected groups Disabled"), db_affected_rows());
+                  } elseif (isset($_POST['delete_groups'])) {
+                    $res = db_query('SELECT client_id FROM ' . CLIENT_TABLE . ' WHERE CLIENT_group_id IN(' . $ids . ')');
+                    if (!$res || db_num_rows($res)) { //fail if any of the selected roles has users.
+                      $errors['err'] = _('One or more of the selected groups have users. Only empty groups can be deleted.');
+                    } else {
+                      db_query('DELETE FROM ' . GROUP_TABLE . ' WHERE group_id IN(' . $ids . ')');
+                      $msg = sprintf(_("%s of %s selected groups Deleted"), db_affected_rows(), $selected);
+                    }
+                  } else {
+                    $errors['err'] = _('Uknown command!');
+                  }
+                } else {
+                  $errors['err'] = _('No groups selected.');
+                }
             }
             break;
         case 'staff':
@@ -654,7 +703,7 @@ switch ($thistab) {
       case 'grp':
       case 'roles':
         if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
-          $res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
+          $res = db_query('SELECT * FROM ' . ROLE_TABLE . ' WHERE role_id=' . db_input($id));
           if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
             $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
         }
@@ -679,18 +728,19 @@ switch ($thistab) {
   //Clients (Clients and groups)
   case 'groups':
   case 'clients':
-    $role = null;
+    $group = null;
     //Tab and Nav options.
     $nav->setTabActive('clients');
     $page = '';
     switch ($thistab) {
       case 'groups':
-        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['role_id']) && is_numeric($id)) {
-          $res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE role_id=' . db_input($id));
-          if (!$res or !db_num_rows($res) or !($role = db_fetch_array($res)))
-            $errors['err'] = sprintf(_('Unable to fetch info on role ID#%s'), $id);
+        $page = 'groups.inc.php';
+        if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['group_id']) && is_numeric($id)) {
+          $res = db_query('SELECT * FROM ' . GROUP_TABLE . ' WHERE group_id=' . db_input($id));
+          if (!$res or !db_num_rows($res) or !($group = db_fetch_array($res)))
+            $errors['err'] = sprintf(_('Unable to fetch info on group ID#%s'), $id);
         }
-        $page = ($role or ($_REQUEST['a'] == 'new' && !$gID)) ? 'role.inc.php' : 'roles.inc.php';
+        $page = ($group or ($_REQUEST['a'] == 'new' && !$gID)) ? 'group.inc.php' : 'groups.inc.php';
         break;
       case 'clients':
         $page = 'clientmembers.inc.php';

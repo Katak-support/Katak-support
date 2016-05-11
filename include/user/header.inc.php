@@ -27,7 +27,7 @@ header("Content-Type: text/html; charset=UTF-8\r\n");
        <?php                    
        if($thisuser && is_object($thisuser) && $thisuser->isValid()) {?>
          <a class="log_out" href="logout.php"><span><?=_('Log Out')?></span></a>
-         <a class="my_tickets" href="tickets.php"><span><?=_('My Tickets')?></span></a>
+         <a class="my_tickets" href="tickets.php"><span><?=_('Tickets')?></span></a>
          <a class="new_ticket" href="open.php"><span><?=_('New Ticket')?></span></a>
        <?php } elseif(!$cfg->getUserLogRequired()) { ?>
          <a class="ticket_status" href="tickets.php"><span><?=_('Ticket Status')?></span></a>

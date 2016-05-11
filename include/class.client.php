@@ -7,7 +7,7 @@
     The administrator chooses whether to allow the creation of the tickets to all (users)
     or restrict it to registered visitors (client). 
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -18,6 +18,7 @@
 class Client extends User {
 
     var $udata;
+    var $group_id;
     var $firstname;
     var $lastname;
     var $passwd;
@@ -38,20 +39,39 @@ class Client extends User {
             return NULL;
 
         $row=db_fetch_array($res);
-        $this->udata=$row;
+        $this->udata      = $row;
         $this->id         = $row['client_id'];
+        $this->username   = $row['client_email'];
+        $this->email      = $row['client_email'];
+        $this->group_id   = $row['client_group_id'];
         $this->firstname  = ucfirst($row['client_firstname']);
         $this->lastname 	= ucfirst($row['client_lastname']);
         $this->fullname   = ucfirst($row['client_firstname'].' '.$row['client_lastname']);
         $this->passwd     = $row['client_password'];
-        $this->username   = $row['client_email'];
-        $this->email      = $row['client_email'];
 
         return($this->id);
     }
 
     function getInfo() {
         return $this->udata;
+    }
+
+    // Get the client's group number
+    function getGroup_id() {
+      return $this->group_id;
+    }
+
+    // Get the email addresses of the members of the client's group
+    function getGroupMemebers(&$errors) {
+      $sql = 'SELECT client_email FROM '.CLIENT_TABLE.' WHERE client_group_id = '.self::getGroup_id();
+       	if(!$result = db_query($sql)) {
+          $errors['err']=_('Internal error occured');
+          return false;
+       	}
+       	while ($row = mysqli_fetch_array($result)) {
+       	  $emails .= "'".$row['client_email']."',";
+       	}
+      return rtrim($emails, ",");
     }
     
     function isactive(){
@@ -121,6 +141,7 @@ class Client extends User {
 
         if(!$errors){
             $sql=' SET client_isactive='.db_input($vars['client_isactive']).
+                 ',client_group_id='.db_input(Format::striptags($vars['group_id'])).
                  ',client_email='.db_input(Format::striptags($vars['client_email'])).
                  ',client_firstname='.db_input(Format::striptags($vars['client_firstname'])).
                  ',client_lastname='.db_input(Format::striptags($vars['client_lastname'])).
@@ -139,7 +160,7 @@ class Client extends User {
                 if($vars['old_client_email']!=$vars['client_email']) { // Email changed? Update the tickets!
                 	$sql='UPDATE '.TICKET_TABLE.' SET email='.db_input(Format::striptags($vars['client_email'])).' WHERE email='.db_input($vars['old_client_email']);
                 	if(!db_query($sql))
-              		  $errors['err']=_('Unable to update the user. Internal error occured'); //TODO: reverse the previous db operation!
+              		  $errors['err']=_('Unable to update the client. Internal error occured'); //TODO: reverse the previous db operation!
                 }
             }else{
                 $sql='INSERT INTO '.CLIENT_TABLE.' '.$sql.',client_created=NOW()';

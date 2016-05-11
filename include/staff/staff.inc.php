@@ -23,7 +23,7 @@ if($staff && $_REQUEST['a']!='new'){
 $rep=($errors && $_POST)?Format::input($_POST):Format::htmlchars($rep);
 
 //get the goodies.
-$roles = db_query('SELECT role_id,role_name FROM '.GROUP_TABLE);
+$roles = db_query('SELECT role_id,role_name FROM '.ROLE_TABLE);
 $depts = db_query('SELECT dept_id,dept_name FROM '.DEPT_TABLE);
 
 ?>

@@ -4,7 +4,7 @@
 
     Staff roles
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -37,7 +37,7 @@ class Role {
         }elseif(strlen($vars['role_name'])<5) {
             $errors['role_name']=_('Role name must be at least 5 chars.');
         }else {
-            $sql='SELECT role_id FROM '.GROUP_TABLE.' WHERE role_name='.db_input($vars['role_name']);
+            $sql='SELECT role_id FROM '.ROLE_TABLE.' WHERE role_name='.db_input($vars['role_name']);
             if($id)
                 $sql.=' AND role_id!='.db_input($id);
 
@@ -62,11 +62,11 @@ class Role {
                  ', can_manage_stdr='.db_input($vars['can_manage_stdr']);
             //echo $sql;
             if($id) {
-                $res=db_query('UPDATE '.GROUP_TABLE.' '.$sql.' WHERE role_id='.db_input($id));
+                $res=db_query('UPDATE '.ROLE_TABLE.' '.$sql.' WHERE role_id='.db_input($id));
                 if(!$res || !db_affected_rows())
                     $errors['err']=_('Internal error occured');
             }else{
-                $res=db_query('INSERT INTO '.GROUP_TABLE.' '.$sql.',created=NOW()');
+                $res=db_query('INSERT INTO '.ROLE_TABLE.' '.$sql.',created=NOW()');
                 if($res && ($gID=db_insert_id()))
                     return $gID;
                 

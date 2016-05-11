@@ -37,7 +37,7 @@ class Staff {
 
     function lookup($var){
 
-        $sql=sprintf("SELECT staff.*, roles.*, dept.dept_name FROM ".STAFF_TABLE." staff LEFT JOIN ".GROUP_TABLE." roles USING(role_id) LEFT JOIN ".DEPT_TABLE." dept USING(dept_id) WHERE %s=%s ",
+        $sql=sprintf("SELECT staff.*, roles.*, dept.dept_name FROM ".STAFF_TABLE." staff LEFT JOIN ".ROLE_TABLE." roles USING(role_id) LEFT JOIN ".DEPT_TABLE." dept USING(dept_id) WHERE %s=%s ",
                         is_numeric($var)?'staff_id':'username',db_input($var));
 
         $res=db_query($sql);

@@ -76,8 +76,8 @@ class StaffNav {
     		case 'clients':
     			$this->addSubMenu(array('desc' => _('CLIENT LIST'), 'href' => 'admin.php?t=clients', 'iconclass' => 'user'));
     			$this->addSubMenu(array('desc' => _('ADD NEW CLIENT'), 'href' => 'admin.php?t=clients&a=new', 'iconclass' => 'newuser'));
-    			//$this->addSubMenu(array('desc' => _('CLIENT GROUPS'), 'href' => 'admin.php?t=groups', 'iconclass' => 'roles'));
-    			//$this->addSubMenu(array('desc' => _('ADD NEW GROUP'), 'href' => 'admin.php?t=groups&a=new', 'iconclass' => 'newrole'));
+    			$this->addSubMenu(array('desc' => _('CLIENT GROUPS'), 'href' => 'admin.php?t=groups', 'iconclass' => 'groups'));
+    			$this->addSubMenu(array('desc' => _('ADD NEW GROUP'), 'href' => 'admin.php?t=groups&a=new', 'iconclass' => 'newgroup'));
     			break;
     		case 'depts':
     			$this->addSubMenu(array('desc' => _('DEPARTMENTS'), 'href' => 'admin.php?t=depts', 'iconclass' => 'departments'));

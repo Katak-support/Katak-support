@@ -1,7 +1,14 @@
 <?php
 if(!defined('KTKUSERINC') || !is_object($thisuser) || !is_object($ticket)) die('Adiaux amikoj!'); //bye..see ya
-//Double check access one last time...
-if(strcasecmp($thisuser->getEmail(),$ticket->getEmail())) die(_('Access Denied'));
+
+// Double check access one last time...
+// The user mail is identical of the ticket mail, OR
+// the user is a logged-in client AND the ticket mail belong to the client group
+if(strcasecmp($thisuser->getEmail(),$ticket->getEmail())) {
+  if(!($cfg->getUserLogRequired() AND stristr($thisuser->getGroupMemebers(),$ticket->getEmail()) AND ($thisuser->group_id != 0))) {
+    die(_('Access Denied'));
+  }
+}
 
 $info=($_POST && $errors)?Format::input($_POST):array(); //Re-use the post info on error...savekeyboards.org
 
@@ -124,8 +131,8 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
         <?php } ?>
     </div>
     <?php 
-    // Give the possibility to post a message and eventually reopen the ticket, if not blocked (reopen grace period overdue)
-    if($ticket->isOpen() || (time()-strtotime($ticket->getCloseDate()))<=$cfg->getReopenGracePeriod()*24*3600) { ?>
+    // Give the possibility to post a message and eventually reopen the ticket, if not blocked (reopen grace period overdue) and if the ticket belong to the user
+    if(($ticket->isOpen() || (time()-strtotime($ticket->getCloseDate()))<=$cfg->getReopenGracePeriod()*24*3600) AND !strcasecmp($thisuser->getEmail(),$ticket->getEmail())) { ?>
     <div id="reply" style="padding:10px 0 20px 40px;">
         <?php if($ticket->isClosed()) { ?>
         <div class="msg"><?=_('Ticket will be reopened on message post') ?></div>

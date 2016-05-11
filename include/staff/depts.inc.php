@@ -42,12 +42,10 @@ $depts=db_query($sql.' GROUP BY dept.dept_id ORDER BY dept_name');
                   <td><a href="admin.php?t=dept&id=<?=$row['dept_id']?>"><?=$row['dept_name']?></a>&nbsp;<?=$default?></td>
                   <td><?=$row['ispublic']?'Public':'<b>Private</b>'?></td>
                   <td>&nbsp;&nbsp;
-                      <b>
                       <?php if($row['users']>0) { ?>
-                          <a href="admin.php?t=staff&dept=<?=$row['dept_id']?>"><?=$row['users']?></a>
+                          <a href="admin.php?t=staff&dept=<?=$row['dept_id']?>"><b><?=$row['users']?></b></a>
                       <?php }else{ ?> 0
                       <?php } ?>
-                      </b>
                   </td>
                   <td><a href="admin.php?t=email&id=<?=$row['email_id']?>"><?=$row['email']?></a></td>
                   <td><a href="admin.php?t=staff&id=<?=$row['manager_id']?>"><?=$row['manager']?>&nbsp;</a></td>

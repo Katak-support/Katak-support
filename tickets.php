@@ -27,7 +27,7 @@ if(($id=$_REQUEST['id']?$_REQUEST['id']:$_POST['ticket_id']) && is_numeric($id))
     if(!$ticket or !$ticket->getEmail()) {
         $ticket=null; //clear.
         $errors['err']=_('Access Denied. Possibly invalid ticket ID');
-    }elseif(strcasecmp($thisuser->getEmail(),$ticket->getEmail())){
+    }elseif(strcasecmp($thisuser->getEmail(),$ticket->getEmail()) AND (!($cfg->getUserLogRequired() AND stristr($thisuser->getGroupMemebers(),$ticket->getEmail()) AND ($thisuser->group_id != 0)))) {
         $errors['err']=_('Security violation. Repeated violations will result in your account being locked.');
         $ticket=null; //clear.
     }else{

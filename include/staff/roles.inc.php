@@ -3,7 +3,7 @@ if(!defined('KTKADMININC') || !$thisuser->isadmin()) die(_('Access Denied'));
 
 //List all roles.   
 $sql='SELECT grp.role_id,role_name,role_enabled,dept_access,count(staff.staff_id) as users, grp.created,grp.updated'
-     .' FROM '.GROUP_TABLE.' grp LEFT JOIN '.STAFF_TABLE.' staff USING(role_id)';
+     .' FROM '.ROLE_TABLE.' grp LEFT JOIN '.STAFF_TABLE.' staff USING(role_id)';
 $roles=db_query($sql.' GROUP BY grp.role_id ORDER BY role_name');    
 $showing=($num=db_num_rows($roles))?_('Staff Roles'):'No roles?';
 ?>
@@ -37,7 +37,12 @@ $showing=($num=db_num_rows($roles))?_('Staff Roles'):'No roles?';
                 </td>
                 <td><a href="admin.php?t=grp&id=<?=$row['role_id']?>"><?=Format::htmlchars($row['role_name'])?></a></td>
                 <td><b><?=$row['role_enabled']?_('Active'):_('Disabled')?></b></td>
-                <td>&nbsp;&nbsp;<a href="admin.php?t=staff&gid=<?=$row['role_id']?>"><?=$row['users']?></a></td>
+                <td>&nbsp;&nbsp;
+                    <?php if($row['users']>0) { ?>
+                        <a href="admin.php?t=staff&gid=<?=$row['role_id']?>"><b><?=$row['users']?></b></a>
+                    <?php }else{ ?> 0
+                    <?php } ?>
+                </td>
                 <td><?=Format::db_date($row['created'])?></td>
                 <td><?=Format::db_datetime($row['updated'])?></td>
             </tr>

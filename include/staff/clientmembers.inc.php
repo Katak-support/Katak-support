@@ -2,10 +2,14 @@
 if(!defined('KTKADMININC') || !$thisuser->isadmin()) die(_('Access Denied'));
 
 //List all clients...not pagenating...
-$sql='SELECT * FROM '.CLIENT_TABLE;    
+$sql='SELECT * FROM '.CLIENT_TABLE.' LEFT JOIN '.GROUP_TABLE.' ON client_group_id=group_id';
+if($_REQUEST['gid'] && is_numeric($_REQUEST['gid'])){
+  $sql.=' WHERE client_group_id='.db_input($_REQUEST['gid']);
+  $groupName=db_fetch_array(db_query('SELECT group_name FROM '.GROUP_TABLE.' WHERE group_id='.db_input($_REQUEST['gid'])));
+}
 
 $clients=db_query($sql.' ORDER BY client_lastname,client_firstname');
-$showing=($num=db_num_rows($clients))?_("Client Members"):sprintf(_("No client found. <a href='admin.php?t=client&a=new&dept=%s'>Add New Client</a>."), $id);
+$showing=($_REQUEST['gid'])?_("Clients in the group: ").$groupName['group_name']:_("Client Members");
 $showing .= $cfg->getUserLogRequired()?"":" &nbsp (" . _("Note: Client log-in disabled") . ")";
 ?>
 <div class="msg">&nbsp;<?=$showing?>&nbsp;</div>
@@ -19,6 +23,7 @@ $showing .= $cfg->getUserLogRequired()?"":" &nbsp (" . _("Note: Client log-in di
         <th><?= _('Full Name') ?></th>
         <th><?= _('Organization') ?></th>
         <th><?= _('Status') ?></th>
+        <th><?= _('Group') ?></th>
         <th><?= _('Created on') ?></th>
         <th><?= _('Last Login') ?></th>
       </tr>
@@ -45,6 +50,7 @@ $showing .= $cfg->getUserLogRequired()?"":" &nbsp (" . _("Note: Client log-in di
                 <td><?=Format::htmlchars($name)?>&nbsp;</td>
                 <td><?=$row['client_organization']?></td>
                 <td><?=$row['client_isactive']?_('Active'):'<b>'._('Locked').'</b>'?></td>
+                <td><?=$row['group_name']?></td>
                 <td><?=Format::db_date($row['client_created'])?></td>
                 <td><?=Format::db_datetime($row['client_lastlogin'])?>&nbsp;</td>
             </tr>

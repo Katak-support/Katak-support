@@ -16,6 +16,8 @@ if($client && $_REQUEST['a']!='new'){
     $rep['client_isactive']=isset($rep['client_isactive'])?$rep['client_isactive']:1;
 }
 $rep=($errors && $_POST)?Format::input($_POST):Format::htmlchars($rep);
+$groups = db_query('SELECT group_id,group_name FROM '.GROUP_TABLE.' WHERE group_enabled = 1 ORDER BY group_name');
+
 
 //get the goodies.
 ?>
@@ -33,6 +35,20 @@ $rep=($errors && $_POST)?Format::input($_POST):Format::htmlchars($rep);
           <th><?= _('E-mail (Username):') ?></th>
           <td><input type="text" name="client_email" value="<?=$rep['client_email']?>">
               &nbsp;<font class="error">*&nbsp;<?=$errors['email']?></font></td>
+      <tr>
+          <th><?= _('Client Group:') ?></th>
+          <td>
+              <select name="group_id">
+                  <option value=0><?= _('Select Group') ?></option>
+                  <?php
+                  while (list($id,$name) = db_fetch_row($groups)){
+                      $selected = ($rep['client_group_id']==$id)?'selected':''; 
+                  ?>
+                      <option value="<?=$id?>"<?=$selected?>><?=$name?></option>
+                  <?php
+                  }?>
+              </select>&nbsp;<font class="error">*&nbsp;<?=$errors['group']?></font>
+          </td>
       </tr>
       <tr>
           <th><?= _('Name (First, Last):') ?></th>

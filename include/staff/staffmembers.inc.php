@@ -5,15 +5,23 @@ if(!defined('KTKADMININC') || !$thisuser->isadmin()) die(_('Access Denied'));
 $sql='SELECT staff.staff_id, staff.role_id, staff.dept_id, firstname, lastname, username, email'.
      ',isactive, onvacation, isadmin, role_name, role_enabled, dept_name, manager_id, DATE(staff.created) as created, lastlogin, staff.updated '.
      ' FROM '.STAFF_TABLE.' staff '.
-     ' LEFT JOIN '.GROUP_TABLE.' roles ON staff.role_id=roles.role_id'.
+     ' LEFT JOIN '.ROLE_TABLE.' roles ON staff.role_id=roles.role_id'.
      ' LEFT JOIN '.DEPT_TABLE.' dept ON staff.dept_id=dept.dept_id';
     
 if($_REQUEST['dept'] && is_numeric($_REQUEST['dept'])){
-    $id=$_REQUEST['dept'];
     $sql.=' WHERE staff.dept_id='.db_input($_REQUEST['dept']);
+    $deptName=db_fetch_array(db_query('SELECT dept_name FROM '.DEPT_TABLE.' WHERE dept_id='.db_input($_REQUEST['dept'])));
+} elseif($_REQUEST['gid'] && is_numeric($_REQUEST['gid'])){
+    $sql.=' WHERE staff.role_id='.db_input($_REQUEST['gid']);
+    $roleName=db_fetch_array(db_query('SELECT role_name FROM '.ROLE_TABLE.' WHERE role_id='.db_input($_REQUEST['gid'])));
 }
 $users=db_query($sql.' ORDER BY lastname,firstname');
-$showing=($num=db_num_rows($users))?_("Staff Members"):sprintf(_("No staff found. <a href='admin.php?t=staff&a=new&dept=%s'>Add New Staff</a>."), $id);
+if($_REQUEST['dept'])
+  $showing=_("Staff in dept.: ").$deptName['dept_name'];
+elseif($_REQUEST['gid'])
+  $showing=_("Staff with role: ").$roleName['role_name'];
+else
+  $showing=_("Staff Members");
 ?>
 <div class="msg">&nbsp;<?=$showing?>&nbsp;</div>
 <form action="admin.php?t=staff" method="POST" name="staff" onSubmit="return checkbox_checker(document.forms['staff'],1,0);">

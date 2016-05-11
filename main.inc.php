@@ -122,7 +122,8 @@ define('SYSLOG_TABLE',TABLE_PREFIX.'syslog');
 define('STAFF_TABLE',TABLE_PREFIX.'staff');
 define('DEPT_TABLE',TABLE_PREFIX.'department');
 define('TOPIC_TABLE',TABLE_PREFIX.'help_topic');
-define('GROUP_TABLE',TABLE_PREFIX.'roles');
+define('ROLE_TABLE',TABLE_PREFIX.'roles');
+define('GROUP_TABLE',TABLE_PREFIX.'groups');
 define('CLIENT_TABLE',TABLE_PREFIX.'clients');
 
 define('TICKET_TABLE',TABLE_PREFIX.'ticket');
