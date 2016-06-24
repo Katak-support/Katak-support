@@ -1,3 +1,7 @@
+SET NAMES utf8;
+SET time_zone = '+01:00';
+
+
 DROP TABLE IF EXISTS `%TABLE_PREFIX%api_key`;
 CREATE TABLE `%TABLE_PREFIX%api_key` (
   `id` int(10) unsigned NOT NULL auto_increment,
@@ -24,11 +28,24 @@ CREATE TABLE `%TABLE_PREFIX%clients` (
   `client_phone` varchar(28) DEFAULT NULL,
   `client_mobile` varchar(28) DEFAULT NULL,
   `client_isactive` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `client_group_id` int(11) unsigned DEFAULT NULL,
   `client_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `client_lastlogin` datetime DEFAULT NULL,
   PRIMARY KEY (`client_id`),
   UNIQUE KEY `email` (`client_email`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `%TABLE_PREFIX%groups`;
+CREATE TABLE `%TABLE_PREFIX%groups` (
+  `group_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `group_name` varchar(32) NOT NULL,
+  `group_enabled` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `group_can_edit_tickets` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `group_created` datetime NOT NULL,
+  `group_updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%config`;
@@ -149,6 +166,7 @@ INSERT INTO `%TABLE_PREFIX%department` (`dept_id`, `tpl_id`, `email_id`, `autore
 (1, 0, 1, 0, 0, 'Support', 'Support Dept', 1, 1, 1, 1, NOW(), NOW()),
 (2, 0, 1, 0, 0, 'Accounting', 'Accounting Dept', 1, 1, 1, 1, NOW(), NOW());
 
+
 DROP TABLE IF EXISTS `%TABLE_PREFIX%email`;
 CREATE TABLE `%TABLE_PREFIX%email` (
   `email_id` int(11) unsigned NOT NULL auto_increment,
@@ -183,6 +201,7 @@ CREATE TABLE `%TABLE_PREFIX%email` (
   KEY `dept_id` (`dept_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
+
 DROP TABLE IF EXISTS `%TABLE_PREFIX%email_banlist`;
 CREATE TABLE `%TABLE_PREFIX%email_banlist` (
   `id` int(11) NOT NULL auto_increment,
@@ -195,6 +214,7 @@ CREATE TABLE `%TABLE_PREFIX%email_banlist` (
 
 INSERT INTO `%TABLE_PREFIX%email_banlist` (`id`, `email`, `submitter`, `added`) VALUES
 (1, 'test@example.com', 'System', NOW());
+
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%email_template`;
 CREATE TABLE `%TABLE_PREFIX%email_template` (
@@ -229,7 +249,6 @@ CREATE TABLE `%TABLE_PREFIX%email_template` (
   FULLTEXT KEY `message_subj` (`ticket_reply_subj`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
-
 INSERT INTO `%TABLE_PREFIX%email_template` (`tpl_id`, `cfg_id`, `name`, `notes`, `ticket_autoresp_subj`, `ticket_autoresp_body`, `ticket_notice_subj`, `ticket_notice_body`, `ticket_alert_subj`, `ticket_alert_body`, `message_autoresp_subj`, `message_autoresp_body`, `message_alert_subj`, `message_alert_body`, `note_alert_subj`, `note_alert_body`, `assigned_alert_subj`, `assigned_alert_body`, `ticket_overdue_subj`, `ticket_overdue_body`, `ticket_overlimit_subj`, `ticket_overlimit_body`, `ticket_reply_subj`, `ticket_reply_body`, `created`, `updated`) VALUES
 (1,	1, 'Katak-support Default Template', 'Default Katak-support templates',	'Support Ticket Opened [#%ticket]',	'%name,\r\n\r\nA request for support has been created and assigned ticket #%ticket. A representative will follow-up with you as soon as possible.\r\n\r\nYou can view this ticket\'s progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\nIf you wish to send additional comments or information regarding this issue, please don\'t open a new ticket. Simply login using the link above and update the ticket.\r\n\r\n%signature',	'[#%ticket] %subject',	'%name,\r\n\r\nOur customer care team has created a ticket, #%ticket on your behalf.\r\n\r\nYou can view this ticket online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\nIf you wish to provide additional comments or information regarding this issue, please don\'t open a new ticket. Simply login using the link above and update the ticket.\r\n\r\n%signature',	'New Ticket Alert',	'%staff,\r\n\r\nNew ticket #%ticket created.\r\n-------------------\r\nName: %name\r\nEmail: %email\r\nDept: %dept\r\nSubject: %subject\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak-support.',	'[#%ticket] Message Added',	'%name,\r\n\r\nYour reply to support request #%ticket has been noted.\r\n\r\nYou can view this support request progress online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\n%signature',	'New Message Alert',	'%staff,\r\n\r\nNew message appended to ticket #%ticket\r\n\r\n----------------------\r\nName: %name\r\nEmail: %email\r\nDept: %dept\r\nSubject: %subject\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak-support.',	'New Internal Note Alert',	'%staff,\r\n\r\nInternal note appended to ticket #%ticket\r\n\r\n----------------------\r\nName: %name\r\n\r\n%note\r\n-------------------\r\n\r\nTo view/respond to the ticket, please login to the support ticket system.\r\n\r\n- Your friendly Customer Support System - powered by Katak-support.',	'Ticket #%ticket Assigned to you',	'%assignee,\r\n\r\n%assigner has assigned ticket #%ticket to you!\r\n\r\nTo view complete details, simply login to the support system.\r\n\r\n- Your friendly Support Ticket System - powered by Katak-support.',	'Stale Ticket Alert',	'%staff,\r\n\r\nA ticket, #%ticket assigned to you or in your department is seriously overdue.\r\n\r\n%url/admin/tickets.php?id=%id\r\n\r\nPlease address the issue A.S.A.P.\r\n\r\n\r\n- Your friendly (although with limited patience) Support Ticket System - powered by Katak-support.',	'Support Ticket Denied',	'%name\r\n\r\nNo support ticket has been created. You\'ve exceeded maximum number of open tickets allowed.\r\n\r\nThis is a temporary block. To be able to open another ticket, one of your pending tickets must be closed. To update or add comments to an open ticket simply login using the link below.\r\n\r\n%url/tickets.php?e=%email\r\n\r\nThank you.\r\n\r\nSupport Ticket System',	'[#%ticket] %subject',	'%name,\r\n\r\nA customer support staff member has replied to your support request #%ticket.\r\n\r\nYou can view the response online here: %url/tickets.php?e=%email&t=%ticket.\r\n\r\nWe hope this response has sufficiently answered your questions. If not, please do not send another email. Instead, reply to this email or simply login using the link above and update the ticket.\r\n\r\n\r\n%signature', NOW(), NOW());
 
@@ -261,6 +280,7 @@ INSERT INTO `%TABLE_PREFIX%roles` (`role_id`, `role_enabled`, `role_name`, `dept
 (2, 0, 'Supervisor', '1,2', 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, NOW(), NOW()),
 (3, 1, 'Operator', '0', 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
+
 DROP TABLE IF EXISTS `%TABLE_PREFIX%help_topic`;
 CREATE TABLE `%TABLE_PREFIX%help_topic` (
   `topic_id` int(11) unsigned NOT NULL auto_increment,
@@ -278,11 +298,11 @@ CREATE TABLE `%TABLE_PREFIX%help_topic` (
   KEY `dept_id` (`dept_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
-
 INSERT INTO `%TABLE_PREFIX%help_topic` (`topic_id`, `isactive`, `noautoresp`, `priority_id`, `dept_id`, `topic`, `created`, `updated`) VALUES
 (1, 1, 0, 2, 1, 'General', NOW(), NOW()),
 (2, 1, 0, 3, 2, 'Billing', NOW(), NOW()),
 (3, 1, 0, 2, 1, 'Tech. Info', NOW(), NOW());
+
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%std_reply`;
 CREATE TABLE `%TABLE_PREFIX%std_reply` (
@@ -441,6 +461,7 @@ CREATE TABLE `%TABLE_PREFIX%ticket_message` (
   FULLTEXT KEY `message` (`message`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+
 DROP TABLE IF EXISTS `%TABLE_PREFIX%ticket_events`;
 CREATE TABLE `%TABLE_PREFIX%ticket_events` (
   `note_id` int(11) unsigned NOT NULL auto_increment,
@@ -455,6 +476,7 @@ CREATE TABLE `%TABLE_PREFIX%ticket_events` (
   KEY `staff_id` (`staff_id`),
   FULLTEXT KEY `note` (`note`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%priority`;
 CREATE TABLE `%TABLE_PREFIX%priority` (
@@ -475,6 +497,7 @@ INSERT INTO `%TABLE_PREFIX%priority` (`priority_id`, `priority`, `priority_desc`
 (2, 'normal', 'Normal', '#333333', 3, 1),
 (3, 'high', 'High', '#CC9900', 2, 1),
 (4, 'urgent', 'Urgent', '#CC3300', 1, 0);
+
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%timezone`;
 CREATE TABLE `%TABLE_PREFIX%timezone` (

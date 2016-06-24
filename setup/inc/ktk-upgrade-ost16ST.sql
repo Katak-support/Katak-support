@@ -2,16 +2,17 @@ ALTER TABLE `%TABLE_PREFIX%api_key`
 CHANGE `ipaddr` `ipaddr` varchar(64) NOT NULL;
 
 ALTER TABLE `%TABLE_PREFIX%config` 
-ADD `staff_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `isonline`,
-ADD `user_language` CHAR(8) NOT NULL DEFAULT 'en' AFTER `staff_language`,
-ADD `user_log_required` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `staff_session_timeout`,
-ADD `enable_topic` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `use_email_priority`,
+ADD `staff_language` CHAR(8) NOT NULL default 'en' AFTER `isonline`,
+ADD `user_language` CHAR(8) NOT NULL default 'en' AFTER `staff_language`,
+ADD `user_log_required` TINYINT(1) unsigned NOT NULL default '0' AFTER `staff_session_timeout`,
+ADD `reopen_grace_period` int(10) unsigned NOT NULL default '90' AFTER `overdue_grace_period`,
+ADD `enable_topic` TINYINT(1) UNSIGNED NOT NULL default '0' AFTER `use_email_priority`,
 ADD `response_notice_active` tinyint(1) unsigned NOT NULL default '0' AFTER `message_autoresponder`,
 ADD `assignment_alert_active` tinyint(1) unsigned NOT NULL default '0' AFTER `message_alert_dept_manager`,
 DROP `show_assigned_tickets`,
 DROP `show_answered_tickets`,
 DROP `admin_email`,
-CHANGE `helpdesk_title` `helpdesk_title` VARCHAR(255) NOT NULL DEFAULT 'KataK Support Ticket System',
+CHANGE `helpdesk_title` `helpdesk_title` VARCHAR(255) NOT NULL default 'KataK Support Ticket System',
 CHANGE `ostversion` `ktsversion` VARCHAR(16) NOT NULL;
 
 DROP TABLE IF EXISTS `%TABLE_PREFIX%clients`;
@@ -25,6 +26,7 @@ CREATE TABLE `%TABLE_PREFIX%clients` (
   `client_phone` varchar(28) DEFAULT NULL,
   `client_mobile` varchar(28) DEFAULT NULL,
   `client_isactive` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `client_group_id` int(11) unsigned DEFAULT NULL,
   `client_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `client_lastlogin` datetime DEFAULT NULL,
   PRIMARY KEY (`client_id`),
@@ -61,6 +63,17 @@ ADD `can_viewunassigned_tickets` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER 
 ADD `can_changepriority_tickets` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `can_edit_tickets`,
 ADD `can_assign_tickets` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0' AFTER `can_changepriority_tickets`,
 CHANGE `can_manage_kb` `can_manage_stdr` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0';
+
+DROP TABLE IF EXISTS `%TABLE_PREFIX%groups`;
+CREATE TABLE `%TABLE_PREFIX%groups` (
+  `group_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `group_name` varchar(32) NOT NULL,
+  `group_enabled` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `group_can_edit_tickets` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `group_created` datetime NOT NULL,
+  `group_updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `%TABLE_PREFIX%help_topic`
 ADD `autoassign_id` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0' AFTER `dept_id`;

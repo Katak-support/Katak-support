@@ -4,7 +4,7 @@
 
     Client groups
 
-    Copyright (c) 1016 Katak Support
+    Copyright (c) 2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.

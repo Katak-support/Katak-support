@@ -1,3 +1,6 @@
+Katak-support 1.2.0, 2016-07-15
+- The clients can be divided into groups
+
 Katak-support 1.1.0, 2014-12-15
 - Ability to require users to login in order to insert tickets
 - Assignee alerted on automatic assignment

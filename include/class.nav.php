@@ -32,8 +32,8 @@ class StaffNav {
             $tabs['emails']=array('desc'=>_('Emails'),'href'=>'admin.php?t=email','title'=>_('Email Settings'));
             $tabs['topics']=array('desc'=>_('Help Topics'),'href'=>'admin.php?t=topics','title'=>_('Help Topics'));
             $tabs['staff']=array('desc'=>_('Staff'),'href'=>'admin.php?t=staff','title'=>_('Staff Members'));
-            $tabs['clients']=array('desc'=>_('Clients'),'href'=>'admin.php?t=clients','title'=>_('Clients'));
             $tabs['depts']=array('desc'=>_('Departments'),'href'=>'admin.php?t=depts','title'=>_('Departments'));
+            $tabs['clients']=array('desc'=>_('Clients'),'href'=>'admin.php?t=clients','title'=>_('Clients'));
         }else {
             $tabs['tickets']=array('desc'=>_('Tickets'),'href'=>'tickets.php','title'=>_('Ticket Queue'));
             if($thisuser && $thisuser->canManageStdr()){

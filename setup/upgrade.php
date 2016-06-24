@@ -5,7 +5,7 @@
     KataK upgrade script
     Install the system retrieving data from old KataK database.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -33,8 +33,8 @@ if(!is_object($thisuser) || !$thisuser->getId() || !$thisuser->isValid() || !$th
 //Let's roll.
 $errors=array();
 $fp=null;
-define('VERSION','1.1'); //Current database version number
-define('VERSION_VERBOSE','1.1.0'); //Script version (what the user sees during installation process).
+define('VERSION','1.2'); //Current database version number
+define('VERSION_VERBOSE','1.2.0'); //Script version (what the user sees during installation process).
 define('CONFIGFILE','../include/ktk-config.php'); //Katak config file full path.
 define('PREFIX',TABLE_PREFIX);
 
@@ -64,6 +64,9 @@ if(!strcasecmp($cfg->getVersion(),VERSION)) { // Check version
           break;
       case '1.0':  //upgrading from ver. 1.0.x.
           $schema='./inc/ktk-upgrade-1.0.sql';
+          break;
+      case '1.1':  //upgrading from ver. 1.1.x.
+          $schema='./inc/ktk-upgrade-1.1.sql';
           break;
       default:
       		$schema=''; // This leads to an error in loading the schema

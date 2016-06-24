@@ -6,7 +6,7 @@
     and sysadmin email recording.
     Created during installation process and shouldn't change even on upgrades.
    
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.

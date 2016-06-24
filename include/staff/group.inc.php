@@ -23,7 +23,7 @@ if($group && $_REQUEST['a']!='new'){
   <table width="100%" border="0" cellspacing=0 cellpadding=2 class="tform">
       <tr class="header"><td colspan=2><?=Format::htmlchars($title)?></td></tr>
       <tr class="subheader"><td colspan=2>
-          <?= _('Group permissions set below applies cross all role members, but don\'t apply to Dept. Managers in some cases.') ?>
+          <?= _('Group permissions set below applies cross all groups members.') ?>
       </td></tr>
       <tr><th><?= _('Group Name:') ?></th>
           <td><input type="text" name="group_name" size=25 value="<?=$info['group_name']?>">

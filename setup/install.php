@@ -4,7 +4,7 @@
 
     Katak-support installer.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -29,10 +29,10 @@ require_once('setup.inc.php');
 $errors=array();
 $fp=null;
 $_SESSION['abort']=false;
-define('VERSION','1.1'); //Current database version number
-define('VERSION_VERBOSE','1.1.0'); //Script version (what the user sees during installation process).
+define('VERSION','1.2'); //Current database version number
+define('VERSION_VERBOSE','1.2.0'); //Script version (what the user sees during installation process).
 define('CONFIGFILE','../include/ktk-config.php'); //Katak config file full path.
-define('SCHEMAFILE','./inc/katak-v1.1.sql'); //Katak SQL schema.
+define('SCHEMAFILE','./inc/katak-v1.2.sql'); //Katak SQL schema.
 define('URL',rtrim('http'.(($_SERVER['HTTPS']=='on')?'s':'').'://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']),'setup'));
 
 $install='<strong>Need help?</strong> &nbsp; <a href="http://www.katak-support.com/en/content/katak-pro" target="_blank">Professional Installation Available</a>';

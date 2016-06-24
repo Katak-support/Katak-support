@@ -63,7 +63,7 @@ define('SETUP_DIR',INCLUDE_DIR.'setup/');
  * The first two digits indicate the database's version.
  * The third digit represents minor changes that do not affect the database.
 */ 
-define('THIS_VERSION','1.1.0'); //Changes from version to version.
+define('THIS_VERSION','1.2.0'); //Changes from version to version.
 
 // Is the system already installed?
 // Check if config file exists and load config info
