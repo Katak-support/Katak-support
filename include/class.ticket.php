@@ -1504,7 +1504,7 @@ class Ticket{
                         Sys::alertAdmin(_('System Error'), 'Server ' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'] . ': ' . $msg);
                     }
                     
-                } //Send send alert.
+                } //Send alert.
                 
                 //Upload attachment if any...
                 if($_FILES['attachment'] && $_FILES['attachment']['size']){

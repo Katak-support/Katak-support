@@ -282,7 +282,7 @@ class Mail_mimeDecode extends PEAR
 
                 case 'content-disposition':
                     $content_disposition = $this->_parseHeaderValue($headers[$key]['value']);
-                    $return->disposition = $content_disposition['value'];
+                    $return->disposition   = $content_disposition['value'];
                     if (isset($content_disposition['other'])) {
                         foreach($content_disposition['other'] as $p_name => $p_value) {
                             $return->d_parameters[$p_name] = $p_value;
