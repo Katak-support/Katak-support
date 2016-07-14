@@ -403,7 +403,7 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
       <th width="54"><a href="tickets.php?sort=ID&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Ticket ID') ?> <?=$negorder?>">&nbsp;<?= _('Ticket') ?></a></th>
       <th width="72"><a href="tickets.php?sort=date&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Date') ?> <?=$negorder?>"><?= _('Date') ?></a></th>
       <th width="270"><?= _('Subject') ?></th>
-      <th width="170"><?= _('From') ?></th>
+      <th width="170"><?= _('Comes from') ?></th>
       <th width="124"><a href="tickets.php?sort=dept&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Category') ?> <?=$negorder?>"><?= _('Department') ?></a></th>
       <th width="58"><a href="tickets.php?sort=pri&order=<?=$negorder?><?=$qstr?>" title="<?= _('Sort By Priority') ?> <?=$negorder?>"><?= _('Priority') ?></a></th>
     </tr>

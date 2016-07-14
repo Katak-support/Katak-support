@@ -4,7 +4,7 @@
 
     Handles staff authentication/logins.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -22,7 +22,7 @@ if (!defined('INCLUDE_DIR'))
 $cfig = Sys::getConfig();
 $lang = $cfig->getStaffLanguage();
 putenv('LC_MESSAGES=' . $lang);
-setlocale(LC_MESSAGES, $lang);
+setlocale(LC_ALL, $lang);
 bindtextdomain('messages', '../i18n');
 bind_textdomain_codeset('messages','UTF-8');
 textdomain("messages");

@@ -4,7 +4,7 @@ if(!defined('KTKADMININC') || !$thisuser->isadmin()) die(_('Access Denied'));
 //List all groups.   
 $sql='SELECT * ,count(client_id) as clients FROM '.GROUP_TABLE.' LEFT JOIN '.CLIENT_TABLE.' ON client_group_id=group_id GROUP BY group_id ORDER BY group_name';
 $groups=db_query($sql);    
-$showing=($num=db_num_rows($groups))?_('Client Groups'):'No groups?';
+$showing=($num=db_num_rows($groups))?_('Client Groups'):_('No groups?');
 ?>
 <div class="msg"><?=$showing?></div>
 <form action="admin.php?t=groups" method="POST" name="groups" onSubmit="return checkbox_checker(document.forms['groups'],1,0);">

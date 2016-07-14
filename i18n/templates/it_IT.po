@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-24 08:40+0100\n"
-"PO-Revision-Date: 2016-06-24 08:41+0100\n"
+"POT-Creation-Date: 2016-07-14 10:09+0100\n"
+"PO-Revision-Date: 2016-07-14 10:10+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: Katak-support Team <info@katak-support.com>\n"
 "Language: it_IT\n"
@@ -219,7 +219,7 @@ msgid "logged out"
 msgstr "uscito"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/main.inc.php:76
+#: Foundation\Apache2.2\htdocs\Katak/main.inc.php:77
 msgid "Error loading settings. Contact admin."
 msgstr "Errore nel caricamento impostazioni. Contattare un amministratore."
 
@@ -365,32 +365,32 @@ msgstr ""
 "la possibilità di scrittura. P.e. <i>chmod 644 %s</i>"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:50
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:51
 msgid "Please consider turning off register globals if possible"
 msgstr "Si prega di impostare su off il \"register global\", se possibile"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:72
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:73
 msgid "Preferences Updated Successfully"
 msgstr "Preferenze aggiornate"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:75
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:174
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:279
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:380
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:477
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:534
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:76
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:175
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:280
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:381
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:476
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:533
 msgid "Internal error"
 msgstr "Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:80
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:81
 msgid "Attachments settings updated"
 msgstr "Impostazioni degli allegati aggiornate"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:83
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:84
 #: Foundation\Apache2.2\htdocs\Katak/include/class.client.php:108
 #: Foundation\Apache2.2\htdocs\Katak/include/class.msgtpl.php:83
 #: Foundation\Apache2.2\htdocs\Katak/include/class.staff.php:285
@@ -398,135 +398,135 @@ msgid "Internal Error"
 msgstr "Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:91
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:92
 #, php-format
 msgid "Key created successfully for %s"
 msgstr "Chiave creata per %s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:93
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:94
 msgid "Error adding the IP. Try again"
 msgstr "Errore nell'aggiunta dell'IP. Riprovare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:97
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:98
 msgid "API passphrase updated successfully"
 msgstr "Passphrase API aggiornata"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:99
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:100
 msgid "Error updating passphrase. Try again"
 msgstr "Errore nell'aggiornamento della passphrase. Riprovare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:103
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:104
 msgid "You must select at least one entry to process"
 msgstr "Selezionare almeno una voce da processare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:111
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:112
 #, php-format
 msgid "%s of %s selected key(s) updated"
 msgstr "%s di %s chiavi selezionate sono state aggiornate"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:113
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:114
 msgid "Unable to delete selected keys."
 msgstr "Impossibile eliminare le chiavi selezionate."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:118
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:119
 #, php-format
 msgid "%s of %s selected key(s) deleted"
 msgstr "%s di %s chiavi selezionate sono state eliminate"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:120
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:121
 msgid "Unable to delete selected key(s). Try again"
 msgstr "Impossibile eliminare le chiavi selezionate. Riprovare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:123
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:205
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:258
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:124
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:206
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:259
 msgid "Unknown command"
 msgstr "Comando sconosciuto"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:128
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:129
 #, php-format
 msgid "Unknown action %s"
 msgstr "Azione %s sconosciuta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:136
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:137
 msgid "Please enter a valid email."
 msgstr "Inserire una e-mail valida."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:138
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:139
 msgid "Email already banned"
 msgstr "E-mail già bloccata"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:141
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:142
 msgid "Email added to banlist"
 msgstr "E-mail aggiunta alla lista indirizzi bloccati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:143
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:144
 msgid "Unable to add email to banlist. Try again"
 msgstr "Impossibile aggiungere alla lista indirizzi bloccati. Prego riprovare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:148
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:149
 msgid "You must select at least one email"
 msgstr "Selezionare almeno un indirizzo e-mail"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:153
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:154
 #, php-format
 msgid "%s of %s selected emails removed from banlist"
 msgstr "%s di %s e-mail selezionate rimosse dalla lista"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:155
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:156
 msgid "Unable to make remove selected emails. Try again."
 msgstr "Impossibile rimuovere le e-mail. Riprovare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:159
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:160
 msgid "Uknown banlist command!"
 msgstr "Comando lista e-mail bloccate sconosciuto!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:170
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:171
 msgid "Email updated successfully"
 msgstr "E-mail aggiornata"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:172
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:173
 msgid "Error updating email"
 msgstr "Errore nell'aggiornamento e-mail"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:179
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:180
 msgid "Email added successfully"
 msgstr "E-mail aggiunta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:181
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:383
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:182
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:385
 msgid "Unable to add email. Internal error"
 msgstr "Impossibile aggiungere e-mail. Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:185
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:186
 msgid "You must select at least one email to process"
 msgstr "Selezionare almeno un indirizzo e-mail"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:192
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:193
 msgid ""
 "One or more of the selected emails is being used by a Dept. Remove "
 "association first."
@@ -535,60 +535,60 @@ msgstr ""
 "associazioni."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:200
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:201
 #, php-format
 msgid "%s of %s selected email(s) deleted"
 msgstr "%s di %s e-mail selezionate sono state eliminate"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:202
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:203
 msgid "Unable to delete selected email(s)."
 msgstr "Impossibile eliminare le e-mail selezionate."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:210
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:316
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:211
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:317
 msgid "Unknown topic action!"
 msgstr "Azione sugli argomenti sconosciuta!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:220
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:221
 msgid "Template created successfully"
 msgstr "Modello creato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:222
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:223
 msgid "Error creating the template - try again"
 msgstr "Errore nella creazione del modello. Ritentare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:231
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:232
 #: Foundation\Apache2.2\htdocs\Katak/include/class.msgtpl.php:180
 msgid "Unknown template"
 msgstr "Modello sconosciuto"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:233
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:234
 msgid "Template updated successfully"
 msgstr "Modello aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:235
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:236
 msgid "Error updating the template. Try again"
 msgstr "Errore nell'aggiornamento del modello. Ritentare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:241
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:242
 msgid "You must select at least one template"
 msgstr "Selezionare almeno un modello"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:243
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:244
 msgid "You can not delete default template"
 msgstr "Impossibile eliminare il modello predefinito"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:250
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:251
 msgid ""
 "One or more of the selected templates is being used by a Dept. Remove "
 "association first."
@@ -597,104 +597,104 @@ msgstr ""
 "l'associazione."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:254
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:255
 #, php-format
 msgid "%s of %s selected templates(s) deleted"
 msgstr "%s di %s modelli selezionati sono stati eliminati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:256
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:257
 msgid "Unable to delete selected templates(s)."
 msgstr "Impossibile eliminare i modelli selezionati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:263
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:264
 #: Foundation\Apache2.2\htdocs\Katak/admin/stdreply.php:98
 #: Foundation\Apache2.2\htdocs\Katak/admin/tickets.php:329
 msgid "Unknown action"
 msgstr "Azione sconosciuta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:275
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:276
 msgid "Topic updated successfully"
 msgstr "Argomento aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:277
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:278
 msgid "Error updating the topic"
 msgstr "Errore nell'aggiornamento argomento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:284
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:285
 msgid "Help topic created successfully"
 msgstr "Argomento creato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:286
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:287
 #: Foundation\Apache2.2\htdocs\Katak/include/class.topic.php:150
 msgid "Unable to create the topic. Internal error"
 msgstr "Impossibile creare argomento. Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:290
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:291
 msgid "You must select at least one topic"
 msgstr "Selezionare almeno un argomento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:297
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:298
 #, php-format
 msgid "%s of %s selected services enabled"
 msgstr "%s di %s servizi selezionati attivati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:299
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:300
 msgid "Unable to complete the action."
 msgstr "Impossibile completare l'azione"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:303
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:304
 #, php-format
 msgid "%s of %s selected topics disabled"
 msgstr "%s di %s argomenti selezionati sono stati disattivati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:305
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:306
 msgid "Unable to disable selected topics"
 msgstr "Impossibile disattivare gli argomenti selezionati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:309
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:310
 #, php-format
 msgid "%s of %s selected topics deleted!"
 msgstr "%s di %s argomenti selezionati sono stati eliminati!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:311
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:312
 msgid "Unable to delete selected topics"
 msgstr "Impossibile eliminare gli argomenti selezionati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:325
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:326
 #, php-format
 msgid "Role %s updated successfully"
 msgstr "Ruolo %s aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:327
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:334
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:424
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:431
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:328
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:335
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:425
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:432
 msgid "Error(s) occured. Try again."
 msgstr "Si sono verificati errori.Riprovare"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:332
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:333
 #, php-format
 msgid "Role %s created successfully"
 msgstr "Ruolo %s creato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:355
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:356
 msgid ""
 "One or more of the selected roles have users. Only empty roles can be "
 "deleted."
@@ -703,92 +703,93 @@ msgstr ""
 "solo ruoli vuoti."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:358
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:359
 #, php-format
 msgid "%s of %s selected roles Deleted"
 msgstr "%s di %s ruoli selezionati sono stati creati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:361
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:406
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:413
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:458
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:512
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:519
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:596
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:362
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:407
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:414
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:457
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:511
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:518
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:595
 msgid "Uknown command!"
 msgstr "Comando sconosciuto!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:364
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:365
 msgid "No roles selected."
 msgstr "Nessun ruolo selezionato."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:376
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:377
 msgid "Client profile updated successfully"
 msgstr "Profilo cliente aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:378
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:475
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:379
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:474
 msgid "Error updating the user"
 msgstr "Errore nell'aggiornamento dell'utente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:385
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:482
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:386
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:481
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:538
 #, php-format
 msgid "%s added successfully"
 msgstr "%s aggiunto"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:387
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:484
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:388
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:483
 msgid "Unable to add the user. Internal error"
 msgstr "Impossibile aggiungere l'utente. Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:397
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:494
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:398
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:493
 #, php-format
 msgid "%s of  %s selected users enabled"
 msgstr "%s di %s utenti selezionati sono stati attivati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:401
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:502
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:402
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:501
 #, php-format
 msgid "%s of %s selected users locked"
 msgstr "%s di %s utenti selezionati sono stati bloccati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:404
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:507
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:405
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:506
 #, php-format
 msgid "%s of %s selected users deleted"
 msgstr "%s di %s utenti selezionati sono stati eliminati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:409
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:515
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:410
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:514
 msgid "No users selected."
 msgstr "Nessun utente selezionato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:422
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:423
 #, php-format
 msgid "Group %s updated successfully"
 msgstr "Gruppo %s aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:429
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:430
 #, php-format
 msgid "Group %s created successfully"
 msgstr "Gruppo  %s creato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:452
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:451
 msgid ""
 "One or more of the selected groups have users. Only empty groups can be "
 "deleted."
@@ -797,48 +798,48 @@ msgstr ""
 "solo gruppi  vuoti."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:455
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:454
 #, php-format
 msgid "%s of %s selected groups Deleted"
 msgstr "%s di %s gruppi selezionati sono stati eliminati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:461
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:460
 msgid "No groups selected."
 msgstr "Nessun gruppo  selezionato."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:473
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:472
 msgid "Staff profile updated successfully"
 msgstr "Profilo operatore aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:497
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:496
 msgid "You can not lock or delete yourself!"
 msgstr "Impossibile bloccare o cancellare se stessi!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:530
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:529
 msgid "Dept updated successfully"
 msgstr "Dipartimento aggiornato"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:532
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:531
 msgid "Error updating the department"
 msgstr "Errore nell'aggiornamento del dipartimento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:541
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:540
 msgid "Unable to add department. Internal error"
 msgstr "Impossibile aggiungere il dipartimento. Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:545
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:544
 msgid "You must select at least one department"
 msgstr "Selezionare almeno un dipartimento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:547
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:546
 msgid ""
 "You can not disable/delete a default department. Remove default Dept and try "
 "again."
@@ -847,38 +848,38 @@ msgstr ""
 "dipartimento predefinito e riprovare."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:554
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:553
 #, php-format
 msgid "%s of %s selected departments made public"
 msgstr "%s di %s dipartimenti selezionati resi pubblici"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:556
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:555
 msgid "Unable to make depts public."
 msgstr "Impossibile rendere pubblico il dipartimento."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:560
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:559
 #, php-format
 msgid "%s of %s selected departments made private"
 msgstr "%s di %s dipartimenti selezionati resi privati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:562
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:561
 msgid ""
 "Unable to make selected department(s) private. Possibly already private!"
 msgstr ""
 "Impossibile rendere privati i dipartimenti selezionati. Forse lo sono già!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:570
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:569
 msgid "Can not delete Dept. with members. Move staff first."
 msgstr ""
 "Impossibile eliminare un dipartimento con membri. Rimuovere prima gli "
 "operatori associati."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:572
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:571
 msgid ""
 "Can not delete Dept. associated with a help topics. Remove association first."
 msgstr ""
@@ -886,76 +887,76 @@ msgstr ""
 "rimuovere l'associazione."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:583
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:582
 #, php-format
 msgid "%s of %s selected departments deleted"
 msgstr "%s di %s dipartimenti selezionati sono stati eliminati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:585
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:584
 msgid "Unable to delete selected departments."
 msgstr "Impossibile eliminare i dipartimenti selezionati"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:592
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:591
 msgid "Unknown Dept action"
 msgstr "Azione di dipartimento sconosciuta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:655
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:654
 #, php-format
 msgid "Unable to fetch info on template ID#"
 msgstr "Impossibile recuperare informazioni sul modello ID Nr."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:672
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:671
 #, php-format
 msgid "Unable to fetch info on email ID#%s"
 msgstr "Impossibile recuperare informazioni sull'e-mail ID Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:688
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:687
 #, php-format
 msgid "Unable to fetch info on topic #%s"
 msgstr "Impossibile recuperare informazioni sull'argomento Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:708
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:707
 #, php-format
 msgid "Unable to fetch info on role ID#%s"
 msgstr "Impossibile recuperare informazioni sul ruolo ID Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:718
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:717
 #, php-format
 msgid "Unable to fetch info on staff ID#%s"
 msgstr "Impossibile recuperare informazioni sul'operatore ID Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:741
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:740
 #, php-format
 msgid "Unable to fetch info on group ID#%s"
 msgstr "Impossibile recuperare informazioni sul gruppo ID Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:751
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:750
 #, php-format
 msgid "Unable to fetch info on client ID#%s"
 msgstr "Impossibile recuperare informazioni sul cliente ID Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:769
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:768
 #, php-format
 msgid "Unable to fetch info on Dept ID#%s"
 msgstr "Impossibile recuperare informazioni sul dipartimento ID Nr.%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:804
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:803
 msgid "Problems loading requested admin page."
 msgstr "Problemi nel caricare la pagina di amministrazione richiesta."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:805
+#: Foundation\Apache2.2\htdocs\Katak/admin/admin.php:804
 msgid ""
 "Possibly access denied, if you believe this is in error please get technical "
 "support."
@@ -1031,6 +1032,15 @@ msgid "All Department"
 msgstr "Tutti i dipartimenti"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/admin/directory.php:73
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/stdreply.inc.php:84
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/syslogs.inc.php:97
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:196
+#: Foundation\Apache2.2\htdocs\Katak/include/user/clientlogin.inc.php:33
+msgid "GO"
+msgstr ""
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/admin/directory.php:77
 #: Foundation\Apache2.2\htdocs\Katak/include/class.nav.php:34
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/staffmembers.inc.php:24
@@ -1041,6 +1051,7 @@ msgstr "Elenco operatori"
 #: Foundation\Apache2.2\htdocs\Katak/admin/directory.php:80
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/template.inc.php:16
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/templates.inc.php:47
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/templates.inc.php:112
 msgid "Name"
 msgstr "Nome"
 
@@ -1235,7 +1246,7 @@ msgstr "Cognome richiesto"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/admin/profile.php:86
 #: Foundation\Apache2.2\htdocs\Katak/include/class.client.php:112
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:266
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:268
 #: Foundation\Apache2.2\htdocs\Katak/include/class.staff.php:303
 #: Foundation\Apache2.2\htdocs\Katak/include/class.ticket.php:1154
 msgid "Valid email required"
@@ -2028,7 +2039,7 @@ msgstr "Richiesto un numero valido"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/class.client.php:133
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:287
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:289
 msgid "Password required"
 msgstr "Richiesta password"
 
@@ -2220,91 +2231,91 @@ msgid "Unable to create department. Internal error"
 msgstr "Impossibile creare il dipartimento. Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:263
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:265
 msgid "Internal error."
 msgstr "Errore interno."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:268
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:270
 msgid "Email already exists"
 msgstr "E-mail già esistente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:272
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:274
 msgid "Email in-use by a staff member"
 msgstr "E-mail in uso da un operatore"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:277
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:279
 msgid "You must select a Dept."
 msgstr "Selezionare un dipartimento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:280
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:282
 #: Foundation\Apache2.2\htdocs\Katak/include/class.topic.php:134
 msgid "You must select a priority"
 msgstr "Selezionare una priorità"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:284
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:286
 msgid "Username missing"
 msgstr "Manca il nome utente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:293
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:295
 msgid "IMAP doesn't exist. PHP must be compiled with IMAP enabled."
 msgstr "IMAP non esiste. PHP deve essere compilato con IMAP abilitato."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:295
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:309
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:297
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:311
 msgid "Host name required"
 msgstr "Nome dell'host richiesto"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:297
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:311
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:299
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:313
 msgid "Port required"
 msgstr "Porta richiesta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:299
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:301
 msgid "Select protocol"
 msgstr "Selezionare protocollo"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:301
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:303
 msgid "Fetch interval required"
 msgstr "Richiesto intervallo di aggiornamento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:303
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:305
 msgid "Maximum emails required"
 msgstr "Massimo numero di e-mail richiesto"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:320
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:322
 msgid "Another department using host/username combination."
 msgstr "Un altro dipartimento usa la combinazione host/username."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:329
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:331
 #, php-format
 msgid "Invalid login. Check %s settings"
 msgstr "Login non valido. Controllare impostazioni %s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:347
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:349
 msgid "Unable to login. Check SMTP settings."
 msgstr "Impossibile effettuare il login. Controllare le impostazioni SMTP."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:379
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:381
 msgid "Unable to update email. Internal error occurred"
 msgstr "Impossibile aggiornare e-mail. Si è verificato un errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:389
+#: Foundation\Apache2.2\htdocs\Katak/include/class.email.php:391
 msgid "Error(s) Occured. Try again"
 msgstr "Si sono verificati errori. Riprovare"
 
@@ -2456,14 +2467,14 @@ msgstr "Operatori"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/class.nav.php:35
-msgid "Clients"
-msgstr "Clienti"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.nav.php:36
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/depts.inc.php:11
 msgid "Departments"
 msgstr "Dipartimenti"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/class.nav.php:36
+msgid "Clients"
+msgstr "Clienti"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/class.nav.php:38
@@ -2961,22 +2972,22 @@ msgid "No fields setup"
 msgstr ""
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:108
+#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:109
 msgid "(5 chars min)"
 msgstr "(min. 5 caratteri)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:112
+#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:113
 msgid "(3 chars min)"
 msgstr "(min. 3 caratteri)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:114
+#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:115
 msgid "(Only letters and numbers allowed)"
 msgstr "(Sono permessi solo lettere e numeri)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:121
+#: Foundation\Apache2.2\htdocs\Katak/include/class.validator.php:122
 msgid "(type not set)"
 msgstr "(tipo non impostato)"
 
@@ -3723,6 +3734,7 @@ msgstr "Tipo dipartimento"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/dept.inc.php:79
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/depts.inc.php:43
 msgid "Public"
 msgstr "Pubblico"
 
@@ -3836,6 +3848,11 @@ msgstr "E-mail principale in uscita"
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/depts.inc.php:21
 msgid "Manager"
 msgstr "Manager"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/depts.inc.php:43
+msgid "Private"
+msgstr "Privato"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/depts.inc.php:71
@@ -4336,6 +4353,11 @@ msgstr "Possibilità di cambiare i dati di un ticket."
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/groups.inc.php:7
 msgid "Client Groups"
 msgstr "Gruppi cliente"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/groups.inc.php:7
+msgid "No groups?"
+msgstr "Nessun gruppo?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/groups.inc.php:15
@@ -5411,6 +5433,11 @@ msgid "Add New Standard Reply"
 msgstr "Nuova risposta predefinita"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/reply.inc.php:27
+msgid "Title"
+msgstr "Titolo"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/reply.inc.php:33
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:33
 msgid "Status:"
@@ -5753,14 +5780,6 @@ msgid "category"
 msgstr "categoria"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/staff/stdreply.inc.php:84
-#: Foundation\Apache2.2\htdocs\Katak/include/staff/syslogs.inc.php:97
-#: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:196
-#: Foundation\Apache2.2\htdocs\Katak/include/user/clientlogin.inc.php:33
-msgid "GO"
-msgstr ""
-
-#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/stdreply.inc.php:93
 msgid "Sort By Title"
 msgstr "Ordinamento per titolo"
@@ -5836,7 +5855,6 @@ msgstr "Periodo:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/syslogs.inc.php:81
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:325
-#: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:406
 msgid "From"
 msgstr "Inviato da"
 
@@ -6096,6 +6114,11 @@ msgstr ""
 "modificarlo."
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/templates.inc.php:115
+msgid "Copy"
+msgstr "Copia"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/templates.inc.php:117
 msgid "Select Template to Copy"
 msgstr "Selezionare un modello da copiare"
@@ -6255,6 +6278,7 @@ msgstr "Ordinamento per:"
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:348
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:23
 #: Foundation\Apache2.2\htdocs\Katak/include/user/tickets.inc.php:77
+#: Foundation\Apache2.2\htdocs\Katak/include/user/viewticket.inc.php:27
 msgid "Ticket #"
 msgstr "Ticket Nr."
 
@@ -6298,6 +6322,11 @@ msgstr "Ticket"
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:404
 msgid "Sort By Date"
 msgstr "Ordinamento per data"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:406
+msgid "Comes from"
+msgstr "Inviato da"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:407
@@ -6470,6 +6499,11 @@ msgstr "Telefono:"
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:81
 msgid "Assigned Staff:"
 msgstr "Assegnato a:"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:82
+msgid "- unassigned -"
+msgstr "- non assegnato -"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/viewticket.inc.php:85

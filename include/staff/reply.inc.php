@@ -24,7 +24,7 @@ if($answer && $_REQUEST['a']!='add'){
   <input type="hidden" name="a" value="<?=$action?>">
   <input type="hidden" name="id" value="<?=$info['stdreply_id']?>">
   <table width="100%" border="0" cellspacing=1 cellpadding=2>  
-  <tr><td width=80px>Title:</td>
+  <tr><td width=80px><?= _('Title') ?>:</td>
       <td><input type="text" size=45 name="title" value="<?=$info['title']?>">
           &nbsp;<font class="error">*&nbsp;<?=$errors['title']?></font>
       </td>

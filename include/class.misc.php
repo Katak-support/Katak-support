@@ -4,7 +4,7 @@
 
     Misc collection of useful generic helper functions.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -17,8 +17,11 @@ require_once(INCLUDE_DIR .'class.password.php');
 
 class Misc {
     
-	static function randCode($len=8) {
-		return substr(strtoupper(base_convert(microtime(),10,16)),0,$len);
+	static function randCode($len=16) {
+	  $randomCode = substr(strtoupper(base_convert(microtime(),10,16)),0,$len);
+	  if(strlen($randomCode) < 16)
+	    $randomCode = substr($randomCode.'012345679012345', 0, 16);
+		return $randomCode;
 	}
     
   /* Helper used to generate ticket IDs */
@@ -40,7 +43,7 @@ class Misc {
         return $text;
     }
 
-    return trim(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256,$salt, $text, MCRYPT_MODE_ECB,
+    return trim(base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $salt, $text, MCRYPT_MODE_ECB,
                      mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND))));
   }
 

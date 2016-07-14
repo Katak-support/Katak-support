@@ -109,10 +109,10 @@ $deletable=0;
      <form action="admin.php?t=templates" method="POST" >
     <input type=hidden name='t' value='templates'>
     <input type=hidden name='do' value='add'>
-    Name:
+    <?= _('Name') ?>:
     <input name="name" size="30" maxlength="32" value="<?=($errors)?Format::htmlchars($_REQUEST['name']):''?>" />
     <font class="error">*&nbsp;<?=$errors['name']?></font>&nbsp;&nbsp;
-    Copy: 
+    <?= _('Copy') ?>: 
     <select name="copy_template">
         <option value=0><?= _('Select Template to Copy') ?></option>
           <?php

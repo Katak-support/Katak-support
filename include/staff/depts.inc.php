@@ -40,7 +40,7 @@ $depts=db_query($sql.' GROUP BY dept.dept_id ORDER BY dept_name');
                     <input type="checkbox" name="ids[]" value="<?=$row['dept_id']?>" <?=$sel?'checked':''?>  <?=$default?'disabled':''?>
                               onClick="highLight(this.value,this.checked);"> </td>
                   <td><a href="admin.php?t=dept&id=<?=$row['dept_id']?>"><?=$row['dept_name']?></a>&nbsp;<?=$default?></td>
-                  <td><?=$row['ispublic']?'Public':'<b>Private</b>'?></td>
+                  <td><?=$row['ispublic']?_('Public'):'<b>'._('Private').'</b>'?></td>
                   <td>&nbsp;&nbsp;
                       <?php if($row['users']>0) { ?>
                           <a href="admin.php?t=staff&dept=<?=$row['dept_id']?>"><b><?=$row['users']?></b></a>

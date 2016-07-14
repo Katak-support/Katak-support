@@ -79,7 +79,7 @@ if($staff)
 <table align="left" class="ticketinfo" cellspacing="1" cellpadding="3" width="50%" border=0>
     <tr>
         <th><?= _('Assigned Staff:') ?></th>
-        <td><?=$staff?Format::htmlchars($staff->getName()):'- unassigned -'?></td>
+        <td><?= $staff?Format::htmlchars($staff->getName()):_('- unassigned -') ?></td>
     </tr>
     <tr>
         <th nowrap><?= _('Last Response:') ?></th>

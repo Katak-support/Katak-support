@@ -46,6 +46,7 @@ if (defined('THIS_VERSION') && strcasecmp($cfg->getVersion(), substr(THIS_VERSIO
             }
         }
     }
+    // from PHP 5.4 register_globals has been removed.
     if (!$sysnotice && ini_get('register_globals'))
         $sysnotice = _('Please consider turning off register globals if possible');
 }
@@ -440,15 +441,13 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                     $sql = 'UPDATE ' . GROUP_TABLE . ' SET group_enabled=1,group_updated=NOW() WHERE group_enabled=0 AND group_id IN(' . $ids . ')';
                     db_query($sql);
                     $msg = sprintf(_("%s of  $selected selected groups Enabled"), db_affected_rows());
-                  } elseif (in_array($thisuser->getDeptId(), $_POST['groups'])) {
-                    $errors['err'] = "Trying to 'Disable' or 'Delete your group? Doesn't make any sense!";
                   } elseif (isset($_POST['disable_groups'])) {
                     $sql = 'UPDATE ' . GROUP_TABLE . ' SET group_enabled=0, group_updated=NOW() WHERE group_enabled=1 AND group_id IN(' . $ids . ')';
                     db_query($sql);
                     $msg = sprintf(_("%s of  $selected selected groups Disabled"), db_affected_rows());
                   } elseif (isset($_POST['delete_groups'])) {
                     $res = db_query('SELECT client_id FROM ' . CLIENT_TABLE . ' WHERE CLIENT_group_id IN(' . $ids . ')');
-                    if (!$res || db_num_rows($res)) { //fail if any of the selected roles has users.
+                    if (!$res || db_num_rows($res)) { //fail if any of the selected groups has users.
                       $errors['err'] = _('One or more of the selected groups have users. Only empty groups can be deleted.');
                     } else {
                       db_query('DELETE FROM ' . GROUP_TABLE . ' WHERE group_id IN(' . $ids . ')');
@@ -536,7 +535,7 @@ if ($_POST && $_REQUEST['t'] && !$errors):
                     break;
                 case 'create':
                     if (($deptID = Dept::create($_POST, $errors)))
-                        $msg = sprintf('%s added successfully', Format::htmlchars($_POST['dept_name']));
+                        $msg = sprintf(_('%s added successfully'), Format::htmlchars($_POST['dept_name']));
                     elseif (!$errors['err'])
                         $errors['err'] = _('Unable to add department. Internal error');
                     break;

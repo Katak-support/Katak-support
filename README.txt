@@ -14,7 +14,7 @@ System requirements:
 - MySQL 4.4+
 - Best viewed with browsers that support CSS3
 - Administrator's area: minimum display resolution 1024x768px
-- In order to receive attachments, the permissions of the file api/pipe.php must be set to 755.
+- In order to receive ticket via e-mail, the permissions of the file api/pipe.php must be set to 755.
 
 See http://www.katak-support.com/en/content/installation-guide for installation support.
 

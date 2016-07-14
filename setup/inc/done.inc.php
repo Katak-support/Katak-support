@@ -6,6 +6,7 @@
     <li><strong>Delete setup directory</strong><br>
      After verifying that your installation completed correctly please delete setup folder.</li>
     <?php
+    // from PHP 5.4 register_globals has been removed.
      if(ini_get('register_globals')) { ?>
      <li><strong>Disable register globals (optional)</strong><br>
      If you don't have a good reason why register globals is enabled then please disable it.

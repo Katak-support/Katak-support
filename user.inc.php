@@ -5,7 +5,7 @@
     File included on every external interface page.
     Includes everything you need for user pages.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -22,7 +22,7 @@ require_once('main.inc.php');
 // set user language and language domain
 $lang = $cfg->getClientLanguage();
 putenv('LC_MESSAGES=' . $lang);
-setlocale(LC_MESSAGES, $lang . '.UTF-8', $lang . '.UTF8', $lang . '.utf8', $lang . '.utf-8');
+setlocale(LC_ALL, $lang . '.UTF-8', $lang . '.UTF8', $lang . '.utf8', $lang . '.utf-8');
 bindtextdomain('messages', './i18n');
 bind_textdomain_codeset('messages','UTF-8');
 textdomain("messages");
@@ -54,7 +54,7 @@ $msg='';
 $thisuser=null;
 
 // Has got the user a session? Then make sure the user is valid...before doing anything else.
-if($_SESSION['_user']['userID'] && $_SESSION['_user']['key'])
+if(isset($_SESSION['_user']) && $_SESSION['_user']['userID'] && $_SESSION['_user']['key'])
   if(!$cfg->getUserLogRequired())
     $thisuser = new UserSession($_SESSION['_user']['userID'],$_SESSION['_user']['key']);
   else {

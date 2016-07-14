@@ -23,8 +23,8 @@ $dept=($dept && $dept->isPublic())?$dept:$cfg->getDefaultDept();
           echo '<span class="Icon closedTicket">&nbsp;</span>';
 		else
           echo '<span class="Icon openTicket">&nbsp;</span>';
-        ?>
-        Ticket #<?=$ticket->getExtId()?>
+
+    echo _('Ticket #') . ' ' . $ticket->getExtId();?>
         &nbsp;<a href="tickets.php?id=<?=$ticket->getExtId()?>" title="<?=_('Reload') ?>"><span class="Icon refresh">&nbsp;</span></a>
 </div>
 <div class="msg" id="ticketstatus"><?=_('Ticket Status:').' '.$ticket->getStatus()?></div>

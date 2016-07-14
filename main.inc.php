@@ -5,7 +5,7 @@
     Master include file which must be included at the start of every file.
     The brain of the whole sytem. Don't monkey with it.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -19,6 +19,7 @@
 if(!strcasecmp(basename($_SERVER['SCRIPT_NAME']),basename(__FILE__))) die('Adiaux amikoj!');
 
 #Disable Globals if enabled....before loading config info
+// from PHP 5.4 register_globals has been removed.
 if(ini_get('register_globals')) {
     ini_set('register_globals',0);
     foreach($_REQUEST as $key=>$val)
@@ -161,7 +162,8 @@ $cfg->init();
 $_SESSION['TZ_OFFSET']=$cfg->getTZoffset();
 $_SESSION['daylight']=$cfg->observeDaylightSaving();
 
-#Cleanup magic quotes crap.
+// Cleanup magic quotes crap.
+// from PHP 5.4 magic_quotes has been removed. get_magic_quotes_gpc() always returs FALSE.
 if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
     $_POST=Format::strip_slashes($_POST);
     $_GET=Format::strip_slashes($_GET);

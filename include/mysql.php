@@ -5,7 +5,7 @@
     Collection of MySQL helper interface functions. 
     Mostly wrappers with error checking.
 
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -184,7 +184,7 @@ else {
   }
 
   function db_close(){
-      global $$dblink;
+      global ${$dblink};
       return @mysql_close($$dblink);
   }
 
@@ -276,7 +276,7 @@ else {
 
   //Do not call this function directly...use db_input
   function db_real_escape($val,$quote=false){
-      global $$dblink;
+      global ${$dblink};
 
       //Magic quotes crap is taken care of in main.inc.php
       $val=mysql_real_escape_string($val);

@@ -70,7 +70,7 @@ require_once(STAFFINC_DIR.'header.inc.php');
            <?php } ?>
     </select>
     &nbsp;
-    <input type="submit" name="search" class="button" value="GO">
+    <input type="submit" name="search" class="button" value="<?= _('GO') ?>">
     </form>
 </div>
 <?php if($users && db_num_rows($users)):?>

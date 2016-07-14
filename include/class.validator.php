@@ -4,7 +4,7 @@
 
     Input validation helper. This class contains collection of functions used for data validation.
    
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -46,7 +46,8 @@ class Validator {
         if($this->errors)
             return false;
 
-        //if magic quotes are enabled - then try cleaning up inputs before validation...
+        // if magic quotes are enabled - then try cleaning up inputs before validation...
+        // from PHP 5.4 magic_quotes has been removed. get_magic_quotes_gpc() always returs FALSE.
         if($userinput && function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
             $source=Format::strip_slashes($source);
 

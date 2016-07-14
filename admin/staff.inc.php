@@ -24,7 +24,7 @@ require_once('../main.inc.php');
 // set staff/admin language and language domain
 $lang = $cfg->getStaffLanguage();
 putenv('LC_MESSAGES=' . $lang);
-setlocale(LC_MESSAGES, $lang . '.UTF-8', $lang . '.UTF8', $lang . '.utf8', $lang . '.utf-8');
+setlocale(LC_ALL, $lang . '.UTF-8', $lang . '.UTF8', $lang . '.utf8', $lang . '.utf-8');
 bindtextdomain('messages', '../i18n');
 bind_textdomain_codeset('messages','UTF-8');
 textdomain("messages");
