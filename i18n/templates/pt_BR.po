@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support ver 1.1.0\n"
-"POT-Creation-Date: 2014-09-26 23:37+0100\n"
-"PO-Revision-Date: 2015-01-02 12:51+0100\n"
+"POT-Creation-Date: 2016-08-11 14:46+0100\n"
+"PO-Revision-Date: 2016-08-11 15:37+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -165,6 +165,8 @@ msgstr "Você alcançou o máximo de tentativas de login com falhas permitido."
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:2
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:3
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:2
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:2
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:2
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:1
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:2
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:2
@@ -182,7 +184,7 @@ msgstr "Você alcançou o máximo de tentativas de login com falhas permitido."
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:2
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:2
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:4
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:4
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:9
 msgid "Access Denied"
 msgstr "Acesso Negado"
 
@@ -220,7 +222,7 @@ msgid "logged out"
 msgstr "desconectado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/main.inc.php:76
+#: Foundation\Apache2.2\htdocs\katak/main.inc.php:77
 msgid "Error loading settings. Contact admin."
 msgstr ""
 "Erro durante o carregamento das configurações. Contactar administrador."
@@ -368,169 +370,169 @@ msgstr ""
 "permissão de escrita. Exemplo: <i>chmod 644 %s</i>."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:50
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:51
 msgid "Please consider turning off register globals if possible"
 msgstr ""
 "Por favor considerar a opção de desligar o register globals se possível"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:72
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:73
 msgid "Preferences Updated Successfully"
 msgstr "Preferências atualizadas com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:75
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:174
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:279
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:380
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:428
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:485
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:76
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:175
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:280
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:381
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:476
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:533
 msgid "Internal error"
 msgstr "Erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:80
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:81
 msgid "Attachments settings updated"
 msgstr "Configurações de anexos atualizada"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:83
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:88
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:84
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:108
 #: Foundation\Apache2.2\htdocs\katak/include/class.msgtpl.php:83
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:285
 msgid "Internal Error"
 msgstr "Erro Interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:91
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:92
 #, php-format
 msgid "Key created successfully for %s"
 msgstr "Chave criada com sucesso para %s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:93
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:94
 msgid "Error adding the IP. Try again"
 msgstr "Erro adicionando o IP. Tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:97
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:98
 msgid "API passphrase updated successfully"
 msgstr "Frase secreta da API atualizada com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:99
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:100
 msgid "Error updating passphrase. Try again"
 msgstr "Erro ao atualizar senha. Tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:103
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:104
 msgid "You must select at least one entry to process"
 msgstr "Você tem que selecionar ao menos uma entrada para processar"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:111
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:112
 #, php-format
 msgid "%s of %s selected key(s) updated"
 msgstr "%s de %s chave(s) selecionada(s) atualizada(s)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:113
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:114
 msgid "Unable to delete selected keys."
 msgstr "Incapaz de apagar as chaves selecionadas."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:118
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:119
 #, php-format
 msgid "%s of %s selected key(s) deleted"
 msgstr "%s de %s chaves selecionadas apagadas"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:120
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:121
 msgid "Unable to delete selected key(s). Try again"
 msgstr "Incapaz de apagar as chaves selecionadas. Tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:123
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:205
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:258
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:124
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:206
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:259
 msgid "Unknown command"
 msgstr "Comando desconhecido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:128
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:129
 #, php-format
 msgid "Unknown action %s"
 msgstr "Ação desconhecida %s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:136
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:137
 msgid "Please enter a valid email."
 msgstr "Favor entrar com um email válido."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:138
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:139
 msgid "Email already banned"
 msgstr "Email já se encontra banido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:141
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:142
 msgid "Email added to banlist"
 msgstr "Email adicionado a lista de banidos"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:143
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:144
 msgid "Unable to add email to banlist. Try again"
 msgstr "Incapaz de adicionar este email a lista de banidos. Tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:148
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:149
 msgid "You must select at least one email"
 msgstr "Você deve selecionar ao menos um email"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:153
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:154
 #, php-format
 msgid "%s of %s selected emails removed from banlist"
 msgstr "%s de %s emails selecionados foram removidos da lista de banidos"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:155
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:156
 msgid "Unable to make remove selected emails. Try again."
 msgstr "Incapaz de remove os emails selecionados. Tente novamente."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:159
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:160
 msgid "Uknown banlist command!"
 msgstr "Comando desconhecido na lista de banidos!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:170
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:171
 msgid "Email updated successfully"
 msgstr "Email atualizado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:172
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:173
 msgid "Error updating email"
 msgstr "Erro durante a atualização do email"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:179
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:180
 msgid "Email added successfully"
 msgstr "Email adicionado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:181
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:383
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:182
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:385
 msgid "Unable to add email. Internal error"
 msgstr "Incapaz de adicionar email. Erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:185
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:186
 msgid "You must select at least one email to process"
 msgstr "Você deve selecionar ao menos um email ao processo"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:192
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:193
 msgid ""
 "One or more of the selected emails is being used by a Dept. Remove "
 "association first."
@@ -539,60 +541,60 @@ msgstr ""
 "Remover associação primeiro."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:200
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:201
 #, php-format
 msgid "%s of %s selected email(s) deleted"
 msgstr "%s de %s emails selecionados apagados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:202
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:203
 msgid "Unable to delete selected email(s)."
 msgstr "Incapaz de apagar o(s) email(s) selecionado(s)."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:210
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:316
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:211
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:317
 msgid "Unknown topic action!"
 msgstr "Ação desconhecida em tópicos!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:220
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:221
 msgid "Template created successfully"
 msgstr "Modelo criado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:222
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:223
 msgid "Error creating the template - try again"
 msgstr "Erro criando o modelo - tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:231
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:232
 #: Foundation\Apache2.2\htdocs\katak/include/class.msgtpl.php:180
 msgid "Unknown template"
 msgstr "Modelo desconhecido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:233
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:234
 msgid "Template updated successfully"
 msgstr "Modelo atualizado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:235
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:236
 msgid "Error updating the template. Try again"
 msgstr "Erro atualizando o modelo. Tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:241
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:242
 msgid "You must select at least one template"
 msgstr "Você deve selecionar ao menos um modelo"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:243
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:244
 msgid "You can not delete default template"
 msgstr "Você não pode deletar o modelo padrão"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:250
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:251
 msgid ""
 "One or more of the selected templates is being used by a Dept. Remove "
 "association first."
@@ -601,213 +603,249 @@ msgstr ""
 "Remover associação primeiro."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:254
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:255
 #, php-format
 msgid "%s of %s selected templates(s) deleted"
 msgstr "%s de %s dos modelos selecionados foram apagados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:256
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:257
 msgid "Unable to delete selected templates(s)."
 msgstr "Incapaz de apagar os modelos selecionados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:263
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:264
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:98
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:329
 msgid "Unknown action"
 msgstr "Ação desconhecida"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:275
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:276
 msgid "Topic updated successfully"
 msgstr "Tópico atualizado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:277
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:278
 msgid "Error updating the topic"
 msgstr "Erro atualizando o tópico"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:284
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:285
 msgid "Help topic created successfully"
 msgstr "Tópico de ajuda criado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:286
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:287
 #: Foundation\Apache2.2\htdocs\katak/include/class.topic.php:150
 msgid "Unable to create the topic. Internal error"
 msgstr "Incapaz de criar tópico. Erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:290
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:291
 msgid "You must select at least one topic"
 msgstr "Você deve selecionar ao menos um tópico"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:297
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:298
 #, php-format
 msgid "%s of %s selected services enabled"
 msgstr "%s de %s dos serviços selecionados foram apagados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:299
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:300
 msgid "Unable to complete the action."
 msgstr "Incapaz de completar a ação"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:303
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:304
 #, php-format
 msgid "%s of %s selected topics disabled"
 msgstr "%s de %s dos tópicos selecionados foram desabilitados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:305
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:306
 msgid "Unable to disable selected topics"
 msgstr "Incapaz de desabilitar os tópicos selecionados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:309
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:310
 #, php-format
 msgid "%s of %s selected topics deleted!"
 msgstr "%s de %s dos tópicos selecionados foram apagados!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:311
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:312
 msgid "Unable to delete selected topics"
 msgstr "Incapaz de apagar os tópicos selecionados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:325
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:326
 #, php-format
 msgid "Role %s updated successfully"
-msgstr "Grupo%s atualizado com sucesso"
+msgstr "Cargo %s atualizado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:327
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:334
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:328
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:335
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:425
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:432
 msgid "Error(s) occured. Try again."
 msgstr "Erros ocorreram. Tente novamente."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:332
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:333
 #, php-format
 msgid "Role %s created successfully"
+msgstr "Cargo %s criado com sucesso"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:356
+msgid ""
+"One or more of the selected roles have users. Only empty roles can be "
+"deleted."
+msgstr ""
+"Um ou mais dos cargos selecionados tem usuários. Somente cargos vazios podem "
+"ser apagados."
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:359
+#, php-format
+msgid "%s of %s selected roles Deleted"
+msgstr "%s de %s dos cargos selecionados foram Apagados"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:362
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:407
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:414
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:457
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:511
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:518
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:595
+msgid "Uknown command!"
+msgstr "Comando desconhecido!"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:365
+msgid "No roles selected."
+msgstr "Nenhum cargo selecionado."
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:377
+msgid "Client profile updated successfully"
+msgstr "Perfil da cliente atualizado com sucesso"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:379
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:474
+msgid "Error updating the user"
+msgstr "Erro atualizando o usuário"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:386
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:481
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:538
+#, php-format
+msgid "%s added successfully"
+msgstr "%s  adicionado com sucesso"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:388
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:483
+msgid "Unable to add the user. Internal error"
+msgstr "Incapaz de adicionar usuário. Erro interno"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:398
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:493
+#, php-format
+msgid "%s of  %s selected users enabled"
+msgstr "%s de  %s dos usuários selecionados foram ativados"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:402
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:501
+#, php-format
+msgid "%s of %s selected users locked"
+msgstr "%s de %s dos usuário selecionados foram bloqueados"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:405
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:506
+#, php-format
+msgid "%s of %s selected users deleted"
+msgstr "%s de %s dos usuários selecionados foram apagados"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:410
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:514
+msgid "No users selected."
+msgstr "Nenhum usuário selecionado."
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:423
+#, php-format
+msgid "Group %s updated successfully"
+msgstr "Grupo%s atualizado com sucesso"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:430
+#, php-format
+msgid "Group %s created successfully"
 msgstr "Grupo %s criado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:355
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:451
 msgid ""
-"One or more of the selected roles have users. Only empty roles can be "
+"One or more of the selected groups have users. Only empty groups can be "
 "deleted."
 msgstr ""
 "Um ou mais dos grupos selecionados tem usuários. Somente grupos vazios podem "
 "ser apagados."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:358
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:454
 #, php-format
-msgid "%s of %s selected roles Deleted"
+msgid "%s of %s selected groups Deleted"
 msgstr "%s de %s dos grupos selecionados foram Apagados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:361
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:406
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:413
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:463
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:470
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:547
-msgid "Uknown command!"
-msgstr "Comando desconhecido!"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:364
-msgid "No roles selected."
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:460
+msgid "No groups selected."
 msgstr "Nenhum grupo selecionado."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:376
-msgid "Client profile updated successfully"
-msgstr "Perfil da cliente atualizado com sucesso"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:378
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:426
-msgid "Error updating the user"
-msgstr "Erro atualizando o usuário"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:385
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:433
-#, php-format
-msgid "%s added successfully"
-msgstr "%s  adicionado com sucesso"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:387
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:435
-msgid "Unable to add the user. Internal error"
-msgstr "Incapaz de adicionar usuário. Erro interno"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:397
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:445
-#, php-format
-msgid "%s of  %s selected users enabled"
-msgstr "%s de  %s dos usuários selecionados foram ativados"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:401
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:453
-#, php-format
-msgid "%s of %s selected users locked"
-msgstr "%s de %s dos usuário selecionados foram bloqueados"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:404
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:458
-#, php-format
-msgid "%s of %s selected users deleted"
-msgstr "%s de %s dos usuários selecionados foram apagados"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:409
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:466
-msgid "No users selected."
-msgstr "Nenhum usuário selecionado."
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:424
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:472
 msgid "Staff profile updated successfully"
 msgstr "Perfil da equipe atualizado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:448
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:496
 msgid "You can not lock or delete yourself!"
 msgstr "Você não pode bloquear ou apagar você mesmo!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:481
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:529
 msgid "Dept updated successfully"
 msgstr "Departamento atualizado com sucesso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:483
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:531
 msgid "Error updating the department"
 msgstr "Erro atualizando o departamento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:492
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:540
 msgid "Unable to add department. Internal error"
 msgstr "Incapaz de adicionar departamento. Erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:496
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:544
 msgid "You must select at least one department"
 msgstr "Você deve selecionar ao menos um departamento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:498
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:546
 msgid ""
 "You can not disable/delete a default department. Remove default Dept and try "
 "again."
@@ -816,24 +854,24 @@ msgstr ""
 "departamento padrão e tente novamente."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:505
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:553
 #, php-format
 msgid "%s of %s selected departments made public"
 msgstr "%s de %s dos departamentos selecionados foram setados como públicos"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:507
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:555
 msgid "Unable to make depts public."
 msgstr "Incapaz de setar os departamentos como públicos."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:511
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:559
 #, php-format
 msgid "%s of %s selected departments made private"
 msgstr "%s de %s dos departamentos selecionados foram setados privados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:513
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:561
 msgid ""
 "Unable to make selected department(s) private. Possibly already private!"
 msgstr ""
@@ -841,13 +879,13 @@ msgstr ""
 "já se encontram como privados!"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:521
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:569
 msgid "Can not delete Dept. with members. Move staff first."
 msgstr ""
 "Não é possível se apagar um departamento com membros. Mova a equipe primeiro."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:523
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:571
 msgid ""
 "Can not delete Dept. associated with a help topics. Remove association first."
 msgstr ""
@@ -855,179 +893,76 @@ msgstr ""
 "Remova as associações primeiro."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:534
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:582
 #, php-format
 msgid "%s of %s selected departments deleted"
 msgstr "%s de %s dos departamentos selecionados foram apagados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:536
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:584
 msgid "Unable to delete selected departments."
 msgstr "Incapaz de apagar os departamentos selecionados."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:543
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:591
 msgid "Unknown Dept action"
 msgstr "Ação em departamentos desconhecida"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:563
-#: Foundation\Apache2.2\htdocs\katak/admin/profile.php:128
-msgid "PREFERENCES"
-msgstr "PREFERÊNCIAS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:564
-msgid "ATTACHMENTS"
-msgstr "ANEXOS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:565
-msgid "API"
-msgstr "API"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:582
-msgid "REPORTS"
-msgstr "RELATÓRIOS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:583
-msgid "SYSTEM LOGS"
-msgstr "LOGS DO SISTEMA"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:597
-msgid "EMAIL ADDRESSES"
-msgstr "ENDEREÇO DE E-MAIL"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:598
-msgid "ADD NEW EMAIL"
-msgstr "ADICIONAR NOVO E-MAIL"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:599
-msgid "TEMPLATES"
-msgstr "MODELOS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:599
-#: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:5
-#: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:35
-msgid "Email Templates"
-msgstr "Modelos de Email"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:600
-msgid "BANLIST"
-msgstr "LISTA DE BANIDOS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:600
-msgid "Banned Email"
-msgstr "Emails Banidos"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:610
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:654
 #, php-format
 msgid "Unable to fetch info on template ID#"
 msgstr "Incapaz de buscar informações no modelo ID#"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:627
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:671
 #, php-format
 msgid "Unable to fetch info on email ID#%s"
 msgstr "Incapaz de ler informações do email ID#%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:637
-msgid "HELP TOPICS"
-msgstr "TÓPICOS DE AJUDA"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:638
-msgid "ADD NEW TOPIC"
-msgstr "ADICIONAR NOVO TÓPICO"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:643
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:687
 #, php-format
 msgid "Unable to fetch info on topic #%s"
 msgstr "Incapaz de ler informações do tópico ID#%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:656
-#: Foundation\Apache2.2\htdocs\katak/admin/directory.php:19
-msgid "STAFF MEMBERS"
-msgstr "MEMBROS DA EQUIPE"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:657
-msgid "ADD NEW STAFF"
-msgstr "ADICIONAR NOVO MEMBRO"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:658
-msgid "STAFF ROLES"
-msgstr "CARGOS DOS MEMBROS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:659
-msgid "ADD NEW ROLE"
-msgstr "ADICIONAR NOVO CARGO"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:660
-msgid "CLIENT LIST"
-msgstr "LISTA CLIENTES"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:661
-msgid "ADD NEW CLIENT"
-msgstr "ADICIONAR NOVO CLIENTE"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:669
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:707
 #, php-format
 msgid "Unable to fetch info on role ID#%s"
-msgstr "Não foi possível obter informação sobre o ID do gruppo #%s"
+msgstr "Não foi possível obter informação sobre o ID do cargo #%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:679
-#, php-format
-msgid "Unable to fetch info on client ID#%s"
-msgstr "Incapaz de obter informaçoes sobre o cliente ID#%s"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:690
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:717
 #, php-format
 msgid "Unable to fetch info on staff ID#%s"
 msgstr "Não foi possível obter informações sobre a equipe com o ID#%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:707
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:740
+#, php-format
+msgid "Unable to fetch info on group ID#%s"
+msgstr "Incapaz de ler informações do grupo ID#%s"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:750
+#, php-format
+msgid "Unable to fetch info on client ID#%s"
+msgstr "Incapaz de obter informaçoes sobre o cliente ID#%s"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:768
 #, php-format
 msgid "Unable to fetch info on Dept ID#%s"
 msgstr "Incapaz de obter informaçoes sobre o Departamento ID#%s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:712
-msgid "DEPARTMENTS"
-msgstr "DEPARTAMENTOS"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:713
-msgid "ADD NEW DEPT."
-msgstr "ADICIONAR NOVO DEPARTAMENTO"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:743
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:803
 msgid "Problems loading requested admin page."
 msgstr "Problemas carregando requisição da página administrativa."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:744
+#: Foundation\Apache2.2\htdocs\katak/admin/admin.php:804
 msgid ""
 "Possibly access denied, if you believe this is in error please get technical "
 "support."
@@ -1080,6 +1015,12 @@ msgid "cron job executed"
 msgstr "atividade cron executada"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/directory.php:19
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:71
+msgid "STAFF MEMBERS"
+msgstr "MEMBROS DA EQUIPE"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:61
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:71
 msgid "Search for"
@@ -1097,9 +1038,18 @@ msgid "All Department"
 msgstr "Todos os Departamentos"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/directory.php:73
+#: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:84
+#: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:97
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:196
+#: Foundation\Apache2.2\htdocs\katak/include/user/clientlogin.inc.php:33
+msgid "GO"
+msgstr "Ir"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:77
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:33
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:16
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:34
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:24
 msgid "Staff Members"
 msgstr "Membros da Equipe"
 
@@ -1107,6 +1057,7 @@ msgstr "Membros da Equipe"
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:80
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:16
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:47
+#: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:112
 msgid "Name"
 msgstr "Nome"
 
@@ -1114,23 +1065,24 @@ msgstr "Nome"
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:81
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:67
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:74
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:29
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:37
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:69
 msgid "Dept"
 msgstr "Departamento"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:82
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:21
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:25
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:98
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:159
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:16
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:18
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:17
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:27
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:35
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:94
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:145
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:402
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:69
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:79
 msgid "Status"
 msgstr "Status"
 
@@ -1147,36 +1099,37 @@ msgstr "Celular"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:94
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:56
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:64
 msgid "mng"
 msgstr ""
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:95
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:54
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:62
 msgid "Vacation"
 msgstr "Modo de Férias"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:95
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:44
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:76
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:47
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:92
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:52
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:38
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:41
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reply.inc.php:35
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:39
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:124
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:54
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:62
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:118
 msgid "Active"
 msgstr "Ativo"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/directory.php:95
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:77
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:47
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:93
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:52
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:125
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:54
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:62
 msgid "Locked"
 msgstr "Bloqueado"
 
@@ -1205,7 +1158,7 @@ msgstr "Tentativas excessivas de login pelo membro da equipe"
 #: Foundation\Apache2.2\htdocs\katak/admin/login.php:81
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:82
 #: Foundation\Apache2.2\htdocs\katak/include/staff/login.tpl.php:20
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:26
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:34
 msgid "Username"
 msgstr "Usuário"
 
@@ -1251,7 +1204,7 @@ msgstr "Nova senha requerida"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:54
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:117
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:137
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:328
 msgid "Must be at least 6 characters"
 msgstr "Deve ter ao menos 6 caracteres"
@@ -1298,8 +1251,8 @@ msgstr "Último nome requerido"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:86
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:92
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:266
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:112
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:268
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:303
 #: Foundation\Apache2.2\htdocs\katak/include/class.ticket.php:1154
 msgid "Valid email required"
@@ -1330,6 +1283,12 @@ msgstr "O(s) erro(s) abaixo ocorreram, Tente novamente"
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:127
 msgid "MY PROFILE"
 msgstr "MEU PERFIL"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/admin/profile.php:128
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:56
+msgid "PREFERENCES"
+msgstr "PREFERÊNCIAS"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/profile.php:129
@@ -1384,11 +1343,12 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/staff.inc.php:104
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:90
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:69
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:75
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:117
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:123
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:100
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:161
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:66
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:65
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:433
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:439
@@ -1400,8 +1360,8 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:491
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:497
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:507
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:62
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:78
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:67
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:86
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:142
 msgid "Enable"
 msgstr "Ativar"
@@ -1415,7 +1375,7 @@ msgstr "ID Desconhecido#"
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:41
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:33
 msgid "Missing or invalid role ID"
-msgstr "ID do Grupo inválido ou faltando"
+msgstr "ID do cargo inválido ou faltando"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/stdreply.php:44
@@ -1534,7 +1494,7 @@ msgstr "Estado do tíquete mudou para %s"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:84
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:316
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:98
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:115
 msgid "Open"
 msgstr "Aberto"
 
@@ -2056,52 +2016,63 @@ msgid "Already set"
 msgstr "Já setado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:94
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:68
+#: Foundation\Apache2.2\htdocs\katak/include/class.group.php:59
+#: Foundation\Apache2.2\htdocs\katak/include/class.role.php:67
+msgid "Internal error occured"
+msgstr "Ocorreu um erro interno"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:114
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:305
 msgid "Already in-use system email"
 msgstr "Email do sistema já em uso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:101
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:121
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:312
 msgid "Already in-use email"
 msgstr "Email do sistema já em uso"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:105
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:108
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:125
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:128
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:316
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:319
 msgid "Valid number required"
 msgstr "Número válido requerido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:113
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:287
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:133
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:289
 msgid "Password required"
 msgstr "Senha requerida"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:115
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:135
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:326
 msgid "Password(s) do not match"
 msgstr "Senhas não batem"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:119
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:139
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:330
 msgid "Password too long"
 msgstr "A sua Senha inserida è muito grande "
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:138
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:142
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:159
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:381
 msgid "Unable to update the user. Internal error occured"
 msgstr "Incapaz de atualizar o usuário. Ocorreu um erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:149
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:163
+msgid "Unable to update the client. Internal error occured"
+msgstr "Incapaz de atualizar o usuário. Ocorreu um erro interno"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.client.php:170
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:387
 msgid "Unable to create user. Internal error"
 msgstr "Incapaz de criar i usuário. Erro interno"
@@ -2265,96 +2236,121 @@ msgid "Unable to create department. Internal error"
 msgstr "Incapaz de criar departamento. Erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:263
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:265
 msgid "Internal error."
 msgstr "Erro interno."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:268
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:270
 msgid "Email already exists"
 msgstr "Email já existe"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:272
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:274
 msgid "Email in-use by a staff member"
 msgstr "Email em uso por um membro da equipe"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:277
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:279
 msgid "You must select a Dept."
 msgstr "Você deve selecionar um departamento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:280
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:282
 #: Foundation\Apache2.2\htdocs\katak/include/class.topic.php:134
 msgid "You must select a priority"
 msgstr "Você deve selecionar uma prioridade"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:284
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:286
 msgid "Username missing"
 msgstr "Usuário faltando"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:293
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:295
 msgid "IMAP doesn't exist. PHP must be compiled with IMAP enabled."
 msgstr "IMAP não existe. PHP deve ser compilado com a extensão IMAP ativada."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:295
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:309
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:297
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:311
 msgid "Host name required"
 msgstr "Nome de servidor requerido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:297
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:311
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:299
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:313
 msgid "Port required"
 msgstr "Porta requerida"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:299
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:301
 msgid "Select protocol"
 msgstr "Selecione o protocolo"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:301
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:303
 msgid "Fetch interval required"
 msgstr "Intervalo de busca requerido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:303
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:305
 msgid "Maximum emails required"
 msgstr "Máximo de emails requerido"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:320
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:322
 msgid "Another department using host/username combination."
 msgstr "Outro departamento esta usando a mesma combinação servidor/usuário."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:329
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:331
 #, php-format
 msgid "Invalid login. Check %s settings"
 msgstr "Login inválido. Verifique as configurações %s"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:347
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:349
 msgid "Unable to login. Check SMTP settings."
 msgstr "Incapaz de logar. Verifique as configurações de SMTP."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:379
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:381
 msgid "Unable to update email. Internal error occurred"
 msgstr "Incapaz de atualizar email. Ocorreu um erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:389
+#: Foundation\Apache2.2\htdocs\katak/include/class.email.php:391
 msgid "Error(s) Occured. Try again"
 msgstr "Erros Ocorreram. Tente novamente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:355
+#: Foundation\Apache2.2\htdocs\katak/include/class.group.php:32
+msgid "Missing or invalid group ID"
+msgstr "ID do Grupo inválido ou faltando"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.group.php:35
+msgid "Group name required"
+msgstr "Nome do grupo requerido"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.group.php:37
+msgid "Group name must be at least 5 chars."
+msgstr "Nome do grupo deve ter ao menos 5 caracteres."
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.group.php:44
+msgid "Group name already exists"
+msgstr "Nome do grupo já existe"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.group.php:65
+msgid "Unable to create the group. Internal error"
+msgstr "Incapaz de criar o grupo. Erro interno"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:369
 msgid ""
 "The system is having trouble fetching emails from the following mail account:"
 msgstr ""
@@ -2362,17 +2358,17 @@ msgstr ""
 "conta de E-mail:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:359
+#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:373
 msgid "consecutive errors. Maximum of"
 msgstr "erros consecutivos. Máximo de"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:359
+#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:373
 msgid " allowed"
 msgstr "bytes permitidos"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:360
+#: Foundation\Apache2.2\htdocs\katak/include/class.mailfetch.php:374
 msgid ""
 "This could be connection issues related to the host. Next delayed login "
 "attempt in approx. 10 minutes"
@@ -2431,89 +2427,203 @@ msgid "Unable to create the template. Internal error occured"
 msgstr "Incapaz de criar um modelo. Ocorreu um erro interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:29
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:30
 msgid "Dashboard"
 msgstr "Painel"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:29
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:30
 msgid "Admin Dashboard"
 msgstr "Painel da Administração"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:30
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:31
 msgid "Settings"
 msgstr "Configurações"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:30
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:31
 msgid "System Settings"
 msgstr "Configurações do Sistema"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:31
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:32
 msgid "Emails"
 msgstr "Emails"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:31
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:32
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:353
 msgid "Email Settings"
 msgstr "Configurações de Email"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:32
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:33
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:10
 msgid "Help Topics"
 msgstr "Tópicos de Ajuda"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:33
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:34
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:107
 msgid "Staff"
 msgstr "Equipe"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:34
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:35
 #: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:11
 msgid "Departments"
 msgstr "Departamentos"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:36
+msgid "Clients"
+msgstr "Clientes"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:38
+#: Foundation\Apache2.2\htdocs\katak/include/user/header.inc.php:30
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:72
 msgid "Tickets"
 msgstr "Tíquetes"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:36
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:38
 msgid "Ticket Queue"
 msgstr "Fila de Tíquetes"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:38
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:40
 msgid "Standard Replies"
 msgstr "Respostas Padrão"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:40
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:42
 msgid "Directory"
 msgstr "Diretório"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:40
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:42
 msgid "Staff Directory"
 msgstr "Diretório da Equipe"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:41
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:43
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:56
 msgid "My Account"
 msgstr "Minha Conta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:41
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:43
 msgid "Personal data of my account"
 msgstr "Dados pessoais da minha conta"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:52
+msgid "REPORTS"
+msgstr "RELATÓRIOS"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:53
+msgid "SYSTEM LOGS"
+msgstr "LOGS DO SISTEMA"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:57
+msgid "ATTACHMENTS"
+msgstr "ANEXOS"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:58
+msgid "API"
+msgstr "API"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:61
+msgid "EMAIL ADDRESSES"
+msgstr "ENDEREÇO DE E-MAIL"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:62
+msgid "ADD NEW EMAIL"
+msgstr "ADICIONAR NOVO E-MAIL"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:63
+msgid "TEMPLATES"
+msgstr "MODELOS"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:63
+#: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:5
+#: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:35
+msgid "Email Templates"
+msgstr "Modelos de Email"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:64
+msgid "BANLIST"
+msgstr "LISTA DE BANIDOS"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:64
+msgid "Banned Email"
+msgstr "Emails Banidos"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:67
+msgid "HELP TOPICS"
+msgstr "TÓPICOS DE AJUDA"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:68
+msgid "ADD NEW TOPIC"
+msgstr "ADICIONAR NOVO TÓPICO"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:72
+msgid "ADD NEW STAFF"
+msgstr "ADICIONAR NOVO MEMBRO"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:73
+msgid "STAFF ROLES"
+msgstr "CARGOS DOS EQUIPE"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:74
+msgid "ADD NEW ROLE"
+msgstr "ADICIONAR NOVO CARGO"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:77
+msgid "CLIENT LIST"
+msgstr "LISTA CLIENTES"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:78
+msgid "ADD NEW CLIENT"
+msgstr "ADICIONAR NOVO CLIENTE"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:79
+msgid "CLIENT GROUPS"
+msgstr "GRUPOS CLIENTES"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:80
+msgid "ADD NEW GROUP"
+msgstr "ADICIONAR NOVO GRUPO"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:83
+msgid "DEPARTMENTS"
+msgstr "DEPARTAMENTOS"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/class.nav.php:84
+msgid "ADD NEW DEPT."
+msgstr "ADICIONAR NOVO DEPARTAMENTO"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.pagenate.php:75
@@ -2523,27 +2633,22 @@ msgstr "Mostrando"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:36
 msgid "Role name required"
-msgstr "Nome do grupo requerido"
+msgstr "Nome do cargo requerido"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:38
 msgid "Role name must be at least 5 chars."
-msgstr "Nome do grupo deve ter ao menos 5 caracteres"
+msgstr "Nome do cargo deve ter ao menos 5 caracteres"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:45
 msgid "Role name already exists"
-msgstr "Nome do grupo já existe"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.role.php:67
-msgid "Internal error occured"
-msgstr "Ocorreu um erro interno"
+msgstr "Nome do cargo já existe"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.role.php:73
 msgid "Unable to create the role. Internal error"
-msgstr "Incapaz de criar um grupo. Erro interno"
+msgstr "Incapaz de criar um cargo. Erro interno"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:288
@@ -2578,7 +2683,7 @@ msgstr "O usuário é atualmente gerente do seu departamento"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:345
 msgid "Role required"
-msgstr "Título requerido"
+msgstr "Cargo requerido"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/class.staff.php:349
@@ -2871,22 +2976,22 @@ msgid "No fields setup"
 msgstr "Sem campos configurados"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:108
+#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:109
 msgid "(5 chars min)"
 msgstr "(5 caracteres min)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:112
+#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:113
 msgid "(3 chars min)"
 msgstr "(3 caracteres min)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:114
+#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:115
 msgid "(Only letters and numbers allowed)"
 msgstr "(Somente letras e números são permitidos)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:121
+#: Foundation\Apache2.2\htdocs\katak/include/class.validator.php:122
 msgid "(type not set)"
 msgstr "(tipo não setado)"
 
@@ -2927,12 +3032,13 @@ msgstr "Criado"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:82
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:116
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:55
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:59
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:61
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:57
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:55
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:52
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:51
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:48
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:64
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:53
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:72
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:127
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:85
 msgid "Query returned 0 results"
@@ -2956,6 +3062,7 @@ msgstr "Você tem certeza que deseja ativar as chaves selecionadas?"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:124
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:101
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:162
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:68
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:67
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:434
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:440
@@ -2967,7 +3074,7 @@ msgstr "Você tem certeza que deseja ativar as chaves selecionadas?"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:492
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:498
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:508
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:64
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:69
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:144
 msgid "Disable"
 msgstr "Desativar"
@@ -2979,10 +3086,11 @@ msgstr "Você tem certeza que deseja desabilitar as chaves selecionadas?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:100
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:73
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:79
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:70
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:69
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:66
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:82
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:71
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:90
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:146
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:494
 msgid "Delete"
@@ -3034,15 +3142,16 @@ msgstr "Frase"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:132
 #: Foundation\Apache2.2\htdocs\katak/include/staff/changepasswd.inc.php:30
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:82
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:98
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:152
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:191
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:54
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:57
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reply.inc.php:61
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:134
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:142
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:92
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:370
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:372
 msgid "Submit"
 msgstr "Enviar"
 
@@ -3214,7 +3323,7 @@ msgstr "Pesquisar"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:72
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:55
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:48
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:55
 msgid "Email:"
 msgstr "E-mail:"
 
@@ -3235,12 +3344,13 @@ msgstr "Data da Adição"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:124
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:63
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:67
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:69
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:65
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:65
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:60
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:59
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:56
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:72
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:61
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:80
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:136
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:456
 msgid "Select:"
@@ -3248,13 +3358,14 @@ msgstr "Selecione:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:125
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:64
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:68
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:70
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:66
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:66
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:61
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:60
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reports.inc.php:79
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:57
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:73
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:62
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:81
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:137
 #: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:91
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:457
@@ -3263,12 +3374,13 @@ msgstr "Todas"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:126
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:65
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:70
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:71
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:68
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:68
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:62
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:62
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:58
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:74
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:63
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:82
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:138
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:459
 msgid "Toggle"
@@ -3276,19 +3388,20 @@ msgstr "Trocar"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:127
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:66
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:69
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:72
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:67
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:106
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:129
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:67
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:63
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:61
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:191
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:59
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:75
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:64
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:83
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:139
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:458
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:80
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:313
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:314
 msgid "None"
 msgstr "Nenhum"
 
@@ -3329,17 +3442,18 @@ msgstr "Nova Senha:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/changepasswd.inc.php:23
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:69
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:85
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:112
 msgid "Confirm Password:"
 msgstr "Confirme a nova senha"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/changepasswd.inc.php:31
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:83
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:99
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:153
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:135
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:192
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:55
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:58
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:53
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:204
@@ -3348,19 +3462,20 @@ msgstr "Confirme a nova senha"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:143
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:181
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:93
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:334
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:371
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:404
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:446
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:336
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:373
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:406
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:448
 msgid "Reset"
 msgstr "Reiniciar"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/changepasswd.inc.php:32
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:84
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:100
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:154
 #: Foundation\Apache2.2\htdocs\katak/include/staff/editticket.inc.php:136
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:193
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:56
 #: Foundation\Apache2.2\htdocs\katak/include/staff/mypref.inc.php:59
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:54
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:205
@@ -3369,12 +3484,12 @@ msgstr "Reiniciar"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:144
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:182
 #: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:94
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:335
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:372
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:405
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:447
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:337
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:374
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:407
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:449
 #: Foundation\Apache2.2\htdocs\katak/include/user/open.inc.php:148
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:158
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:165
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -3401,134 +3516,145 @@ msgid "Password required (min. 6 chars.)"
 msgstr "Senha requerida (min. 6 caracteres)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:30
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:32
 msgid "Client Account"
 msgstr "Conta do Cliente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:31
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:33
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:38
 msgid "Account information"
 msgstr "Informações da Conta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:33
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:35
 msgid "E-mail (Username):"
 msgstr "E-mail (nome de usuário):"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:38
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:39
+msgid "Client Group:"
+msgstr "Grupo de clientes:"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:42
+msgid "Select Group"
+msgstr "Selecionar Grupo"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:54
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:78
 msgid "Name (First, Last):"
 msgstr "Nome (Primeiro, Último):"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:45
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:61
 msgid "Organization:"
 msgstr "Organização:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:51
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:67
 #: Foundation\Apache2.2\htdocs\katak/include/staff/myprofile.inc.php:34
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:90
 msgid "Office Phone:"
 msgstr "Telefone"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:57
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:73
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:96
 msgid "Mobile Phone:"
 msgstr "Celular:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:63
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:79
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:106
 msgid "Password:"
 msgstr "Senha:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:73
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:89
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:121
 msgid "Account Permission, Status &amp; Settings"
 msgstr "Permissões de Conta, Situação e Configurações"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:74
+#: Foundation\Apache2.2\htdocs\katak/include/staff/client.inc.php:90
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:122
 msgid "Account Status"
 msgstr "Situação da Conta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:8
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:12
+msgid "Clients in the group: "
+msgstr "Clientes no grupo:"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:12
 msgid "Client Members"
 msgstr "Clientes"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:8
-#, php-format
-msgid ""
-"No client found. <a href='admin.php?t=client&a=new&dept=%s'>Add New Client</"
-"a>."
-msgstr ""
-"Nenhum cliente encontrado. <a href='admin.php?t=client&a=new&dept="
-"%s'>Adicionar Novo Cliente</a>."
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:9
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:13
 msgid "Note: Client log-in disabled"
-msgstr ""
+msgstr "Nota: login cliente desativado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:18
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:22
 msgid "Email (Username)"
 msgstr "E-mail (nome de usuário)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:19
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:25
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:23
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:33
 msgid "Full Name"
 msgstr "Nome Completo"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:20
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:24
 msgid "Organization"
 msgstr "Organização"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:22
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:26
+msgid "Group"
+msgstr "Grupo"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:27
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:18
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:19
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:30
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:38
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:149
 msgid "Created on"
 msgstr "Criado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:23
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:31
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:28
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:39
 msgid "Last Login"
 msgstr "Último Login"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:70
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:79
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:76
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:87
 msgid "Are you sure you want to ENABLE selected user(s)?"
 msgstr "Você tem certeza que deseja ativar os usuários selecionados?"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:71
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:80
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:77
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:88
 msgid "Lock"
 msgstr "Bloquear"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:72
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:81
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:78
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:89
 msgid "Are you sure you want to LOCK selected user(s)?"
 msgstr "Você tem certeza que deseja bloquear os usuários selecionados?"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:74
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:83
+#: Foundation\Apache2.2\htdocs\katak/include/staff/clientmembers.inc.php:80
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:91
 msgid "Are you sure you want to DELETE selected user(s)?"
 msgstr "Você tem certeza que deseja apagar os usuários selecionados?"
 
@@ -3548,7 +3674,7 @@ msgstr "Novo Departamento"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:20
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:147
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:407
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:70
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:80
 msgid "Department"
 msgstr "Departamento"
 
@@ -3612,6 +3738,7 @@ msgstr "Tipo"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/dept.inc.php:79
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:43
 msgid "Public"
 msgstr "Público"
 
@@ -3726,32 +3853,37 @@ msgid "Manager"
 msgstr "Gerente"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:73
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:43
+msgid "Private"
+msgstr "Privado"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:71
 msgid "Make Public"
 msgstr "Tornar Público"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:74
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:72
 msgid "Are you sure you want to make selected depts(s) public?"
 msgstr "Tem certeza que deseja tornar público os departamentos selecionados?"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:75
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:73
 msgid "Make Private"
 msgstr "Tornar Privado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:76
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:74
 msgid "Are you sure you want to make selected depts(s) private?"
 msgstr "Tem certeza que deseja tornar privado os departamentos selecionados?"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:77
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:75
 msgid "Delete Dept(s)"
 msgstr "Apagar Departamento(s)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:78
+#: Foundation\Apache2.2\htdocs\katak/include/staff/depts.inc.php:76
 msgid "Are you sure you want to DELETE selected depts(s)?"
 msgstr "Você tem certeza que deseja apagar os seguintes departamentos?"
 
@@ -3791,7 +3923,7 @@ msgstr "Nome Completo:"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:71
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:118
 #: Foundation\Apache2.2\htdocs\katak/include/user/open.inc.php:81
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:63
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:70
 msgid "Subject:"
 msgstr "Assunto:"
 
@@ -4077,6 +4209,7 @@ msgstr "Autenticação Requerida?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:180
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:45
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:63
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:70
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:77
@@ -4092,6 +4225,7 @@ msgstr "Sim"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/email.inc.php:182
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:46
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:42
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:64
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:71
@@ -4137,6 +4271,7 @@ msgstr "Prioridade"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:23
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:19
 #: Foundation\Apache2.2\htdocs\katak/include/staff/helptopics.inc.php:22
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:20
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:96
@@ -4152,6 +4287,105 @@ msgstr "Apagar Emails Selecionados"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/emails.inc.php:74
 msgid "Are you sure you want to DELETE selected emails?"
 msgstr "Você tem certeza que deseja apagar os emails selecionados?"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:6
+#, php-format
+msgid "Edit Group: %s"
+msgstr "Editar Grupo: %s"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:6
+#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:6
+msgid "Administrator"
+msgstr "Notas administrativas"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:9
+msgid "Add New Group"
+msgstr "Adicionar Novo Grupo"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:26
+msgid "Group permissions set below applies cross all groups members."
+msgstr ""
+"Permissões de grupo definido a seguir aplicam-se a todos membros do grupo."
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:28
+msgid "Group Name:"
+msgstr "Nome do Grupo:"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:35
+msgid "Group Status:"
+msgstr "Estado do Grupo:"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:37
+#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:37
+#: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:36
+msgid "Enabled"
+msgstr "Ativo"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:38
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:38
+#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:38
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:39
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:63
+#: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:118
+#: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:37
+msgid "Disabled"
+msgstr "Desabilitado"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:43
+#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:75
+msgid "Can <b>Edit</b> Tickets"
+msgstr "Pode <b>Editar</b> Tíquetes"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:47
+#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:79
+msgid "Ability to change the contents and the data of the tickets."
+msgstr "Permissão para alterar o conteúdo e os dados dos tíquetes"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:7
+msgid "Client Groups"
+msgstr "Grupos de clientes"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:7
+msgid "No groups?"
+msgstr "Nenhum grupo?"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:15
+msgid "Group Name"
+msgstr "Nome do Grupo"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:17
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:18
+msgid "Members"
+msgstr "Membros"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:67
+msgid "Are you sure you want to ENABLE selected group(s)"
+msgstr "Você tem certeza que deseja ATIVAR os grupos selecionados?"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:69
+msgid "Are you sure you want to DISABLE selected group(s)"
+msgstr "Você tem certeza que deseja DESATIVAR os grupos selecionados?"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/groups.inc.php:71
+msgid "Are you sure you want to DELETE selected group(s)"
+msgstr "Você tem certeza que deseja APAGAR os grupos selecionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/header.inc.php:37
@@ -4291,8 +4525,8 @@ msgstr "Usuário:"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reports.inc.php:77
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:45
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:41
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:385
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:32
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:387
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:39
 msgid "Department:"
 msgstr "Departamento:"
 
@@ -4414,7 +4648,7 @@ msgstr "nenhum"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/newticket.inc.php:193
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:315
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:316
 msgid "My signature"
 msgstr "Minha assinatura"
 
@@ -4644,6 +4878,8 @@ msgstr "Usuário requerido:"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:149
 msgid "Require user to log-in and become \"client\" to post and view ticket."
 msgstr ""
+"Requerer que o usuário log-in e tornar-se \"cliente\" para postar e ver o "
+"ticket."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:153
@@ -5044,7 +5280,7 @@ msgstr "Mensagem anexada  a uma confirmação de tíquete existente"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:449
 msgid "New Response from staff:"
-msgstr ""
+msgstr "Nova resposta da equipe:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/preference.inc.php:450
@@ -5197,6 +5433,11 @@ msgid "Add New Standard Reply"
 msgstr "Adicionar Nova Resposta Padrão"
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/reply.inc.php:27
+msgid "Title"
+msgstr "Título"
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/reply.inc.php:33
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:33
 msgid "Status:"
@@ -5273,17 +5514,12 @@ msgstr "Número total de tíquetes recebidos"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:6
 #, php-format
 msgid "Edit Role: %s"
-msgstr "Editar Grupo: %s"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:6
-msgid "Administrator"
-msgstr "Notas administrativas"
+msgstr "Editar cargo: %s"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:9
 msgid "Add New Role"
-msgstr "Adicionar Novo Usuário"
+msgstr "Adicionar Novo Cargo"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:26
@@ -5291,34 +5527,19 @@ msgid ""
 "Role permissions set below applies cross all role members, but don't apply "
 "to Dept. Managers in some cases."
 msgstr ""
-"Permissões de grupo definido a seguir aplicam-se a todos membros do grupo, "
+"Permissões de cargo definido a seguir aplicam-se a todos membros do cargo, "
 "mas não se aplicam aos administradores e gerentes de Departamento em alguns "
 "casos."
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:28
 msgid "Role Name:"
-msgstr "Nome Completo:"
+msgstr "Nome cargo:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:35
 msgid "Role Status:"
 msgstr "Estado:"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:37
-#: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:36
-msgid "Enabled"
-msgstr "Ativo"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:38
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:39
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:55
-#: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:118
-#: Foundation\Apache2.2\htdocs\katak/include/staff/topic.inc.php:37
-msgid "Disabled"
-msgstr "Desabilitado"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:42
@@ -5331,7 +5552,7 @@ msgid ""
 "Select departments role members are allowed to access in addition to their "
 "own department."
 msgstr ""
-"Selecionar departamentos que os membros do grupo tem permissão para acessar "
+"Selecionar departamentos que os membros do cargo tem permissão para acessar "
 "em adição ao seu próprio departamento."
 
 #: C:\Program Files\Apache Software
@@ -5365,16 +5586,6 @@ msgstr "Pode <b>Criar</b> Tíquetes"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:72
 msgid "Ability to open tickets on behalf of users."
 msgstr "Habilidade de abrir tíquetes em nome dos usuários!"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:75
-msgid "Can <b>Edit</b> Tickets"
-msgstr "Pode <b>Editar</b> Tíquetes"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:79
-msgid "Ability to change the contents and the data of the tickets."
-msgstr "Permissão para alterar o conteúdo e os dados dos tíquetes"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/role.inc.php:82
@@ -5459,32 +5670,27 @@ msgstr ""
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:8
 msgid "Staff Roles"
-msgstr "Arquivos de Respostas da Equipe:"
+msgstr "Cargos do Equipe:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:16
 msgid "Role Name"
-msgstr "Nome Grupo"
+msgstr "Nome Cargo"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:18
-msgid "Members"
-msgstr "Membros"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:63
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:68
 msgid "Are you sure you want to ENABLE selected role(s)"
-msgstr "Você tem certeza que deseja ATIVAR os grupos selecionados?"
+msgstr "Você tem certeza que deseja ATIVAR os cargos selecionados?"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:65
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:70
 msgid "Are you sure you want to DISABLE selected role(s)"
-msgstr "Você tem certeza que deseja DESATIVAR os grupos selecionados?"
+msgstr "Você tem certeza que deseja DESATIVAR os cargos selecionados?"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:67
+#: Foundation\Apache2.2\htdocs\katak/include/staff/roles.inc.php:72
 msgid "Are you sure you want to DELETE selected role(s)"
-msgstr "Você tem certeza que deseja APAGAR os grupos selecionados?"
+msgstr "Você tem certeza que deseja APAGAR os cargos selecionados?"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:8
@@ -5510,12 +5716,12 @@ msgstr "Conta do Usuário"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:59
 msgid "Staff Role:"
-msgstr "Membros do Grupo:"
+msgstr "Membros do cargo:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:62
 msgid "Select Role"
-msgstr "Selecionar Grupo"
+msgstr "Selecionar Cargo"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/staff.inc.php:117
@@ -5553,18 +5759,19 @@ msgid "No ticket assignment or Alerts"
 msgstr "Nenhuma atribuição de tíquetes ou Alertas"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:16
-#, php-format
-msgid ""
-"No staff found. <a href='admin.php?t=staff&a=new&dept=%s'>Add New Staff</a>."
-msgstr ""
-"Nenhum membro encontrado. <a href='admin.php?t=staff&a=new&dept="
-"%s'>Adicionar Novo Usuário</a>."
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:20
+msgid "Staff in dept.: "
+msgstr "Equipe no dep.:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:28
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:22
+msgid "Staff with role: "
+msgstr "Equipe com cargo:"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/staffmembers.inc.php:36
 msgid "Role"
-msgstr "Grupo"
+msgstr "Cargo"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:54
@@ -5575,14 +5782,6 @@ msgstr "Resposta Padrão"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:72
 msgid "category"
 msgstr "categoria"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:84
-#: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:97
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:196
-#: Foundation\Apache2.2\htdocs\katak/include/user/clientlogin.inc.php:33
-msgid "GO"
-msgstr "Ir"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:93
@@ -5660,7 +5859,6 @@ msgstr "Alcance de Datas:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/syslogs.inc.php:81
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:325
-#: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:406
 msgid "From"
 msgstr "De"
 
@@ -5746,7 +5944,7 @@ msgstr ""
 #: Foundation\Apache2.2\htdocs\katak/include/staff/template.inc.php:167
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:142
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:405
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:71
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:81
 msgid "Subject"
 msgstr "Assunto"
 
@@ -5923,6 +6121,11 @@ msgstr ""
 "posteriormente."
 
 #: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:115
+msgid "Copy"
+msgstr ""
+
+#: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/templates.inc.php:117
 msgid "Select Template to Copy"
 msgstr "Selecionar Modelo para Copiar"
@@ -6081,7 +6284,8 @@ msgstr "Ordenar por:"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:348
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:23
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:67
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:77
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:27
 msgid "Ticket #"
 msgstr "Tíquete #"
 
@@ -6125,6 +6329,11 @@ msgstr "Tíquete"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:404
 msgid "Sort By Date"
 msgstr "Ordenar Por Data"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:406
+msgid "Comes from"
+msgstr ""
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:407
@@ -6266,20 +6475,20 @@ msgstr ""
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:23
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:63
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:21
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:73
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:28
 msgid "Reload"
 msgstr "Atualizar"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:45
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:28
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:35
 msgid "Created on:"
 msgstr "Criado"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:51
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:44
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:51
 msgid "Name:"
 msgstr "Nome:"
 
@@ -6291,7 +6500,7 @@ msgstr "Tíquete Relacionados"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:66
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:52
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:59
 msgid "Phone:"
 msgstr "Telefone:"
 
@@ -6299,6 +6508,11 @@ msgstr "Telefone:"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:81
 msgid "Assigned Staff:"
 msgstr "Equipe Designada!"
+
+#: C:\Program Files\Apache Software
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:82
+msgid "- unassigned -"
+msgstr "- não atribuído -"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:85
@@ -6327,7 +6541,7 @@ msgstr "Última Mensagem:"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:124
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:66
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:73
 msgid "Ticket text:"
 msgstr "Estado do Tíquete"
 
@@ -6363,13 +6577,13 @@ msgstr "Liberar (remover designação)"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:168
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:363
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:365
 msgid "Close Ticket"
 msgstr "Fechar Tíquete"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:170
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:365
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:367
 msgid "Reopen Ticket"
 msgstr "Reabrir Tíquete"
 
@@ -6405,14 +6619,14 @@ msgstr "postado por"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:223
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:78
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:85
 msgid "Ticket Thread"
 msgstr "Assunto do Tíquete"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:273
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:333
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:157
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:335
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:164
 msgid "Post Reply"
 msgstr "Postar Resposta"
 
@@ -6432,100 +6646,100 @@ msgid "Attach File:"
 msgstr "Anexar Arquivo:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:312
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:313
 msgid "Append signature to e-mail:"
 msgstr "Anexar assinatura de e-mail:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:318
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:319
 msgid "Dept Signature"
 msgstr "Assinatura do Departamento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:323
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:359
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:23
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:325
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:361
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:30
 msgid "Ticket Status:"
 msgstr "Status do Ticket"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:327
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:329
 msgid "Close on Reply"
 msgstr "Fechar ao Responder"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:329
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:331
 msgid "Reopen on Reply"
 msgstr "Reabrir ao Responder"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:340
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:342
 msgid "Post Internal Note"
 msgstr "Postar Nota Interna"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:345
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:347
 msgid "Note Title:"
 msgstr "Título da Nota"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:350
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:352
 msgid "Enter note content."
 msgstr "Entre com o conteúdo da nota."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:380
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:382
 msgid "Dept. Transfer"
 msgstr "Transf. de Dep."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:387
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:389
 msgid "-Select Target Dept.-"
 msgstr "-Selecionar Dep. de Destino-"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:398
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:400
 msgid "Comments/Reasons for the transfer"
 msgstr "Comentários/Razões para a transferência"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:398
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:439
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:400
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:441
 msgid "(Internal note)."
 msgstr "(Nota interna)"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:403
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:405
 msgid "Transfer"
 msgstr "Transferir"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:415
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:417
 msgid "Re Assign Ticket"
 msgstr "Reatribuir o Tíquete"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:415
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:417
 msgid "Assign to Staff"
 msgstr "Atribuir a Equipe"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:420
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:422
 msgid "Staff Member:"
 msgstr "Membro da Equipe:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:422
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:424
 msgid "-Select Staff Member.-"
 msgstr "-Selecione Membro da Equipe-"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:439
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:441
 msgid "Comments/message for assignee"
 msgstr "Comentários / mensagem para atribuir"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:445
+#: Foundation\Apache2.2\htdocs\katak/include/staff/viewticket.inc.php:447
 msgid "Assign"
 msgstr "Designar"
 
@@ -6559,11 +6773,6 @@ msgstr "Centro de Suporte Katak"
 #: Foundation\Apache2.2\htdocs\katak/include/user/header.inc.php:20
 msgid "KataK Support Center"
 msgstr "Centro de Suporte Katak"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/header.inc.php:30
-msgid "My Tickets"
-msgstr "Meus Tíquetes"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/user/header.inc.php:33
@@ -6675,69 +6884,84 @@ msgid "Support Team"
 msgstr "Equipe de Suporte"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:62
-msgid "tickets"
-msgstr "Tíquetes"
-
-#: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:67
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:77
 msgid "Sort by Ticket Number"
 msgstr "Ordenar Por ID do Tíquete"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:68
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:78
 msgid "Sort by Date of Creation"
 msgstr "Ordenar Por Data de criação"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:68
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:78
 msgid "Create Date"
 msgstr "Data de Criação"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:69
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:79
 msgid "Sort by Status"
 msgstr "Ordenar pelo Estado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:70
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:80
 msgid "Sort by Department"
 msgstr "Ordenar por Departamento"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:94
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:111
 msgid "Closed on "
 msgstr "Fechado"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:96
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:113
 msgid "Open - Answered on "
 msgstr "Resposta Aberta"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:110
-msgid "NO tickets found."
+#: Foundation\Apache2.2\htdocs\katak/include/user/tickets.inc.php:127
+msgid "NO Tickets Found."
 msgstr "Nenhum tíquete encontrado."
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:37
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:44
 msgid "Closing date:"
 msgstr "Data de Fechamento:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:131
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:138
 msgid "Ticket will be reopened on message post"
 msgstr "Tíquete será reaberto na postagem da mensagem"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:138
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:145
 msgid "Enter new message"
 msgstr "Digite a nova mensagem"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:143
+#: Foundation\Apache2.2\htdocs\katak/include/user/viewticket.inc.php:150
 msgid "Attach File"
 msgstr "Anexar Arquivo"
+
+#~ msgid ""
+#~ "No client found. <a href='admin.php?t=client&a=new&dept=%s'>Add New "
+#~ "Client</a>."
+#~ msgstr ""
+#~ "Nenhum cliente encontrado. <a href='admin.php?t=client&a=new&dept="
+#~ "%s'>Adicionar Novo Cliente</a>."
+
+#~ msgid ""
+#~ "No staff found. <a href='admin.php?t=staff&a=new&dept=%s'>Add New Staff</"
+#~ "a>."
+#~ msgstr ""
+#~ "Nenhum membro encontrado. <a href='admin.php?t=staff&a=new&dept="
+#~ "%s'>Adicionar Novo Usuário</a>."
+
+#~ msgid "My Tickets"
+#~ msgstr "Meus Tíquetes"
+
+#~ msgid "tickets"
+#~ msgstr "Tíquetes"
 
 #~ msgid "IP"
 #~ msgstr "IP:"
@@ -6822,12 +7046,6 @@ msgstr "Anexar Arquivo"
 #~ msgid "User Groups"
 #~ msgstr "Grupos de Usuários"
 
-#~ msgid "Add New Group"
-#~ msgstr "Adicionar Novo Grupo"
-
-#~ msgid "Unable to fetch info on group ID#%s"
-#~ msgstr "Incapaz de ler informações do grupo ID#%s"
-
 #~ msgid "Add New Dept."
 #~ msgstr "Adicionar Novo Departamento"
 
@@ -6872,12 +7090,6 @@ msgstr "Anexar Arquivo"
 
 #~ msgid "Group required"
 #~ msgstr "Grupo requerido"
-
-#~ msgid "Group name required"
-#~ msgstr "Nome do grupo requerido"
-
-#~ msgid "Unable to create the group. Internal error"
-#~ msgstr "Incapaz de criar o grupo. Erro interno"
 
 #~ msgid "Cancel Edit"
 #~ msgstr "Cancelar Edição"
@@ -6931,12 +7143,6 @@ msgstr "Anexar Arquivo"
 
 #~ msgid "Ticket:"
 #~ msgstr "Tíquete:"
-
-#~ msgid "Group Name:"
-#~ msgstr "Nome do Grupo:"
-
-#~ msgid "Group Status:"
-#~ msgstr "Estado do Grupo:"
 
 #~ msgid "Can Manage Premade"
 #~ msgstr "Pode Gerenciar Respostas Pronta"
@@ -7014,9 +7220,6 @@ msgstr "Anexar Arquivo"
 #~ msgid "User Group:"
 #~ msgstr "Grupo"
 
-#~ msgid "Select Group"
-#~ msgstr "Selecionar Grupo"
-
 #~ msgid "Password (confirm):"
 #~ msgstr "Senha (confirmar):"
 
@@ -7038,12 +7241,6 @@ msgstr "Anexar Arquivo"
 #~ msgstr ""
 #~ "Copyright &copy; 2006-%s&nbsp;osTicket.com. &nbsp;Todos os Direitos "
 #~ "Reservados."
-
-#~ msgid "Group"
-#~ msgstr "Grupo"
-
-#~ msgid "Group Name"
-#~ msgstr "Nome do Grupo"
 
 #~ msgid "Group Status"
 #~ msgstr "Situação"
