@@ -4,7 +4,7 @@
     
     Internationalization using the Gettext library.
     
-    Copyright (c)  2012-2014 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -27,10 +27,11 @@ class i18n {
 
        $langs[] = new i18n("en", "English (default)");
        $langs[] = new i18n("de_DE", "Deutsch");
-       $langs[] = new i18n("es_ES", "Espa&ntilde;ol");
        $langs[] = new i18n("it_IT", "Italiano");
-       $langs[] = new i18n("nl_NL", "Nederlands");
+       $langs[] = new i18n("hr_HR", "Hrvatski");
        $langs[] = new i18n("pt_BR", "Portugu&ecirc;s do Brasil");
+       $langs[] = new i18n("es_ES", "Espa&ntilde;ol");
+       $langs[] = new i18n("nl_NL", "Nederlands");
        $langs[] = new i18n("ru_RU", "Русский");
        $langs[] = new i18n("pl_PL", "Polski");
        

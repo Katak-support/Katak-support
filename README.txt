@@ -19,6 +19,7 @@ System requirements:
 See http://www.katak-support.com/en/content/installation-guide for installation support.
 
 Thanks to:
+Iva Biuklija for the Croatian translation.
 Leon ter Linden for the Dutch translation.
 Thiago Andrade Lima for the Brazilian Portuguese translation.
 Victor Goryachko for the Russian translation.

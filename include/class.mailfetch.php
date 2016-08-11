@@ -118,6 +118,7 @@ class MailFetcher {
     }
     
     //Generic decoder - mirrors imap_utf8
+/*
     function mime_decode($text) {
         
         $a = imap_mime_header_decode($text);
@@ -127,7 +128,20 @@ class MailFetcher {
         
         return $str?$str:imap_utf8($text);
     }
-
+*/
+    function mime_decode($text, $encoding='utf-8') {  // Thanks to franzdoe
+      if (function_exists('mb_detect_encoding'))
+        if (($src_enc = mb_detect_encoding($text)) && (strcasecmp($src_enc, 'ASCII') !== 0))
+          return Format::encode($text, $src_enc, $encoding);
+    
+      $str = '';
+      $parts = imap_mime_header_decode($text);
+      foreach ($parts as $part)
+        $str.= $this->mime_encode($part->text, $part->charset, $encoding);
+    
+      return $str?$str:imap_utf8($text);
+    }
+    
     function getLastError(){
         return imap_last_error();
     }
