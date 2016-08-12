@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support ver 1.1.0\n"
 "POT-Creation-Date: 2016-08-11 14:46+0100\n"
-"PO-Revision-Date: 2016-08-11 15:37+0100\n"
+"PO-Revision-Date: 2016-08-11 15:43+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -4292,7 +4292,7 @@ msgstr "Você tem certeza que deseja apagar os emails selecionados?"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:6
 #, php-format
 msgid "Edit Group: %s"
-msgstr "Editar Grupo: %s"
+msgstr "Editar grupo: %s"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/group.inc.php:6
@@ -6783,7 +6783,7 @@ msgstr "Estado do Tíquete"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/user/header.inc.php:36
 msgid "Log-in"
-msgstr ""
+msgstr "Login"
 
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/user/header.inc.php:38
