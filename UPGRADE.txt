@@ -18,6 +18,7 @@ You have to:
 7) Check the setting of the attachments folder.
 8) For security reasons, ask to all the staff members to change the password.
 
+
 Note: If you database is big, be sure to have enough time and memory to run the PHP upgrade script!
 Note2: KataK does not allow to have duplicate email addresses among the members of the staff!
 Note3: There could be problems doing the upgrade with messages written in non-Latin characters (eg Cyrillic)

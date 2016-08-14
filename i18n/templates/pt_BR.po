@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support ver 1.1.0\n"
-"POT-Creation-Date: 2016-08-11 14:46+0100\n"
-"PO-Revision-Date: 2016-08-11 15:43+0100\n"
+"POT-Creation-Date: 2016-08-14 09:57+0100\n"
+"PO-Revision-Date: 2016-08-14 09:58+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -1867,6 +1867,7 @@ msgstr "Tíquete reaberto por"
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:371
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:383
 #: Foundation\Apache2.2\htdocs\katak/admin/tickets.php:391
+#: Foundation\Apache2.2\htdocs\katak/include/class.pagenate.php:77
 msgid "of"
 msgstr "de"
 
@@ -3159,7 +3160,7 @@ msgstr "Enviar"
 #: Foundation\Apache2.2\htdocs\katak/include/staff/api.inc.php:135
 msgid ""
 "Please note that changing the passprase does NOT invalidate existing keys. "
-"To regerate a key you need to delete and readd it."
+"To regenerate a key you need to delete and readd it."
 msgstr ""
 "Notar que mudando a senha, não inválida chaves existentes. Para regenerar a "
 "chave você precisar apaga-la e depois adiciona-la novamente."
@@ -3298,6 +3299,7 @@ msgstr "O termo a buscar deve ter mais de 3 caracteres"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\katak/include/staff/banlist.inc.php:53
 #: Foundation\Apache2.2\htdocs\katak/include/staff/stdreply.inc.php:54
+#: Foundation\Apache2.2\htdocs\katak/include/staff/tickets.inc.php:260
 msgid "Search Results"
 msgstr "Resultados da Busca"
 

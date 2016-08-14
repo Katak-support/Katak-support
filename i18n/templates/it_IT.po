@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Katak-support\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-14 10:09+0100\n"
-"PO-Revision-Date: 2016-07-14 10:10+0100\n"
+"POT-Creation-Date: 2016-08-14 09:56+0100\n"
+"PO-Revision-Date: 2016-08-14 09:57+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: Katak-support Team <info@katak-support.com>\n"
 "Language: it_IT\n"
@@ -1862,6 +1862,7 @@ msgstr "Ticket riaperto da"
 #: Foundation\Apache2.2\htdocs\Katak/admin/tickets.php:371
 #: Foundation\Apache2.2\htdocs\Katak/admin/tickets.php:383
 #: Foundation\Apache2.2\htdocs\Katak/admin/tickets.php:391
+#: Foundation\Apache2.2\htdocs\Katak/include/class.pagenate.php:77
 msgid "of"
 msgstr "di"
 
@@ -2345,24 +2346,24 @@ msgid "Unable to create the group. Internal error"
 msgstr "Impossibile creare il gruppo. Errore interno"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:355
+#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:369
 msgid ""
 "The system is having trouble fetching emails from the following mail account:"
 msgstr ""
 "Il sistema non riesce a recuperare le email dalla seguente casella si posta:"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:359
+#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:373
 msgid "consecutive errors. Maximum of"
 msgstr "errori consecutivi. Max di"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:359
+#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:373
 msgid " allowed"
 msgstr "permessi"
 
 #: C:\Program Files\Apache Software
-#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:360
+#: Foundation\Apache2.2\htdocs\Katak/include/class.mailfetch.php:374
 msgid ""
 "This could be connection issues related to the host. Next delayed login "
 "attempt in approx. 10 minutes"
@@ -3156,7 +3157,7 @@ msgstr "Salvare"
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/api.inc.php:135
 msgid ""
 "Please note that changing the passprase does NOT invalidate existing keys. "
-"To regerate a key you need to delete and readd it."
+"To regenerate a key you need to delete and readd it."
 msgstr ""
 "Notare che cambiare la passphrase NON invalida le chiavi esistenti. Per "
 "rigenerare una chiave eliminarla e riaggiungerla."
@@ -3296,6 +3297,7 @@ msgstr "Il termine di ricerca deve essere di almeno 3 caratteri"
 #: C:\Program Files\Apache Software
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/banlist.inc.php:53
 #: Foundation\Apache2.2\htdocs\Katak/include/staff/stdreply.inc.php:54
+#: Foundation\Apache2.2\htdocs\Katak/include/staff/tickets.inc.php:260
 msgid "Search Results"
 msgstr "Risultati ricerca"
 

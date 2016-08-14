@@ -132,5 +132,5 @@ $deletable=0;
     &nbsp;&nbsp; <input class="button" type="submit" name="update" value="<?= _('Submit') ?>">
   </form>
   <br /><br />
-  <div><i><?= _('Please note that changing the passprase does NOT invalidate existing keys. To regerate a key you need to delete and readd it.') ?></i></div>
+  <div><i><?= _('Please note that changing the passprase does NOT invalidate existing keys. To regenerate a key you need to delete and readd it.') ?></i></div>
 </div>

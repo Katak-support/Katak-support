@@ -393,7 +393,7 @@ $basic_display=!isset($_REQUEST['advance_search'])?true:false;
 </div>
 <form action="tickets.php" method="POST" name='tickets' onSubmit="return checkbox_checker(this,1,0);">
   <input type="hidden" name="a" value="mass_process" >
-  <input type="hidden" name="status" value="<?=$statusss?>" >
+  <input type="hidden" name="status" value="<?=$status?>" >
   <table width="100%" border="0" cellspacing=0 cellpadding=2 class="dtable" align="center">
     <tr>
       <?php if($canDelete || $canClose) { ?>

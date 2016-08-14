@@ -4,7 +4,7 @@
 
     Pagenation  support class
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2016 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -74,7 +74,7 @@ class PageNate {
 		}
         $html="&nbsp;"._("Showing")."&nbsp;&nbsp;";
 		if ($this->total > 0) {
-            $html .= "$from - $to of " .$this->total;
+            $html .= "$from - $to &nbsp;" . _('of') . " &nbsp;" .$this->total;
 		}else{
 			$html .= " 0 ";
 		}
