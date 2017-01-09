@@ -147,7 +147,7 @@ if (!db_connect(DBHOST,DBUSER,DBPASS,DBNAME)) {
 }elseif(!($cfg=Sys::getConfig())) {
     $ferror='Unable to load config info from DB.';
 }elseif(!ini_get('short_open_tag') && (double)phpversion()<5.4) { // PHP ver. < 5.4 requires short_open_tag enabled
-    $ferror='Short open tag disabled! - Katak-support requires it is turned ON.';
+    $ferror='Short open tag disabled! - Katak-support requires that it is turned ON.';
 }
 
 if($ferror) { //Fatal error

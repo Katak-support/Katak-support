@@ -64,12 +64,12 @@ if (class_exists('mysqli')) {
         //echo $msg; #uncomment during debuging or dev.
     }
     return $response;
-	}
+  }
 
 	function db_count($query){		
 		list($count)=db_fetch_row(db_query($query));
 		return $count;
-	}
+  }
 
 	function db_fetch_array($result,$mode=FALSE) {
    	    return ($result)?db_output($result->fetch_array(($mode)?$mode:MYSQLI_ASSOC)):NULL;

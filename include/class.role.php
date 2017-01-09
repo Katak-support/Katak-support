@@ -4,7 +4,7 @@
 
     Staff roles
 
-    Copyright (c)  2012-2016 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -57,7 +57,7 @@ class Role {
                  ', can_changepriority_tickets='.db_input($vars['can_changepriority_tickets']).
                  ', can_assign_tickets='.db_input($vars['can_assign_tickets']).
                  ', can_close_tickets='.db_input($vars['can_close_tickets']).
-                 ', can_transfer_tickets='.db_input($vars['can_edit_tickets']).
+                 ', can_transfer_tickets='.db_input($vars['can_transfer_tickets']).
                  ', can_ban_emails='.db_input($vars['can_ban_emails']).
                  ', can_manage_stdr='.db_input($vars['can_manage_stdr']);
             //echo $sql;
