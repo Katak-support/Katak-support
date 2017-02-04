@@ -202,6 +202,7 @@ strong { color:#000; }
     #nav a.api { background:url(../images/icons/v_bar.gif) 0 5px no-repeat #ececec; }
    
     #nav a.syslogs { background:url(../images/icons/void.gif) 0 5px no-repeat #ececec; }
+    #nav a.status { background:url(../images/icons/void.gif) 0 5px no-repeat #ececec; }
 
     #nav a.emailTemplates { background:url(../images/icons/void.gif) 0 5px no-repeat #ececec; }
     #nav a.emailSettings { background:url(../images/icons/v_bar.gif) 0px 5px no-repeat #ececec; }

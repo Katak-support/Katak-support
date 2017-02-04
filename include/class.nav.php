@@ -5,7 +5,7 @@
     Navigation helper class. Defines the menus and helps keep navigation
     clean and free from errors.
 
-    Copyright (c)  2012-2016 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -51,6 +51,7 @@ class StaffNav {
     		case 'dashboard':
     			$this->addSubMenu(array('desc' => _('REPORTS'), 'href' => 'admin.php?t=reports', 'iconclass' => 'reports'));
     			$this->addSubMenu(array('desc' => _('SYSTEM LOGS'), 'href' => 'admin.php?t=syslog', 'iconclass' => 'syslogs'));
+    			$this->addSubMenu(array('desc' => _('STATUS'), 'href' => 'admin.php?t=status', 'iconclass' => 'status'));
     			break;
     		case 'settings':
     			$this->addSubMenu(array('desc' => _('PREFERENCES'), 'href' => 'admin.php?t=pref', 'iconclass' => 'preferences'));

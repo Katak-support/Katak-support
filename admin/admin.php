@@ -4,7 +4,7 @@
 
     Handles all admin related pages....everything admin!
 
-    Copyright (c)  2012-2016 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -605,8 +605,9 @@ switch ($thistab) {
 	
 	//Dashboard
 	case 'dashboard':
-	case 'syslog':
-	case 'reports':
+    case 'reports':
+    case 'syslog':
+    case 'status':
 		$nav->setTabActive('dashboard');
 		switch ($thistab) {
 			case 'dashboard':
@@ -615,7 +616,10 @@ switch ($thistab) {
 				break;
 			case 'syslog':
 				$page = 'syslogs.inc.php';
-	}
+				break;
+			case 'status':
+				$page = 'status.inc.php';
+		}
 	break;
 	
 	//Preferences & settings

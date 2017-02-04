@@ -67,6 +67,10 @@ class Config {
         return $this->config['ktsversion'];
     }
 
+    function getLastUpdate(){
+        return $this->config['updated'];
+    }
+
     function setMysqlTZ($tz){
         //TODO: Combine the 2 replace regex 
         $this->mysqltzoffset=($tz=='SYSTEM')?preg_replace('/([+-]\d{2})(\d{2})/','\1',date('O')):preg_replace('/([+-]\d{2})(:)(\d{2})/','\1',$tz);
