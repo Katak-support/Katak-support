@@ -33,7 +33,7 @@ $depts = db_query('SELECT dept_id,dept_name FROM '.DEPT_TABLE);
   <input type="hidden" name="a" value="<?=Format::htmlchars($_REQUEST['a'])?>">
   <input type="hidden" name="t" value="staff">
   <input type="hidden" name="staff_id" value="<?=$rep['staff_id']?>">
-  <table width="100%" border="0" cellspacing=0 cellpadding=2 class="tform">
+  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="tform">
       <tr class="header"><td colspan=2><?= _('User Account') ?></td></tr>
       <tr class="subheader"><td colspan=2><?= _('Account information') ?></td></tr>
       <tr>

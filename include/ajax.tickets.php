@@ -4,7 +4,7 @@
 
     AJAX interface for tickets
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -14,7 +14,7 @@
     $Id: $
 **********************************************************************/
 
-if(!defined('OSTAJAXINC') || !defined('INCLUDE_DIR')) die('403');
+if(!defined('KTKAJAXINC') || !defined('INCLUDE_DIR')) die('403');
 
 include_once(INCLUDE_DIR.'class.ticket.php');
 

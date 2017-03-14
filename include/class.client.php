@@ -7,7 +7,7 @@
     The administrator chooses whether to allow the creation of the tickets to all (users)
     or restrict it to registered visitors (client). 
 
-    Copyright (c)  2012-2016 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -155,8 +155,8 @@ class Client extends User {
            
             if($id) {
                 $sql='UPDATE '.CLIENT_TABLE.' '.$sql.' WHERE client_id='.db_input($id);
-                if(!db_query($sql) || !db_affected_rows())
-                  $errors['err']=_('Unable to update the user. Internal error occured');
+                if(!db_query($sql)) // TODO: Add an updated field on database
+                  $errors['err']=_('Unable to update the client. Internal error occured');
                 if($vars['old_client_email']!=$vars['client_email']) { // Email changed? Update the tickets!
                 	$sql='UPDATE '.TICKET_TABLE.' SET email='.db_input(Format::striptags($vars['client_email'])).' WHERE email='.db_input($vars['old_client_email']);
                 	if(!db_query($sql))

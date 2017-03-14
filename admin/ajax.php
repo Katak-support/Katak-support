@@ -4,7 +4,7 @@
 
     Ajax utils interface.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -35,7 +35,7 @@ if (!$_REQUEST['api'] || !$_REQUEST['f']) {
     exit;
 }
 //------Do the AJAX Dance ----------------//
-define('OSTAJAXINC', TRUE);
+define('KTKAJAXINC', TRUE);
 $file = 'ajax.' . Format::file_name(strtolower($_REQUEST['api'])) . '.php';
 if (!file_exists(INCLUDE_DIR . $file)) {
     Http::response(405, _('invalid method'));

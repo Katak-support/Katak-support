@@ -28,7 +28,7 @@ $groups = db_query('SELECT group_id,group_name FROM '.GROUP_TABLE.' WHERE group_
   <input type="hidden" name="t" value="clients">
   <input type="hidden" name="client_id" value="<?=$rep['client_id']?>">
   <input type="hidden" name="old_client_email" value="<?=$rep['client_email']?>">
-  <table width="100%" border="0" cellspacing=0 cellpadding=2 class="tform">
+  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="tform">
       <tr class="header"><td colspan=2><?= _('Client Account') ?></td></tr>
       <tr class="subheader"><td colspan=2><?= _('Account information') ?></td></tr>
       <tr>

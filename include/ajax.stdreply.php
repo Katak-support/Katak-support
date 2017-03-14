@@ -4,7 +4,7 @@
 
     AJAX interface for standard replies related...allowed methods.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -14,7 +14,7 @@
     $Id: $
 **********************************************************************/
 
-if(!defined('OSTAJAXINC') || !defined('INCLUDE_DIR')) die('!');
+if(!defined('KTKAJAXINC') || !defined('INCLUDE_DIR')) die('!');
 	    
 class StdreplyAjaxAPI{
     
