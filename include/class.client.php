@@ -156,11 +156,11 @@ class Client extends User {
             if($id) {
                 $sql='UPDATE '.CLIENT_TABLE.' '.$sql.' WHERE client_id='.db_input($id);
                 if(!db_query($sql)) // TODO: Add an updated field on database
-                  $errors['err']=_('Unable to update the client. Internal error occured');
+                  $errors['err']=_('Unable to update the client. Internal error occurred');
                 if($vars['old_client_email']!=$vars['client_email']) { // Email changed? Update the tickets!
                 	$sql='UPDATE '.TICKET_TABLE.' SET email='.db_input(Format::striptags($vars['client_email'])).' WHERE email='.db_input($vars['old_client_email']);
                 	if(!db_query($sql))
-              		  $errors['err']=_('Unable to update the client. Internal error occured'); //TODO: reverse the previous db operation!
+              		  $errors['err']=_('Unable to update the client. Internal error occurred'); //TODO: reverse the previous db operation!
                 }
             }else{
                 $sql='INSERT INTO '.CLIENT_TABLE.' '.$sql.',client_created=NOW()';

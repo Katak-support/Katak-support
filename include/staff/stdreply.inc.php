@@ -114,7 +114,7 @@ $negorder = $order == 'DESC' ? 'ASC' : 'DESC'; //Negate the sorting..
               <input type="checkbox" name="canned[]" value="<?= $row['stdreply_id'] ?>" <?= $sel ? 'checked' : '' ?>
                      onClick="highLight(this.value,this.checked);">
           </td>
-          <td><a href="stdreply.php?id=<?= $row['stdreply_id'] ?>"><?= Format::htmlchars(Format::truncate($row['title'], 60)) ?></a></td>
+          <td><a href="stdreply.php?stdreply_id=<?= $row['stdreply_id'] ?>"><?= Format::htmlchars(Format::truncate($row['title'], 60)) ?></a></td>
           <td><b><?= $row['isenabled'] ? _('Active') : _('Disabled') ?></b></td>
           <td><?= $row['dept_name'] ? Format::htmlchars($row['dept_name']) : 'All Departments' ?></td>
           <td><?= Format::db_datetime($row['updated']) ?></td>

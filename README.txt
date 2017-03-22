@@ -1,4 +1,4 @@
-Katak-support ver. 1.2.0
+Katak-support ver. 1.2.1
 
 Katak-support is an online help desk software solution for handling customer requests through a web-based support ticket system.
 It is PHP-based and can receive tickets via email (pop3/pipe) or through a web form.

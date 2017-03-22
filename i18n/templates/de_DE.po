@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Katak support 1.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 13:12+0100\n"
-"PO-Revision-Date: 2016-08-24 13:14+0100\n"
+"POT-Creation-Date: 2017-03-14 16:48+0100\n"
+"PO-Revision-Date: 2017-03-14 16:48+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: Katak-support Team\n"
 "Language: de_DE\n"
@@ -494,51 +494,51 @@ msgstr ""
 msgid "Unknown Dept action"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:654
+#: /var/www/html/katak/admin/admin.php:658
 #, php-format
 msgid "Unable to fetch info on template ID#"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:671
+#: /var/www/html/katak/admin/admin.php:675
 #, php-format
 msgid "Unable to fetch info on email ID#%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:687
+#: /var/www/html/katak/admin/admin.php:691
 #, php-format
 msgid "Unable to fetch info on topic #%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:707
+#: /var/www/html/katak/admin/admin.php:711
 #, php-format
 msgid "Unable to fetch info on role ID#%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:717
+#: /var/www/html/katak/admin/admin.php:721
 #, php-format
 msgid "Unable to fetch info on staff ID#%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:740
+#: /var/www/html/katak/admin/admin.php:744
 #, php-format
 msgid "Unable to fetch info on group ID#%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:750
+#: /var/www/html/katak/admin/admin.php:754
 #, php-format
 msgid "Unable to fetch info on client ID#%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:768
+#: /var/www/html/katak/admin/admin.php:772
 #, php-format
 msgid "Unable to fetch info on Dept ID#%s"
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:803
+#: /var/www/html/katak/admin/admin.php:807
 msgid "Problems loading requested admin page."
 msgstr ""
 
-#: /var/www/html/katak/admin/admin.php:804
+#: /var/www/html/katak/admin/admin.php:808
 msgid ""
 "Possibly access denied, if you believe this is in error please get technical "
 "support."
@@ -596,6 +596,7 @@ msgstr ""
 #: /var/www/html/katak/include/staff/roles.inc.php:2
 #: /var/www/html/katak/include/staff/staff.inc.php:2
 #: /var/www/html/katak/include/staff/staffmembers.inc.php:2
+#: /var/www/html/katak/include/staff/status.inc.php:2
 #: /var/www/html/katak/include/staff/stdreply.inc.php:3
 #: /var/www/html/katak/include/staff/syslogs.inc.php:2
 #: /var/www/html/katak/include/staff/template.inc.php:2
@@ -619,7 +620,7 @@ msgid "cron job executed"
 msgstr "cron job ausgeführt"
 
 #: /var/www/html/katak/admin/directory.php:19
-#: /var/www/html/katak/include/class.nav.php:71
+#: /var/www/html/katak/include/class.nav.php:72
 msgid "STAFF MEMBERS"
 msgstr "MITARBEITERLISTE"
 
@@ -899,7 +900,7 @@ msgid "MY PROFILE"
 msgstr "MEIN PROFIL"
 
 #: /var/www/html/katak/admin/profile.php:128
-#: /var/www/html/katak/include/class.nav.php:56
+#: /var/www/html/katak/include/class.nav.php:57
 msgid "PREFERENCES"
 msgstr "EINSTELLUNGEN"
 
@@ -1567,16 +1568,10 @@ msgid "Password too long"
 msgstr "Kennwort zu lang"
 
 #: /var/www/html/katak/include/class.client.php:159
-#: /var/www/html/katak/include/class.staff.php:381
-msgid "Unable to update the user. Internal error occured"
-msgstr ""
-"Kunden-Informationen können nicht aktualisiert werden.  Interner Fehler "
-"aufgetreten"
-
 #: /var/www/html/katak/include/class.client.php:163
-msgid "Unable to update the client. Internal error occured"
+msgid "Unable to update the client. Internal error occurred"
 msgstr ""
-"Kunden-Informationen können nicht aktualisiert werden.  Interner Fehler "
+"Kunden-Informationen können nicht aktualisiert werden. Interner Fehler "
 "aufgetreten"
 
 #: /var/www/html/katak/include/class.client.php:170
@@ -1584,86 +1579,86 @@ msgstr ""
 msgid "Unable to create user. Internal error"
 msgstr "Kann den Benutzer nicht anlegen. Interner Fehler"
 
-#: /var/www/html/katak/include/class.config.php:472
+#: /var/www/html/katak/include/class.config.php:476
 msgid "Support System URl required"
 msgstr "Support System URl erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:473
+#: /var/www/html/katak/include/class.config.php:477
 msgid "Support System title required"
 msgstr "Support System Titel erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:474
+#: /var/www/html/katak/include/class.config.php:478
 msgid "Default Dept. required"
 msgstr "Standard Abteilung benötigt"
 
-#: /var/www/html/katak/include/class.config.php:475
+#: /var/www/html/katak/include/class.config.php:479
 msgid "Default email required"
 msgstr "Standard-E-Mail-Adresse erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:476
+#: /var/www/html/katak/include/class.config.php:480
 msgid "You must select template."
 msgstr "Vorlage auswählen"
 
-#: /var/www/html/katak/include/class.config.php:477
-#: /var/www/html/katak/include/class.config.php:478
+#: /var/www/html/katak/include/class.config.php:481
+#: /var/www/html/katak/include/class.config.php:482
 msgid "Enter idle time in minutes"
 msgstr ""
 
-#: /var/www/html/katak/include/class.config.php:479
+#: /var/www/html/katak/include/class.config.php:483
 msgid "Time format required"
 msgstr "Zeitformat ist erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:480
+#: /var/www/html/katak/include/class.config.php:484
 msgid "Date format required"
 msgstr "Datumsformat ist erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:481
+#: /var/www/html/katak/include/class.config.php:485
 msgid "Datetime format required"
 msgstr "Datums- und Zeitformat ist erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:482
+#: /var/www/html/katak/include/class.config.php:486
 msgid "Day, Datetime format required"
 msgstr "Tag-, Datums und Zeitformat ist erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:483
+#: /var/www/html/katak/include/class.config.php:487
 msgid "Enter lock time in minutes"
 msgstr "Blockirungszeit in Minuten eingeben"
 
-#: /var/www/html/katak/include/class.config.php:497
-#: /var/www/html/katak/include/class.config.php:504
-#: /var/www/html/katak/include/class.config.php:511
+#: /var/www/html/katak/include/class.config.php:501
+#: /var/www/html/katak/include/class.config.php:508
+#: /var/www/html/katak/include/class.config.php:515
 msgid "No target recipient(s) selected"
 msgstr ""
 
-#: /var/www/html/katak/include/class.config.php:515
+#: /var/www/html/katak/include/class.config.php:519
 msgid "Reply separator required (?)"
 msgstr ""
 
-#: /var/www/html/katak/include/class.config.php:519
+#: /var/www/html/katak/include/class.config.php:523
 msgid "The GD extension required"
 msgstr ""
 
-#: /var/www/html/katak/include/class.config.php:521
+#: /var/www/html/katak/include/class.config.php:525
 msgid "PNG support required for Image Captcha"
 msgstr ""
 
-#: /var/www/html/katak/include/class.config.php:625
+#: /var/www/html/katak/include/class.config.php:629
 msgid "Directory must be valid and writeable"
 msgstr "Verzeichnis muss gültig und beschreibbar sein"
 
-#: /var/www/html/katak/include/class.config.php:627
+#: /var/www/html/katak/include/class.config.php:631
 msgid "Invalid upload dir"
 msgstr "Verzeichnis 'upload' ungültig"
 
-#: /var/www/html/katak/include/class.config.php:629
+#: /var/www/html/katak/include/class.config.php:633
 msgid "The 'file_uploads' directive is disabled in php.ini"
 msgstr "Direktive 'file_uploads' ist in der php.ini deaktiviert"
 
-#: /var/www/html/katak/include/class.config.php:633
+#: /var/www/html/katak/include/class.config.php:637
 msgid "Maximum file size required"
 msgstr "Maximale Dateigrö&szlig;e erforderlich"
 
-#: /var/www/html/katak/include/class.config.php:636
+#: /var/www/html/katak/include/class.config.php:640
 msgid "Allowed file extentions required"
 msgstr "Erlaubte Dateiendungen erforderlich"
 
@@ -1953,81 +1948,85 @@ msgstr "STATISTIKEN"
 msgid "SYSTEM LOGS"
 msgstr "PROTOKOLLE"
 
-#: /var/www/html/katak/include/class.nav.php:57
+#: /var/www/html/katak/include/class.nav.php:54
+msgid "STATUS"
+msgstr ""
+
+#: /var/www/html/katak/include/class.nav.php:58
 msgid "ATTACHMENTS"
 msgstr "ANLAGEN"
 
-#: /var/www/html/katak/include/class.nav.php:58
+#: /var/www/html/katak/include/class.nav.php:59
 msgid "API"
 msgstr "API"
 
-#: /var/www/html/katak/include/class.nav.php:61
+#: /var/www/html/katak/include/class.nav.php:62
 msgid "EMAIL ADDRESSES"
 msgstr "E-MAIL-ADRESSEN"
 
-#: /var/www/html/katak/include/class.nav.php:62
+#: /var/www/html/katak/include/class.nav.php:63
 msgid "ADD NEW EMAIL"
 msgstr "NEUE E-MAIL"
 
-#: /var/www/html/katak/include/class.nav.php:63
+#: /var/www/html/katak/include/class.nav.php:64
 msgid "TEMPLATES"
 msgstr "VORLAGEN"
 
-#: /var/www/html/katak/include/class.nav.php:63
+#: /var/www/html/katak/include/class.nav.php:64
 #: /var/www/html/katak/include/staff/template.inc.php:5
 #: /var/www/html/katak/include/staff/templates.inc.php:35
 msgid "Email Templates"
 msgstr "E-Mail-Vorlagen"
 
-#: /var/www/html/katak/include/class.nav.php:64
+#: /var/www/html/katak/include/class.nav.php:65
 msgid "BANLIST"
 msgstr "SPERRLISTE"
 
-#: /var/www/html/katak/include/class.nav.php:64
+#: /var/www/html/katak/include/class.nav.php:65
 msgid "Banned Email"
 msgstr "Gesperrte E-Mail"
 
-#: /var/www/html/katak/include/class.nav.php:67
+#: /var/www/html/katak/include/class.nav.php:68
 msgid "HELP TOPICS"
 msgstr "THEMEN"
 
-#: /var/www/html/katak/include/class.nav.php:68
+#: /var/www/html/katak/include/class.nav.php:69
 msgid "ADD NEW TOPIC"
 msgstr "NEUES THEMA HINZUFÜGEN"
 
-#: /var/www/html/katak/include/class.nav.php:72
+#: /var/www/html/katak/include/class.nav.php:73
 msgid "ADD NEW STAFF"
 msgstr "MITARBEITER HINZUFÜGEN"
 
-#: /var/www/html/katak/include/class.nav.php:73
+#: /var/www/html/katak/include/class.nav.php:74
 msgid "STAFF ROLES"
 msgstr "MITARBEITER AUFGABENBEREICH"
 
-#: /var/www/html/katak/include/class.nav.php:74
+#: /var/www/html/katak/include/class.nav.php:75
 msgid "ADD NEW ROLE"
 msgstr "AUFGABENBEREICH HINZUFÜGEN"
 
-#: /var/www/html/katak/include/class.nav.php:77
+#: /var/www/html/katak/include/class.nav.php:78
 msgid "CLIENT LIST"
 msgstr "KUNDEN LISTE"
 
-#: /var/www/html/katak/include/class.nav.php:78
+#: /var/www/html/katak/include/class.nav.php:79
 msgid "ADD NEW CLIENT"
 msgstr "NEUEN KUNDEN"
 
-#: /var/www/html/katak/include/class.nav.php:79
+#: /var/www/html/katak/include/class.nav.php:80
 msgid "CLIENT GROUPS"
 msgstr "KUNDENGRUPPEN"
 
-#: /var/www/html/katak/include/class.nav.php:80
+#: /var/www/html/katak/include/class.nav.php:81
 msgid "ADD NEW GROUP"
 msgstr "NEUE GRUPPE"
 
-#: /var/www/html/katak/include/class.nav.php:83
+#: /var/www/html/katak/include/class.nav.php:84
 msgid "DEPARTMENTS"
 msgstr "ABTEILUNGEN"
 
-#: /var/www/html/katak/include/class.nav.php:84
+#: /var/www/html/katak/include/class.nav.php:85
 msgid "ADD NEW DEPT."
 msgstr "NEUE ABTEILUNG"
 
@@ -2085,6 +2084,12 @@ msgstr "Aufgabebereich benötigt"
 #: /var/www/html/katak/include/class.staff.php:349
 msgid "At least an administrator must remain"
 msgstr "Wenigstens ein Administrator muss bleiben"
+
+#: /var/www/html/katak/include/class.staff.php:381
+msgid "Unable to update the user. Internal error occured"
+msgstr ""
+"Kunden-Informationen können nicht aktualisiert werden.  Interner Fehler "
+"aufgetreten"
 
 #: /var/www/html/katak/include/class.ticket.php:523
 msgid "Unable to fetch 'overdue' alert template No."

@@ -4,7 +4,7 @@
 
     Banned emails handle.
 
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -27,6 +27,6 @@ class Banlist {
     }
     
     static function isbanned($email) {
-        return db_num_rows(db_query('SELECT id FROM '.BANLIST_TABLE.' WHERE email='.db_input($email)))?true:false;
+        return db_num_rows(db_query('SELECT id FROM '.BANLIST_TABLE.' WHERE' . db_input($email) . ' LIKE  email'))?true:false;
     }
 }

@@ -20,7 +20,7 @@ if (!$thisuser->canManageStdr() && !$thisuser->isadmin())
 
 $page = '';
 $answer = null; //clean start.
-if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['id']) && is_numeric($id)) {
+if (($id = $_REQUEST['stdreply_id'] ? $_REQUEST['stdreply_id'] : $_POST['stdreply_id']) && is_numeric($id)) {
     $replyID = 0;
     $resp = db_query('SELECT * FROM ' . STD_REPLY_TABLE . ' WHERE stdreply_id=' . db_input($id));
     if ($resp && db_num_rows($resp))
@@ -28,7 +28,7 @@ if (($id = $_REQUEST['id'] ? $_REQUEST['id'] : $_POST['id']) && is_numeric($id))
     else
         $errors['err'] = _('Unknown ID#') . $id; //Sucker...invalid id
 
-        if (!$errors && $answer['stdreply_id'] == $id)
+    if (!$errors && $answer['stdreply_id'] == $id)
         $page = 'reply.inc.php';
 }
 
@@ -37,7 +37,7 @@ if ($_POST):
     switch (strtolower($_POST['a'])):
         case 'update':
         case 'add':
-            if (!$_POST['id'] && $_POST['a'] == 'update')
+            if (!$_POST['stdreply_id'] && $_POST['a'] == 'update')
                 $errors['err'] = _('Missing or invalid role ID');
 
             if (!$_POST['title'])
@@ -58,7 +58,7 @@ if ($_POST):
                     else
                         $msg='Standard reply created';
                 }elseif ($_POST['a'] == 'update') { //update
-                    $res = db_query('UPDATE ' . STD_REPLY_TABLE . ' ' . $sql . ' WHERE stdreply_id=' . db_input($_POST['id']));
+                    $res = db_query('UPDATE ' . STD_REPLY_TABLE . ' ' . $sql . ' WHERE stdreply_id=' . db_input($_POST['stdreply_id']));
                     if ($res && db_affected_rows()) {
                         $msg = _('Standard reply updated');
                         $answer = db_fetch_array(db_query('SELECT * FROM ' . STD_REPLY_TABLE . ' WHERE stdreply_id=' . db_input($id)));
