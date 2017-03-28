@@ -4,7 +4,7 @@
     
     Handles all tickets related actions for staff.
     
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -260,13 +260,12 @@ if ($_POST && !$errors):
                             $errors['err'] = _('Ticket is not assigned!');
                         elseif ($ticket->release()) {
                             $msg = sprintf(_('Ticket released (unassigned) from %s by %s'), $staff->getName(), $thisuser->getName());
-                            ;
                             $ticket->logActivity(_('Ticket unassigned'), $msg);
                         }else
                             $errors['err'] = _('Problems releasing the ticket. Try again');
                         break;
                     case 'overdue':
-                        //Mark the ticket as overdue
+                        //Mark the ticket as overdue and simultaneously sets the priority
                         if (!$thisuser->isadmin() && !$thisuser->isManager()) {
                             $errors['err'] = _('Perm. Denied. You are not allowed to flag tickets overdue');
                         } else {

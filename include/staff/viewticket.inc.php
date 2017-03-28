@@ -147,7 +147,7 @@ if($thisuser->canManageTickets()){ ?>
       <tr><td>
               <input type='hidden' name='ticket_id' value="<?=$id?>"/>
               <input type='hidden' name='a' value="process"/>
-              <span for="do"> &nbsp;<b><?= _('Action:') ?></b></span>
+              <label for="do"> &nbsp;<b><?= _('Action:') ?></b></label>
               <select id="do" name="do" 
                 onChange="this.form.ticket_priority.disabled=strcmp(this.options[this.selectedIndex].value,'change_priority','reopen','overdue')?false:true;">
                   <option value=""><?= _('Select Action') ?></option>
@@ -182,7 +182,7 @@ if($thisuser->canManageTickets()){ ?>
                           <option value="delete" ><?= _('Delete Ticket') ?></option>
                   <?php } ?>
               </select>
-              <span for="ticket_priority"><?= _('Priority:') ?></span>
+              <label for="ticket_priority"><?= _('Priority:') ?></label>
               <select id="ticket_priority" name="ticket_priority" <?=!$info['do']?'disabled':''?> >
                   <option value="0" selected="selected"><?= _('-Unchanged-') ?></option>
                   <?php
@@ -346,7 +346,7 @@ if($notes=db_num_rows($resp)){
                 <div class="input">
                     <label for="title"><?= _('Note Title:') ?></label>
                     <input type="text" name="title" id="title" value="<?=$info['title']?>" size=30px />
-                    </select><font class="error">*&nbsp;<?=$errors['title']?></font>
+                    <font class="error">*&nbsp;<?=$errors['title']?></font>
                 </div>
                 <div style="margin-top: 3px;">
                     <label for="note"><?= _('Enter note content.') ?>
@@ -384,7 +384,7 @@ if($notes=db_num_rows($resp)){
                 <input type="hidden" name="ticket_id" value="<?=$id?>">
                 <input type="hidden" name="a" value="transfer">
                 <div class="input">
-                    <span for="dept_id"><?= _('Department:') ?></span>
+                    <label for="dept_id"><?= _('Department:') ?></label>
                     <select id="dept_id" name="dept_id">
                         <option value="" selected="selected"><?= _('-Select Target Dept.-') ?></option>
                         <?php
@@ -419,7 +419,7 @@ if($notes=db_num_rows($resp)){
                 <input type="hidden" name="ticket_id" value="<?=$id?>">
                 <input type="hidden" name="a" value="assign">
                 <div class="input">
-                    <span for="staffId"><?= _('Staff Member:') ?></span>
+                    <label for="staffId"><?= _('Staff Member:') ?></label>
                     <select id="staffId" name="staffId">
                         <option value="0" selected="selected"><?= _('-Select Staff Member.-') ?></option>
                         <?php
