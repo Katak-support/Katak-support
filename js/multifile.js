@@ -117,7 +117,7 @@ function MultiSelector( list_target, max ){
 		// Delete button
 		var new_row_button = document.createElement( 'input' );
 		new_row_button.type = 'image';
-		new_row_button.src = './js/user-trash.png';
+		new_row_button.src = './js/trash.png';
 		new_row_button.alt = 'Remove';
 		new_row_button.value = 'Delete';
 		new_row_button.id = 'Delete';
