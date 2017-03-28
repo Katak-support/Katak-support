@@ -1,6 +1,8 @@
 Katak-support 1.2.1, 2017-03-31
 - Fixed error in saving the customer's card without changes
-- Added status page
+- Fixed error in saving the standard replay with an empty field
+- Fixed some compatibility problems with PHP7
+- Added status page for the administrator
 
 Katak-support 1.2.0, 2016-08-15
 - The clients can be divided into groups. Clients see the tickets of the other members of their group.

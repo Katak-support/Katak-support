@@ -4,7 +4,7 @@
     
     Manage email
 
-    Copyright (c)  2012-2016 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -164,7 +164,7 @@ class Email {
                           'Subject' => $subject,
                           'Date'=>date('D, d M Y H:i:s O'),
                           'Message-ID' =>'<'.Misc::randCode(6).''.time().'-'.$this->getEmail().'>',
-                          'X-Mailer' =>'katak-support v 1.2.0',
+                          'X-Mailer' =>'katak-support v 1.2.1',
                           'Content-Type' => 'text/html; charset="UTF-8"'
                           );
         $mime = new Mail_mime();
@@ -223,7 +223,7 @@ class Email {
                           'To' => $to,
                           'Subject' => $subject,
                           'Message-ID' =>'<'.Misc::randCode(10).''.time().'@katak-support>',
-                          'X-Mailer' =>'katak-support v 1.2.0',
+                          'X-Mailer' =>'katak-support v 1.2.1',
                           'Content-Type' => 'text/html; charset="UTF-8"'
                           );
         $mime = new Mail_mime();

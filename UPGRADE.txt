@@ -1,6 +1,6 @@
 UPGRADE FROM KATAK OLD VERSIONS
 1) Do a safety backup of the database and of the attachments directory.
-2) Replace all files with the new release, UNLESS THE FILE INCLUDE/KTK-CONFIG.PHP and the attachments directory (if exists).
+2) Replace all files with the new release, UNLESS the file INCLUDE/KTK-CONFIG.PHP and the attachments directory (if exists).
 3) With a browser go to your_site/setup/, select the tag "Upgrade" and follow the instruction. You'll have to enter the system administrator's name and password.
 
 

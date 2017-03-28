@@ -4,7 +4,7 @@
 
     Very basic captcha class.
     
-    Copyright (c)  2012-2013 Katak Support
+    Copyright (c)  2012-2017 Katak Support
     http://www.katak-support.com/
     
     Released under the GNU General Public License WITHOUT ANY WARRANTY.
@@ -44,7 +44,7 @@ class Captcha {
         $img= imagecreatefrompng($this->bgimg);
         imagestring($img,$this->font, $x, $y,$this->hash,imagecolorallocate($img,0, 0, 0));
 
-        Header ("(captcha-content-type:) image/png");
+        Header ("Content-Type: image/png");
         imagepng($img);
         imagedestroy($img);
         $_SESSION['captcha'] = md5($this->hash);

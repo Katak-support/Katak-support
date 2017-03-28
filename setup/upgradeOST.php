@@ -29,7 +29,7 @@ $errors=array();
 $fp=null;
 $_SESSION['abort']=false;
 define('VERSION','1.2'); //Current database version number
-define('VERSION_VERBOSE','1.2.0'); //Script version (what the user sees during installation process).
+define('VERSION_VERBOSE','1.2.1'); //Script version (what the user sees during installation process).
 define('CONFIGFILE','../include/ktk-config.php'); //Katak config file full path.
 define('SCHEMAFILE','./inc/ktk-upgrade-ost16ST.sql'); //Katak upgrade from osTicket SQL schema.
 define('URL',rtrim('http'.(($_SERVER['HTTPS']=='on')?'s':'').'://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']),'setup'));

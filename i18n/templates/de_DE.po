@@ -2,10 +2,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Katak support 1.2.0\n"
+"Project-Id-Version: Katak support 1.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-14 16:48+0100\n"
-"PO-Revision-Date: 2017-03-14 16:48+0100\n"
+"POT-Creation-Date: 2017-03-27 14:44+0100\n"
+"PO-Revision-Date: 2017-03-27 14:45+0100\n"
 "Last-Translator: Katak-support Team <info@katak-support.com>\n"
 "Language-Team: Katak-support Team\n"
 "Language: de_DE\n"
