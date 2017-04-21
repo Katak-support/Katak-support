@@ -27,7 +27,7 @@ CREATE TABLE `%TABLE_PREFIX%clients` (
   `client_mobile` varchar(28) DEFAULT NULL,
   `client_isactive` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `client_group_id` int(11) unsigned DEFAULT NULL,
-  `client_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `client_created` datetime DEFAULT NULL,
   `client_lastlogin` datetime DEFAULT NULL,
   PRIMARY KEY (`client_id`),
   UNIQUE KEY `email` (`client_email`)
