@@ -26,7 +26,7 @@ class TicketsAjaxAPI{
         $len = strlen($input);
         $limit = isset($params['limit']) ? (int) $params['limit']:25;
         $items=array();
-        $sql='SELECT DISTINCT email,name FROM '.TICKET_TABLE.' WHERE email LIKE \''.$input.'%\' ORDER BY created LIMIT '.$limit;
+        $sql='SELECT DISTINCT email,name,created FROM '.TICKET_TABLE.' WHERE email LIKE \''.$input.'%\' ORDER BY created LIMIT '.$limit;
         $resp=db_query($sql);
         if($resp && db_num_rows($resp)){
             while(list($email,$name)=db_fetch_row($resp)) {
@@ -51,7 +51,7 @@ class TicketsAjaxAPI{
         }else{
             $WHERE=' WHERE email LIKE \''.$input.'%\'';
         }
-        $sql='SELECT DISTINCT ticketID,email FROM '.TICKET_TABLE.' '.$WHERE.' ORDER BY created LIMIT '.$limit;
+        $sql='SELECT DISTINCT ticketID,email,created FROM '.TICKET_TABLE.' '.$WHERE.' ORDER BY created LIMIT '.$limit;
         $resp=db_query($sql);
         if($resp && db_num_rows($resp)){
             while(list($id,$email)=db_fetch_row($resp)) {
